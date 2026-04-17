@@ -83,15 +83,11 @@ const ServicesGrid = () => {
   // Row 2 cards are not allowed to activate, so this only ever holds a row-1 id.
   const [activeId, setActiveId] = useState<string>("01");
 
-  // Row 1 idle width: when one card is expanded (flex-grow:2), the other two share the rest.
-  // Using flex-1 (basis 0, grow 1) on idle cards keeps the active card visually wider.
-  const row1IdleBasis = "md:basis-0 md:flex-1";
-
-  // Row 2 idle width: match the *idle* width of a row-1 card so cards align visually.
-  // Row 1 layout: active (2 parts) + 2 idle (1 part each) = 4 parts total → idle ≈ 25% of row width.
-  // We use ~25% so the three row-2 cards take ~75% and the remaining ~25% is split as
-  // equal margins on left/right (centered), matching the wireframe.
-  const row2IdleBasis = "md:basis-[calc((100%-2.5rem)/4)]";
+  // Both rows use the SAME idle card width: ~25% of the container (3 idle cards + 1 expanded
+  // worth of space ≈ 4 units). Active card in row 1 absorbs the remaining width via flex-grow.
+  const idleBasis = "md:basis-[calc((100%-2.5rem)/4)]";
+  const row1IdleBasis = idleBasis;
+  const row2IdleBasis = idleBasis;
 
   return (
     <section className="pb-16 md:pb-20">
