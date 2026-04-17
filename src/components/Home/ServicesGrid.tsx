@@ -34,7 +34,7 @@ const ServiceCard = ({ s, isActive, onActivate, idleBasisClass }: CardProps) => 
     tabIndex={0}
     onMouseEnter={onActivate}
     onFocus={onActivate}
-    className={`relative bg-background rounded-xl border border-border p-5 h-[380px] overflow-hidden transition-[flex-basis,box-shadow] duration-500 ease-out hover:shadow-lg focus:shadow-lg focus:outline-none cursor-pointer md:flex-grow-0 md:flex-shrink-0 ${
+    className={`relative bg-background rounded-xl border border-border p-5 h-[380px] overflow-hidden transition-[flex-basis,box-shadow] duration-500 ease-out shadow-[4px_4px_12px_-2px_hsl(var(--foreground)/0.08)] hover:shadow-[6px_6px_18px_-2px_hsl(var(--foreground)/0.12)] focus:shadow-[6px_6px_18px_-2px_hsl(var(--foreground)/0.12)] focus:outline-none cursor-pointer md:flex-grow-0 md:flex-shrink-0 ${
       isActive
         ? "md:basis-[calc((100%-2.5rem)/2)]"
         : idleBasisClass
