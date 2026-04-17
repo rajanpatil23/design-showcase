@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/connecttly-logo.png";
 
 const Footer = () => {
   return (
@@ -24,9 +25,7 @@ const Footer = () => {
 
       {/* Newsletter */}
       <div className="container-main pb-10 flex flex-col md:flex-row items-center justify-between gap-6 border-b border-border">
-        <span className="text-xl font-heading font-bold tracking-tight">
-          CO<span className="text-primary">N</span>NECTTLY
-        </span>
+        <img src={logo} alt="Connecttly" className="h-8 w-auto" />
         <div className="flex w-full md:w-auto items-center gap-2">
           <input
             type="email"
