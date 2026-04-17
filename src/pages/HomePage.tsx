@@ -173,8 +173,8 @@ const HomePage = () => {
               preserveAspectRatio="none"
             >
               <defs>
-                <marker id="arrowhead-top" markerWidth="3" markerHeight="3" refX="2.5" refY="1.5" orient="auto" markerUnits="userSpaceOnUse">
-                  <path d="M0.3,0.3 L2.7,1.5 L0.3,2.7" fill="none" stroke="#ffffff" strokeWidth="0.7" strokeLinecap="round" strokeLinejoin="round" />
+                <marker id="arrowhead-top" markerWidth="4" markerHeight="4" refX="3.2" refY="2" orient="auto">
+                  <path d="M0.5,0.5 L3.5,2 L0.5,3.5" fill="none" stroke="#ffffff" strokeWidth="0.9" strokeLinecap="round" strokeLinejoin="round" />
                 </marker>
               </defs>
               {/* Card 1 (right side ~16%) -> Card 2 (left side ~34%) */}
@@ -208,8 +208,8 @@ const HomePage = () => {
               preserveAspectRatio="none"
             >
               <defs>
-                <marker id="arrowhead-bot" markerWidth="3" markerHeight="3" refX="2.5" refY="1.5" orient="auto" markerUnits="userSpaceOnUse">
-                  <path d="M0.3,0.3 L2.7,1.5 L0.3,2.7" fill="none" stroke="#ffffff" strokeWidth="0.7" strokeLinecap="round" strokeLinejoin="round" />
+                <marker id="arrowhead-bot" markerWidth="4" markerHeight="4" refX="3.2" refY="2" orient="auto">
+                  <path d="M0.5,0.5 L3.5,2 L0.5,3.5" fill="none" stroke="#ffffff" strokeWidth="0.9" strokeLinecap="round" strokeLinejoin="round" />
                 </marker>
               </defs>
               {/* Card 2 (right side ~41%) -> Card 3 (left side ~59%) */}
