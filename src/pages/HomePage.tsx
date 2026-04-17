@@ -164,8 +164,8 @@ const HomePage = () => {
           {/* Cards + connector arrows */}
           <div className="relative mt-16 max-w-5xl mx-auto">
             {/* Decorative dashed arrows — desktop only.
-                Top arrow arcs from card 1 -> card 2.
-                Bottom arrow arcs from card 3 -> card 4. */}
+                Top arrows arc from card 1 -> 2 and card 3 -> 4.
+                Bottom arrow arcs from card 2 -> 3. */}
             <svg
               aria-hidden
               className="hidden md:block absolute inset-x-0 -top-10 w-full h-10 pointer-events-none"
@@ -177,9 +177,20 @@ const HomePage = () => {
                   <path d="M0,0 L6,3 L0,6 Z" fill="#ffffff" />
                 </marker>
               </defs>
-              {/* From middle of card 1 (~12.5%) to middle of card 2 (~37.5%) */}
+              {/* Card 1 (~12.5%) -> Card 2 (~37.5%) */}
               <path
                 d="M 12.5 9 Q 25 -6 37.5 9"
+                fill="none"
+                stroke="#ffffff"
+                strokeWidth="1.4"
+                strokeLinecap="round"
+                strokeDasharray="0.1 3"
+                vectorEffect="non-scaling-stroke"
+                markerEnd="url(#arrowhead-top)"
+              />
+              {/* Card 3 (~62.5%) -> Card 4 (~87.5%) */}
+              <path
+                d="M 62.5 9 Q 75 -6 87.5 9"
                 fill="none"
                 stroke="#ffffff"
                 strokeWidth="1.4"
@@ -201,9 +212,9 @@ const HomePage = () => {
                   <path d="M0,0 L6,3 L0,6 Z" fill="#ffffff" />
                 </marker>
               </defs>
-              {/* From middle of card 3 (~62.5%) to middle of card 4 (~87.5%) */}
+              {/* Card 2 (~37.5%) -> Card 3 (~62.5%) */}
               <path
-                d="M 62.5 1 Q 75 16 87.5 1"
+                d="M 37.5 1 Q 50 16 62.5 1"
                 fill="none"
                 stroke="#ffffff"
                 strokeWidth="1.4"
