@@ -150,7 +150,7 @@ const HomePage = () => {
       <ServicesGrid />
 
       {/* How It Works — Dark Section */}
-      <section className="py-16 md:py-20 bg-ct-dark">
+      <section className="py-16 md:py-20 bg-[#09233C]">
         <div className="container-main">
           <div className="flex justify-center mb-6">
             <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider rounded-full border border-primary/40 bg-primary/10 text-primary">
