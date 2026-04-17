@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowUpRight, BarChart3, Users, Globe, Megaphone, PenTool, Code, Star, Quote, ExternalLink, Play } from "lucide-react";
+import { ArrowRight, ArrowUpRight, BarChart3, Users, Code, Star, Quote, Play } from "lucide-react";
 import { Link } from "react-router-dom";
 import SectionLabel from "@/components/SectionLabel";
 import Hero from "@/components/Home/Hero";
+import ServicesGrid from "@/components/Home/ServicesGrid";
 import testimonialPerson from "@/assets/testimonial-person.jpg";
 import caseStudyDashboard from "@/assets/case-study-dashboard.jpg";
 import blogIllustration from "@/assets/blog-illustration.jpg";
-import performanceMarketingCard from "@/assets/performance-marketing-card.jpg";
 
 const heroStats = [
   { value: "2M+", label: "Content Impressions Generated" },
@@ -15,14 +15,6 @@ const heroStats = [
   { value: "10+", label: "Marketing Systems Automated" },
 ];
 
-const services = [
-  { num: "01", title: "Performance Marketing", desc: "Run high-performing ad campaigns that generate leads and revenue.", icon: <BarChart3 className="w-5 h-5 text-primary" />, hasImage: true },
-  { num: "02", title: "Social Media Management", desc: "Build a strong brand presence and an engaged audience.", icon: <Megaphone className="w-5 h-5 text-primary" /> },
-  { num: "03", title: "LinkedIn Growth", desc: "Turn LinkedIn into your most powerful B2B growth engine.", icon: <Users className="w-5 h-5 text-primary" /> },
-  { num: "04", title: "Search Engine Optimisation", desc: "Drive long-term organic traffic and visibility.", icon: <Globe className="w-5 h-5 text-primary" /> },
-  { num: "05", title: "Content & Creative", desc: "Create content that builds authority and demand.", icon: <PenTool className="w-5 h-5 text-primary" /> },
-  { num: "06", title: "Web & AI Automation", desc: "Build high-converting websites and automated marketing systems.", icon: <Code className="w-5 h-5 text-primary" /> },
-];
 
 const steps = [
   { num: "01", title: "Discover", desc: "" },
@@ -151,102 +143,8 @@ const HomePage = () => {
         </div>
       </div>
 
-      {/* Services cards — expandable row: hovered card grows + shows image, others compact */}
-      <section className="pb-16 md:pb-20">
-        <div className="container-main">
-          {/* Row 1: cards 01, 02, 03 */}
-          <div className="flex flex-col md:flex-row gap-5 mt-12 group/row">
-            {services.slice(0, 3).map((s, i) => (
-              <article
-                key={s.num}
-                tabIndex={0}
-                className={`
-                  relative bg-background rounded-xl border border-border p-5
-                  flex flex-col justify-between min-h-[260px]
-                  transition-[flex-grow,box-shadow] duration-500 ease-out
-                  hover:shadow-lg focus:shadow-lg focus:outline-none
-                  md:flex-[1_1_0%]
-                  ${i === 0 ? "md:flex-[2_1_0%] md:group-hover/row:flex-[1_1_0%] md:group-focus-within/row:flex-[1_1_0%]" : ""}
-                  md:hover:!flex-[2_1_0%] md:focus:!flex-[2_1_0%]
-                  group/card
-                `}
-              >
-                <div>
-                  <h3 className={`font-heading font-semibold text-base mb-1.5 transition-colors ${i === 0 ? "text-primary group-hover/row:text-foreground group-focus-within/row:text-foreground" : "text-foreground"} group-hover/card:!text-primary group-focus/card:!text-primary`}>
-                    {s.title}
-                  </h3>
-                  <p className="text-xs text-muted-foreground leading-relaxed max-w-[34ch]">{s.desc}</p>
-                </div>
-
-                {/* Image only visible when this card is the active/expanded one */}
-                <div
-                  className={`
-                    overflow-hidden rounded-lg transition-all duration-500 ease-out
-                    ${i === 0 ? "max-h-40 opacity-100 mt-3 group-hover/row:max-h-0 group-hover/row:opacity-0 group-hover/row:mt-0 group-focus-within/row:max-h-0 group-focus-within/row:opacity-0 group-focus-within/row:mt-0" : "max-h-0 opacity-0 mt-0"}
-                    md:group-hover/card:!max-h-40 md:group-hover/card:!opacity-100 md:group-hover/card:!mt-3
-                    md:group-focus/card:!max-h-40 md:group-focus/card:!opacity-100 md:group-focus/card:!mt-3
-                  `}
-                >
-                  <img
-                    src={performanceMarketingCard}
-                    alt={s.title}
-                    className="w-full h-32 object-cover rounded-lg"
-                    loading="lazy"
-                    width={512}
-                    height={256}
-                  />
-                </div>
-
-                <div className="flex items-end justify-between mt-auto pt-4">
-                  <span className="text-5xl font-heading font-bold text-primary/80 leading-none">{s.num}</span>
-                  <ArrowUpRight className="w-4 h-4 text-primary opacity-60 group-hover/card:opacity-100 transition-opacity" />
-                </div>
-              </article>
-            ))}
-          </div>
-
-          {/* Row 2: cards 04, 05, 06 */}
-          <div className="flex flex-col md:flex-row gap-5 mt-5 group/row2">
-            {services.slice(3).map((s) => (
-              <article
-                key={s.num}
-                tabIndex={0}
-                className="
-                  relative bg-background rounded-xl border border-border p-5
-                  flex flex-col justify-between min-h-[260px]
-                  transition-[flex-grow,box-shadow] duration-500 ease-out
-                  hover:shadow-lg focus:shadow-lg focus:outline-none
-                  md:flex-[1_1_0%] md:hover:!flex-[2_1_0%] md:focus:!flex-[2_1_0%]
-                  group/card
-                "
-              >
-                <div>
-                  <h3 className="font-heading font-semibold text-base mb-1.5 transition-colors group-hover/card:text-primary group-focus/card:text-primary">
-                    {s.title}
-                  </h3>
-                  <p className="text-xs text-muted-foreground leading-relaxed max-w-[34ch]">{s.desc}</p>
-                </div>
-
-                <div className="overflow-hidden rounded-lg max-h-0 opacity-0 mt-0 transition-all duration-500 ease-out md:group-hover/card:max-h-40 md:group-hover/card:opacity-100 md:group-hover/card:mt-3 md:group-focus/card:max-h-40 md:group-focus/card:opacity-100 md:group-focus/card:mt-3">
-                  <img
-                    src={performanceMarketingCard}
-                    alt={s.title}
-                    className="w-full h-32 object-cover rounded-lg"
-                    loading="lazy"
-                    width={512}
-                    height={256}
-                  />
-                </div>
-
-                <div className="flex items-end justify-between mt-auto pt-4">
-                  <span className="text-5xl font-heading font-bold text-primary/80 leading-none">{s.num}</span>
-                  <ArrowUpRight className="w-4 h-4 text-primary opacity-60 group-hover/card:opacity-100 transition-opacity" />
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Services cards — expandable rows. Active card grows wider + shows image; others compact. Both rows share identical flex ratios so widths align. */}
+      <ServicesGrid />
 
       {/* How It Works — Dark Section */}
       <section className="py-16 md:py-20 bg-ct-dark">
