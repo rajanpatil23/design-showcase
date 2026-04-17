@@ -198,16 +198,17 @@ const HomePage = () => {
             >
               <defs>
                 <marker id="arrowhead-bot" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-                  <path d="M0,0 L6,3 L0,6 Z" fill="rgba(255,255,255,0.45)" />
+                  <path d="M0,0 L6,3 L0,6 Z" fill="#ffffff" />
                 </marker>
               </defs>
               {/* From middle of card 3 (~62.5%) to middle of card 4 (~87.5%) */}
               <path
                 d="M 62.5 1 Q 75 16 87.5 1"
                 fill="none"
-                stroke="rgba(255,255,255,0.45)"
-                strokeWidth="0.4"
-                strokeDasharray="1.2 1.2"
+                stroke="#ffffff"
+                strokeWidth="1.4"
+                strokeLinecap="round"
+                strokeDasharray="0.1 3"
                 vectorEffect="non-scaling-stroke"
                 markerEnd="url(#arrowhead-bot)"
               />
