@@ -491,8 +491,8 @@ export default function Hero({
           </div>
         </div>
 
-        {/* Trusted By marquee — part of hero (shares grid bg) but below the floating-icons region so icons never overlap brand cards */}
-        <div className="relative z-20 pb-10 md:pb-14">
+        {/* Trusted By marquee — part of hero (shares grid bg), sits flush at the bottom so it connects directly to the stats grid below */}
+        <div className="relative z-20 pb-6 md:pb-8">
           <TrustedMarquee />
         </div>
 
@@ -531,8 +531,6 @@ export default function Hero({
         `}</style>
       </section>
 
-      {/* Curved bottom spacer */}
-      <div className="hidden md:block md:h-20 lg:h-24 w-full bg-background rounded-b-[60px]" />
     </>
   );
 }
