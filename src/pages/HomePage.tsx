@@ -184,7 +184,7 @@ const HomePage = () => {
                 stroke="#ffffff"
                 strokeWidth="1.4"
                 strokeLinecap="round"
-                strokeDasharray="0.1 3"
+                strokeDasharray="3 2"
                 vectorEffect="non-scaling-stroke"
                 markerEnd="url(#arrowhead-top)"
               />
@@ -194,8 +194,8 @@ const HomePage = () => {
                 fill="none"
                 stroke="#ffffff"
                 strokeWidth="1.4"
-                strokeLinecap="round"
-                strokeDasharray="0.1 3"
+                strokeLinecap="butt"
+                strokeDasharray="3 2"
                 vectorEffect="non-scaling-stroke"
                 markerEnd="url(#arrowhead-top)"
               />
@@ -219,7 +219,7 @@ const HomePage = () => {
                 stroke="#ffffff"
                 strokeWidth="1.4"
                 strokeLinecap="round"
-                strokeDasharray="0.1 3"
+                strokeDasharray="3 2"
                 vectorEffect="non-scaling-stroke"
                 markerEnd="url(#arrowhead-bot)"
               />
