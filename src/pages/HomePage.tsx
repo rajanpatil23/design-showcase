@@ -75,7 +75,7 @@ const HomePage = () => {
             </div>
 
             {/* Stats row: 4 equal columns. Borders form the grid; circles mark intersections. */}
-            <div className="relative grid grid-cols-2 md:grid-cols-4 border-t border-b border-border/70">
+            <div className="relative grid grid-cols-2 md:grid-cols-4 border-t border-b border-l border-r border-border/70">
               {/* Vertical dividers (only between cells) */}
               {heroStats.map((stat, i) => (
                 <div
@@ -100,7 +100,7 @@ const HomePage = () => {
                 <span
                   key={`top-${leftPct}`}
                   aria-hidden
-                  className="hidden md:block absolute -top-[5px] w-2.5 h-2.5 rounded-full border border-border bg-background -translate-x-1/2"
+                  className="hidden md:block absolute -top-[5px] w-2.5 h-2.5 rounded-full border border-border bg-background -translate-x-1/2 z-20"
                   style={{ left: `${leftPct}%` }}
                 />
               ))}
@@ -109,7 +109,7 @@ const HomePage = () => {
                 <span
                   key={`bot-${leftPct}`}
                   aria-hidden
-                  className="hidden md:block absolute -bottom-[5px] w-2.5 h-2.5 rounded-full border border-border bg-background -translate-x-1/2"
+                  className="hidden md:block absolute -bottom-[5px] w-2.5 h-2.5 rounded-full border border-border bg-background -translate-x-1/2 z-20"
                   style={{ left: `${leftPct}%` }}
                 />
               ))}
