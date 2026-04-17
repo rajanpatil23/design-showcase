@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Handshake, Sparkles, Workflow, Database, Layers, Zap, Mic, Heart, Compass } from "lucide-react";
+import { ArrowRight, Handshake, Sparkles, Workflow, Database, Layers, Zap, Mic, Heart, Compass, Linkedin as LinkedinIcon } from "lucide-react";
 import {
-  SiLinkedin, SiFacebook, SiYoutube,
+  SiFacebook, SiYoutube,
   SiInstagram, SiGoogleads, SiMeta, SiReddit,
   SiWhatsapp, SiTwitch, SiOpenai, SiReplit,
 } from "react-icons/si";
@@ -54,7 +54,7 @@ type TileSpec = { id: TileId; Icon: IconType; color: string };
 const CORE: TileSpec[] = [
   { id: "yt",         Icon: SiOpenai,    color: BRAND.chatgpt },
   { id: "x",          Icon: Compass,     color: BRAND.x },
-  { id: "li",         Icon: SiLinkedin,  color: BRAND.linkedin },
+  { id: "li",         Icon: LinkedinIcon as unknown as IconType,  color: BRAND.linkedin },
   { id: "pi",         Icon: SiReddit,    color: BRAND.pinterest },
   { id: "fb",         Icon: SiFacebook,  color: BRAND.facebook },
   { id: "tt",         Icon: Sparkles,    color: BRAND.tiktok },
