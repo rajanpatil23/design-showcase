@@ -73,17 +73,19 @@ const HomePage = () => {
           {/* Edge-to-edge infinite marquee */}
           <div className="relative mt-8 overflow-hidden w-full [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
             <div className="flex w-max animate-scroll-left">
-              {/* Two identical halves — animation translates exactly -50% so the second half seamlessly takes the first's place */}
+              {/* Two identical halves — animation translates exactly -50% so the second half seamlessly takes the first's place. Each half repeats brands enough times to exceed wide viewports. */}
               {[0, 1].map((half) => (
                 <div key={half} className="flex shrink-0" aria-hidden={half === 1}>
-                  {trustedBrands.map((brand, i) => (
-                    <div key={`${brand.name}-${half}-${i}`} className="flex flex-col items-center gap-3 shrink-0 px-3">
-                      <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl border border-border bg-background flex items-center justify-center shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
-                        <img src={brand.logo} alt={brand.name} className="w-12 h-12 md:w-14 md:h-14 object-contain" loading="lazy" width={56} height={56} />
+                  {Array.from({ length: 3 }).flatMap((_, rep) =>
+                    trustedBrands.map((brand, i) => (
+                      <div key={`${brand.name}-${half}-${rep}-${i}`} className="flex flex-col items-center gap-3 shrink-0 px-3">
+                        <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl border border-border bg-background flex items-center justify-center shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
+                          <img src={brand.logo} alt={brand.name} className="w-12 h-12 md:w-14 md:h-14 object-contain" loading="lazy" width={56} height={56} />
+                        </div>
+                        <span className="text-xs md:text-sm text-foreground/80 font-medium">{brand.name}</span>
                       </div>
-                      <span className="text-xs md:text-sm text-foreground/80 font-medium">{brand.name}</span>
-                    </div>
-                  ))}
+                    ))
+                  )}
                 </div>
               ))}
             </div>
