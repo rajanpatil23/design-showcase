@@ -6,8 +6,8 @@ import logo from "@/assets/connecttly-logo.png";
 const Footer = () => {
   return (
     <footer className="relative bg-ct-footer pt-32 pb-8 mt-24">
-      {/* Floating CTA Card */}
-      <div className="container-main absolute left-1/2 -translate-x-1/2 -top-16 px-4 sm:px-6 lg:px-8 w-full">
+      {/* Floating CTA Card — aligned to the same rail as the rest of the page */}
+      <div className="absolute left-1/2 -translate-x-1/2 -top-16 w-full container-main">
         <div className="bg-background rounded-3xl shadow-xl px-8 md:px-12 py-8 md:py-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="text-2xl md:text-3xl font-heading font-bold text-foreground">

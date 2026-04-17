@@ -81,7 +81,10 @@
     @apply py-16 md:py-24;
   }
 
+  /* One unified content rail used by navbar, hero, sections, and footer.
+     Sized to feel right at 100% zoom on 13–16" laptops (≈1280–1536 viewports)
+     while still breathing on larger displays. */
   .container-main {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-6xl mx-auto px-5 sm:px-6 lg:px-8;
   }
 }
