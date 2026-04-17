@@ -304,11 +304,12 @@ export default function Hero({
         if (mouseMoving && inHero) {
           s.vx = dX * 0.5; s.vy = dY * 0.5;
         } else {
+          // Mouse idle / outside hero — bleed off momentum without injecting
+          // any new random energy. Otherwise, all tiles end up drifting in
+          // sync because they share the same RNG-driven jitter.
           s.vx *= MOMENTUM_DECAY; s.vy *= MOMENTUM_DECAY;
-          if (Math.abs(s.vx) < MOMENTUM_THRESHOLD && Math.abs(s.vy) < MOMENTUM_THRESHOLD) {
-            s.vx += (Math.random() - 0.5) * 0.01;
-            s.vy += (Math.random() - 0.5) * 0.01;
-          }
+          if (Math.abs(s.vx) < MOMENTUM_THRESHOLD) s.vx = 0;
+          if (Math.abs(s.vy) < MOMENTUM_THRESHOLD) s.vy = 0;
           tx += s.vx * 25; ty += s.vy * 25;
         }
         s.lastTx = tx; s.lastTy = ty;
