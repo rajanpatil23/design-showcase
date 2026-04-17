@@ -167,6 +167,31 @@ export default function Hero({
   secondaryLabel = "Learn more",
 }: HeroProps) {
   const heroRef = useRef<HTMLElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+
+  /* Measure CTA buttons to size & position the sliding pill */
+  useEffect(() => {
+    const cta = ctaRef.current;
+    if (!cta) return;
+    const measure = () => {
+      const primary = cta.querySelector<HTMLElement>(".hero-cta__primary");
+      const secondary = cta.querySelector<HTMLElement>(".hero-cta__secondary");
+      if (!primary || !secondary) return;
+      const ctaRect = cta.getBoundingClientRect();
+      const pRect = primary.getBoundingClientRect();
+      const sRect = secondary.getBoundingClientRect();
+      cta.style.setProperty("--primary-w", `${pRect.width}px`);
+      cta.style.setProperty("--secondary-w", `${sRect.width}px`);
+      cta.style.setProperty("--secondary-x", `${sRect.left - pRect.left}px`);
+      // anchor pill to primary's left offset within container
+      cta.style.setProperty("--pill-left", `${pRect.left - ctaRect.left}px`);
+    };
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(cta);
+    window.addEventListener("resize", measure);
+    return () => { ro.disconnect(); window.removeEventListener("resize", measure); };
+  }, [primaryLabel, secondaryLabel]);
 
   /* Section parallax */
   useEffect(() => {
