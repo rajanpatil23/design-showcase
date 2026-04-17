@@ -1,12 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ArrowUpRight, BarChart3, Users, Globe, Megaphone, PenTool, Code, Star, Quote, ExternalLink, Play } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import SectionLabel from "@/components/SectionLabel";
 import Hero from "@/components/Home/Hero";
 import testimonialPerson from "@/assets/testimonial-person.jpg";
 import caseStudyDashboard from "@/assets/case-study-dashboard.jpg";
 import blogIllustration from "@/assets/blog-illustration.jpg";
-import performanceMarketingCard from "@/assets/performance-marketing-card.jpg";
+import svcPerformance from "@/assets/services/performance-marketing.svg";
+import svcSocial from "@/assets/services/social-media-management.svg";
+import svcLinkedIn from "@/assets/services/linkedin-growth.svg";
+import svcSeo from "@/assets/services/seo.svg";
+import svcContent from "@/assets/services/content-creative.svg";
+import svcWebAi from "@/assets/services/web-ai-automation.svg";
 
 const heroStats = [
   { value: "2M+", label: "Content Impressions Generated" },
@@ -16,12 +22,12 @@ const heroStats = [
 ];
 
 const services = [
-  { num: "01", title: "Performance Marketing", desc: "Run high-performing ad campaigns that generate leads and revenue.", icon: <BarChart3 className="w-5 h-5 text-primary" />, hasImage: true },
-  { num: "02", title: "Social Media Management", desc: "Build a strong brand presence and an engaged audience.", icon: <Megaphone className="w-5 h-5 text-primary" /> },
-  { num: "03", title: "LinkedIn Growth", desc: "Turn LinkedIn into your most powerful B2B growth engine.", icon: <Users className="w-5 h-5 text-primary" /> },
-  { num: "04", title: "Search Engine Optimisation", desc: "Drive long-term organic traffic and visibility.", icon: <Globe className="w-5 h-5 text-primary" /> },
-  { num: "05", title: "Content & Creative", desc: "Create content that builds authority and demand.", icon: <PenTool className="w-5 h-5 text-primary" /> },
-  { num: "06", title: "Web & AI Automation", desc: "Build high-converting websites and automated marketing systems.", icon: <Code className="w-5 h-5 text-primary" /> },
+  { num: "01", title: "Performance Marketing", desc: "Run high-performing ad campaigns that generate leads and revenue.", image: svcPerformance },
+  { num: "02", title: "Social Media Management", desc: "Build a strong brand presence and an engaged audience.", image: svcSocial },
+  { num: "03", title: "LinkedIn Growth", desc: "Turn LinkedIn into your most powerful B2B growth engine.", image: svcLinkedIn },
+  { num: "04", title: "Search Engine Optimisation", desc: "Drive long-term organic traffic and visibility.", image: svcSeo },
+  { num: "05", title: "Content & Creative", desc: "Create content that builds authority and demand.", image: svcContent },
+  { num: "06", title: "Web & AI Automation", desc: "Build high-converting websites and automated marketing systems.", image: svcWebAi },
 ];
 
 const steps = [
