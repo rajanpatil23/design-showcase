@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowUpRight, BarChart3, Users, Quote, Play } from "lucide-react";
+import { ArrowRight, ArrowUpRight, BarChart3, Users, Code, Star, Quote, Play } from "lucide-react";
 import { Link } from "react-router-dom";
 import SectionLabel from "@/components/SectionLabel";
 import Hero from "@/components/Home/Hero";
@@ -15,14 +15,6 @@ const heroStats = [
   { value: "10+", label: "Marketing Systems Automated" },
 ];
 
-const services = [
-  { num: "01", title: "Performance Marketing", desc: "Run high-performing ad campaigns that generate leads and revenue.", image: svcPerformance },
-  { num: "02", title: "Social Media Management", desc: "Build a strong brand presence and an engaged audience.", image: svcSocial },
-  { num: "03", title: "LinkedIn Growth", desc: "Turn LinkedIn into your most powerful B2B growth engine.", image: svcLinkedIn },
-  { num: "04", title: "Search Engine Optimisation", desc: "Drive long-term organic traffic and visibility.", image: svcSeo },
-  { num: "05", title: "Content & Creative", desc: "Create content that builds authority and demand.", image: svcContent },
-  { num: "06", title: "Web & AI Automation", desc: "Build high-converting websites and automated marketing systems.", image: svcWebAi },
-];
 
 const steps = [
   { num: "01", title: "Discover", desc: "" },
