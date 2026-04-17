@@ -439,14 +439,19 @@ export default function Hero({
                 </Button>
               </div>
 
-              {/* Desktop segmented CTA */}
-              <div className="hidden sm:flex items-center gap-2 p-1.5 rounded-full bg-background/70 backdrop-blur-md border border-border shadow-sm">
-                <Button asChild className="rounded-full h-11 px-5 font-semibold gap-2">
-                  <Link to={primaryHref}><Handshake className="w-4 h-4" /> {primaryLabel}</Link>
-                </Button>
+              {/* Desktop segmented CTA with sliding pill */}
+              <div className="hero-cta hidden sm:flex relative items-center p-1.5 rounded-full bg-background/70 backdrop-blur-md border border-border shadow-sm">
+                <span aria-hidden className="hero-cta__pill absolute top-1.5 bottom-1.5 left-1.5 rounded-full bg-primary transition-all duration-300 ease-out" />
+                <Link
+                  to={primaryHref}
+                  className="hero-cta__primary relative z-10 inline-flex items-center gap-2 h-11 px-5 rounded-full text-sm font-semibold text-primary-foreground transition-colors duration-300"
+                >
+                  <Handshake className="w-4 h-4" />
+                  {primaryLabel}
+                </Link>
                 <Link
                   to={secondaryHref}
-                  className="px-5 h-11 inline-flex items-center gap-1.5 text-sm font-semibold text-foreground hover:text-primary transition-colors"
+                  className="hero-cta__secondary relative z-10 inline-flex items-center gap-1.5 h-11 px-5 rounded-full text-sm font-semibold text-foreground transition-colors duration-300"
                 >
                   {secondaryLabel}
                   <ArrowRight className="w-4 h-4" />
@@ -457,6 +462,17 @@ export default function Hero({
         </div>
 
         <style>{`
+          .hero-cta__pill {
+            width: var(--primary-w, 0px);
+            transform: translateX(0);
+          }
+          .hero-cta:has(.hero-cta__secondary:hover) .hero-cta__pill {
+            width: var(--secondary-w, 0px);
+            transform: translateX(var(--secondary-x, 0px));
+          }
+          .hero-cta:has(.hero-cta__secondary:hover) .hero-cta__primary { color: hsl(var(--foreground)); }
+          .hero-cta:has(.hero-cta__secondary:hover) .hero-cta__secondary { color: hsl(var(--primary-foreground)); }
+
           .tile { --mx: 0px; --my: 0px; will-change: transform; }
           @media (max-width: 767px) {
             .tile { left: var(--left-mobile) !important; top: var(--top-mobile) !important; }
