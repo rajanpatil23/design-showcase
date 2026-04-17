@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/connecttly-logo.png";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -19,10 +20,8 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
       <div className="container-main flex items-center justify-between h-16">
-        <Link to="/" className="flex items-center gap-1">
-          <span className="text-xl font-heading font-bold tracking-tight">
-            CO<span className="text-primary">N</span>NECTTLY
-          </span>
+        <Link to="/" className="flex items-center">
+          <img src={logo} alt="Connecttly" className="h-8 w-auto" />
         </Link>
 
         {/* Desktop Nav */}
