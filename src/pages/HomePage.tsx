@@ -46,54 +46,84 @@ const HomePage = () => {
       {/* Hero Section */}
       <Hero />
 
-      {/* Stats + Services intro — shared grid background that extends from the hero feel */}
+      {/* Stats + Services intro — shared grid, stats sit INSIDE the grid cells */}
       <div className="relative">
-        {/* Shared grid background with node circles at intersections */}
-        <div
-          aria-hidden
-          className="absolute inset-0 pointer-events-none opacity-[0.5]"
-          style={{
-            backgroundImage: [
-              // Node circles at intersections (radial dots)
-              "radial-gradient(circle at 1px 1px, hsl(var(--border)) 3.5px, transparent 4px)",
-              // Vertical grid lines
-              "linear-gradient(to right, hsl(var(--border)) 1px, transparent 1px)",
-              // Horizontal grid lines
-              "linear-gradient(to bottom, hsl(var(--border)) 1px, transparent 1px)",
-            ].join(", "),
-            backgroundSize: "176px 176px, 176px 176px, 176px 176px",
-            backgroundPosition: "-4px -4px, 0 0, 0 0",
-            maskImage:
-              "linear-gradient(to bottom, black 0%, black 78%, transparent 100%)",
-            WebkitMaskImage:
-              "linear-gradient(to bottom, black 0%, black 78%, transparent 100%)",
-          }}
-        />
-
-        {/* Stats */}
-        <section className="relative pb-16 md:pb-20">
-          <div className="container-main">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
-              {heroStats.map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <p className="text-3xl md:text-4xl font-heading font-bold text-primary">{stat.value}</p>
-                  <p className="text-xs text-muted-foreground mt-1">{stat.label}</p>
+        <div className="container-main">
+          {/* The grid lives inside the rail so it aligns with logo/nav/cards */}
+          <div className="relative">
+            {/* Stats row: 4 equal columns. Borders form the grid; circles mark intersections. */}
+            <div className="relative grid grid-cols-2 md:grid-cols-4 border-t border-b border-border/70">
+              {/* Vertical dividers (only between cells) */}
+              {heroStats.map((stat, i) => (
+                <div
+                  key={stat.label}
+                  className={`relative h-[180px] md:h-[200px] flex flex-col items-center justify-center text-center px-4 ${
+                    i > 0 ? "md:border-l border-border/70" : ""
+                  } ${i === 2 ? "border-l md:border-l" : ""} ${
+                    i < 2 && "border-b md:border-b-0"
+                  }`}
+                >
+                  <p className="text-4xl md:text-5xl font-heading font-bold text-primary leading-none">
+                    {stat.value}
+                  </p>
+                  <p className="text-xs md:text-sm text-muted-foreground mt-3 max-w-[16ch]">
+                    {stat.label}
+                  </p>
                 </div>
               ))}
+
+              {/* Intersection circles — top edge */}
+              {[0, 25, 50, 75, 100].map((leftPct) => (
+                <span
+                  key={`top-${leftPct}`}
+                  aria-hidden
+                  className="hidden md:block absolute -top-[5px] w-2.5 h-2.5 rounded-full border border-border bg-background -translate-x-1/2"
+                  style={{ left: `${leftPct}%` }}
+                />
+              ))}
+              {/* Intersection circles — bottom edge */}
+              {[0, 25, 50, 75, 100].map((leftPct) => (
+                <span
+                  key={`bot-${leftPct}`}
+                  aria-hidden
+                  className="hidden md:block absolute -bottom-[5px] w-2.5 h-2.5 rounded-full border border-border bg-background -translate-x-1/2"
+                  style={{ left: `${leftPct}%` }}
+                />
+              ))}
+            </div>
+
+            {/* Services intro sits below the stats grid, but the vertical guides continue down */}
+            <div className="relative">
+              {/* Continuation of vertical lines behind the eyebrow + heading, fading out */}
+              <div
+                aria-hidden
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  maskImage:
+                    "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)",
+                  WebkitMaskImage:
+                    "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)",
+                }}
+              >
+                {[25, 50, 75].map((leftPct) => (
+                  <div
+                    key={`v-${leftPct}`}
+                    className="hidden md:block absolute top-0 bottom-0 w-px bg-border/70"
+                    style={{ left: `${leftPct}%` }}
+                  />
+                ))}
+              </div>
+
+              <section className="relative pt-14 md:pt-16 pb-2">
+                <SectionLabel label="Services" />
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-center max-w-2xl mx-auto mt-4">
+                  The Future of Digital Growth In{" "}
+                  <span className="gradient-text">One Unified Platform</span>
+                </h2>
+              </section>
             </div>
           </div>
-        </section>
-
-        {/* Services intro (eyebrow + heading) sits on the same grid */}
-        <section className="relative pt-16 md:pt-20">
-          <div className="container-main">
-            <SectionLabel label="Services" />
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-center max-w-2xl mx-auto mt-4">
-              The Future of Digital Growth In{" "}
-              <span className="gradient-text">One Unified Platform</span>
-            </h2>
-          </div>
-        </section>
+        </div>
       </div>
 
       {/* Services cards */}
