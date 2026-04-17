@@ -212,9 +212,9 @@ const HomePage = () => {
                   <path d="M0,0 L6,3 L0,6 Z" fill="#ffffff" />
                 </marker>
               </defs>
-              {/* Card 2 bottom-right (~49%) -> Card 3 bottom-left (~51%) */}
+              {/* Card 2 (right side ~45%) -> Card 3 (left side ~55%) */}
               <path
-                d="M 49 0 Q 50 12 51 0"
+                d="M 45 0 Q 50 20 55 0"
                 fill="none"
                 stroke="#ffffff"
                 strokeWidth="1.4"
