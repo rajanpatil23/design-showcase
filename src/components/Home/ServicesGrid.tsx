@@ -25,23 +25,20 @@ interface CardProps {
   s: Service;
   isActive: boolean;
   onActivate: () => void;
-  /**
-   * Compact (idle) flex-basis. Row 2 uses a fixed basis so cards keep row-1's idle
-   * width and the empty space is centered around them rather than stretching them.
-   */
+  /** Compact (idle) flex-basis Tailwind class. */
   idleBasisClass: string;
-  /** Whether this card is allowed to expand on hover. Row 2 cards never expand. */
-  canExpand: boolean;
 }
 
-const ServiceCard = ({ s, isActive, onActivate, idleBasisClass, canExpand }: CardProps) => (
+const ServiceCard = ({ s, isActive, onActivate, idleBasisClass }: CardProps) => (
   <article
     tabIndex={0}
-    onMouseEnter={canExpand ? onActivate : undefined}
-    onFocus={canExpand ? onActivate : undefined}
-    className={`relative bg-background rounded-xl border border-border p-5 flex flex-col justify-between h-[380px] transition-[flex-grow,flex-basis,box-shadow] duration-500 ease-out hover:shadow-lg focus:shadow-lg focus:outline-none ${
-      canExpand ? "cursor-pointer" : ""
-    } ${isActive ? "md:flex-[2_1_0%]" : `md:flex-grow-0 md:flex-shrink-0 ${idleBasisClass}`}`}
+    onMouseEnter={onActivate}
+    onFocus={onActivate}
+    className={`relative bg-background rounded-xl border border-border p-5 flex flex-col justify-between h-[380px] transition-[flex-basis,box-shadow] duration-500 ease-out hover:shadow-lg focus:shadow-lg focus:outline-none cursor-pointer md:flex-grow-0 md:flex-shrink-0 ${
+      isActive
+        ? "md:basis-[calc((100%-2.5rem)/2)]"
+        : idleBasisClass
+    }`}
   >
     <div>
       <h3
@@ -79,20 +76,16 @@ const ServiceCard = ({ s, isActive, onActivate, idleBasisClass, canExpand }: Car
 );
 
 const ServicesGrid = () => {
-  // Single global active id — only one card can be in expanded state at a time.
-  // Row 2 cards are not allowed to activate, so this only ever holds a row-1 id.
+  // Single global active id across BOTH rows — only one card can be expanded at a time.
   const [activeId, setActiveId] = useState<string>("01");
 
-  // Both rows use the SAME idle card width: ~25% of the container (3 idle cards + 1 expanded
-  // worth of space ≈ 4 units). Active card in row 1 absorbs the remaining width via flex-grow.
+  // Both rows share the same idle card width (~25% of row).
   const idleBasis = "md:basis-[calc((100%-2.5rem)/4)]";
-  const row1IdleBasis = idleBasis;
-  const row2IdleBasis = idleBasis;
 
   return (
     <section className="pb-16 md:pb-20">
       <div className="container-main space-y-5 mt-12">
-        {/* Row 1 — one card always active */}
+        {/* Row 1 */}
         <div className="flex flex-col md:flex-row gap-5">
           {row1.map((s) => (
             <ServiceCard
@@ -100,22 +93,20 @@ const ServicesGrid = () => {
               s={s}
               isActive={activeId === s.id}
               onActivate={() => setActiveId(s.id)}
-              idleBasisClass={row1IdleBasis}
-              canExpand
+              idleBasisClass={idleBasis}
             />
           ))}
         </div>
 
-        {/* Row 2 — all compact, centered, never expand */}
+        {/* Row 2 — centered when no card here is active; fills row when one is active */}
         <div className="flex flex-col md:flex-row md:justify-center gap-5">
           {row2.map((s) => (
             <ServiceCard
               key={s.id}
               s={s}
-              isActive={false}
-              onActivate={() => {}}
-              idleBasisClass={row2IdleBasis}
-              canExpand={false}
+              isActive={activeId === s.id}
+              onActivate={() => setActiveId(s.id)}
+              idleBasisClass={idleBasis}
             />
           ))}
         </div>
