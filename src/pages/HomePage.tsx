@@ -65,28 +65,34 @@ const HomePage = () => {
 
       {/* Trusted By + Stats */}
       <section className="pb-16 md:pb-20">
-        <div className="container-main text-center">
+        <div className="text-center">
           <span className="inline-block px-5 py-1.5 text-xs font-medium rounded-full border border-primary/30 bg-primary/5 text-primary">
             Trusted By
           </span>
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mt-8">
-            {trustedBrands.map((brand) => (
-              <div key={brand.name} className={`flex flex-col items-center gap-3 transition-opacity ${brand.faded ? "opacity-40" : "opacity-100"}`}>
-                <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl border border-border bg-background flex items-center justify-center shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
-                  <img src={brand.logo} alt={brand.name} className="w-12 h-12 md:w-14 md:h-14 object-contain" loading="lazy" width={56} height={56} />
+
+          {/* Edge-to-edge infinite marquee */}
+          <div className="relative mt-8 overflow-hidden w-full [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+            <div className="flex w-max gap-6 animate-scroll-left">
+              {[...trustedBrands, ...trustedBrands].map((brand, i) => (
+                <div key={`${brand.name}-${i}`} className="flex flex-col items-center gap-3 shrink-0">
+                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl border border-border bg-background flex items-center justify-center shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
+                    <img src={brand.logo} alt={brand.name} className="w-12 h-12 md:w-14 md:h-14 object-contain" loading="lazy" width={56} height={56} />
+                  </div>
+                  <span className="text-xs md:text-sm text-foreground/80 font-medium">{brand.name}</span>
                 </div>
-                <span className="text-xs md:text-sm text-foreground/80 font-medium">{brand.name}</span>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14 max-w-3xl mx-auto">
-            {heroStats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <p className="text-3xl md:text-4xl font-heading font-bold text-primary">{stat.value}</p>
-                <p className="text-xs text-muted-foreground mt-1">{stat.label}</p>
-              </div>
-            ))}
+          <div className="container-main">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14 max-w-3xl mx-auto">
+              {heroStats.map((stat) => (
+                <div key={stat.label} className="text-center">
+                  <p className="text-3xl md:text-4xl font-heading font-bold text-primary">{stat.value}</p>
+                  <p className="text-xs text-muted-foreground mt-1">{stat.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
