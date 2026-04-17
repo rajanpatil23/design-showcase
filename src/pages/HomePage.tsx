@@ -97,7 +97,7 @@ const HomePage = () => {
                 <span
                   key={`top-${leftPct}`}
                   aria-hidden
-                  className="hidden md:block absolute -top-[8px] w-4 h-4 rounded-full border border-border bg-background -translate-x-1/2 z-20"
+                  className="hidden md:block absolute -top-[8px] w-4 h-4 rounded-full border border-border bg-background -translate-x-1/2 z-20 shadow-[0_2px_6px_hsl(var(--foreground)/0.18)]"
                   style={{ left: `${leftPct}%` }}
                 />
               ))}
