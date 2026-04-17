@@ -69,7 +69,7 @@ const HomePage = () => {
                 <div
                   key={`v-up-${leftPct}`}
                   className="absolute top-0 bottom-0 w-px bg-border/70"
-                  style={{ left: `${leftPct}%` }}
+                  style={{ left: `${leftPct}%`, transform: leftPct === 100 ? "translateX(-1px)" : "translateX(0)" }}
                 />
               ))}
             </div>
