@@ -48,9 +48,32 @@ const HomePage = () => {
 
       {/* Stats + Services intro — shared grid, stats sit INSIDE the grid cells */}
       <div className="relative">
+        {/* Full-bleed horizontal lines that extend left & right beyond the rail */}
+        <div aria-hidden className="hidden md:block absolute left-0 right-0 top-0 h-px bg-border/70" />
         <div className="container-main">
           {/* The grid lives inside the rail so it aligns with logo/nav/cards */}
           <div className="relative">
+            {/* Vertical line extensions ABOVE the stats grid (continue up through the hero/marquee region).
+                Positioned to match the 4 inner column borders (25/50/75) + the 2 outer borders (0/100). */}
+            <div
+              aria-hidden
+              className="hidden md:block absolute left-0 right-0 pointer-events-none"
+              style={{
+                bottom: "100%",
+                height: "120px",
+                maskImage: "linear-gradient(to top, black 0%, black 40%, transparent 100%)",
+                WebkitMaskImage: "linear-gradient(to top, black 0%, black 40%, transparent 100%)",
+              }}
+            >
+              {[0, 25, 50, 75, 100].map((leftPct) => (
+                <div
+                  key={`v-up-${leftPct}`}
+                  className="absolute top-0 bottom-0 w-px bg-border/70"
+                  style={{ left: `${leftPct}%` }}
+                />
+              ))}
+            </div>
+
             {/* Stats row: 4 equal columns. Borders form the grid; circles mark intersections. */}
             <div className="relative grid grid-cols-2 md:grid-cols-4 border-t border-b border-border/70">
               {/* Vertical dividers (only between cells) */}
