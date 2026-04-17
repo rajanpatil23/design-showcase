@@ -38,6 +38,9 @@ const HomePage = () => {
       {/* Hero Section */}
       <Hero />
 
+      {/* Spacer above stats */}
+      <div aria-hidden className="h-8 md:h-12" />
+
       {/* Stats + Services intro — shared grid, stats sit INSIDE the grid cells */}
       <div className="relative">
         {/* Full-bleed horizontal lines that extend left & right beyond the rail.
