@@ -75,7 +75,7 @@ const ServiceCard = ({ s, isActive, onActivate, idleBasisClass }: CardProps) => 
       <div className="flex items-end justify-between mt-auto pt-4">
         <span className="text-5xl font-heading font-bold text-primary/80 leading-none">{s.num}</span>
         <ArrowUpRight
-          className={`w-4 h-4 text-primary transition-opacity ${isActive ? "opacity-0" : "opacity-60"}`}
+          className={`w-8 h-8 text-primary transition-opacity ${isActive ? "opacity-0" : "opacity-60"}`}
         />
       </div>
     </div>
