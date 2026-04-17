@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, ArrowUpRight, BarChart3, Users, Globe, Megaphone, PenTool, Code, Star, Quote, ExternalLink, Play } from "lucide-react";
 import { Link } from "react-router-dom";
 import SectionLabel from "@/components/SectionLabel";
-import worldMap from "@/assets/world-map-dots.jpg";
+import Hero from "@/components/Home/Hero";
 import testimonialPerson from "@/assets/testimonial-person.jpg";
 import caseStudyDashboard from "@/assets/case-study-dashboard.jpg";
 import blogIllustration from "@/assets/blog-illustration.jpg";
@@ -54,43 +54,25 @@ const HomePage = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-12 pb-16 md:pt-16 md:pb-20">
-        <div className="absolute inset-0 flex items-center justify-center opacity-15 pointer-events-none">
-          <img src={worldMap} alt="" className="w-full max-w-5xl object-contain" />
-        </div>
-        <div className="container-main relative text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-[1.15] max-w-3xl mx-auto">
-            AI-Powered Growth Partner
-            <br />
-            for <span className="gradient-text">Ambitious Brands</span>
-          </h1>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-8">
-            <Button asChild className="rounded-full px-7 py-2.5 text-sm font-semibold">
-              <Link to="/services">Explore Services</Link>
-            </Button>
-            <Button variant="outline" className="rounded-full px-7 py-2.5 text-sm font-semibold">
-              Book Free Growth Strategy Call
-            </Button>
-          </div>
+      <Hero />
 
-          {/* Trusted By */}
-          <div className="mt-14">
-            <span className="inline-block px-4 py-1 text-[10px] font-semibold tracking-wider rounded-full border border-primary/30 bg-primary/5 text-primary uppercase">
-              Trusted By
-            </span>
-            <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mt-6">
-              {trustedBrands.map((brand) => (
-                <div key={brand.name} className="flex flex-col items-center gap-1.5">
-                  <div className="w-14 h-14 rounded-xl border border-border bg-background flex items-center justify-center text-lg shadow-sm">
-                    {brand.icon}
-                  </div>
-                  <span className="text-[10px] text-muted-foreground font-medium">{brand.name}</span>
+      {/* Trusted By + Stats */}
+      <section className="pb-16 md:pb-20">
+        <div className="container-main text-center">
+          <span className="inline-block px-4 py-1 text-[10px] font-semibold tracking-wider rounded-full border border-primary/30 bg-primary/5 text-primary uppercase">
+            Trusted By
+          </span>
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mt-6">
+            {trustedBrands.map((brand) => (
+              <div key={brand.name} className="flex flex-col items-center gap-1.5">
+                <div className="w-14 h-14 rounded-xl border border-border bg-background flex items-center justify-center text-lg shadow-sm">
+                  {brand.icon}
                 </div>
-              ))}
-            </div>
+                <span className="text-[10px] text-muted-foreground font-medium">{brand.name}</span>
+              </div>
+            ))}
           </div>
 
-          {/* Hero Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14 max-w-3xl mx-auto">
             {heroStats.map((stat) => (
               <div key={stat.label} className="text-center">
@@ -104,6 +86,7 @@ const HomePage = () => {
 
       {/* Divider */}
       <div className="border-t border-border" />
+
 
       {/* Services Section */}
       <section className="py-16 md:py-20">
