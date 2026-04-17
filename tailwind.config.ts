@@ -63,6 +63,7 @@ export default {
           border: "hsl(var(--ct-gray-border))",
         },
         "ct-section": "hsl(var(--ct-section-bg))",
+        "ct-footer": "hsl(var(--ct-footer-bg))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
