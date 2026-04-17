@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import SectionLabel from "@/components/SectionLabel";
 import Hero from "@/components/Home/Hero";
+import ServicesGrid from "@/components/Home/ServicesGrid";
 import testimonialPerson from "@/assets/testimonial-person.jpg";
 import caseStudyDashboard from "@/assets/case-study-dashboard.jpg";
 import blogIllustration from "@/assets/blog-illustration.jpg";
