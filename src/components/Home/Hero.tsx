@@ -167,6 +167,31 @@ export default function Hero({
   secondaryLabel = "Learn more",
 }: HeroProps) {
   const heroRef = useRef<HTMLElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+
+  /* Measure CTA buttons to size & position the sliding pill */
+  useEffect(() => {
+    const cta = ctaRef.current;
+    if (!cta) return;
+    const measure = () => {
+      const primary = cta.querySelector<HTMLElement>(".hero-cta__primary");
+      const secondary = cta.querySelector<HTMLElement>(".hero-cta__secondary");
+      if (!primary || !secondary) return;
+      const ctaRect = cta.getBoundingClientRect();
+      const pRect = primary.getBoundingClientRect();
+      const sRect = secondary.getBoundingClientRect();
+      cta.style.setProperty("--primary-w", `${pRect.width}px`);
+      cta.style.setProperty("--secondary-w", `${sRect.width}px`);
+      cta.style.setProperty("--secondary-x", `${sRect.left - pRect.left}px`);
+      // anchor pill to primary's left offset within container
+      cta.style.setProperty("--pill-left", `${pRect.left - ctaRect.left}px`);
+    };
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(cta);
+    window.addEventListener("resize", measure);
+    return () => { ro.disconnect(); window.removeEventListener("resize", measure); };
+  }, [primaryLabel, secondaryLabel]);
 
   /* Section parallax */
   useEffect(() => {
@@ -439,14 +464,19 @@ export default function Hero({
                 </Button>
               </div>
 
-              {/* Desktop segmented CTA */}
-              <div className="hidden sm:flex items-center gap-2 p-1.5 rounded-full bg-background/70 backdrop-blur-md border border-border shadow-sm">
-                <Button asChild className="rounded-full h-11 px-5 font-semibold gap-2">
-                  <Link to={primaryHref}><Handshake className="w-4 h-4" /> {primaryLabel}</Link>
-                </Button>
+              {/* Desktop segmented CTA with sliding pill */}
+              <div ref={ctaRef} className="hero-cta hidden sm:flex relative items-center p-1.5 rounded-full bg-background/70 backdrop-blur-md border border-border shadow-sm">
+                <span aria-hidden className="hero-cta__pill absolute top-1.5 bottom-1.5 rounded-full bg-primary transition-all duration-300 ease-out" />
+                <Link
+                  to={primaryHref}
+                  className="hero-cta__primary relative z-10 inline-flex items-center gap-2 h-11 px-5 rounded-full text-sm font-semibold text-primary-foreground transition-colors duration-300"
+                >
+                  <Handshake className="w-4 h-4" />
+                  {primaryLabel}
+                </Link>
                 <Link
                   to={secondaryHref}
-                  className="px-5 h-11 inline-flex items-center gap-1.5 text-sm font-semibold text-foreground hover:text-primary transition-colors"
+                  className="hero-cta__secondary relative z-10 inline-flex items-center gap-1.5 h-11 px-5 rounded-full text-sm font-semibold text-foreground transition-colors duration-300"
                 >
                   {secondaryLabel}
                   <ArrowRight className="w-4 h-4" />
@@ -457,6 +487,18 @@ export default function Hero({
         </div>
 
         <style>{`
+          .hero-cta__pill {
+            left: var(--pill-left, 6px);
+            width: var(--primary-w, 0px);
+            transform: translateX(0);
+          }
+          .hero-cta:has(.hero-cta__secondary:hover) .hero-cta__pill {
+            width: var(--secondary-w, 0px);
+            transform: translateX(var(--secondary-x, 0px));
+          }
+          .hero-cta:has(.hero-cta__secondary:hover) .hero-cta__primary { color: hsl(var(--foreground)); }
+          .hero-cta:has(.hero-cta__secondary:hover) .hero-cta__secondary { color: hsl(var(--primary-foreground)); }
+
           .tile { --mx: 0px; --my: 0px; will-change: transform; }
           @media (max-width: 767px) {
             .tile { left: var(--left-mobile) !important; top: var(--top-mobile) !important; }
