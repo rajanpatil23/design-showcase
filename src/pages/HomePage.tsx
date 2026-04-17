@@ -168,18 +168,18 @@ const HomePage = () => {
                 Bottom arrow arcs from card 2 -> 3. */}
             <svg
               aria-hidden
-              className="hidden md:block absolute inset-x-0 -top-10 w-full h-10 pointer-events-none"
-              viewBox="0 0 100 10"
+              className="hidden md:block absolute inset-x-0 -top-12 w-full h-12 pointer-events-none overflow-visible"
+              viewBox="0 0 100 12"
               preserveAspectRatio="none"
             >
               <defs>
-                <marker id="arrowhead-top" markerWidth="4" markerHeight="4" refX="3.2" refY="2" orient="auto">
-                  <path d="M0.5,0.5 L3.5,2 L0.5,3.5" fill="none" stroke="#ffffff" strokeWidth="0.9" strokeLinecap="round" strokeLinejoin="round" />
+                <marker id="arrowhead-top" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto">
+                  <path d="M0.5,0.5 L4.5,2.5 L0.5,4.5" fill="none" stroke="#ffffff" strokeWidth="0.9" strokeLinecap="round" strokeLinejoin="round" />
                 </marker>
               </defs>
               {/* Card 1 (right side ~16%) -> Card 2 (left side ~34%) */}
               <path
-                d="M 16 10 Q 25 -4 34 10"
+                d="M 16 11 Q 25 -3 34 9"
                 fill="none"
                 stroke="#ffffff"
                 strokeWidth="1.4"
@@ -190,7 +190,7 @@ const HomePage = () => {
               />
               {/* Card 3 (right side ~66%) -> Card 4 (left side ~84%) */}
               <path
-                d="M 66 10 Q 75 -4 84 10"
+                d="M 66 11 Q 75 -3 84 9"
                 fill="none"
                 stroke="#ffffff"
                 strokeWidth="1.4"
@@ -203,18 +203,18 @@ const HomePage = () => {
 
             <svg
               aria-hidden
-              className="hidden md:block absolute inset-x-0 -bottom-10 w-full h-10 pointer-events-none"
-              viewBox="0 0 100 10"
+              className="hidden md:block absolute inset-x-0 -bottom-12 w-full h-12 pointer-events-none overflow-visible"
+              viewBox="0 0 100 12"
               preserveAspectRatio="none"
             >
               <defs>
-                <marker id="arrowhead-bot" markerWidth="4" markerHeight="4" refX="3.2" refY="2" orient="auto">
-                  <path d="M0.5,0.5 L3.5,2 L0.5,3.5" fill="none" stroke="#ffffff" strokeWidth="0.9" strokeLinecap="round" strokeLinejoin="round" />
+                <marker id="arrowhead-bot" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto">
+                  <path d="M0.5,0.5 L4.5,2.5 L0.5,4.5" fill="none" stroke="#ffffff" strokeWidth="0.9" strokeLinecap="round" strokeLinejoin="round" />
                 </marker>
               </defs>
               {/* Card 2 (right side ~41%) -> Card 3 (left side ~59%) */}
               <path
-                d="M 41 0 Q 50 14 59 0"
+                d="M 41 1 Q 50 15 59 3"
                 fill="none"
                 stroke="#ffffff"
                 strokeWidth="1.4"
