@@ -47,7 +47,7 @@ const ServiceCard = ({ s, isActive, onActivate, idleBasisClass }: CardProps) => 
       className={`absolute pointer-events-none transition-opacity duration-500 ease-out ${
         isActive ? "opacity-100" : "opacity-0"
       }`}
-      style={{ left: "25%", top: "25%", right: 0, bottom: 0 }}
+      style={{ left: "20%", top: "20%", right: 0, bottom: 0 }}
     >
       <img
         src={s.image}
