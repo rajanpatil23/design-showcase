@@ -46,91 +46,82 @@ const HomePage = () => {
       {/* Hero Section */}
       <Hero />
 
-      {/* Stats + Services intro — shared grid that bleeds full-width with vertical guides aligned to the rail */}
+      {/* Stats + Services intro — shared grid, stats sit INSIDE the grid cells */}
       <div className="relative">
-        {/* Full-bleed horizontal lines (top + bottom of stats row) — extend to viewport edges */}
-        <div aria-hidden className="absolute inset-x-0 top-0 h-px bg-border/70 pointer-events-none" />
-        <div aria-hidden className="absolute inset-x-0 top-[180px] md:top-[200px] h-px bg-border/70 pointer-events-none" />
-
-        {/* Container rail holds the stat content + the vertical guides */}
-        <div className="relative container-main">
-          {/* Vertical guides — extend slightly above and below the stats row so lines continue past the circle nodes */}
-          <div aria-hidden className="absolute inset-x-0 -top-6 md:-top-8 h-6 md:h-8 pointer-events-none">
-            {[0, 25, 50, 75, 100].map((leftPct) => (
-              <div
-                key={`v-up-${leftPct}`}
-                className="hidden md:block absolute top-0 bottom-0 w-px bg-border/70"
-                style={{ left: `${leftPct}%` }}
-              />
-            ))}
-          </div>
-
-          {/* Stats grid */}
-          <div className="relative grid grid-cols-2 md:grid-cols-4">
-            {heroStats.map((stat, i) => (
-              <div
-                key={stat.label}
-                className={`relative h-[180px] md:h-[200px] flex flex-col items-center justify-center text-center px-4 ${
-                  i > 0 ? "md:border-l border-border/70" : ""
-                } ${i === 2 ? "border-l md:border-l" : ""} ${
-                  i < 2 ? "border-b md:border-b-0" : ""
-                }`}
-              >
-                <p className="text-4xl md:text-5xl font-heading font-bold text-primary leading-none">
-                  {stat.value}
-                </p>
-                <p className="text-xs md:text-sm text-muted-foreground mt-3 max-w-[16ch]">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-
-            {/* Intersection circles — top edge */}
-            {[0, 25, 50, 75, 100].map((leftPct) => (
-              <span
-                key={`top-${leftPct}`}
-                aria-hidden
-                className="hidden md:block absolute -top-[5px] w-2.5 h-2.5 rounded-full border border-border bg-background -translate-x-1/2"
-                style={{ left: `${leftPct}%` }}
-              />
-            ))}
-            {/* Intersection circles — bottom edge */}
-            {[0, 25, 50, 75, 100].map((leftPct) => (
-              <span
-                key={`bot-${leftPct}`}
-                aria-hidden
-                className="hidden md:block absolute -bottom-[5px] w-2.5 h-2.5 rounded-full border border-border bg-background -translate-x-1/2"
-                style={{ left: `${leftPct}%` }}
-              />
-            ))}
-          </div>
-
-          {/* Services intro — vertical guides continue down, fading out */}
+        <div className="container-main">
+          {/* The grid lives inside the rail so it aligns with logo/nav/cards */}
           <div className="relative">
-            <div
-              aria-hidden
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                maskImage: "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)",
-                WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)",
-              }}
-            >
-              {[0, 25, 50, 75, 100].map((leftPct) => (
+            {/* Stats row: 4 equal columns. Borders form the grid; circles mark intersections. */}
+            <div className="relative grid grid-cols-2 md:grid-cols-4 border-t border-b border-border/70">
+              {/* Vertical dividers (only between cells) */}
+              {heroStats.map((stat, i) => (
                 <div
-                  key={`v-down-${leftPct}`}
-                  className="hidden md:block absolute top-0 bottom-0 w-px bg-border/70"
+                  key={stat.label}
+                  className={`relative h-[180px] md:h-[200px] flex flex-col items-center justify-center text-center px-4 ${
+                    i > 0 ? "md:border-l border-border/70" : ""
+                  } ${i === 2 ? "border-l md:border-l" : ""} ${
+                    i < 2 && "border-b md:border-b-0"
+                  }`}
+                >
+                  <p className="text-4xl md:text-5xl font-heading font-bold text-primary leading-none">
+                    {stat.value}
+                  </p>
+                  <p className="text-xs md:text-sm text-muted-foreground mt-3 max-w-[16ch]">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+
+              {/* Intersection circles — top edge */}
+              {[0, 25, 50, 75, 100].map((leftPct) => (
+                <span
+                  key={`top-${leftPct}`}
+                  aria-hidden
+                  className="hidden md:block absolute -top-[5px] w-2.5 h-2.5 rounded-full border border-border bg-background -translate-x-1/2"
+                  style={{ left: `${leftPct}%` }}
+                />
+              ))}
+              {/* Intersection circles — bottom edge */}
+              {[0, 25, 50, 75, 100].map((leftPct) => (
+                <span
+                  key={`bot-${leftPct}`}
+                  aria-hidden
+                  className="hidden md:block absolute -bottom-[5px] w-2.5 h-2.5 rounded-full border border-border bg-background -translate-x-1/2"
                   style={{ left: `${leftPct}%` }}
                 />
               ))}
             </div>
 
-            <section className="relative pt-14 md:pt-16 pb-2">
-              <SectionLabel label="Services" />
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-center max-w-2xl mx-auto mt-4">
-                The Future of Digital Growth In{" "}
-                <span className="gradient-text">One Unified Platform</span>
-              </h2>
-            </section>
+            {/* Services intro sits below the stats grid, but the vertical guides continue down */}
+            <div className="relative">
+              {/* Continuation of vertical lines behind the eyebrow + heading, fading out */}
+              <div
+                aria-hidden
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  maskImage:
+                    "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)",
+                  WebkitMaskImage:
+                    "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)",
+                }}
+              >
+                {[25, 50, 75].map((leftPct) => (
+                  <div
+                    key={`v-${leftPct}`}
+                    className="hidden md:block absolute top-0 bottom-0 w-px bg-border/70"
+                    style={{ left: `${leftPct}%` }}
+                  />
+                ))}
+              </div>
+
+              <section className="relative pt-14 md:pt-16 pb-2">
+                <SectionLabel label="Services" />
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-center max-w-2xl mx-auto mt-4">
+                  The Future of Digital Growth In{" "}
+                  <span className="gradient-text">One Unified Platform</span>
+                </h2>
+              </section>
+            </div>
           </div>
         </div>
       </div>
