@@ -34,14 +34,16 @@ interface CardProps {
   canExpand: boolean;
 }
 
-const ServiceCard = ({ s, isActive, onActivate, idleBasisClass, canExpand }: CardProps) => (
+const ServiceCard = ({ s, isActive, onActivate, idleBasisClass }: CardProps) => (
   <article
     tabIndex={0}
-    onMouseEnter={canExpand ? onActivate : undefined}
-    onFocus={canExpand ? onActivate : undefined}
-    className={`relative bg-background rounded-xl border border-border p-5 flex flex-col justify-between h-[380px] transition-[flex-grow,flex-basis,box-shadow] duration-500 ease-out hover:shadow-lg focus:shadow-lg focus:outline-none ${
-      canExpand ? "cursor-pointer" : ""
-    } ${isActive ? "md:flex-[2_1_0%]" : `md:flex-grow-0 md:flex-shrink-0 ${idleBasisClass}`}`}
+    onMouseEnter={onActivate}
+    onFocus={onActivate}
+    className={`relative bg-background rounded-xl border border-border p-5 flex flex-col justify-between h-[380px] transition-[flex-basis,box-shadow] duration-500 ease-out hover:shadow-lg focus:shadow-lg focus:outline-none cursor-pointer md:flex-grow-0 md:flex-shrink-0 ${
+      isActive
+        ? "md:basis-[calc((100%-2.5rem)/2)]"
+        : idleBasisClass
+    }`}
   >
     <div>
       <h3
