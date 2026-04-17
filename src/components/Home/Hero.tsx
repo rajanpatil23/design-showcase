@@ -406,7 +406,7 @@ export default function Hero({
     <>
       <section
         ref={heroRef}
-        className="relative overflow-hidden bg-background min-h-[640px] md:min-h-[720px]"
+        className="relative overflow-hidden bg-background"
       >
         {/* Subtle grid */}
         <div
@@ -444,14 +444,14 @@ export default function Hero({
             })}
           </div>
 
-          {/* Content */}
-          <div className="relative z-20 container-main flex items-center justify-center min-h-[640px] md:min-h-[720px] py-20">
+          {/* Content — height is viewport-relative (minus navbar) and capped, so it stays balanced on 13–16" laptops */}
+          <div className="relative z-20 container-main flex items-center justify-center min-h-[520px] md:min-h-[min(calc(100svh-4rem),720px)] py-14 md:py-16">
             <div className="hero-content-box max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-[1.15] text-foreground">
+              <h1 className="text-[2rem] md:text-5xl lg:text-[3.25rem] font-heading font-bold leading-[1.12] tracking-tight text-foreground">
                 AI-Powered Marketing Partner for{" "}
                 <span className="gradient-text">Scaling Brands</span>
               </h1>
-              <p className="mt-5 text-base md:text-lg text-muted-foreground max-w-xl mx-auto">
+              <p className="mt-4 text-base md:text-lg text-muted-foreground max-w-xl mx-auto">
                 Everything you need to grow, everywhere.
               </p>
 
