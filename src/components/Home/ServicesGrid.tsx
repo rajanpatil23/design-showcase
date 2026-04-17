@@ -34,48 +34,50 @@ const ServiceCard = ({ s, isActive, onActivate, idleBasisClass }: CardProps) => 
     tabIndex={0}
     onMouseEnter={onActivate}
     onFocus={onActivate}
-    className={`relative bg-background rounded-xl border border-border p-5 flex flex-col justify-between h-[380px] overflow-hidden transition-[flex-basis,box-shadow] duration-500 ease-out hover:shadow-lg focus:shadow-lg focus:outline-none cursor-pointer md:flex-grow-0 md:flex-shrink-0 ${
+    className={`relative bg-background rounded-xl border border-border p-5 h-[380px] overflow-hidden transition-[flex-basis,box-shadow] duration-500 ease-out hover:shadow-lg focus:shadow-lg focus:outline-none cursor-pointer md:flex-grow-0 md:flex-shrink-0 ${
       isActive
         ? "md:basis-[calc((100%-2.5rem)/2)]"
         : idleBasisClass
     }`}
   >
-    <div>
-      <h3
-        className={`font-heading font-semibold text-base mb-1.5 transition-colors ${
-          isActive ? "text-primary" : "text-foreground"
-        }`}
-      >
-        {s.title}
-      </h3>
-      <p className="text-xs text-muted-foreground leading-relaxed max-w-[34ch]">{s.desc}</p>
-    </div>
-
-    {/* Illustration — bleeds edge-to-edge (negative margins escape the p-5 padding),
-        cropped tight on the central diagram area of the SVG via object-cover + viewport-style sizing. */}
+    {/* Illustration layer — absolutely positioned in the bottom-right 75% of the card
+        (cells 6-8, 10-12, 14-16 of a 4×4 grid). Sits behind the text/number layer. */}
     <div
-      className={`-mx-5 overflow-hidden transition-all duration-500 ease-out ${
-        isActive ? "max-h-56 opacity-100 mt-3" : "max-h-0 opacity-0 mt-0"
+      aria-hidden={!isActive}
+      className={`absolute pointer-events-none transition-opacity duration-500 ease-out ${
+        isActive ? "opacity-100" : "opacity-0"
       }`}
+      style={{ left: "25%", top: "25%", right: 0, bottom: 0 }}
     >
       <img
         src={s.image}
-        alt={s.title}
-        /* SVG is 943×597 with the illustration roughly centered.
-           object-cover + larger height + center positioning crops away the
-           empty top/bottom whitespace so the diagram fills the card width. */
-        className="w-full h-52 object-cover object-center scale-[1.35] origin-center"
+        alt=""
+        className="w-full h-full object-cover object-center"
         loading="lazy"
         width={943}
         height={597}
       />
     </div>
 
-    <div className="flex items-end justify-between mt-auto pt-4">
-      <span className="text-5xl font-heading font-bold text-primary/80 leading-none">{s.num}</span>
-      <ArrowUpRight
-        className={`w-4 h-4 text-primary transition-opacity ${isActive ? "opacity-0" : "opacity-60"}`}
-      />
+    {/* Foreground content layer */}
+    <div className="relative z-10 flex flex-col justify-between h-full">
+      <div>
+        <h3
+          className={`font-heading font-semibold text-base mb-1.5 transition-colors ${
+            isActive ? "text-primary" : "text-foreground"
+          }`}
+        >
+          {s.title}
+        </h3>
+        <p className="text-xs text-muted-foreground leading-relaxed max-w-[34ch]">{s.desc}</p>
+      </div>
+
+      <div className="flex items-end justify-between mt-auto pt-4">
+        <span className="text-5xl font-heading font-bold text-primary/80 leading-none">{s.num}</span>
+        <ArrowUpRight
+          className={`w-4 h-4 text-primary transition-opacity ${isActive ? "opacity-0" : "opacity-60"}`}
+        />
+      </div>
     </div>
   </article>
 );
