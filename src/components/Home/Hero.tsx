@@ -8,6 +8,7 @@ import {
   SiWhatsapp, SiTwitch, SiOpenai, SiReplit,
 } from "react-icons/si";
 import type { IconType } from "react-icons";
+import TrustedMarquee from "@/components/Home/TrustedMarquee";
 
 /* ---------- Brand colors ---------- */
 const BRAND = {
