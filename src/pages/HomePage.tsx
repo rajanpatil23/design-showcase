@@ -164,64 +164,80 @@ const HomePage = () => {
           {/* Cards + connector arrows */}
           <div className="relative mt-16 max-w-5xl mx-auto">
             {/* Decorative dashed arrows — desktop only.
-                Top arrows arc from card 1 -> 2 and card 3 -> 4.
-                Bottom arrow arcs from card 2 -> 3. */}
+                Each arrow is its own SVG with a correct aspect ratio so the
+                arrowhead stays crisp (no preserveAspectRatio="none" stretching).
+                Positioned over the gap between adjacent cards. */}
+            {/* Arrow 1 -> 2 (top, spans cards 1 & 2 area: 0% .. 50%) */}
             <svg
               aria-hidden
-              className="hidden md:block absolute inset-x-0 -top-10 w-full h-10 pointer-events-none"
-              viewBox="0 0 100 10"
-              preserveAspectRatio="none"
+              className="hidden md:block absolute pointer-events-none"
+              style={{ left: "0%", width: "50%", top: "-44px", height: "44px" }}
+              viewBox="0 0 200 44"
             >
-              <defs>
-                <marker id="arrowhead-top" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-                  <path d="M0,0 L6,3 L0,6 Z" fill="#ffffff" />
-                </marker>
-              </defs>
-              {/* Card 1 (right side ~16%) -> Card 2 (left side ~34%) */}
               <path
-                d="M 16 10 Q 25 -4 34 10"
+                d="M 60 40 Q 100 -8 140 40"
                 fill="none"
                 stroke="#ffffff"
-                strokeWidth="1.4"
+                strokeWidth="2"
                 strokeLinecap="round"
-                strokeDasharray="0.1 3"
-                vectorEffect="non-scaling-stroke"
-                markerEnd="url(#arrowhead-top)"
+                strokeDasharray="0.1 6"
               />
-              {/* Card 3 (right side ~66%) -> Card 4 (left side ~84%) */}
+              {/* Arrowhead at end of curve (~140,40), pointing down-right along tangent */}
               <path
-                d="M 66 10 Q 75 -4 84 10"
+                d="M 140 40 L 134 32 M 140 40 L 146 34"
                 fill="none"
                 stroke="#ffffff"
-                strokeWidth="1.4"
+                strokeWidth="2"
                 strokeLinecap="round"
-                strokeDasharray="0.1 3"
-                vectorEffect="non-scaling-stroke"
-                markerEnd="url(#arrowhead-top)"
               />
             </svg>
 
+            {/* Arrow 3 -> 4 (top, spans cards 3 & 4 area: 50% .. 100%) */}
             <svg
               aria-hidden
-              className="hidden md:block absolute inset-x-0 -bottom-10 w-full h-10 pointer-events-none"
-              viewBox="0 0 100 10"
-              preserveAspectRatio="none"
+              className="hidden md:block absolute pointer-events-none"
+              style={{ left: "50%", width: "50%", top: "-44px", height: "44px" }}
+              viewBox="0 0 200 44"
             >
-              <defs>
-                <marker id="arrowhead-bot" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-                  <path d="M0,0 L6,3 L0,6 Z" fill="#ffffff" />
-                </marker>
-              </defs>
-              {/* Card 2 (right side ~41%) -> Card 3 (left side ~59%) */}
               <path
-                d="M 41 0 Q 50 14 59 0"
+                d="M 60 40 Q 100 -8 140 40"
                 fill="none"
                 stroke="#ffffff"
-                strokeWidth="1.4"
+                strokeWidth="2"
                 strokeLinecap="round"
-                strokeDasharray="0.1 3"
-                vectorEffect="non-scaling-stroke"
-                markerEnd="url(#arrowhead-bot)"
+                strokeDasharray="0.1 6"
+              />
+              <path
+                d="M 140 40 L 134 32 M 140 40 L 146 34"
+                fill="none"
+                stroke="#ffffff"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
+
+            {/* Arrow 2 -> 3 (bottom, spans cards 2 & 3 area: 25% .. 75%) */}
+            <svg
+              aria-hidden
+              className="hidden md:block absolute pointer-events-none"
+              style={{ left: "25%", width: "50%", bottom: "-44px", height: "44px" }}
+              viewBox="0 0 200 44"
+            >
+              <path
+                d="M 60 4 Q 100 52 140 4"
+                fill="none"
+                stroke="#ffffff"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeDasharray="0.1 6"
+              />
+              {/* Arrowhead at end of curve (~140,4), pointing up-right along tangent */}
+              <path
+                d="M 140 4 L 134 12 M 140 4 L 146 10"
+                fill="none"
+                stroke="#ffffff"
+                strokeWidth="2"
+                strokeLinecap="round"
               />
             </svg>
 
