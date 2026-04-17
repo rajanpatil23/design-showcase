@@ -465,8 +465,8 @@ export default function Hero({
               </div>
 
               {/* Desktop segmented CTA with sliding pill */}
-              <div className="hero-cta hidden sm:flex relative items-center p-1.5 rounded-full bg-background/70 backdrop-blur-md border border-border shadow-sm">
-                <span aria-hidden className="hero-cta__pill absolute top-1.5 bottom-1.5 left-1.5 rounded-full bg-primary transition-all duration-300 ease-out" />
+              <div ref={ctaRef} className="hero-cta hidden sm:flex relative items-center p-1.5 rounded-full bg-background/70 backdrop-blur-md border border-border shadow-sm">
+                <span aria-hidden className="hero-cta__pill absolute top-1.5 bottom-1.5 rounded-full bg-primary transition-all duration-300 ease-out" />
                 <Link
                   to={primaryHref}
                   className="hero-cta__primary relative z-10 inline-flex items-center gap-2 h-11 px-5 rounded-full text-sm font-semibold text-primary-foreground transition-colors duration-300"
@@ -488,6 +488,7 @@ export default function Hero({
 
         <style>{`
           .hero-cta__pill {
+            left: var(--pill-left, 6px);
             width: var(--primary-w, 0px);
             transform: translateX(0);
           }
