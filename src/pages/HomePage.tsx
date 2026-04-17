@@ -17,7 +17,7 @@ const heroStats = [
 
 
 const steps = [
-  { num: "01", title: "Discover", desc: "" },
+  { num: "01", title: "Discover", desc: "We learn your business, goals, and audience." },
   { num: "02", title: "Strategize", desc: "We build a custom growth strategy tailored to you." },
   { num: "03", title: "Launch", desc: "We execute campaigns, content, and automation." },
   { num: "04", title: "Scale", desc: "We optimise and scale what works to maximise ROI." },
@@ -150,7 +150,7 @@ const HomePage = () => {
       <ServicesGrid />
 
       {/* How It Works — Dark Section */}
-      <section className="py-16 md:py-20 bg-[#09233C]">
+      <section className="py-16 md:py-24 bg-[#09233C]">
         <div className="container-main">
           <div className="flex justify-center mb-6">
             <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider rounded-full border border-primary/40 bg-primary/10 text-primary">
@@ -160,40 +160,78 @@ const HomePage = () => {
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-center text-white">
             How <span className="gradient-text">Connecttly</span> Works
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 relative">
-            {/* Decorative dotted lines */}
-            <div className="hidden md:block absolute top-0 left-[25%] w-px h-full" style={{ borderLeft: '2px dashed rgba(255,255,255,0.1)' }} />
-            <div className="hidden md:block absolute top-0 left-[50%] w-px h-full" style={{ borderLeft: '2px dashed rgba(255,255,255,0.1)' }} />
-            <div className="hidden md:block absolute top-0 left-[75%] w-px h-full" style={{ borderLeft: '2px dashed rgba(255,255,255,0.1)' }} />
-            
-            {steps.map((step, i) => (
-              <div
-                key={step.num}
-                className={`rounded-xl p-5 ${
-                  i === 0
-                    ? "border-2 border-primary bg-transparent"
-                    : "bg-primary"
-                }`}
-              >
-                <span className={`text-4xl md:text-5xl font-heading font-bold leading-none ${
-                  i === 0 ? "text-primary" : "text-primary-foreground/30"
-                }`}>
-                  {step.num}
-                </span>
-                <h3 className={`font-heading font-semibold text-base mt-4 ${
-                  i === 0 ? "text-white" : "text-primary-foreground"
-                }`}>
-                  {step.title}
-                </h3>
-                {step.desc && (
-                  <p className={`text-xs mt-2 leading-relaxed ${
-                    i === 0 ? "text-white/60" : "text-primary-foreground/70"
-                  }`}>
-                    {step.desc}
-                  </p>
-                )}
-              </div>
-            ))}
+
+          {/* Cards + connector arrows */}
+          <div className="relative mt-16 max-w-5xl mx-auto">
+            {/* Decorative dashed arrows — desktop only.
+                Top arrow arcs from card 1 -> card 2.
+                Bottom arrow arcs from card 3 -> card 4. */}
+            <svg
+              aria-hidden
+              className="hidden md:block absolute inset-x-0 -top-10 w-full h-10 pointer-events-none"
+              viewBox="0 0 100 10"
+              preserveAspectRatio="none"
+            >
+              <defs>
+                <marker id="arrowhead-top" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                  <path d="M0,0 L6,3 L0,6 Z" fill="rgba(255,255,255,0.45)" />
+                </marker>
+              </defs>
+              {/* From middle of card 1 (~12.5%) to middle of card 2 (~37.5%) */}
+              <path
+                d="M 12.5 9 Q 25 -6 37.5 9"
+                fill="none"
+                stroke="rgba(255,255,255,0.45)"
+                strokeWidth="0.4"
+                strokeDasharray="1.2 1.2"
+                vectorEffect="non-scaling-stroke"
+                markerEnd="url(#arrowhead-top)"
+              />
+            </svg>
+
+            <svg
+              aria-hidden
+              className="hidden md:block absolute inset-x-0 -bottom-10 w-full h-10 pointer-events-none"
+              viewBox="0 0 100 10"
+              preserveAspectRatio="none"
+            >
+              <defs>
+                <marker id="arrowhead-bot" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                  <path d="M0,0 L6,3 L0,6 Z" fill="rgba(255,255,255,0.45)" />
+                </marker>
+              </defs>
+              {/* From middle of card 3 (~62.5%) to middle of card 4 (~87.5%) */}
+              <path
+                d="M 62.5 1 Q 75 16 87.5 1"
+                fill="none"
+                stroke="rgba(255,255,255,0.45)"
+                strokeWidth="0.4"
+                strokeDasharray="1.2 1.2"
+                vectorEffect="non-scaling-stroke"
+                markerEnd="url(#arrowhead-bot)"
+              />
+            </svg>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+              {steps.map((step) => (
+                <div
+                  key={step.num}
+                  className="rounded-2xl p-6 bg-primary min-h-[210px] flex flex-col"
+                >
+                  <span className="text-5xl md:text-6xl font-heading font-bold leading-none text-white">
+                    {step.num}
+                  </span>
+                  <h3 className="font-heading font-semibold text-lg mt-5 text-white">
+                    {step.title}
+                  </h3>
+                  {step.desc && (
+                    <p className="text-xs mt-2 leading-relaxed text-white/75">
+                      {step.desc}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
