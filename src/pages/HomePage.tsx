@@ -128,7 +128,7 @@ const HomePage = () => {
                     "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)",
                 }}
               >
-                {[25, 50, 75].map((leftPct) => (
+                {[0, 25, 50, 75, 100].map((leftPct) => (
                   <div
                     key={`v-${leftPct}`}
                     className="hidden md:block absolute top-0 bottom-0 w-px bg-border/70"
