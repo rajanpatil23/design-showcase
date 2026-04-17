@@ -177,9 +177,9 @@ const HomePage = () => {
                   <path d="M0,0 L6,3 L0,6 Z" fill="#ffffff" />
                 </marker>
               </defs>
-              {/* Card 1 (~12.5%) -> Card 2 (~37.5%) */}
+              {/* Card 1 top-right (~24%) -> Card 2 top-left (~26%) */}
               <path
-                d="M 12.5 9 Q 25 -6 37.5 9"
+                d="M 24 10 Q 25 -2 26 10"
                 fill="none"
                 stroke="#ffffff"
                 strokeWidth="1.4"
@@ -188,9 +188,9 @@ const HomePage = () => {
                 vectorEffect="non-scaling-stroke"
                 markerEnd="url(#arrowhead-top)"
               />
-              {/* Card 3 (~62.5%) -> Card 4 (~87.5%) */}
+              {/* Card 3 top-right (~74%) -> Card 4 top-left (~76%) */}
               <path
-                d="M 62.5 9 Q 75 -6 87.5 9"
+                d="M 74 10 Q 75 -2 76 10"
                 fill="none"
                 stroke="#ffffff"
                 strokeWidth="1.4"
@@ -212,9 +212,9 @@ const HomePage = () => {
                   <path d="M0,0 L6,3 L0,6 Z" fill="#ffffff" />
                 </marker>
               </defs>
-              {/* Card 2 (~37.5%) -> Card 3 (~62.5%) */}
+              {/* Card 2 bottom-right (~49%) -> Card 3 bottom-left (~51%) */}
               <path
-                d="M 37.5 1 Q 50 16 62.5 1"
+                d="M 49 0 Q 50 12 51 0"
                 fill="none"
                 stroke="#ffffff"
                 strokeWidth="1.4"
