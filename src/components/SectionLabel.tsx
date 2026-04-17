@@ -4,7 +4,7 @@ interface SectionLabelProps {
 
 const SectionLabel = ({ label }: SectionLabelProps) => (
   <div className="flex justify-center mb-6">
-    <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider rounded-full border border-border bg-background text-muted-foreground">
+    <span className="inline-block px-5 py-1.5 text-xs font-medium rounded-full border border-primary/30 bg-primary/5 text-primary">
       {label}
     </span>
   </div>
