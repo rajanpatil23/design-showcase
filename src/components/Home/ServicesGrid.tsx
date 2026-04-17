@@ -82,11 +82,16 @@ const ServicesGrid = () => {
   // Both rows share the same idle card width (~25% of row).
   const idleBasis = "md:basis-[calc((100%-2.5rem)/4)]";
 
+  // When the active card lives in the OTHER row, this row has only idle cards and
+  // should be centered (so the empty ~25% gap splits equally on left & right).
+  const row1HasActive = row1.some((s) => s.id === activeId);
+  const row2HasActive = row2.some((s) => s.id === activeId);
+
   return (
     <section className="pb-16 md:pb-20">
       <div className="container-main space-y-5 mt-12">
-        {/* Row 1 */}
-        <div className="flex flex-col md:flex-row gap-5">
+        {/* Row 1 — center when no card here is active */}
+        <div className={`flex flex-col md:flex-row gap-5 ${row1HasActive ? "" : "md:justify-center"}`}>
           {row1.map((s) => (
             <ServiceCard
               key={s.id}
@@ -98,8 +103,8 @@ const ServicesGrid = () => {
           ))}
         </div>
 
-        {/* Row 2 — centered when no card here is active; fills row when one is active */}
-        <div className="flex flex-col md:flex-row md:justify-center gap-5">
+        {/* Row 2 — center when no card here is active */}
+        <div className={`flex flex-col md:flex-row gap-5 ${row2HasActive ? "" : "md:justify-center"}`}>
           {row2.map((s) => (
             <ServiceCard
               key={s.id}
