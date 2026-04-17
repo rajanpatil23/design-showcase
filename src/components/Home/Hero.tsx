@@ -423,30 +423,31 @@ export default function Hero({
 
         {/* Hero content area (icons + text) — wrapped so floating icons stay in this region only and don't overlap the marquee below */}
         <div className="relative">
-          {/* Floating icons */}
-          <div className="absolute inset-0 z-10 pointer-events-none">
-            {allSpecs.map((spec, i) => {
-              const d = POSITIONS_DESKTOP[spec.id];
-              const m = POSITIONS_MOBILE[spec.id];
-              return (
-                <GlassTile
-                  key={spec.id}
-                  Icon={spec.Icon}
-                  color={spec.color}
-                  leftPct={d.leftPct}
-                  topPct={d.topPct}
-                  leftPctMobile={m.leftPct}
-                  topPctMobile={m.topPct}
-                  delay={`${(i % 6) * 0.4}s`}
-                  isBlurred={blurredIds.includes(spec.id)}
-                />
-              );
-            })}
-          </div>
+          {/* Content + floating icons share the same container rail so everything aligns with the navbar/logo */}
+          <div className="relative container-main min-h-[520px] md:min-h-[min(calc(100svh-4rem),680px)] py-14 md:py-16 flex items-center justify-center">
+            {/* Floating icons — constrained to the container rail, not the full viewport */}
+            <div className="absolute inset-0 z-10 pointer-events-none">
+              {allSpecs.map((spec, i) => {
+                const d = POSITIONS_DESKTOP[spec.id];
+                const m = POSITIONS_MOBILE[spec.id];
+                return (
+                  <GlassTile
+                    key={spec.id}
+                    Icon={spec.Icon}
+                    color={spec.color}
+                    leftPct={d.leftPct}
+                    topPct={d.topPct}
+                    leftPctMobile={m.leftPct}
+                    topPctMobile={m.topPct}
+                    delay={`${(i % 6) * 0.4}s`}
+                    isBlurred={blurredIds.includes(spec.id)}
+                  />
+                );
+              })}
+            </div>
 
-          {/* Content — height is viewport-relative (minus navbar) and capped, so it stays balanced on 13–16" laptops */}
-          <div className="relative z-20 container-main flex items-center justify-center min-h-[520px] md:min-h-[min(calc(100svh-4rem),720px)] py-14 md:py-16">
-            <div className="hero-content-box max-w-3xl mx-auto text-center">
+            {/* Content */}
+            <div className="hero-content-box relative z-20 max-w-3xl mx-auto text-center">
               <h1 className="text-[2rem] md:text-5xl lg:text-[3.25rem] font-heading font-bold leading-[1.12] tracking-tight text-foreground">
                 AI-Powered Marketing Partner for{" "}
                 <span className="gradient-text">Scaling Brands</span>
