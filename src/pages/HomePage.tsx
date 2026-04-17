@@ -7,23 +7,6 @@ import testimonialPerson from "@/assets/testimonial-person.jpg";
 import caseStudyDashboard from "@/assets/case-study-dashboard.jpg";
 import blogIllustration from "@/assets/blog-illustration.jpg";
 import performanceMarketingCard from "@/assets/performance-marketing-card.jpg";
-import brandActionSync from "@/assets/brands/action-sync.png";
-import brandEduEdge from "@/assets/brands/the-edu-edge.png";
-import brandYttGlobal from "@/assets/brands/ytt-global.svg";
-import brandEduOcean from "@/assets/brands/the-edu-ocean.svg";
-import brandInfosec from "@/assets/brands/infosec-minds.svg";
-import brandWfyi from "@/assets/brands/wfyi.svg";
-import brandEvolveU from "@/assets/brands/evolveu.svg";
-
-const trustedBrands = [
-  { name: "Action Sync", logo: brandActionSync, faded: true },
-  { name: "The Edu Edge", logo: brandEduEdge },
-  { name: "YTT Global", logo: brandYttGlobal },
-  { name: "The Edu ocean", logo: brandEduOcean },
-  { name: "Infosec Minds", logo: brandInfosec },
-  { name: "WFYI", logo: brandWfyi },
-  { name: "EvolveU", logo: brandEvolveU, faded: true },
-];
 
 const heroStats = [
   { value: "2M+", label: "Content Impressions Generated" },
