@@ -7,15 +7,22 @@ import testimonialPerson from "@/assets/testimonial-person.jpg";
 import caseStudyDashboard from "@/assets/case-study-dashboard.jpg";
 import blogIllustration from "@/assets/blog-illustration.jpg";
 import performanceMarketingCard from "@/assets/performance-marketing-card.jpg";
+import brandActionSync from "@/assets/brands/action-sync.svg";
+import brandEduEdge from "@/assets/brands/the-edu-edge.svg";
+import brandYttGlobal from "@/assets/brands/ytt-global.svg";
+import brandEduOcean from "@/assets/brands/the-edu-ocean.svg";
+import brandInfosec from "@/assets/brands/infosec-minds.svg";
+import brandWfyi from "@/assets/brands/wfyi.svg";
+import brandEvolveU from "@/assets/brands/evolveu.svg";
 
 const trustedBrands = [
-  { name: "Action Sync", icon: "✕" },
-  { name: "The Edu Edge", icon: "🎓" },
-  { name: "YTT Global", icon: "🏔" },
-  { name: "The Edu Ocean", icon: "☀" },
-  { name: "Infosec Minds", icon: "ℹ" },
-  { name: "WFYI", icon: "✓" },
-  { name: "EvolveU", icon: "◎" },
+  { name: "Action Sync", logo: brandActionSync, faded: true },
+  { name: "The Edu Edge", logo: brandEduEdge },
+  { name: "YTT Global", logo: brandYttGlobal },
+  { name: "The Edu ocean", logo: brandEduOcean },
+  { name: "Infosec Minds", logo: brandInfosec },
+  { name: "WFYI", logo: brandWfyi },
+  { name: "EvolveU", logo: brandEvolveU, faded: true },
 ];
 
 const heroStats = [
@@ -59,16 +66,16 @@ const HomePage = () => {
       {/* Trusted By + Stats */}
       <section className="pb-16 md:pb-20">
         <div className="container-main text-center">
-          <span className="inline-block px-4 py-1 text-[10px] font-semibold tracking-wider rounded-full border border-primary/30 bg-primary/5 text-primary uppercase">
+          <span className="inline-block px-5 py-1.5 text-xs font-medium rounded-full border border-primary/30 bg-primary/5 text-primary">
             Trusted By
           </span>
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mt-6">
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mt-8">
             {trustedBrands.map((brand) => (
-              <div key={brand.name} className="flex flex-col items-center gap-1.5">
-                <div className="w-14 h-14 rounded-xl border border-border bg-background flex items-center justify-center text-lg shadow-sm">
-                  {brand.icon}
+              <div key={brand.name} className={`flex flex-col items-center gap-3 transition-opacity ${brand.faded ? "opacity-40" : "opacity-100"}`}>
+                <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl border border-border bg-background flex items-center justify-center shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
+                  <img src={brand.logo} alt={brand.name} className="w-12 h-12 md:w-14 md:h-14 object-contain" loading="lazy" width={56} height={56} />
                 </div>
-                <span className="text-[10px] text-muted-foreground font-medium">{brand.name}</span>
+                <span className="text-xs md:text-sm text-foreground/80 font-medium">{brand.name}</span>
               </div>
             ))}
           </div>
