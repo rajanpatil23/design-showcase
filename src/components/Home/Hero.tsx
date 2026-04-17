@@ -8,6 +8,7 @@ import {
   SiWhatsapp, SiTwitch, SiOpenai, SiReplit,
 } from "react-icons/si";
 import type { IconType } from "react-icons";
+import TrustedMarquee from "@/components/Home/TrustedMarquee";
 
 /* ---------- Brand colors ---------- */
 const BRAND = {
@@ -420,70 +421,78 @@ export default function Hero({
           }}
         />
 
-        {/* Floating icons */}
-        <div className="absolute inset-0 z-10 pointer-events-none">
-          {allSpecs.map((spec, i) => {
-            const d = POSITIONS_DESKTOP[spec.id];
-            const m = POSITIONS_MOBILE[spec.id];
-            return (
-              <GlassTile
-                key={spec.id}
-                Icon={spec.Icon}
-                color={spec.color}
-                leftPct={d.leftPct}
-                topPct={d.topPct}
-                leftPctMobile={m.leftPct}
-                topPctMobile={m.topPct}
-                delay={`${(i % 6) * 0.4}s`}
-                isBlurred={blurredIds.includes(spec.id)}
-              />
-            );
-          })}
-        </div>
+        {/* Hero content area (icons + text) — wrapped so floating icons stay in this region only and don't overlap the marquee below */}
+        <div className="relative">
+          {/* Floating icons */}
+          <div className="absolute inset-0 z-10 pointer-events-none">
+            {allSpecs.map((spec, i) => {
+              const d = POSITIONS_DESKTOP[spec.id];
+              const m = POSITIONS_MOBILE[spec.id];
+              return (
+                <GlassTile
+                  key={spec.id}
+                  Icon={spec.Icon}
+                  color={spec.color}
+                  leftPct={d.leftPct}
+                  topPct={d.topPct}
+                  leftPctMobile={m.leftPct}
+                  topPctMobile={m.topPct}
+                  delay={`${(i % 6) * 0.4}s`}
+                  isBlurred={blurredIds.includes(spec.id)}
+                />
+              );
+            })}
+          </div>
 
-        {/* Content */}
-        <div className="relative z-20 container-main flex items-center justify-center min-h-[640px] md:min-h-[720px] py-20">
-          <div className="hero-content-box max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-[1.15] text-foreground">
-              AI-Powered Marketing Partner for{" "}
-              <span className="gradient-text">Scaling Brands</span>
-            </h1>
-            <p className="mt-5 text-base md:text-lg text-muted-foreground max-w-xl mx-auto">
-              Everything you need to grow, everywhere.
-            </p>
+          {/* Content */}
+          <div className="relative z-20 container-main flex items-center justify-center min-h-[640px] md:min-h-[720px] py-20">
+            <div className="hero-content-box max-w-3xl mx-auto text-center">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-[1.15] text-foreground">
+                AI-Powered Marketing Partner for{" "}
+                <span className="gradient-text">Scaling Brands</span>
+              </h1>
+              <p className="mt-5 text-base md:text-lg text-muted-foreground max-w-xl mx-auto">
+                Everything you need to grow, everywhere.
+              </p>
 
-            {/* CTAs */}
-            <div className="mt-8 flex justify-center">
-              {/* Mobile */}
-              <div className="flex flex-col sm:hidden gap-3 w-full max-w-xs">
-                <Button asChild className="rounded-full h-12 font-semibold gap-2">
-                  <Link to={primaryHref}><Handshake className="w-4 h-4" /> Book Free Session</Link>
-                </Button>
-                <Button asChild variant="outline" className="rounded-full h-12 font-semibold gap-2">
-                  <Link to={secondaryHref}>{secondaryLabel} <ArrowRight className="w-4 h-4" /></Link>
-                </Button>
-              </div>
+              {/* CTAs */}
+              <div className="mt-8 flex justify-center">
+                {/* Mobile */}
+                <div className="flex flex-col sm:hidden gap-3 w-full max-w-xs">
+                  <Button asChild className="rounded-full h-12 font-semibold gap-2">
+                    <Link to={primaryHref}><Handshake className="w-4 h-4" /> Book Free Session</Link>
+                  </Button>
+                  <Button asChild variant="outline" className="rounded-full h-12 font-semibold gap-2">
+                    <Link to={secondaryHref}>{secondaryLabel} <ArrowRight className="w-4 h-4" /></Link>
+                  </Button>
+                </div>
 
-              {/* Desktop segmented CTA with sliding pill */}
-              <div ref={ctaRef} className="hero-cta hidden sm:flex relative items-center p-1.5 rounded-full bg-background/70 backdrop-blur-md border border-border shadow-sm">
-                <span aria-hidden className="hero-cta__pill absolute top-1.5 bottom-1.5 rounded-full bg-primary transition-all duration-300 ease-out" />
-                <Link
-                  to={primaryHref}
-                  className="hero-cta__primary relative z-10 inline-flex items-center gap-2 h-11 px-5 rounded-full text-sm font-semibold text-primary-foreground transition-colors duration-300"
-                >
-                  <Handshake className="w-4 h-4" />
-                  {primaryLabel}
-                </Link>
-                <Link
-                  to={secondaryHref}
-                  className="hero-cta__secondary relative z-10 inline-flex items-center gap-1.5 h-11 px-5 rounded-full text-sm font-semibold text-foreground transition-colors duration-300"
-                >
-                  {secondaryLabel}
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
+                {/* Desktop segmented CTA with sliding pill */}
+                <div ref={ctaRef} className="hero-cta hidden sm:flex relative items-center p-1.5 rounded-full bg-background/70 backdrop-blur-md border border-border shadow-sm">
+                  <span aria-hidden className="hero-cta__pill absolute top-1.5 bottom-1.5 rounded-full bg-primary transition-all duration-300 ease-out" />
+                  <Link
+                    to={primaryHref}
+                    className="hero-cta__primary relative z-10 inline-flex items-center gap-2 h-11 px-5 rounded-full text-sm font-semibold text-primary-foreground transition-colors duration-300"
+                  >
+                    <Handshake className="w-4 h-4" />
+                    {primaryLabel}
+                  </Link>
+                  <Link
+                    to={secondaryHref}
+                    className="hero-cta__secondary relative z-10 inline-flex items-center gap-1.5 h-11 px-5 rounded-full text-sm font-semibold text-foreground transition-colors duration-300"
+                  >
+                    {secondaryLabel}
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Trusted By marquee — part of hero (shares grid bg) but below the floating-icons region so icons never overlap brand cards */}
+        <div className="relative z-20 pb-10 md:pb-14">
+          <TrustedMarquee />
         </div>
 
         <style>{`
