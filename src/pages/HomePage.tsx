@@ -1,19 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowUpRight, BarChart3, Users, Globe, Megaphone, PenTool, Code, Star, Quote, ExternalLink, Play } from "lucide-react";
+import { ArrowRight, ArrowUpRight, BarChart3, Users, Quote, Play } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import SectionLabel from "@/components/SectionLabel";
 import Hero from "@/components/Home/Hero";
 import ServicesGrid from "@/components/Home/ServicesGrid";
 import testimonialPerson from "@/assets/testimonial-person.jpg";
 import caseStudyDashboard from "@/assets/case-study-dashboard.jpg";
 import blogIllustration from "@/assets/blog-illustration.jpg";
-import svcPerformance from "@/assets/services/performance-marketing.svg";
-import svcSocial from "@/assets/services/social-media-management.svg";
-import svcLinkedIn from "@/assets/services/linkedin-growth.svg";
-import svcSeo from "@/assets/services/seo.svg";
-import svcContent from "@/assets/services/content-creative.svg";
-import svcWebAi from "@/assets/services/web-ai-automation.svg";
 
 const heroStats = [
   { value: "2M+", label: "Content Impressions Generated" },
