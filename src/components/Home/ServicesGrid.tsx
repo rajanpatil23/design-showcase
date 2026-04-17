@@ -34,11 +34,12 @@ const ServiceCard = ({ s, isActive, onActivate, idleBasisClass }: CardProps) => 
     tabIndex={0}
     onMouseEnter={onActivate}
     onFocus={onActivate}
-    className={`relative bg-background rounded-xl border border-border p-5 h-[380px] overflow-hidden transition-[flex-basis,box-shadow] duration-500 ease-out hover:shadow-lg focus:shadow-lg focus:outline-none cursor-pointer md:flex-grow-0 md:flex-shrink-0 ${
+    className={`relative bg-background p-5 h-[380px] overflow-hidden transition-[flex-basis,box-shadow] duration-500 ease-out hover:shadow-[0_8px_24px_-4px_hsl(var(--foreground)/0.12)] focus:shadow-[0_8px_24px_-4px_hsl(var(--foreground)/0.12)] focus:outline-none cursor-pointer md:flex-grow-0 md:flex-shrink-0 ${
       isActive
         ? "md:basis-[calc((100%-2.5rem)/2)]"
         : idleBasisClass
     }`}
+    style={{ borderRadius: 20, border: "3px solid hsl(var(--border))" }}
   >
     {/* Illustration layer — absolutely positioned in the bottom-right 75% of the card
         (cells 6-8, 10-12, 14-16 of a 4×4 grid). Sits behind the text/number layer. */}
