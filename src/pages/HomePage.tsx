@@ -48,8 +48,10 @@ const HomePage = () => {
 
       {/* Stats + Services intro — shared grid, stats sit INSIDE the grid cells */}
       <div className="relative">
-        {/* Full-bleed horizontal lines that extend left & right beyond the rail */}
+        {/* Full-bleed horizontal lines that extend left & right beyond the rail.
+            Top line sits at the top of stats grid; bottom line sits at the bottom edge of stats grid. */}
         <div aria-hidden className="hidden md:block absolute left-0 right-0 top-0 h-px bg-border/70" />
+        <div aria-hidden className="hidden md:block absolute left-0 right-0 h-px bg-border/70" style={{ top: "calc(200px + 1px)" }} />
         <div className="container-main">
           {/* The grid lives inside the rail so it aligns with logo/nav/cards */}
           <div className="relative">
