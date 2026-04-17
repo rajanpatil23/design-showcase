@@ -97,7 +97,7 @@ const HomePage = () => {
                 <span
                   key={`top-${leftPct}`}
                   aria-hidden
-                  className="hidden md:block absolute -top-[5px] w-2.5 h-2.5 rounded-full border border-border bg-background -translate-x-1/2 z-20"
+                  className="hidden md:block absolute -top-[8px] w-4 h-4 rounded-full border border-border bg-background -translate-x-1/2 z-20"
                   style={{ left: `${leftPct}%` }}
                 />
               ))}
@@ -106,7 +106,7 @@ const HomePage = () => {
                 <span
                   key={`bot-${leftPct}`}
                   aria-hidden
-                  className="hidden md:block absolute -bottom-[5px] w-2.5 h-2.5 rounded-full border border-border bg-background -translate-x-1/2 z-20"
+                  className="hidden md:block absolute -bottom-[8px] w-4 h-4 rounded-full border border-border bg-background -translate-x-1/2 z-20"
                   style={{ left: `${leftPct}%` }}
                 />
               ))}
