@@ -151,29 +151,98 @@ const HomePage = () => {
         </div>
       </div>
 
-      {/* Services cards */}
+      {/* Services cards — expandable row: hovered card grows + shows image, others compact */}
       <section className="pb-16 md:pb-20">
         <div className="container-main">
-          <div className="grid md:grid-cols-3 gap-5 mt-12">
-            {services.map((s) => (
-              <div
+          {/* Row 1: cards 01, 02, 03 */}
+          <div className="flex flex-col md:flex-row gap-5 mt-12 group/row">
+            {services.slice(0, 3).map((s, i) => (
+              <article
                 key={s.num}
-                className="bg-background rounded-xl border border-border p-5 flex flex-col justify-between hover:shadow-lg transition-shadow group min-h-[240px]"
+                tabIndex={0}
+                className={`
+                  relative bg-background rounded-xl border border-border p-5
+                  flex flex-col justify-between min-h-[260px]
+                  transition-[flex-grow,box-shadow] duration-500 ease-out
+                  hover:shadow-lg focus:shadow-lg focus:outline-none
+                  md:flex-[1_1_0%]
+                  ${i === 0 ? "md:flex-[2_1_0%] md:group-hover/row:flex-[1_1_0%] md:group-focus-within/row:flex-[1_1_0%]" : ""}
+                  md:hover:!flex-[2_1_0%] md:focus:!flex-[2_1_0%]
+                  group/card
+                `}
               >
                 <div>
-                  <h3 className="font-heading font-semibold text-base mb-1.5">{s.title}</h3>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
+                  <h3 className={`font-heading font-semibold text-base mb-1.5 transition-colors ${i === 0 ? "text-primary group-hover/row:text-foreground group-focus-within/row:text-foreground" : "text-foreground"} group-hover/card:!text-primary group-focus/card:!text-primary`}>
+                    {s.title}
+                  </h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed max-w-[34ch]">{s.desc}</p>
                 </div>
-                {s.hasImage && (
-                  <div className="mt-3 rounded-lg overflow-hidden">
-                    <img src={performanceMarketingCard} alt="Performance Marketing" className="w-full h-28 object-cover rounded-lg" loading="lazy" width={512} height={512} />
-                  </div>
-                )}
+
+                {/* Image only visible when this card is the active/expanded one */}
+                <div
+                  className={`
+                    overflow-hidden rounded-lg transition-all duration-500 ease-out
+                    ${i === 0 ? "max-h-40 opacity-100 mt-3 group-hover/row:max-h-0 group-hover/row:opacity-0 group-hover/row:mt-0 group-focus-within/row:max-h-0 group-focus-within/row:opacity-0 group-focus-within/row:mt-0" : "max-h-0 opacity-0 mt-0"}
+                    md:group-hover/card:!max-h-40 md:group-hover/card:!opacity-100 md:group-hover/card:!mt-3
+                    md:group-focus/card:!max-h-40 md:group-focus/card:!opacity-100 md:group-focus/card:!mt-3
+                  `}
+                >
+                  <img
+                    src={performanceMarketingCard}
+                    alt={s.title}
+                    className="w-full h-32 object-cover rounded-lg"
+                    loading="lazy"
+                    width={512}
+                    height={256}
+                  />
+                </div>
+
                 <div className="flex items-end justify-between mt-auto pt-4">
-                  <span className="text-4xl font-heading font-bold text-muted-foreground/15 leading-none">{s.num}</span>
-                  <ArrowUpRight className="w-4 h-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <span className="text-5xl font-heading font-bold text-primary/80 leading-none">{s.num}</span>
+                  <ArrowUpRight className="w-4 h-4 text-primary opacity-60 group-hover/card:opacity-100 transition-opacity" />
                 </div>
-              </div>
+              </article>
+            ))}
+          </div>
+
+          {/* Row 2: cards 04, 05, 06 */}
+          <div className="flex flex-col md:flex-row gap-5 mt-5 group/row2">
+            {services.slice(3).map((s) => (
+              <article
+                key={s.num}
+                tabIndex={0}
+                className="
+                  relative bg-background rounded-xl border border-border p-5
+                  flex flex-col justify-between min-h-[260px]
+                  transition-[flex-grow,box-shadow] duration-500 ease-out
+                  hover:shadow-lg focus:shadow-lg focus:outline-none
+                  md:flex-[1_1_0%] md:hover:!flex-[2_1_0%] md:focus:!flex-[2_1_0%]
+                  group/card
+                "
+              >
+                <div>
+                  <h3 className="font-heading font-semibold text-base mb-1.5 transition-colors group-hover/card:text-primary group-focus/card:text-primary">
+                    {s.title}
+                  </h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed max-w-[34ch]">{s.desc}</p>
+                </div>
+
+                <div className="overflow-hidden rounded-lg max-h-0 opacity-0 mt-0 transition-all duration-500 ease-out md:group-hover/card:max-h-40 md:group-hover/card:opacity-100 md:group-hover/card:mt-3 md:group-focus/card:max-h-40 md:group-focus/card:opacity-100 md:group-focus/card:mt-3">
+                  <img
+                    src={performanceMarketingCard}
+                    alt={s.title}
+                    className="w-full h-32 object-cover rounded-lg"
+                    loading="lazy"
+                    width={512}
+                    height={256}
+                  />
+                </div>
+
+                <div className="flex items-end justify-between mt-auto pt-4">
+                  <span className="text-5xl font-heading font-bold text-primary/80 leading-none">{s.num}</span>
+                  <ArrowUpRight className="w-4 h-4 text-primary opacity-60 group-hover/card:opacity-100 transition-opacity" />
+                </div>
+              </article>
             ))}
           </div>
         </div>
