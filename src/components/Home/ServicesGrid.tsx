@@ -34,7 +34,7 @@ const ServiceCard = ({ s, isActive, onActivate, idleBasisClass }: CardProps) => 
     tabIndex={0}
     onMouseEnter={onActivate}
     onFocus={onActivate}
-    className={`relative bg-background rounded-xl border border-border p-5 flex flex-col justify-between h-[380px] transition-[flex-basis,box-shadow] duration-500 ease-out hover:shadow-lg focus:shadow-lg focus:outline-none cursor-pointer md:flex-grow-0 md:flex-shrink-0 ${
+    className={`relative bg-background rounded-xl border border-border p-5 flex flex-col justify-between h-[380px] overflow-hidden transition-[flex-basis,box-shadow] duration-500 ease-out hover:shadow-lg focus:shadow-lg focus:outline-none cursor-pointer md:flex-grow-0 md:flex-shrink-0 ${
       isActive
         ? "md:basis-[calc((100%-2.5rem)/2)]"
         : idleBasisClass
@@ -51,15 +51,20 @@ const ServiceCard = ({ s, isActive, onActivate, idleBasisClass }: CardProps) => 
       <p className="text-xs text-muted-foreground leading-relaxed max-w-[34ch]">{s.desc}</p>
     </div>
 
+    {/* Illustration — bleeds edge-to-edge (negative margins escape the p-5 padding),
+        cropped tight on the central diagram area of the SVG via object-cover + viewport-style sizing. */}
     <div
-      className={`overflow-hidden rounded-lg transition-all duration-500 ease-out ${
-        isActive ? "max-h-44 opacity-100 mt-3" : "max-h-0 opacity-0 mt-0"
+      className={`-mx-5 overflow-hidden transition-all duration-500 ease-out ${
+        isActive ? "max-h-56 opacity-100 mt-3" : "max-h-0 opacity-0 mt-0"
       }`}
     >
       <img
         src={s.image}
         alt={s.title}
-        className="w-full h-40 object-contain rounded-lg"
+        /* SVG is 943×597 with the illustration roughly centered.
+           object-cover + larger height + center positioning crops away the
+           empty top/bottom whitespace so the diagram fills the card width. */
+        className="w-full h-52 object-cover object-center scale-[1.35] origin-center"
         loading="lazy"
         width={943}
         height={597}
