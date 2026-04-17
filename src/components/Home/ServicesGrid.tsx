@@ -96,7 +96,10 @@ const ServicesGrid = () => {
 
   return (
     <section className="pb-16 md:pb-20">
-      <div className="container-main space-y-5 mt-12">
+      <div
+        className="container-main space-y-5 mt-12"
+        onMouseLeave={() => setActiveId("01")}
+      >
         {/* Row 1 — center when no card here is active */}
         <div className={`flex flex-col md:flex-row gap-5 ${row1HasActive ? "" : "md:justify-center"}`}>
           {row1.map((s) => (
