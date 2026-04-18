@@ -174,7 +174,7 @@ const HomePage = () => {
             >
               {/* Card 1 (right side ~16%) -> Card 2 (left side ~34%) */}
               <path
-                d="M 16 12 Q 25 -2 34 11"
+                d="M 16 14 Q 25 -2 34 14"
                 fill="none"
                 stroke="#ffffff"
                 strokeWidth="1.4"
@@ -184,7 +184,7 @@ const HomePage = () => {
               />
               {/* Card 3 (right side ~66%) -> Card 4 (left side ~84%) */}
               <path
-                d="M 66 12 Q 75 -2 84 11"
+                d="M 66 14 Q 75 -2 84 14"
                 fill="none"
                 stroke="#ffffff"
                 strokeWidth="1.4"
@@ -202,7 +202,7 @@ const HomePage = () => {
             >
               {/* Card 2 (right side ~41%) -> Card 3 (left side ~59%) */}
               <path
-                d="M 41 0 Q 50 16 59 1"
+                d="M 41 -2 Q 50 16 59 -2"
                 fill="none"
                 stroke="#ffffff"
                 strokeWidth="1.4"
