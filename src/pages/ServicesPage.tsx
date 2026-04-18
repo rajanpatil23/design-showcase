@@ -44,11 +44,12 @@ const ServicesPage = () => {
 
             {/* Image with yellow backdrop + floating badges */}
             <div className="relative w-full max-w-md mx-auto md:ml-auto md:mr-0 py-10 md:py-14">
-              {/* Yellow backdrop */}
-              <div className="absolute inset-y-0 right-6 left-16 bg-[hsl(48,96%,58%)] rounded-md" aria-hidden />
-              {/* Image */}
-              <div className="relative rounded-md overflow-hidden translate-x-6 translate-y-4">
-                <img src={servicesHero} alt="Services" className="w-full h-[360px] object-cover" width={700} height={512} />
+              {/* Image with yellow backdrop behind it */}
+              <div className="relative">
+                <div className="absolute -inset-3 bg-[hsl(48,96%,58%)] rounded-md translate-x-3 translate-y-3" aria-hidden />
+                <div className="relative rounded-md overflow-hidden">
+                  <img src={servicesHero} alt="Services" className="w-full h-[360px] object-cover block" width={700} height={512} />
+                </div>
               </div>
 
               {/* Floating badge: Growth Categories (top right) */}
