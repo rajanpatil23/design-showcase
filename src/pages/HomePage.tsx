@@ -179,8 +179,8 @@ const HomePage = () => {
                 stroke="#ffffff"
                 strokeWidth="1.4"
                 strokeLinecap="butt"
-                strokeDasharray="3 2"
                 vectorEffect="non-scaling-stroke"
+                className="animated-dash"
               />
               {/* Card 3 (right side ~66%) -> Card 4 (left side ~84%) */}
               <path
@@ -189,8 +189,8 @@ const HomePage = () => {
                 stroke="#ffffff"
                 strokeWidth="1.4"
                 strokeLinecap="butt"
-                strokeDasharray="3 2"
                 vectorEffect="non-scaling-stroke"
+                className="animated-dash"
               />
             </svg>
 
@@ -207,8 +207,8 @@ const HomePage = () => {
                 stroke="#ffffff"
                 strokeWidth="1.4"
                 strokeLinecap="butt"
-                strokeDasharray="3 2"
                 vectorEffect="non-scaling-stroke"
+                className="animated-dash"
               />
             </svg>
 
