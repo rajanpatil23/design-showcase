@@ -234,7 +234,7 @@ const AboutPage = () => {
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-12">Meet the Team</h2>
 
           {/* Founder — dark navy card */}
-          <div className="max-w-5xl mx-auto bg-[#09233C] text-white rounded-2xl p-6 md:p-10 mb-6 md:flex gap-10 items-center">
+          <div className="max-w-5xl mx-auto bg-[#09233C] text-white p-6 md:p-10 mb-6 md:flex gap-10 items-center">
             <div className="w-full md:w-72 h-72 rounded-2xl overflow-hidden shrink-0 mb-6 md:mb-0 bg-primary">
               <img src={founderImg} alt="Neeraj Yadav" className="w-full h-full object-cover object-top" loading="lazy" width={288} height={288} />
             </div>
