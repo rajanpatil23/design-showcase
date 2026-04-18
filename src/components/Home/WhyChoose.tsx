@@ -86,16 +86,16 @@ const ServicesHub = ({
       </div>
 
       {/* Decorative blank dummy strip cards in the N/E/S/W gaps */}
-      {/* Each strip's length matches the adjacent card's edge length so they look like proper sibling cards. */}
-      {/* gap is md:gap-24 = 96px, so each card width = calc(50% - 48px). */}
+      {/* Each strip matches its adjacent card's edge length, with a gap before the central dial. */}
+      {/* gap is md:gap-24 = 96px → card width = calc(50% - 48px). Dial is 104px → half = 52px. Gap from dial = 16px. */}
       <div aria-hidden className="hidden md:block pointer-events-none">
-        {/* WEST strip — horizontal, along bottom edge of TL card / top edge of BL card */}
+        {/* WEST strip */}
         <div
           className="absolute -translate-y-1/2 bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
           style={{
             top: "50%",
             left: 0,
-            width: "calc(50% - 48px)",
+            width: "calc(50% - 68px)",
             height: "60px",
           }}
         />
@@ -105,17 +105,17 @@ const ServicesHub = ({
           style={{
             top: "50%",
             right: 0,
-            width: "calc(50% - 48px)",
+            width: "calc(50% - 68px)",
             height: "60px",
           }}
         />
-        {/* NORTH strip — vertical, along right edge of TL / left edge of TR */}
+        {/* NORTH strip */}
         <div
           className="absolute -translate-x-1/2 bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
           style={{
             left: "50%",
             top: 0,
-            height: "calc(50% - 48px)",
+            height: "calc(50% - 68px)",
             width: "60px",
           }}
         />
@@ -125,7 +125,7 @@ const ServicesHub = ({
           style={{
             left: "50%",
             bottom: 0,
-            height: "calc(50% - 48px)",
+            height: "calc(50% - 68px)",
             width: "60px",
           }}
         />
