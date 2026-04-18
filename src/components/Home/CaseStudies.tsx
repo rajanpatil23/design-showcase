@@ -87,15 +87,15 @@ const CaseStudies = () => {
           </div>
 
           {/* Right - Image swaps based on active */}
-          <div className="rounded-xl overflow-hidden bg-background">
+          <div className="rounded-xl overflow-hidden bg-background aspect-[4/3] max-h-[360px] mx-auto w-full">
             <img
               key={active.key}
               src={active.image}
               alt={`${active.title} case study`}
-              className="w-full h-auto object-cover rounded-xl animate-fade-in"
+              className="w-full h-full object-cover rounded-xl animate-fade-in"
               loading="lazy"
               width={640}
-              height={640}
+              height={480}
             />
           </div>
         </div>
