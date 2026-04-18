@@ -285,21 +285,24 @@ const AboutPage = () => {
           <h2 className="text-3xl md:text-5xl font-heading font-bold text-center max-w-2xl mx-auto leading-tight">
             Built for Brands That <span className="gradient-text">Want to Grow</span>
           </h2>
-          <div className="grid md:grid-cols-2 gap-x-8 gap-y-6 mt-12 max-w-5xl mx-auto">
-            {clientTypes.map((c, i) => (
-              <div
-                key={c.title}
-                className={`bg-background rounded-2xl border border-border/50 p-6 min-h-[300px] flex flex-col shadow-[0_4px_20px_hsl(var(--foreground)/0.06)] ${
-                  i % 2 === 1 ? "md:mt-16" : ""
-                }`}
-              >
-                <div className="p-2.5 rounded-lg bg-ct-blue-light inline-flex w-fit">{c.icon}</div>
-                <div className="mt-auto pt-10">
-                  <h3 className="font-heading font-semibold text-xl mb-2">{c.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
+          <div className="grid md:grid-cols-2 gap-x-8 gap-y-6 mt-12 max-w-5xl mx-auto md:items-center">
+            {clientTypes.map((c, i) => {
+              const tall = i === 0 || i === 3;
+              return (
+                <div
+                  key={c.title}
+                  className={`bg-background rounded-2xl border border-border/50 p-6 flex flex-col shadow-[0_4px_20px_hsl(var(--foreground)/0.06)] ${
+                    tall ? "md:min-h-[340px]" : "md:min-h-[240px]"
+                  }`}
+                >
+                  <div className="p-2.5 rounded-lg bg-ct-blue-light inline-flex w-fit">{c.icon}</div>
+                  <div className="mt-auto pt-10">
+                    <h3 className="font-heading font-semibold text-xl mb-2">{c.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
