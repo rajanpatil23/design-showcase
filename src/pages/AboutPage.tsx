@@ -135,12 +135,18 @@ const AboutPage = () => {
         <div className="container-main">
           <div className="bg-[hsl(222,47%,11%)] text-white rounded-2xl p-8 md:p-14">
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-8">Our Mission</h2>
-            <div className="flex items-start gap-4 md:gap-6">
-              <Quote className="w-10 h-10 md:w-12 md:h-12 text-white/80 shrink-0 -scale-x-100" />
-              <p className="flex-1 text-center text-base md:text-xl font-heading leading-relaxed">
+            <div className="relative px-12 md:px-20">
+              {/* Opening quote — top left */}
+              <svg className="absolute left-0 top-0 w-10 h-10 md:w-12 md:h-12 text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                <path d="M7 7h4v4H8c0 2 1 3 3 3v3c-4 0-7-2-7-6V7zm9 0h4v4h-3c0 2 1 3 3 3v3c-4 0-7-2-7-6V7z" />
+              </svg>
+              {/* Closing quote — bottom right */}
+              <svg className="absolute right-0 bottom-0 w-10 h-10 md:w-12 md:h-12 text-white rotate-180" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                <path d="M7 7h4v4H8c0 2 1 3 3 3v3c-4 0-7-2-7-6V7zm9 0h4v4h-3c0 2 1 3 3 3v3c-4 0-7-2-7-6V7z" />
+              </svg>
+              <p className="text-center text-base md:text-xl font-heading leading-relaxed">
                 "To make world-class growth marketing accessible to every ambitious brand — regardless of size or budget — by combining strategy, execution, and AI-powered automation."
               </p>
-              <Quote className="w-10 h-10 md:w-12 md:h-12 text-white/80 shrink-0 self-end" />
             </div>
           </div>
         </div>
