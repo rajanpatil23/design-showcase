@@ -173,7 +173,7 @@ const HomePage = () => {
               preserveAspectRatio="none"
             >
               <defs>
-                <marker id="arrowhead-top" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto">
+                <marker id="arrowhead-top" markerWidth="6" markerHeight="6" refX="4" refY="2.5" orient="auto">
                   <path d="M0.5,0.5 L4.5,2.5 L0.5,4.5" fill="none" stroke="#ffffff" strokeWidth="0.9" strokeLinecap="round" strokeLinejoin="round" />
                 </marker>
               </defs>
@@ -208,7 +208,7 @@ const HomePage = () => {
               preserveAspectRatio="none"
             >
               <defs>
-                <marker id="arrowhead-bot" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto">
+                <marker id="arrowhead-bot" markerWidth="6" markerHeight="6" refX="4" refY="2.5" orient="auto">
                   <path d="M0.5,0.5 L4.5,2.5 L0.5,4.5" fill="none" stroke="#ffffff" strokeWidth="0.9" strokeLinecap="round" strokeLinejoin="round" />
                 </marker>
               </defs>
