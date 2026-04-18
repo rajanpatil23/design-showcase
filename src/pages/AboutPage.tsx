@@ -112,14 +112,20 @@ const AboutPage = () => {
       {/* Our Story */}
       <section className="section-padding bg-ct-section">
         <div className="container-main">
-          <SectionLabel label="How it started" />
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-10">Our Story</h2>
-          <div className="max-w-3xl mx-auto text-muted-foreground space-y-4 leading-relaxed text-sm">
-            <p>Connecttly was born from a simple frustration: too many businesses were paying premium prices for marketing that didn't deliver results.</p>
-            <p>Our founder, Neeraj Yadav, saw the gap firsthand — agencies that overpromised and underdelivered, strategies built on vanity metrics instead of revenue, and small businesses left behind because they couldn't afford the big-agency price tag.</p>
-            <p>So he built Connecttly to be different.</p>
-            <p>We're a growth marketing agency that operates like an extension of your team. We combine strategic thinking with hands-on execution, powered by AI and automation, to deliver marketing that actually moves the needle — more leads, more revenue, more growth.</p>
-            <p className="font-semibold text-foreground italic">We don't believe in marketing for marketing's sake. If it doesn't drive growth, we don't do it.</p>
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold">Our Story</h2>
+            <div className="border-l-2 border-primary pl-6 text-muted-foreground space-y-4 leading-relaxed text-sm">
+              <div>
+                <p>Connecttly was born from a simple frustration: too many businesses were paying premium prices for marketing that didn't deliver results.</p>
+                <p>Our founder, Neeraj Yadav, saw the gap firsthand — agencies that overpromised and underdelivered, strategies built on vanity metrics instead of revenue, and small businesses left behind because they couldn't afford the big-agency price tag.</p>
+              </div>
+              <p className="font-semibold text-foreground">So he built Connecttly to be different.</p>
+              <div>
+                <p>We're a growth marketing agency that operates like an extension of your team. We combine strategic thinking with hands-on execution, powered by AI and automation, to deliver marketing that actually moves the needle — more leads, more pipeline, more revenue.</p>
+                <p>Based in Bengaluru and serving clients globally, we've helped 20+ brands across EdTech, SaaS, professional services, and enterprise automation build scalable growth systems from the ground up.</p>
+              </div>
+              <p className="font-semibold text-foreground">We don't believe in marketing for marketing's sake. If it doesn't drive growth, we don't do it.</p>
+            </div>
           </div>
         </div>
       </section>
