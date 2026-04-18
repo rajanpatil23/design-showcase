@@ -172,11 +172,6 @@ const HomePage = () => {
               viewBox="0 0 100 12"
               preserveAspectRatio="none"
             >
-              <defs>
-                <marker id="arrowhead-top" markerWidth="8" markerHeight="8" refX="4" refY="2.5" orient="auto">
-                  <path d="M0.5,0.5 L4.5,2.5 L0.5,4.5" fill="none" stroke="#ffffff" strokeWidth="0.9" strokeLinecap="round" strokeLinejoin="round" />
-                </marker>
-              </defs>
               {/* Card 1 (right side ~16%) -> Card 2 (left side ~34%) */}
               <path
                 d="M 16 12 Q 25 -2 34 11"
@@ -186,7 +181,6 @@ const HomePage = () => {
                 strokeLinecap="butt"
                 strokeDasharray="3 2"
                 vectorEffect="non-scaling-stroke"
-                markerEnd="url(#arrowhead-top)"
               />
               {/* Card 3 (right side ~66%) -> Card 4 (left side ~84%) */}
               <path
@@ -197,7 +191,6 @@ const HomePage = () => {
                 strokeLinecap="butt"
                 strokeDasharray="3 2"
                 vectorEffect="non-scaling-stroke"
-                markerEnd="url(#arrowhead-top)"
               />
             </svg>
 
@@ -207,11 +200,6 @@ const HomePage = () => {
               viewBox="0 0 100 12"
               preserveAspectRatio="none"
             >
-              <defs>
-                <marker id="arrowhead-bot" markerWidth="8" markerHeight="8" refX="4" refY="2.5" orient="auto">
-                  <path d="M0.5,0.5 L4.5,2.5 L0.5,4.5" fill="none" stroke="#ffffff" strokeWidth="0.9" strokeLinecap="round" strokeLinejoin="round" />
-                </marker>
-              </defs>
               {/* Card 2 (right side ~41%) -> Card 3 (left side ~59%) */}
               <path
                 d="M 41 0 Q 50 16 59 1"
@@ -221,7 +209,6 @@ const HomePage = () => {
                 strokeLinecap="butt"
                 strokeDasharray="3 2"
                 vectorEffect="non-scaling-stroke"
-                markerEnd="url(#arrowhead-bot)"
               />
             </svg>
 
