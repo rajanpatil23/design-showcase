@@ -22,11 +22,13 @@ const CARDS: CardDef[] = [
   { key: "br", title: "Founder-Friendly", desc: "We work closely with startups and growth-stage businesses.", iconSrc: founderFriendlyIcon },
 ];
 
+// Each corner uses a radial gradient anchored to its outer corner so only a
+// small, soft quarter-arc of blue hugs the edge — not a hard solid block.
 const cornerClass: Record<CardKey, string> = {
-  tl: "top-0 left-0 rounded-tl-[20px]",
-  tr: "top-0 right-0 rounded-tr-[20px]",
-  bl: "bottom-0 left-0 rounded-bl-[20px]",
-  br: "bottom-0 right-0 rounded-br-[20px]",
+  tl: "top-0 left-0 rounded-tl-[20px] [background:radial-gradient(circle_at_top_left,hsl(var(--primary))_0,hsl(var(--primary))_55%,transparent_72%)]",
+  tr: "top-0 right-0 rounded-tr-[20px] [background:radial-gradient(circle_at_top_right,hsl(var(--primary))_0,hsl(var(--primary))_55%,transparent_72%)]",
+  bl: "bottom-0 left-0 rounded-bl-[20px] [background:radial-gradient(circle_at_bottom_left,hsl(var(--primary))_0,hsl(var(--primary))_55%,transparent_72%)]",
+  br: "bottom-0 right-0 rounded-br-[20px] [background:radial-gradient(circle_at_bottom_right,hsl(var(--primary))_0,hsl(var(--primary))_55%,transparent_72%)]",
 };
 
 // Rotation (deg) of the blue arc segment so it sits in the quadrant facing the hovered card.
@@ -158,7 +160,7 @@ const ServicesHub = ({
           {(["tl", "tr", "bl", "br"] as CardKey[]).map((k) => (
             <span
               key={`corner-${k}`}
-              className={`absolute w-7 h-7 bg-primary transition-opacity duration-300 ${cornerClass[k]} ${
+              className={`absolute w-5 h-5 transition-opacity duration-300 ${cornerClass[k]} ${
                 hovered === k ? "opacity-100" : "opacity-0"
               }`}
             />
