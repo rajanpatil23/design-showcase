@@ -137,7 +137,7 @@ const ResourcesShowcase = () => {
         <div className="hidden md:block mt-6">
           <div className={`rounded-3xl border border-border/60 shadow-[12px_16px_32px_-12px_hsl(var(--foreground)/0.18)] ${PANEL_BG[activeIndex % PANEL_BG.length]}`}>
             <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-6 p-5 md:p-6 h-[380px]">
-              <div className="order-2 md:order-1">
+              <div className="order-2 md:order-1 self-center">
                 <h3 className="text-2xl md:text-3xl font-heading font-bold text-primary">
                   {current.title}
                 </h3>
