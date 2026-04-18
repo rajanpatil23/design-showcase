@@ -234,19 +234,19 @@ const AboutPage = () => {
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-12">Meet the Team</h2>
 
           {/* Founder — dark navy card */}
-          <div className="max-w-5xl mx-auto bg-[#09233C] text-white rounded-2xl p-6 md:p-8 mb-6 md:flex gap-8 items-center">
-            <div className="w-full md:w-56 h-56 rounded-xl overflow-hidden shrink-0 mb-6 md:mb-0">
-              <img src={founderImg} alt="Neeraj Yadav" className="w-full h-full object-cover" loading="lazy" width={224} height={224} />
+          <div className="max-w-5xl mx-auto bg-[#09233C] text-white rounded-2xl p-6 md:p-10 mb-6 md:flex gap-10 items-center">
+            <div className="w-full md:w-72 h-72 rounded-2xl overflow-hidden shrink-0 mb-6 md:mb-0 bg-primary">
+              <img src={founderImg} alt="Neeraj Yadav" className="w-full h-full object-cover object-top" loading="lazy" width={288} height={288} />
             </div>
-            <div>
-              <div className="flex items-center gap-2 mb-1">
-                <h3 className="text-2xl md:text-3xl font-heading font-bold">Neeraj Yadav</h3>
-                <span className="inline-flex items-center justify-center w-6 h-6 rounded bg-primary">
-                  <Linkedin className="w-3.5 h-3.5 text-white fill-white" />
+            <div className="flex-1">
+              <div className="flex items-center gap-2 mb-2">
+                <h3 className="text-3xl md:text-4xl font-heading font-bold">Neeraj Yadav</h3>
+                <span className="inline-flex items-center justify-center w-7 h-7 rounded bg-primary">
+                  <Linkedin className="w-4 h-4 text-white fill-white" />
                 </span>
               </div>
-              <p className="text-lg md:text-xl font-heading font-semibold gradient-text mb-4">Founder & Growth Head</p>
-              <p className="text-sm text-white/80 leading-relaxed">
+              <p className="text-2xl md:text-3xl font-heading font-light mb-5">Founder & Growth Head</p>
+              <p className="text-sm md:text-base text-white/85 leading-relaxed">
                 Neeraj built Connecttly with a mission to democratize growth marketing. With deep expertise in demand generation, LinkedIn strategy, and marketing automation, he personally architects the growth strategy for every client and leads the team with a bias for speed, data, and measurable outcomes.
               </p>
             </div>
