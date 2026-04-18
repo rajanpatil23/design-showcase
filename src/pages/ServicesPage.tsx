@@ -75,10 +75,7 @@ const ServicesPage = () => {
             </div>
           </div>
 
-          {/* Stats bar in light blue container */}
-          <div className="mt-12 bg-ct-blue-light rounded-2xl px-6 py-5">
-            <StatsBar />
-          </div>
+          <StatsBar />
         </div>
       </section>
 
