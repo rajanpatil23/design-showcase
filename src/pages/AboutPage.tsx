@@ -226,37 +226,50 @@ const AboutPage = () => {
       </section>
 
       {/* Team */}
-      <section className="section-padding bg-ct-section">
+      <section className="section-padding">
         <div className="container-main">
-          <SectionLabel label="Meet the Team" />
+          <div className="flex justify-center mb-4">
+            <SectionLabel label="Meet the Team" />
+          </div>
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-12">Meet the Team</h2>
 
-          {/* Founder */}
-          <div className="max-w-4xl mx-auto bg-background rounded-xl border border-border p-8 mb-10 md:flex gap-8 items-start">
-            <div className="w-48 h-48 rounded-xl overflow-hidden shrink-0 mb-6 md:mb-0">
-              <img src={founderImg} alt="Neeraj Yadav" className="w-full h-full object-cover" loading="lazy" width={192} height={192} />
+          {/* Founder — dark navy card */}
+          <div className="max-w-5xl mx-auto bg-[#09233C] text-white rounded-2xl p-6 md:p-8 mb-6 md:flex gap-8 items-center">
+            <div className="w-full md:w-56 h-56 rounded-xl overflow-hidden shrink-0 mb-6 md:mb-0">
+              <img src={founderImg} alt="Neeraj Yadav" className="w-full h-full object-cover" loading="lazy" width={224} height={224} />
             </div>
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <h3 className="text-xl font-heading font-bold">Neeraj Yadav</h3>
-                <Linkedin className="w-5 h-5 text-primary" />
+                <h3 className="text-2xl md:text-3xl font-heading font-bold">Neeraj Yadav</h3>
+                <span className="inline-flex items-center justify-center w-6 h-6 rounded bg-primary">
+                  <Linkedin className="w-3.5 h-3.5 text-white fill-white" />
+                </span>
               </div>
-              <p className="text-sm text-primary font-semibold mb-3">Founder & Growth Head</p>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="text-lg md:text-xl font-heading font-semibold gradient-text mb-4">Founder & Growth Head</p>
+              <p className="text-sm text-white/80 leading-relaxed">
                 Neeraj built Connecttly with a mission to democratize growth marketing. With deep expertise in demand generation, LinkedIn strategy, and marketing automation, he personally architects the growth strategy for every client and leads the team with a bias for speed, data, and measurable outcomes.
               </p>
             </div>
           </div>
 
-          {/* Team Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            {teamMembers.map((m) => (
-              <div key={m.name} className="bg-background rounded-xl border border-border p-5 text-center">
-                <div className="w-16 h-16 rounded-full bg-ct-blue-light mx-auto mb-3 flex items-center justify-center">
-                  <Users className="w-6 h-6 text-primary" />
-                </div>
-                <p className="font-heading font-semibold text-sm">{m.name}</p>
-                <p className="text-xs text-muted-foreground">{m.role}</p>
+          {/* Team Grid — solid blue cards */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+            {teamMembers.map((m, i) => (
+              <div key={m.name} className="bg-primary text-primary-foreground rounded-2xl p-5 aspect-square flex flex-col items-center justify-center text-center overflow-hidden">
+                {i === 0 ? (
+                  <div className="w-full h-full -m-5 relative">
+                    <img src={founderImg} alt={m.name} className="w-full h-full object-cover" loading="lazy" />
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-3 text-center">
+                      <p className="font-heading font-semibold text-sm text-white">{m.name}</p>
+                      <p className="text-xs text-white/80">{m.role}</p>
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    <p className="font-heading font-semibold text-sm">{m.name}</p>
+                    <p className="text-xs text-primary-foreground/80 mt-1">{m.role}</p>
+                  </>
+                )}
               </div>
             ))}
           </div>
