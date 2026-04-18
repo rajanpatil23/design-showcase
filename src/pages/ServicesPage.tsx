@@ -88,7 +88,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="section-padding bg-ct-section">
+      <section className="pt-8 md:pt-12 pb-16 md:pb-20 bg-ct-section">
         <div className="container-main">
           <SectionLabel label="Our Services" />
           <div className="flex flex-wrap justify-center gap-3 mb-10">
@@ -103,8 +103,8 @@ const ServicesPage = () => {
               s.recommended ? (
                 <div key={s.title} className="relative overflow-hidden rounded-2xl bg-primary text-primary-foreground p-6 flex flex-col shadow-[0_10px_30px_hsl(var(--primary)/0.35)]">
                   {/* Recommended ribbon */}
-                  <div className="absolute -top-1 -left-1 w-28 h-28 pointer-events-none">
-                    <div className="absolute top-5 -left-7 rotate-[-45deg] bg-[hsl(48,96%,58%)] text-foreground text-[10px] font-bold tracking-wide px-10 py-1 shadow-md">
+                  <div className="absolute top-0 left-0 w-32 h-32 overflow-hidden pointer-events-none">
+                    <div className="absolute top-4 -left-9 w-40 rotate-[-45deg] bg-[hsl(48,96%,58%)] text-foreground text-[10px] font-bold tracking-wide text-center py-1 shadow-md">
                       Recommended
                     </div>
                   </div>
