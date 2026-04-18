@@ -23,7 +23,7 @@ const principles = [
 ];
 
 const steps = [
-  { num: "01", title: "Discover" },
+  { num: "01", title: "Discover", desc: "We learn your business, goals, and audience." },
   { num: "02", title: "Strategize", desc: "We build a custom growth strategy tailored to you." },
   { num: "03", title: "Launch", desc: "We execute campaigns, content, and automation." },
   { num: "04", title: "Scale", desc: "We optimise and scale what works to maximise ROI." },
