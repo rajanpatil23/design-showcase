@@ -1,6 +1,9 @@
 import { useState } from "react";
-import { Monitor, Sparkles, Target, Users } from "lucide-react";
+import { Monitor } from "lucide-react";
 import connecttlyMark from "@/assets/connecttly-mark.svg";
+import aiIcon from "@/assets/why/ai.svg";
+import performanceIcon from "@/assets/why/performance.svg";
+import founderFriendlyIcon from "@/assets/why/founder-friendly.svg";
 
 type CardKey = "tl" | "tr" | "bl" | "br";
 
@@ -8,14 +11,15 @@ type CardDef = {
   key: CardKey;
   title: string;
   desc: string;
-  Icon: React.ComponentType<{ className?: string }>;
+  Icon?: React.ComponentType<{ className?: string }>;
+  iconSrc?: string;
 };
 
 const CARDS: CardDef[] = [
   { key: "tl", title: "Strategy + Execution", desc: "We don't just advise — we build and run your growth engine.", Icon: Monitor },
-  { key: "tr", title: "AI-Powered Marketing", desc: "Automation and AI tools drive efficiency and scale.", Icon: Sparkles },
-  { key: "bl", title: "Performance Focused", desc: "Every campaign is optimised for measurable ROI.", Icon: Target },
-  { key: "br", title: "Founder-Friendly", desc: "We work closely with startups and growth-stage businesses.", Icon: Users },
+  { key: "tr", title: "AI-Powered Marketing", desc: "Automation and AI tools drive efficiency and scale.", iconSrc: aiIcon },
+  { key: "bl", title: "Performance Focused", desc: "Every campaign is optimised for measurable ROI.", iconSrc: performanceIcon },
+  { key: "br", title: "Founder-Friendly", desc: "We work closely with startups and growth-stage businesses.", iconSrc: founderFriendlyIcon },
 ];
 
 const cornerClass: Record<CardKey, string> = {
@@ -44,7 +48,7 @@ const Card = ({
   setHovered: (k: CardKey | null) => void;
 }) => {
   const isActive = hovered === card.key;
-  const { Icon } = card;
+  const { Icon, iconSrc } = card;
   return (
     <article
       onMouseEnter={() => setHovered(card.key)}
@@ -56,9 +60,13 @@ const Card = ({
         isActive ? "border-primary" : "border-transparent ring-1 ring-border/40"
       }`}
     >
-      <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center">
-        <Icon className="w-5 h-5 text-muted-foreground" />
-      </div>
+      {iconSrc ? (
+        <img src={iconSrc} alt="" className="w-14 h-14 -ml-1 -mt-1" />
+      ) : (
+        <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center">
+          {Icon && <Icon className="w-5 h-5 text-muted-foreground" />}
+        </div>
+      )}
       <div>
         <h3 className={`font-heading font-semibold text-lg mb-1.5 transition-colors duration-200 ${isActive ? "text-primary" : "text-foreground"}`}>{card.title}</h3>
         <p className="text-sm text-muted-foreground leading-relaxed">{card.desc}</p>
