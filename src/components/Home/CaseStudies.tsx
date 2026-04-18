@@ -48,7 +48,7 @@ const CaseStudies = () => {
           Real <span className="gradient-text">Growth Stories</span>
         </h2>
 
-        <div className="mt-12 max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+        <div className="mt-12 grid md:grid-cols-2 gap-8 items-center">
           {/* Left - Accordion list */}
           <div className="space-y-0" onMouseLeave={() => setActiveKey(CASES[0].key)}>
             {CASES.map((c, i) => {
