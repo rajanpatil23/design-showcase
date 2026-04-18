@@ -136,7 +136,7 @@ const AboutPage = () => {
       {/* Mission */}
       <section className="section-padding">
         <div className="container-main">
-          <div className="bg-[hsl(222,47%,11%)] text-white rounded-2xl p-8 md:p-14">
+          <div className="bg-[hsl(222,47%,11%)] text-white p-8 md:p-14">
             <h2 className="text-3xl md:text-4xl font-heading font-bold mb-8">Our Mission</h2>
             <div className="relative px-12 md:px-20">
               {/* Opening quote — top left */}
