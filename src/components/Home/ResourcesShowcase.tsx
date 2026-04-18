@@ -153,13 +153,13 @@ const ResourcesShowcase = () => {
                 </div>
               </div>
               <div className="order-1 md:order-2 flex justify-end">
-                <div className="relative overflow-hidden rounded-2xl max-h-[220px] w-full">
+                <div className="relative overflow-hidden rounded-2xl max-h-[300px] w-full">
                   <img
                     key={current.key}
                     src={current.img.src}
                     alt={current.img.alt}
                     loading="lazy"
-                    className="block w-full h-full max-h-[220px] object-cover animate-fade-in"
+                    className="block w-full h-full max-h-[300px] object-cover animate-fade-in"
                   />
                 </div>
               </div>
