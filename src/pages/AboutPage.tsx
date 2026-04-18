@@ -63,26 +63,46 @@ const AboutPage = () => {
       {/* Hero */}
       <section className="section-padding">
         <div className="container-main">
+          <div className="flex justify-center mb-6">
+            <SectionLabel label="About Us" />
+          </div>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <SectionLabel label="About Us" />
-              <h1 className="text-3xl md:text-5xl font-heading font-bold leading-tight">
+              <h1 className="text-4xl md:text-6xl font-heading font-bold leading-tight">
                 We Build Growth Engines for <span className="gradient-text">Ambitious Brands.</span>
               </h1>
-              <p className="text-muted-foreground mt-4 leading-relaxed">
+              <p className="text-muted-foreground mt-6 leading-relaxed max-w-md">
                 Connecttly is an AI-powered growth marketing agency that helps startups, scaling businesses, and enterprise teams generate demand, build authority, and turn marketing into a measurable revenue driver.
               </p>
-              <div className="grid grid-cols-2 gap-4 mt-8">
-                {aboutStats.map((stat) => (
-                  <div key={stat.label} className="bg-ct-blue-light rounded-lg px-4 py-3">
-                    <p className="font-heading font-bold text-primary">{stat.value}</p>
-                    <p className="text-xs text-muted-foreground">{stat.label}</p>
-                  </div>
-                ))}
-              </div>
             </div>
-            <div className="rounded-2xl overflow-hidden">
-              <img src={teamImg} alt="Team collaborating" className="w-full h-80 object-cover" width={800} height={512} />
+            <div className="relative">
+              <div className="rounded-2xl overflow-hidden">
+                <img src={teamImg} alt="Team collaborating" className="w-full h-[420px] object-cover" width={800} height={512} />
+              </div>
+
+              {/* Top-left: Qualified Leads */}
+              <div className="absolute -top-4 left-6 md:left-12 bg-primary text-primary-foreground rounded-xl px-4 py-3 shadow-lg">
+                <p className="font-heading font-bold text-2xl leading-none">15,000+</p>
+                <p className="text-xs mt-1 opacity-90 leading-tight">Qualified Leads<br />Generated</p>
+              </div>
+
+              {/* Top-right: Industries */}
+              <div className="absolute top-10 -right-2 md:-right-6 bg-background rounded-full pl-3 pr-4 py-2 shadow-lg flex items-center gap-2">
+                <span className="font-heading font-bold text-primary text-lg">6+</span>
+                <span className="text-xs font-medium">Industries Served</span>
+              </div>
+
+              {/* Bottom-left: Marketing Systems */}
+              <div className="absolute bottom-16 -left-3 md:-left-6 bg-background rounded-xl px-4 py-2.5 shadow-lg flex items-center gap-3">
+                <span className="font-heading font-bold text-primary text-xl">20+</span>
+                <span className="text-xs leading-tight">Marketing Systems<br />Automated</span>
+              </div>
+
+              {/* Bottom-right: CPL Reduction */}
+              <div className="absolute -bottom-4 right-4 md:right-8 bg-primary text-primary-foreground rounded-xl px-4 py-3 shadow-lg text-right">
+                <p className="font-heading font-bold text-2xl leading-none">47%</p>
+                <p className="text-xs mt-1 opacity-90">Avg. CPL Reduction</p>
+              </div>
             </div>
           </div>
           <StatsBar />
