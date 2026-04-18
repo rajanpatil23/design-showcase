@@ -85,45 +85,45 @@ const ServicesHub = ({
         <Card card={cardByKey("br")} hovered={hovered} setHovered={setHovered} />
       </div>
 
-      {/* Decorative blank dummy cards in the gaps (desktop only) */}
+      {/* Decorative blank dummy strip cards in the N/E/S/W gaps (desktop only) */}
       <div aria-hidden className="hidden md:block pointer-events-none">
-        {/* Top dummy — horizontal strip in top gap */}
+        {/* NORTH — horizontal strip centered vertically in top gap, spanning between TL and TR cards */}
         <div
           className="absolute bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
           style={{
-            top: "calc(50% - 110px)",
-            left: "32%",
-            right: "32%",
+            top: "calc(25% - 30px)",
+            left: "12%",
+            right: "12%",
             height: "60px",
           }}
         />
-        {/* Bottom dummy */}
+        {/* SOUTH */}
         <div
           className="absolute bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
           style={{
-            top: "calc(50% + 50px)",
-            left: "32%",
-            right: "32%",
+            top: "calc(75% - 30px)",
+            left: "12%",
+            right: "12%",
             height: "60px",
           }}
         />
-        {/* Left dummy — vertical strip in left gap */}
+        {/* WEST — vertical strip centered horizontally in left gap */}
         <div
           className="absolute bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
           style={{
-            left: "calc(50% - 110px)",
-            top: "32%",
-            bottom: "32%",
+            left: "calc(25% - 30px)",
+            top: "12%",
+            bottom: "12%",
             width: "60px",
           }}
         />
-        {/* Right dummy */}
+        {/* EAST */}
         <div
           className="absolute bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
           style={{
-            left: "calc(50% + 50px)",
-            top: "32%",
-            bottom: "32%",
+            left: "calc(75% - 30px)",
+            top: "12%",
+            bottom: "12%",
             width: "60px",
           }}
         />
