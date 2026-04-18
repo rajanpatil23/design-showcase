@@ -85,11 +85,9 @@ const ServicesHub = ({
         <Card card={cardByKey("br")} hovered={hovered} setHovered={setHovered} />
       </div>
 
-      {/* Decorative blank dummy strip cards in the N/E/S/W gaps */}
-      {/* Each strip matches its adjacent card's edge length, with a gap before the central dial. */}
-      {/* gap is md:gap-24 = 96px → card width = calc(50% - 48px). Dial is 104px → half = 52px. Gap from dial = 16px. */}
+      {/* Decorative blank dummy strip cards in the N/E/S/W gaps, fading toward outer edges */}
       <div aria-hidden className="hidden md:block pointer-events-none">
-        {/* WEST strip */}
+        {/* WEST strip — fades toward the left (outer) */}
         <div
           className="absolute -translate-y-1/2 bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
           style={{
@@ -97,9 +95,11 @@ const ServicesHub = ({
             left: 0,
             width: "calc(50% - 68px)",
             height: "60px",
+            WebkitMaskImage: "linear-gradient(to left, black 50%, transparent 100%)",
+            maskImage: "linear-gradient(to left, black 50%, transparent 100%)",
           }}
         />
-        {/* EAST strip */}
+        {/* EAST strip — fades toward the right (outer) */}
         <div
           className="absolute -translate-y-1/2 bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
           style={{
@@ -107,9 +107,11 @@ const ServicesHub = ({
             right: 0,
             width: "calc(50% - 68px)",
             height: "60px",
+            WebkitMaskImage: "linear-gradient(to right, black 50%, transparent 100%)",
+            maskImage: "linear-gradient(to right, black 50%, transparent 100%)",
           }}
         />
-        {/* NORTH strip */}
+        {/* NORTH strip — fades toward the top (outer) */}
         <div
           className="absolute -translate-x-1/2 bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
           style={{
@@ -117,9 +119,11 @@ const ServicesHub = ({
             top: 0,
             height: "calc(50% - 68px)",
             width: "60px",
+            WebkitMaskImage: "linear-gradient(to top, black 50%, transparent 100%)",
+            maskImage: "linear-gradient(to top, black 50%, transparent 100%)",
           }}
         />
-        {/* SOUTH strip */}
+        {/* SOUTH strip — fades toward the bottom (outer) */}
         <div
           className="absolute -translate-x-1/2 bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
           style={{
@@ -127,6 +131,8 @@ const ServicesHub = ({
             bottom: 0,
             height: "calc(50% - 68px)",
             width: "60px",
+            WebkitMaskImage: "linear-gradient(to bottom, black 50%, transparent 100%)",
+            maskImage: "linear-gradient(to bottom, black 50%, transparent 100%)",
           }}
         />
       </div>
