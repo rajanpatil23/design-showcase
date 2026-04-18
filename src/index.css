@@ -87,4 +87,13 @@
   .container-main {
     @apply max-w-6xl mx-auto px-5 sm:px-6 lg:px-8;
   }
+
+  /* Animated dashed connector — dashes flow along the path */
+  @keyframes dash-flow {
+    to { stroke-dashoffset: -20; }
+  }
+  .animated-dash {
+    stroke-dasharray: 3 2;
+    animation: dash-flow 1.2s linear infinite;
+  }
 }
