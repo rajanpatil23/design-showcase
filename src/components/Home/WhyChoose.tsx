@@ -85,69 +85,6 @@ const ServicesHub = ({
         <Card card={cardByKey("br")} hovered={hovered} setHovered={setHovered} />
       </div>
 
-      {/* Gap-filling fading strips (desktop only) */}
-      <div aria-hidden className="hidden md:block pointer-events-none">
-        {/* Top horizontal strip — sits in the top-row gap, between the two top cards */}
-        <div
-          className="absolute bg-background rounded-2xl shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
-          style={{
-            left: "20%",
-            right: "20%",
-            top: "calc(50% - 80px)",
-            height: "52px",
-            transform: "translateY(-100%)",
-            // fade outward from center horizontally
-            WebkitMaskImage:
-              "linear-gradient(to right, transparent 0%, black 35%, black 65%, transparent 100%)",
-            maskImage:
-              "linear-gradient(to right, transparent 0%, black 35%, black 65%, transparent 100%)",
-          }}
-        />
-        {/* Bottom horizontal strip */}
-        <div
-          className="absolute bg-background rounded-2xl shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
-          style={{
-            left: "20%",
-            right: "20%",
-            top: "calc(50% + 80px)",
-            height: "52px",
-            WebkitMaskImage:
-              "linear-gradient(to right, transparent 0%, black 35%, black 65%, transparent 100%)",
-            maskImage:
-              "linear-gradient(to right, transparent 0%, black 35%, black 65%, transparent 100%)",
-          }}
-        />
-        {/* Left vertical strip */}
-        <div
-          className="absolute bg-background rounded-2xl shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
-          style={{
-            top: "20%",
-            bottom: "20%",
-            left: "calc(50% - 80px)",
-            width: "52px",
-            transform: "translateX(-100%)",
-            WebkitMaskImage:
-              "linear-gradient(to bottom, transparent 0%, black 35%, black 65%, transparent 100%)",
-            maskImage:
-              "linear-gradient(to bottom, transparent 0%, black 35%, black 65%, transparent 100%)",
-          }}
-        />
-        {/* Right vertical strip */}
-        <div
-          className="absolute bg-background rounded-2xl shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
-          style={{
-            top: "20%",
-            bottom: "20%",
-            left: "calc(50% + 80px)",
-            width: "52px",
-            WebkitMaskImage:
-              "linear-gradient(to bottom, transparent 0%, black 35%, black 65%, transparent 100%)",
-            maskImage:
-              "linear-gradient(to bottom, transparent 0%, black 35%, black 65%, transparent 100%)",
-          }}
-        />
-      </div>
-
       {/* CENTRAL DIAL — desktop only */}
       <div
         aria-hidden
