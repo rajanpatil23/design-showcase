@@ -86,44 +86,45 @@ const ServicesHub = ({
       </div>
 
       {/* Decorative blank dummy strip cards in the N/E/S/W gaps (desktop only) */}
+      {/* Cards are aspect-[5/4]; row height ≈ (containerWidth - gap)/2 * 4/5. Strips center on the divider lines. */}
       <div aria-hidden className="hidden md:block pointer-events-none">
-        {/* NORTH — horizontal strip centered vertically in top gap, spanning between TL and TR cards */}
+        {/* NORTH — horizontal strip, centered on horizontal row divider, spanning across top half */}
         <div
-          className="absolute bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
+          className="absolute -translate-y-1/2 bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
           style={{
-            top: "calc(25% - 30px)",
-            left: "12%",
-            right: "12%",
+            top: "25%",
+            left: "15%",
+            right: "15%",
             height: "60px",
           }}
         />
         {/* SOUTH */}
         <div
-          className="absolute bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
+          className="absolute -translate-y-1/2 bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
           style={{
-            top: "calc(75% - 30px)",
-            left: "12%",
-            right: "12%",
+            top: "75%",
+            left: "15%",
+            right: "15%",
             height: "60px",
           }}
         />
-        {/* WEST — vertical strip centered horizontally in left gap */}
+        {/* WEST — vertical strip, centered on vertical column divider (50%), spanning left half */}
         <div
-          className="absolute bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
+          className="absolute -translate-x-1/2 bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
           style={{
-            left: "calc(25% - 30px)",
-            top: "12%",
-            bottom: "12%",
+            left: "25%",
+            top: "15%",
+            bottom: "15%",
             width: "60px",
           }}
         />
         {/* EAST */}
         <div
-          className="absolute bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
+          className="absolute -translate-x-1/2 bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
           style={{
-            left: "calc(75% - 30px)",
-            top: "12%",
-            bottom: "12%",
+            left: "75%",
+            top: "15%",
+            bottom: "15%",
             width: "60px",
           }}
         />
