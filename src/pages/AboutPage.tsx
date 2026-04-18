@@ -84,25 +84,25 @@ const AboutPage = () => {
               </div>
 
               {/* Top-left: Qualified Leads */}
-              <div className="absolute -top-4 left-6 md:left-12 bg-primary text-primary-foreground rounded-xl px-4 py-3 shadow-lg">
+              <div className="absolute -top-4 left-6 md:left-12 bg-primary text-primary-foreground rounded-xl px-4 py-3 shadow-lg animate-float">
                 <p className="font-heading font-bold text-2xl leading-none">15,000+</p>
                 <p className="text-xs mt-1 opacity-90 leading-tight">Qualified Leads<br />Generated</p>
               </div>
 
               {/* Top-right: Industries */}
-              <div className="absolute top-10 -right-2 md:-right-6 bg-background rounded-full pl-3 pr-4 py-2 shadow-lg flex items-center gap-2">
+              <div className="absolute top-10 -right-2 md:-right-6 bg-background rounded-full pl-3 pr-4 py-2 shadow-lg flex items-center gap-2 animate-float-slow">
                 <span className="font-heading font-bold text-primary text-lg">6+</span>
                 <span className="text-xs font-medium">Industries Served</span>
               </div>
 
               {/* Bottom-left: Marketing Systems */}
-              <div className="absolute bottom-16 -left-3 md:-left-6 bg-background rounded-xl px-4 py-2.5 shadow-lg flex items-center gap-3">
+              <div className="absolute bottom-16 -left-3 md:-left-6 bg-background rounded-xl px-4 py-2.5 shadow-lg flex items-center gap-3 animate-float-slow2">
                 <span className="font-heading font-bold text-primary text-xl">20+</span>
                 <span className="text-xs leading-tight">Marketing Systems<br />Automated</span>
               </div>
 
               {/* Bottom-right: CPL Reduction */}
-              <div className="absolute -bottom-4 right-4 md:right-8 bg-primary text-primary-foreground rounded-xl px-4 py-3 shadow-lg text-right">
+              <div className="absolute -bottom-4 right-4 md:right-8 bg-primary text-primary-foreground rounded-xl px-4 py-3 shadow-lg text-right animate-float-delay">
                 <p className="font-heading font-bold text-2xl leading-none">47%</p>
                 <p className="text-xs mt-1 opacity-90">Avg. CPL Reduction</p>
               </div>
