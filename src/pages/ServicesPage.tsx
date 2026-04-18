@@ -4,6 +4,9 @@ import SectionLabel from "@/components/SectionLabel";
 import StatsBar from "@/components/StatsBar";
 import { ArrowRight, BarChart3, Megaphone, Users, Globe, PenTool, Code, Youtube, TrendingUp, MessageCircle, Search, Send } from "lucide-react";
 import servicesHero from "@/assets/services-hero-person.jpg";
+import illustrationStrategist from "@/assets/services/illustration-strategist.png";
+import illustrationQuiz from "@/assets/services/illustration-quiz.png";
+import illustrationBrief from "@/assets/services/illustration-brief.png";
 
 const categories = ["Performance", "Social Media", "LinkedIn", "SEO", "Content", "Web & AI"];
 
@@ -17,9 +20,9 @@ const serviceCards = [
 ];
 
 const ctaCards = [
-  { title: "Talk to a Strategist", desc: "Book a free 30-minute growth strategy call. We'll audit your current setup and recommend a plan.", cta: "Book a Free Call", icon: <MessageCircle className="w-10 h-10 text-primary" /> },
-  { title: "Take the Growth Quiz", desc: "Answer 5 quick questions and get a personalised service recommendation in under 2 minutes.", cta: "Take the Quiz", icon: <Search className="w-10 h-10 text-primary" /> },
-  { title: "Send Us a Brief", desc: "Share your goals, budget, and timeline. We'll come back with a custom proposal within 48 hours.", cta: "Submit a Brief", icon: <Send className="w-10 h-10 text-primary" /> },
+  { title: "Talk to a Strategist", desc: "Book a free 30-minute growth strategy call. We'll audit your current setup and recommend a plan.", cta: "Book a Free Call", image: illustrationStrategist },
+  { title: "Take the Growth Quiz", desc: "Answer 5 quick questions and get a personalised service recommendation in under 2 minutes.", cta: "Take the Quiz", image: illustrationQuiz },
+  { title: "Send Us a Brief", desc: "Share your goals, budget, and timeline. We'll come back with a custom proposal within 48 hours.", cta: "Submit a Brief", image: illustrationBrief },
 ];
 
 const ServicesPage = () => {
@@ -115,21 +118,28 @@ const ServicesPage = () => {
       {/* Not Sure Where to Start */}
       <section className="section-padding">
         <div className="container-main">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold">
             Not Sure <span className="gradient-text">Where to Start?</span>
           </h2>
-          <div className="space-y-8 mt-12 max-w-4xl mx-auto">
+          <div className="space-y-12 md:space-y-16 mt-12 max-w-4xl mx-auto">
             {ctaCards.map((card, i) => (
-              <div key={card.title} className={`md:flex items-center gap-8 ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}>
+              <div key={card.title} className={`md:flex items-center gap-12 ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}>
                 <div className="flex-1">
-                  <h3 className="text-xl font-heading font-bold mb-2">{card.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">{card.desc}</p>
-                  <Button variant="outline" className="rounded-full font-semibold text-primary border-primary hover:bg-primary hover:text-primary-foreground">
+                  <h3 className="text-xl md:text-2xl font-heading font-bold mb-3">{card.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-5 max-w-sm">{card.desc}</p>
+                  <Button className="rounded-full px-6 font-semibold">
                     {card.cta}
                   </Button>
                 </div>
-                <div className="w-32 h-32 rounded-xl bg-ct-blue-light flex items-center justify-center shrink-0 mt-6 md:mt-0">
-                  {card.icon}
+                <div className="flex-1 flex justify-center mt-8 md:mt-0">
+                  <img
+                    src={card.image}
+                    alt={card.title}
+                    width={512}
+                    height={512}
+                    loading="lazy"
+                    className="w-48 md:w-56 h-auto object-contain"
+                  />
                 </div>
               </div>
             ))}
