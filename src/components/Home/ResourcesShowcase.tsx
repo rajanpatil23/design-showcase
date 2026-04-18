@@ -177,17 +177,17 @@ const ResourcesShowcase = () => {
               <div key={tab.key} className="snap-start shrink-0 w-[88%]">
                 <div className={`rounded-3xl ${PANEL_BG[i % PANEL_BG.length]}`}>
                   <div className="flex flex-col p-5 min-h-[400px]">
-                    <h3 className="text-2xl font-heading font-bold text-foreground mb-3">
+                    <h3 className="text-2xl font-heading font-bold text-primary mb-3">
                       {tab.title}
                     </h3>
                     <p className="text-sm text-foreground/75 mb-4">{tab.desc}</p>
                     <div className="mb-4">
                       <Link
                         to={tab.cta.to}
-                        className="inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-primary-foreground bg-foreground hover:bg-foreground/90 transition-colors"
+                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
                       >
                         {tab.cta.label}
-                        <ArrowRight className="h-4 w-4" />
+                        <ArrowUpRight className="h-4 w-4" />
                       </Link>
                     </div>
                     <div className="mt-auto">
