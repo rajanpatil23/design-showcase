@@ -49,28 +49,28 @@ const ServicesPage = () => {
                 <img src={servicesHero} alt="Services" className="absolute inset-0 w-full h-full object-cover" width={700} height={875} />
               </div>
 
-              {/* Floating badge: Growth Categories (top right) */}
-              <div className="absolute top-2 right-0 bg-background rounded-full shadow-[0_8px_24px_hsl(var(--foreground)/0.12)] pl-2 pr-4 py-1.5 flex items-center gap-2 animate-float">
+              {/* Floating badge: Growth Categories (top right, outside) */}
+              <div className="absolute top-4 -right-3 md:-right-6 bg-background rounded-full shadow-[0_8px_24px_hsl(var(--foreground)/0.12)] pl-2.5 pr-4 py-1.5 flex items-center gap-2 animate-float z-10">
                 <span className="text-primary font-bold text-sm">6</span>
-                <span className="text-xs font-semibold text-foreground">Growth Categories</span>
+                <span className="text-xs font-semibold text-foreground whitespace-nowrap">Growth Categories</span>
               </div>
 
-              {/* Floating badge: Specialized Services (left) */}
-              <div className="absolute top-16 -left-2 bg-primary text-primary-foreground rounded-xl shadow-[0_8px_24px_hsl(var(--primary)/0.35)] px-4 py-2.5 animate-float-slow">
+              {/* Floating badge: Specialized Services (top left, over image) */}
+              <div className="absolute top-20 -left-3 md:-left-6 bg-primary text-primary-foreground rounded-xl shadow-[0_8px_24px_hsl(var(--primary)/0.35)] px-4 py-2.5 animate-float-slow z-10">
                 <p className="text-2xl font-bold leading-none">36</p>
-                <p className="text-[11px] font-medium opacity-90 mt-0.5">Specialized<br/>Services</p>
+                <p className="text-[11px] font-medium opacity-90 mt-1 leading-tight">Specialized<br/>Services</p>
               </div>
 
-              {/* Floating badge: All-In-One Bundles (mid left) */}
-              <div className="absolute bottom-24 left-0 bg-background rounded-full shadow-[0_8px_24px_hsl(var(--foreground)/0.12)] pl-2 pr-4 py-1.5 flex items-center gap-2 animate-float-delay">
+              {/* Floating badge: All-In-One Bundles (mid-left, over image) */}
+              <div className="absolute top-1/2 -translate-y-1/2 -left-3 md:-left-6 bg-background rounded-full shadow-[0_8px_24px_hsl(var(--foreground)/0.12)] pl-2.5 pr-4 py-1.5 flex items-center gap-2 animate-float-delay z-10">
                 <span className="text-primary font-bold text-sm">6</span>
-                <span className="text-xs font-semibold text-foreground">All-In-One Bundles</span>
+                <span className="text-xs font-semibold text-foreground whitespace-nowrap">All-In-One Bundles</span>
               </div>
 
-              {/* Floating badge: Results-Driven (bottom right) */}
-              <div className="absolute bottom-2 right-2 bg-primary text-primary-foreground rounded-xl shadow-[0_8px_24px_hsl(var(--primary)/0.35)] px-4 py-2.5 animate-float-slow2">
+              {/* Floating badge: Results-Driven (bottom right, outside) */}
+              <div className="absolute bottom-6 -right-3 md:-right-6 bg-primary text-primary-foreground rounded-xl shadow-[0_8px_24px_hsl(var(--primary)/0.35)] px-4 py-2.5 animate-float-slow2 z-10">
                 <p className="text-2xl font-bold leading-none">100%</p>
-                <p className="text-[11px] font-medium opacity-90 mt-0.5">Results-Driven</p>
+                <p className="text-[11px] font-medium opacity-90 mt-1 leading-tight">Results-Driven</p>
               </div>
             </div>
           </div>
