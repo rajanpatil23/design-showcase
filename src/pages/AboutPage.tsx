@@ -1,7 +1,7 @@
 import SectionLabel from "@/components/SectionLabel";
 import StatsBar from "@/components/StatsBar";
 import { Button } from "@/components/ui/button";
-import { Linkedin, Quote, Shield, Zap, BarChart3, Handshake, Clock, Users, Building2, GraduationCap, Building, HeartPulse, Cpu, Briefcase, RefreshCw, Code2 } from "lucide-react";
+import { Linkedin, Quote, Shield, Zap, BarChart3, Handshake, Clock, Users, Building2, GraduationCap, Building, HeartPulse, Cpu, Briefcase, RefreshCw, Code2, MessageSquare, HelpCircle, ArrowUpRight } from "lucide-react";
 import founderImg from "@/assets/founder-neeraj.jpg";
 import teamImg from "@/assets/team-collab.jpg";
 import testimonialImg from "@/assets/testimonial-person.jpg";
