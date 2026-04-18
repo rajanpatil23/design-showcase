@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Monitor, Sparkles, Target, Users } from "lucide-react";
+import connecttlyMark from "@/assets/connecttly-mark.svg";
 
 type CardKey = "tl" | "tr" | "bl" | "br";
 
@@ -181,7 +182,7 @@ const ServicesHub = ({
 
           {/* Layer 3: inner blue circle with logo */}
           <div className="relative w-[54px] h-[54px] rounded-full bg-primary flex items-center justify-center shadow-[0_2px_10px_hsl(var(--primary)/0.45)]">
-            <span className="text-primary-foreground font-heading font-bold text-lg leading-none">m</span>
+            <img src={connecttlyMark} alt="Connecttly" className="w-5 h-auto" />
           </div>
         </div>
       </div>
