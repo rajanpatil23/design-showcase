@@ -107,8 +107,8 @@ const ServicesPage = () => {
               s.recommended ? (
                 <div key={s.title} className="relative overflow-hidden rounded-2xl bg-primary text-primary-foreground p-6 flex flex-col shadow-[0_10px_30px_hsl(var(--primary)/0.35)]">
                   {/* Recommended diagonal banner */}
-                  <div className="absolute -top-2 -left-2 w-48 h-48 overflow-hidden pointer-events-none rounded-tl-2xl">
-                    <div className="absolute top-10 -left-12 w-64 rotate-[-45deg] bg-gradient-to-r from-white/95 to-white/70 text-primary text-sm font-bold tracking-wide text-center py-2 shadow-lg">
+                  <div className="absolute top-0 left-0 w-28 h-28 overflow-hidden pointer-events-none rounded-tl-2xl">
+                    <div className="absolute top-5 -left-8 w-40 rotate-[-45deg] bg-white/95 text-primary text-[10px] font-bold tracking-wide text-center py-1 shadow-md">
                       Recommended
                     </div>
                   </div>
