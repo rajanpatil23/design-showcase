@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import SectionLabel from "@/components/SectionLabel";
 import Hero from "@/components/Home/Hero";
 import ServicesGrid from "@/components/Home/ServicesGrid";
+import WhyChoose from "@/components/Home/WhyChoose";
 import testimonialPerson from "@/assets/testimonial-person.jpg";
 import caseStudyDashboard from "@/assets/case-study-dashboard.jpg";
 import blogIllustration from "@/assets/blog-illustration.jpg";
@@ -237,33 +238,7 @@ const HomePage = () => {
       </section>
 
       {/* Why Brands Choose */}
-      <section className="py-16 md:py-20 bg-ct-section">
-        <div className="container-main">
-          <div className="flex justify-center mb-6">
-            <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider rounded-full border border-primary/30 bg-primary/5 text-primary">
-              How Connecttly Works
-            </span>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center">
-            Why Brands Choose <span className="gradient-text">Connecttly</span>
-          </h2>
-          <div className="grid md:grid-cols-2 gap-5 mt-12 max-w-4xl mx-auto relative">
-            {/* Center decorative element */}
-            <div className="hidden md:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-primary items-center justify-center z-10 shadow-lg">
-              <span className="text-white font-bold text-lg">n</span>
-            </div>
-            {whyUs.map((item) => (
-              <div key={item.title} className="bg-background rounded-xl border border-border p-6 flex flex-col items-start">
-                <div className="w-10 h-10 rounded-lg bg-ct-blue-light flex items-center justify-center mb-4">
-                  {item.icon}
-                </div>
-                <h3 className="font-heading font-semibold text-base mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <WhyChoose />
 
       {/* Case Studies — Dark Section */}
       <section className="py-16 md:py-20 bg-ct-dark">
