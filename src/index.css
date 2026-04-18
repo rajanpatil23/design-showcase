@@ -96,4 +96,14 @@
     stroke-dasharray: 3 2;
     animation: dash-flow 1.2s linear infinite;
   }
+
+  /* Floating animation for badge cards */
+  @keyframes float-y {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-10px); }
+  }
+  .animate-float       { animation: float-y 5s ease-in-out infinite; }
+  .animate-float-delay { animation: float-y 5s ease-in-out infinite; animation-delay: 1.2s; }
+  .animate-float-slow  { animation: float-y 6.5s ease-in-out infinite; animation-delay: 0.6s; }
+  .animate-float-slow2 { animation: float-y 6.5s ease-in-out infinite; animation-delay: 1.8s; }
 }
