@@ -1,6 +1,210 @@
-const WhyChoose = () => {
+import { useState } from "react";
+import { Monitor, Sparkles, Target, Users } from "lucide-react";
+
+type CardKey = "tl" | "tr" | "bl" | "br";
+
+type CardDef = {
+  key: CardKey;
+  title: string;
+  desc: string;
+  Icon: React.ComponentType<{ className?: string }>;
+};
+
+const CARDS: CardDef[] = [
+  { key: "tl", title: "Strategy + Execution", desc: "We don't just advise — we build and run your growth engine.", Icon: Monitor },
+  { key: "tr", title: "AI-Powered Marketing", desc: "Automation and AI tools drive efficiency and scale.", Icon: Sparkles },
+  { key: "bl", title: "Performance Focused", desc: "Every campaign is optimised for measurable ROI.", Icon: Target },
+  { key: "br", title: "Founder-Friendly", desc: "We work closely with startups and growth-stage businesses.", Icon: Users },
+];
+
+const cornerClass: Record<CardKey, string> = {
+  tl: "top-0 left-0 rounded-tl-[20px]",
+  tr: "top-0 right-0 rounded-tr-[20px]",
+  bl: "bottom-0 left-0 rounded-bl-[20px]",
+  br: "bottom-0 right-0 rounded-br-[20px]",
+};
+
+// Rotation (deg) of the blue arc segment so it sits in the quadrant facing the hovered card.
+// Base arc lives in top-left quadrant -> 0deg points top-left.
+const arcRotation: Record<CardKey, number> = {
+  tl: 0,
+  tr: 90,
+  br: 180,
+  bl: 270,
+};
+
+const Card = ({
+  card,
+  hovered,
+  setHovered,
+}: {
+  card: CardDef;
+  hovered: CardKey | null;
+  setHovered: (k: CardKey | null) => void;
+}) => {
+  const isActive = hovered === card.key;
+  const { Icon } = card;
   return (
-    <section className="py-16 md:py-20 bg-ct-section">
+    <article
+      onMouseEnter={() => setHovered(card.key)}
+      onMouseLeave={() => setHovered(null)}
+      tabIndex={0}
+      onFocus={() => setHovered(card.key)}
+      onBlur={() => setHovered(null)}
+      className={`relative bg-background rounded-2xl p-6 flex flex-col justify-between aspect-[5/4] outline-none transition-all duration-200 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)] border-2 ${
+        isActive ? "border-primary" : "border-transparent ring-1 ring-border/40"
+      }`}
+    >
+      <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center">
+        <Icon className="w-5 h-5 text-muted-foreground" />
+      </div>
+      <div>
+        <h3 className="font-heading font-semibold text-lg text-foreground mb-1.5">{card.title}</h3>
+        <p className="text-sm text-muted-foreground leading-relaxed">{card.desc}</p>
+      </div>
+    </article>
+  );
+};
+
+const ServicesHub = ({
+  hovered,
+  setHovered,
+}: {
+  hovered: CardKey | null;
+  setHovered: (k: CardKey | null) => void;
+}) => {
+  const cardByKey = (k: CardKey) => CARDS.find((c) => c.key === k)!;
+
+  return (
+    <div className="relative mx-auto w-full max-w-[680px]">
+      {/* 2x2 grid */}
+      <div className="grid grid-cols-2 gap-10 md:gap-12">
+        <Card card={cardByKey("tl")} hovered={hovered} setHovered={setHovered} />
+        <Card card={cardByKey("tr")} hovered={hovered} setHovered={setHovered} />
+        <Card card={cardByKey("bl")} hovered={hovered} setHovered={setHovered} />
+        <Card card={cardByKey("br")} hovered={hovered} setHovered={setHovered} />
+      </div>
+
+      {/* Gap-filling fading strips (desktop only) */}
+      <div aria-hidden className="hidden md:block pointer-events-none">
+        {/* Top horizontal strip — sits in the top-row gap, between the two top cards */}
+        <div
+          className="absolute bg-background rounded-2xl shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
+          style={{
+            left: "20%",
+            right: "20%",
+            top: "calc(50% - 80px)",
+            height: "52px",
+            transform: "translateY(-100%)",
+            // fade outward from center horizontally
+            WebkitMaskImage:
+              "linear-gradient(to right, transparent 0%, black 35%, black 65%, transparent 100%)",
+            maskImage:
+              "linear-gradient(to right, transparent 0%, black 35%, black 65%, transparent 100%)",
+          }}
+        />
+        {/* Bottom horizontal strip */}
+        <div
+          className="absolute bg-background rounded-2xl shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
+          style={{
+            left: "20%",
+            right: "20%",
+            top: "calc(50% + 80px)",
+            height: "52px",
+            WebkitMaskImage:
+              "linear-gradient(to right, transparent 0%, black 35%, black 65%, transparent 100%)",
+            maskImage:
+              "linear-gradient(to right, transparent 0%, black 35%, black 65%, transparent 100%)",
+          }}
+        />
+        {/* Left vertical strip */}
+        <div
+          className="absolute bg-background rounded-2xl shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
+          style={{
+            top: "20%",
+            bottom: "20%",
+            left: "calc(50% - 80px)",
+            width: "52px",
+            transform: "translateX(-100%)",
+            WebkitMaskImage:
+              "linear-gradient(to bottom, transparent 0%, black 35%, black 65%, transparent 100%)",
+            maskImage:
+              "linear-gradient(to bottom, transparent 0%, black 35%, black 65%, transparent 100%)",
+          }}
+        />
+        {/* Right vertical strip */}
+        <div
+          className="absolute bg-background rounded-2xl shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
+          style={{
+            top: "20%",
+            bottom: "20%",
+            left: "calc(50% + 80px)",
+            width: "52px",
+            WebkitMaskImage:
+              "linear-gradient(to bottom, transparent 0%, black 35%, black 65%, transparent 100%)",
+            maskImage:
+              "linear-gradient(to bottom, transparent 0%, black 35%, black 65%, transparent 100%)",
+          }}
+        />
+      </div>
+
+      {/* CENTRAL DIAL — desktop only */}
+      <div
+        aria-hidden
+        className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20"
+        style={{ width: 104, height: 104 }}
+      >
+        {/* Layer 1: outer rounded square */}
+        <div className="absolute inset-0 rounded-[20px] bg-background shadow-[0_4px_18px_-6px_hsl(var(--primary)/0.25)] ring-1 ring-border/50 overflow-hidden">
+          {/* Corner fills */}
+          {(["tl", "tr", "bl", "br"] as CardKey[]).map((k) => (
+            <span
+              key={`corner-${k}`}
+              className={`absolute w-7 h-7 bg-primary transition-opacity duration-300 ${cornerClass[k]} ${
+                hovered === k ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          ))}
+        </div>
+
+        {/* Layer 2: white circle (creates ring gap) */}
+        <div className="absolute inset-[10px] rounded-full bg-background ring-1 ring-border/40 flex items-center justify-center">
+          {/* Layer 2.5: rotating blue arc segment in the ring gap */}
+          <div
+            className="absolute inset-0 transition-transform duration-300 ease-out"
+            style={{
+              transform: `rotate(${hovered ? arcRotation[hovered] : 0}deg)`,
+              opacity: hovered ? 1 : 0,
+              transitionProperty: "transform, opacity",
+            }}
+          >
+            <svg viewBox="0 0 100 100" className="w-full h-full">
+              {/* Arc lives in top-left quadrant when rotation = 0 */}
+              <path
+                d="M 50 12 A 38 38 0 0 0 12 50"
+                fill="none"
+                stroke="hsl(var(--primary))"
+                strokeWidth="7"
+                strokeLinecap="round"
+              />
+            </svg>
+          </div>
+
+          {/* Layer 3: inner blue circle with logo */}
+          <div className="relative w-[54px] h-[54px] rounded-full bg-primary flex items-center justify-center shadow-[0_2px_10px_hsl(var(--primary)/0.45)]">
+            <span className="text-primary-foreground font-heading font-bold text-lg leading-none">m</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const WhyChoose = () => {
+  const [hovered, setHovered] = useState<CardKey | null>(null);
+
+  return (
+    <section className="py-16 md:py-24 bg-ct-section">
       <div className="container-main">
         <div className="flex justify-center mb-6">
           <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider rounded-full border border-primary/30 bg-primary/5 text-primary">
@@ -10,6 +214,10 @@ const WhyChoose = () => {
         <h2 className="text-3xl md:text-4xl font-heading font-bold text-center">
           Why Brands Choose <span className="gradient-text">Connecttly</span>
         </h2>
+
+        <div className="mt-14">
+          <ServicesHub hovered={hovered} setHovered={setHovered} />
+        </div>
       </div>
     </section>
   );
