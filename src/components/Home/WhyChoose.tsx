@@ -2,16 +2,15 @@ import { useState } from "react";
 import icon1 from "@/assets/why/icon-1.svg";
 import icon2 from "@/assets/why/icon-2.svg";
 import icon3 from "@/assets/why/icon-3.svg";
-import dialPointer from "@/assets/why/dial-pointer.svg";
 
-type Item = { id: number; title: string; desc: string; icon: string; angle: number };
+type Item = { id: number; title: string; desc: string; icon: string; pointerAngle: number };
 
-// Pointer SVG points UP by default. We rotate so it points toward the active card.
+// pointerAngle: rotation of the blue arc indicator. 0deg = points to top-left card.
 const items: Item[] = [
-  { id: 0, title: "Strategy + Execution", desc: "We don't just advise — we build and run your growth engine.", icon: icon1, angle: -45 },   // top-left
-  { id: 1, title: "AI-Powered Marketing", desc: "Automation and AI tools drive efficiency and scale.",            icon: icon2, angle: 45 },    // top-right
-  { id: 2, title: "Performance Focused",  desc: "Every campaign is optimised for measurable ROI.",                icon: icon3, angle: -135 },  // bottom-left
-  { id: 3, title: "Founder-Friendly",     desc: "We work closely with startups and growth-stage businesses.",     icon: icon1, angle: 135 },   // bottom-right
+  { id: 0, title: "Strategy + Execution", desc: "We don't just advise — we build and run your growth engine.", icon: icon1, pointerAngle: 0 },
+  { id: 1, title: "AI-Powered Marketing", desc: "Automation and AI tools drive efficiency and scale.",            icon: icon2, pointerAngle: 90 },
+  { id: 2, title: "Performance Focused",  desc: "Every campaign is optimised for measurable ROI.",                icon: icon3, pointerAngle: 270 },
+  { id: 3, title: "Founder-Friendly",     desc: "We work closely with startups and growth-stage businesses.",     icon: icon1, pointerAngle: 180 },
 ];
 
 const WhyChoose = () => {
@@ -30,7 +29,7 @@ const WhyChoose = () => {
           Why Brands Choose <span className="gradient-text">Connecttly</span>
         </h2>
 
-        <div className="relative grid md:grid-cols-2 gap-5 mt-12 max-w-3xl mx-auto">
+        <div className="relative grid md:grid-cols-2 gap-6 mt-12 max-w-2xl mx-auto">
           {items.map((item) => {
             const isActive = item.id === activeId;
             return (
@@ -39,39 +38,55 @@ const WhyChoose = () => {
                 onMouseEnter={() => setActiveId(item.id)}
                 onFocus={() => setActiveId(item.id)}
                 tabIndex={0}
-                className={`bg-background rounded-2xl p-6 flex flex-col items-start cursor-pointer transition-all duration-300 border-2 outline-none ${
+                className={`relative aspect-square bg-background rounded-2xl p-6 flex flex-col items-start justify-between cursor-pointer transition-all duration-300 outline-none ${
                   isActive
-                    ? "border-primary shadow-[0_8px_24px_-8px_hsl(var(--primary)/0.35)]"
-                    : "border-transparent shadow-[0_4px_18px_-8px_hsl(var(--foreground)/0.15)]"
+                    ? "ring-2 ring-primary shadow-[0_8px_28px_-8px_hsl(var(--primary)/0.35)]"
+                    : "ring-1 ring-border/60 shadow-[0_4px_18px_-10px_hsl(var(--foreground)/0.18)]"
                 }`}
               >
                 <img src={item.icon} alt="" width={64} height={64} className="w-16 h-16 -ml-2 -mt-2" loading="lazy" />
-                <h3
-                  className={`font-heading font-semibold text-lg mt-3 mb-2 transition-colors ${
-                    isActive ? "text-primary" : "text-foreground"
-                  }`}
-                >
-                  {item.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                <div>
+                  <h3
+                    className={`font-heading font-semibold text-lg mb-2 transition-colors ${
+                      isActive ? "text-primary" : "text-foreground"
+                    }`}
+                  >
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                </div>
               </article>
             );
           })}
 
-          {/* Center dial */}
+          {/* Center dial — fixed white tile with soft blue inner glow + rotating arc pointer */}
           <div
             aria-hidden
-            className="hidden md:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-background items-center justify-center z-10 shadow-[0_8px_24px_-4px_hsl(var(--primary)/0.35)] ring-1 ring-border"
+            className="hidden md:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[88px] h-[88px] rounded-2xl bg-background items-center justify-center z-10 shadow-[0_10px_28px_-6px_hsl(var(--primary)/0.45)] ring-1 ring-border"
           >
-            <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-[hsl(var(--primary)/0.75)] flex items-center justify-center">
-              <img
-                src={dialPointer}
-                alt=""
-                width={28}
-                height={20}
-                className="transition-transform duration-500 ease-out"
-                style={{ transform: `rotate(${active.angle}deg)` }}
-              />
+            {/* Soft blue concentric glow */}
+            <div className="relative w-16 h-16 rounded-full bg-[hsl(var(--primary)/0.10)] flex items-center justify-center">
+              <div className="absolute inset-2 rounded-full bg-[hsl(var(--primary)/0.18)]" />
+
+              {/* Rotating arc pointer — quarter-circle blue sector that sweeps to the active card */}
+              <div
+                className="absolute inset-0 transition-transform duration-500 ease-out"
+                style={{ transform: `rotate(${active.pointerAngle}deg)` }}
+              >
+                <svg viewBox="0 0 64 64" className="w-full h-full overflow-visible">
+                  {/* top-left quadrant arc/sector */}
+                  <path
+                    d="M 32 32 L 32 0 A 32 32 0 0 0 0 32 Z"
+                    fill="hsl(var(--primary))"
+                    opacity="0.95"
+                  />
+                </svg>
+              </div>
+
+              {/* Fixed logo bubble in the center (does not rotate) */}
+              <div className="relative w-9 h-9 rounded-full bg-background flex items-center justify-center shadow-[0_2px_8px_hsl(var(--primary)/0.35)] z-10">
+                <span className="text-primary font-heading font-bold text-sm leading-none">np</span>
+              </div>
             </div>
           </div>
         </div>
