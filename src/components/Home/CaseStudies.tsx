@@ -50,7 +50,7 @@ const CaseStudies = () => {
 
         <div className="mt-12 max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-center">
           {/* Left - Accordion list */}
-          <div className="space-y-0">
+          <div className="space-y-0" onMouseLeave={() => setActiveKey(CASES[0].key)}>
             {CASES.map((c, i) => {
               const isOpen = activeKey === c.key;
               const isLast = i === CASES.length - 1;
