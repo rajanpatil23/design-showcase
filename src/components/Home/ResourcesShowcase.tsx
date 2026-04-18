@@ -165,6 +165,7 @@ const ResourcesShowcase = () => {
               </div>
             </div>
           </div>
+        </div>
 
         {/* Mobile carousel */}
         <div className="md:hidden mt-6">
