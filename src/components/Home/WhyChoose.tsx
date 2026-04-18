@@ -79,7 +79,7 @@ const ServicesHub = ({
   return (
     <div className="relative mx-auto w-full max-w-[680px]">
       {/* 2x2 grid */}
-      <div className="grid grid-cols-2 gap-6 md:gap-16">
+      <div className="grid grid-cols-2 gap-8 md:gap-24">
         <Card card={cardByKey("tl")} hovered={hovered} setHovered={setHovered} />
         <Card card={cardByKey("tr")} hovered={hovered} setHovered={setHovered} />
         <Card card={cardByKey("bl")} hovered={hovered} setHovered={setHovered} />
