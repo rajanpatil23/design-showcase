@@ -7,16 +7,21 @@ import servicesHero from "@/assets/services-hero-person.jpg";
 import illustrationStrategist from "@/assets/services/illustration-strategist.png";
 import illustrationQuiz from "@/assets/services/illustration-quiz.png";
 import illustrationBrief from "@/assets/services/illustration-brief.png";
+import illuGoogleAds from "@/assets/services/illu-google-ads.png";
+import illuMetaAds from "@/assets/services/illu-meta-ads.png";
+import illuLinkedinAds from "@/assets/services/illu-linkedin-ads.png";
+import illuYoutubeAds from "@/assets/services/illu-youtube-ads.png";
+import illuCro from "@/assets/services/illu-cro.png";
 
 const categories = ["Performance", "Social Media", "LinkedIn", "SEO", "Content", "Web & AI"];
 
 const serviceCards = [
-  { title: "Google Ads Management", desc: "Your competitors are bidding on your keywords right now. We make sure you win.", cta: "Get a Free Audit", icon: <Search className="w-8 h-8 text-primary" />, link: "/services/google-ads" },
-  { title: "Meta Ads Management", desc: "3 seconds to stop the scroll. We make everyone count — and convert.", cta: "Get a Free Audit", icon: <Megaphone className="w-8 h-8 text-primary" /> },
-  { title: "LinkedIn Ads Management", desc: "Reach the C-suite by name, title, and company. Not by guessing.", cta: "Get a Free Audit", icon: <Users className="w-8 h-8 text-primary" /> },
-  { title: "YouTube Ads Management", desc: "6 seconds before they skip. We make them stay — and act.", cta: "Get a Free Audit", icon: <Youtube className="w-8 h-8 text-primary" /> },
-  { title: "Conversion Rate Optimisation", desc: "Same traffic. More customers. We find the leaks and fix them.", cta: "Fix My Funnel", icon: <TrendingUp className="w-8 h-8 text-primary" /> },
-  { title: "Performance Marketing Bundle", desc: "Every paid channel. One war room. Maximum ROI.", cta: "Explore Bundle", icon: <BarChart3 className="w-8 h-8 text-primary" />, recommended: true },
+  { title: "Google Ads Management", desc: "Your competitors are bidding on your keywords right now. We make sure you win.", cta: "Get a Free Audit", image: illuGoogleAds, link: "/services/google-ads" },
+  { title: "Meta Ads Management", desc: "3 seconds to stop the scroll. We make everyone count — and convert.", cta: "Get a Free Audit", image: illuMetaAds },
+  { title: "LinkedIn Ads Management", desc: "Reach the C-suite by name, title, and company. Not by guessing.", cta: "Get a Free Audit", image: illuLinkedinAds },
+  { title: "YouTube Ads Management", desc: "6 seconds before they skip. We make them stay — and act.", cta: "Get a Free Audit", image: illuYoutubeAds },
+  { title: "Conversion Rate Optimisation", desc: "Same traffic. More customers. We find the leaks and fix them.", cta: "Fix My Funnel", image: illuCro },
+  { title: "Performance Marketing Bundle", desc: "Every paid channel. One war room. Maximum ROI.", cta: "Explore Bundle", recommended: true },
 ];
 
 const ctaCards = [
@@ -94,23 +99,47 @@ const ServicesPage = () => {
             ))}
           </div>
           <div className="grid md:grid-cols-3 gap-6">
-            {serviceCards.map((s) => (
-              <div key={s.title} className={`bg-background rounded-xl border p-6 flex flex-col ${s.recommended ? "border-primary ring-2 ring-primary/20" : "border-border"}`}>
-                {s.recommended && (
-                  <span className="text-xs font-semibold bg-primary text-primary-foreground px-3 py-1 rounded-full self-start mb-3">Recommended</span>
-                )}
-                <div className="p-3 rounded-lg bg-ct-blue-light inline-block self-start mb-4">{s.icon}</div>
-                <h3 className="font-heading font-semibold text-lg mb-2">{s.title}</h3>
-                <p className="text-sm text-muted-foreground mb-4 flex-1">{s.desc}</p>
-                <Button
-                  variant="outline"
-                  className="rounded-full font-semibold text-primary border-primary hover:bg-primary hover:text-primary-foreground w-full"
-                  asChild={!!s.link}
-                >
-                  {s.link ? <Link to={s.link}>{s.cta}</Link> : <span>{s.cta}</span>}
-                </Button>
-              </div>
-            ))}
+            {serviceCards.map((s) =>
+              s.recommended ? (
+                <div key={s.title} className="relative overflow-hidden rounded-2xl bg-primary text-primary-foreground p-6 flex flex-col shadow-[0_10px_30px_hsl(var(--primary)/0.35)]">
+                  {/* Recommended ribbon */}
+                  <div className="absolute -top-1 -left-1 w-28 h-28 pointer-events-none">
+                    <div className="absolute top-5 -left-7 rotate-[-45deg] bg-[hsl(48,96%,58%)] text-foreground text-[10px] font-bold tracking-wide px-10 py-1 shadow-md">
+                      Recommended
+                    </div>
+                  </div>
+                  {/* Channel logos */}
+                  <div className="grid grid-cols-3 gap-2 mb-6 mt-6 max-w-[180px]">
+                    {[illuGoogleAds, illuMetaAds, illuLinkedinAds, null, illuYoutubeAds].map((img, i) => (
+                      img ? (
+                        <div key={i} className="bg-background rounded-lg p-2 aspect-square flex items-center justify-center">
+                          <img src={img} alt="" className="w-full h-full object-contain" loading="lazy" width={64} height={64} />
+                        </div>
+                      ) : <div key={i} />
+                    ))}
+                  </div>
+                  <h3 className="font-heading font-semibold text-lg mb-2">{s.title}</h3>
+                  <p className="text-sm opacity-90 mb-5 flex-1">{s.desc}</p>
+                  <Button className="rounded-full font-semibold w-full bg-background text-primary hover:bg-background/90">
+                    {s.cta}
+                  </Button>
+                </div>
+              ) : (
+                <div key={s.title} className="bg-background rounded-2xl border border-border p-5 flex flex-col shadow-[0_2px_10px_hsl(var(--foreground)/0.04)]">
+                  <div className="rounded-xl bg-ct-blue-light/60 aspect-[4/3] flex items-center justify-center mb-5 overflow-hidden">
+                    <img src={s.image} alt={s.title} className="w-3/4 h-3/4 object-contain" loading="lazy" width={300} height={225} />
+                  </div>
+                  <h3 className="font-heading font-semibold text-lg mb-2">{s.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-5 flex-1">{s.desc}</p>
+                  <Button
+                    className="rounded-full font-semibold w-full"
+                    asChild={!!s.link}
+                  >
+                    {s.link ? <Link to={s.link}>{s.cta}</Link> : <span>{s.cta}</span>}
+                  </Button>
+                </div>
+              )
+            )}
           </div>
         </div>
       </section>
