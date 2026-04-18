@@ -6,6 +6,7 @@ import Hero from "@/components/Home/Hero";
 import ServicesGrid from "@/components/Home/ServicesGrid";
 import WhyChoose from "@/components/Home/WhyChoose";
 import CaseStudies from "@/components/Home/CaseStudies";
+import ResourcesShowcase from "@/components/Home/ResourcesShowcase";
 import testimonialPerson from "@/assets/testimonial-person.jpg";
 import blogIllustration from "@/assets/blog-illustration.jpg";
 
@@ -289,42 +290,7 @@ const HomePage = () => {
       </section>
 
       {/* Resource Hub */}
-      <section className="py-16 md:py-20">
-        <div className="container-main">
-          <SectionLabel label="Resource Hub" />
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mt-4">
-            Fuel Your <span className="gradient-text">Marketing Success</span>
-          </h2>
-          <div className="flex flex-wrap justify-center gap-3 mt-8">
-            {resourceTabs.map((tab, i) => (
-              <button
-                key={tab}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
-                  i === 0
-                    ? "bg-primary text-primary-foreground"
-                    : "border border-border text-muted-foreground hover:bg-secondary"
-                }`}
-              >
-                {tab}
-              </button>
-            ))}
-          </div>
-          <div className="mt-10 max-w-3xl mx-auto bg-ct-section rounded-xl border border-border p-8 grid md:grid-cols-2 gap-6 items-center">
-            <div>
-              <h3 className="text-2xl font-heading font-semibold gradient-text">Blog</h3>
-              <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
-                Benchmark reports and platform updates to keep you always ahead in LinkedIn and social media strategy.
-              </p>
-              <button className="text-sm text-primary font-semibold mt-5 flex items-center gap-1 hover:underline">
-                Read Updates <ArrowUpRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
-            <div className="rounded-lg overflow-hidden">
-              <img src={blogIllustration} alt="Blog" className="w-full object-cover rounded-lg" loading="lazy" width={512} height={512} />
-            </div>
-          </div>
-        </div>
-      </section>
+      <ResourcesShowcase />
     </div>
   );
 };
