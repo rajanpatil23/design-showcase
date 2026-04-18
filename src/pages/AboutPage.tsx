@@ -180,19 +180,47 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="section-padding">
+      {/* How It Works — Dark Section (mirrors Home) */}
+      <section className="py-16 md:py-24 bg-[#09233C]">
         <div className="container-main">
-          <SectionLabel label="Why Us" />
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center">How Connecttly Works</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-            {steps.map((step, i) => (
-              <div key={step.num} className={`rounded-xl p-6 text-center ${i === 0 ? "border-2 border-primary bg-background" : "bg-primary text-primary-foreground"}`}>
-                <span className={`text-5xl font-heading font-bold ${i === 0 ? "text-primary" : "text-primary-foreground/30"}`}>{step.num}</span>
-                <h3 className="font-heading font-semibold text-lg mt-4">{step.title}</h3>
-                {step.desc && <p className={`text-xs mt-2 ${i === 0 ? "text-muted-foreground" : "text-primary-foreground/70"}`}>{step.desc}</p>}
-              </div>
-            ))}
+          <div className="flex justify-center mb-6">
+            <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider rounded-full border border-primary/40 bg-primary/10 text-primary">
+              Why Us
+            </span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center text-white">
+            How <span className="gradient-text">Connecttly</span> Works
+          </h2>
+
+          {/* Cards + connector arrows */}
+          <div className="relative mt-16 max-w-5xl mx-auto">
+            <svg
+              aria-hidden
+              className="hidden md:block absolute inset-x-0 -top-12 w-full h-12 pointer-events-none overflow-visible"
+              viewBox="0 0 100 12"
+              preserveAspectRatio="none"
+            >
+              <path d="M 16 12 Q 25 -2 34 12" fill="none" stroke="#ffffff" strokeWidth="1.4" strokeLinecap="butt" vectorEffect="non-scaling-stroke" className="animated-dash" />
+              <path d="M 66 12 Q 75 -2 84 12" fill="none" stroke="#ffffff" strokeWidth="1.4" strokeLinecap="butt" vectorEffect="non-scaling-stroke" className="animated-dash" />
+            </svg>
+            <svg
+              aria-hidden
+              className="hidden md:block absolute inset-x-0 -bottom-12 w-full h-12 pointer-events-none overflow-visible"
+              viewBox="0 0 100 12"
+              preserveAspectRatio="none"
+            >
+              <path d="M 41 0 Q 50 16 59 0" fill="none" stroke="#ffffff" strokeWidth="1.4" strokeLinecap="butt" vectorEffect="non-scaling-stroke" className="animated-dash" />
+            </svg>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+              {steps.map((step) => (
+                <div key={step.num} className="rounded-2xl p-6 bg-primary min-h-[210px] flex flex-col">
+                  <span className="text-5xl md:text-6xl font-heading font-bold leading-none text-white">{step.num}</span>
+                  <h3 className="font-heading font-semibold text-lg mt-5 text-white">{step.title}</h3>
+                  {step.desc && <p className="text-xs mt-2 leading-relaxed text-white/75">{step.desc}</p>}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
