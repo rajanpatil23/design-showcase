@@ -1,10 +1,11 @@
 import SectionLabel from "@/components/SectionLabel";
 import StatsBar from "@/components/StatsBar";
 import { Button } from "@/components/ui/button";
-import { Linkedin, Quote, Shield, Zap, BarChart3, Handshake, Clock, Users, Building2, GraduationCap, Home, Stethoscope, Cpu, Briefcase, RefreshCw } from "lucide-react";
+import { Linkedin, Quote, Shield, Zap, BarChart3, Handshake, Clock, Users, Building2, GraduationCap, Building, HeartPulse, Cpu, Briefcase, RefreshCw, Code2 } from "lucide-react";
 import founderImg from "@/assets/founder-neeraj.jpg";
 import teamImg from "@/assets/team-collab.jpg";
 import testimonialImg from "@/assets/testimonial-person.jpg";
+import connecttlyMark from "@/assets/connecttly-mark.svg";
 
 const aboutStats = [
   { value: "15,000+", label: "Qualified Leads Generated" },
@@ -48,13 +49,15 @@ const clientTypes = [
   { title: "EdTech & Training Companies", desc: "You're building an audience and need a content strategy, paid acquisition, and brand positioning that drives enrollments.", icon: <GraduationCap className="w-5 h-5 text-primary" /> },
 ];
 
-const industries = [
-  { name: "SaaS & Technology", icon: <Cpu className="w-8 h-8 text-primary" /> },
-  { name: "Enterprise Automation", icon: <Building2 className="w-8 h-8 text-primary" /> },
-  { name: "EdTech & E-Learning", icon: <GraduationCap className="w-8 h-8 text-primary" /> },
-  { name: "Real Estate & Co-Working", icon: <Home className="w-8 h-8 text-primary" /> },
-  { name: "Professional Services", icon: <Briefcase className="w-8 h-8 text-primary" /> },
-  { name: "Healthcare & Wellness", icon: <Stethoscope className="w-8 h-8 text-primary" /> },
+const industriesLeft = [
+  { name: "SaaS & Technology", icon: <Code2 className="w-5 h-5 text-primary" /> },
+  { name: "EdTech & E-Learning", icon: <GraduationCap className="w-5 h-5 text-primary" /> },
+  { name: "Professional Services", icon: <Briefcase className="w-5 h-5 text-primary" /> },
+];
+const industriesRight = [
+  { name: "Enterprise Automation", icon: <Building2 className="w-5 h-5 text-primary" /> },
+  { name: "Real Estate & Co-Working", icon: <Building className="w-5 h-5 text-primary" /> },
+  { name: "Healthcare & Wellness", icon: <HeartPulse className="w-5 h-5 text-primary" /> },
 ];
 
 const AboutPage = () => {
