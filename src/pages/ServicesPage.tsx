@@ -29,7 +29,7 @@ const ServicesPage = () => {
   return (
     <div>
       {/* Hero */}
-      <section className="section-padding">
+      <section className="pt-6 md:pt-10 pb-16 md:pb-20">
         <div className="container-main">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
