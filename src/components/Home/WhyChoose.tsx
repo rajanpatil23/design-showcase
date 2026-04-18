@@ -89,7 +89,7 @@ const ServicesHub = ({
       <div aria-hidden className="hidden md:block pointer-events-none">
         {/* WEST strip — fades toward the left (outer) */}
         <div
-          className="absolute -translate-y-1/2 bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
+          className="absolute -translate-y-1/2 bg-background rounded-lg ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
           style={{
             top: "50%",
             left: 0,
@@ -101,7 +101,7 @@ const ServicesHub = ({
         />
         {/* EAST strip — fades toward the right (outer) */}
         <div
-          className="absolute -translate-y-1/2 bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
+          className="absolute -translate-y-1/2 bg-background rounded-lg ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
           style={{
             top: "50%",
             right: 0,
@@ -113,7 +113,7 @@ const ServicesHub = ({
         />
         {/* NORTH strip — fades toward the top (outer) */}
         <div
-          className="absolute -translate-x-1/2 bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
+          className="absolute -translate-x-1/2 bg-background rounded-lg ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
           style={{
             left: "50%",
             top: 0,
@@ -125,7 +125,7 @@ const ServicesHub = ({
         />
         {/* SOUTH strip — fades toward the bottom (outer) */}
         <div
-          className="absolute -translate-x-1/2 bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
+          className="absolute -translate-x-1/2 bg-background rounded-lg ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
           style={{
             left: "50%",
             bottom: 0,
