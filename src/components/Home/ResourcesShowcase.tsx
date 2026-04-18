@@ -135,7 +135,7 @@ const ResourcesShowcase = () => {
 
         {/* Desktop panel */}
         <div className="hidden md:block mt-6">
-          <div className={`rounded-3xl border border-border/60 shadow-[12px_16px_32px_-12px_hsl(var(--foreground)/0.18)] ${PANEL_BG[activeIndex % PANEL_BG.length]}`}>
+          <div className={`rounded-3xl border border-border/60 shadow-[12px_16px_32px_-12px_hsl(var(--foreground)/0.18)] overflow-hidden ${PANEL_BG[activeIndex % PANEL_BG.length]}`}>
             <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-6 p-5 md:p-6 h-[380px]">
               <div className="order-2 md:order-1 self-center">
                 <h3 className="text-2xl md:text-3xl font-heading font-bold text-primary">
@@ -152,14 +152,14 @@ const ResourcesShowcase = () => {
                   </Link>
                 </div>
               </div>
-              <div className="order-1 md:order-2 flex items-center justify-end h-full">
-                <div className="relative overflow-hidden rounded-2xl w-full h-full flex items-center justify-center">
+              <div className="order-1 md:order-2 flex items-center justify-end h-full relative">
+                <div className="relative w-full h-full flex items-center justify-center overflow-visible">
                   <img
                     key={current.key}
                     src={current.img.src}
                     alt={current.img.alt}
                     loading="lazy"
-                    className="block max-w-full max-h-full object-contain animate-fade-in"
+                    className="block max-w-none h-auto w-auto max-h-[460px] object-contain animate-fade-in"
                   />
                 </div>
               </div>
