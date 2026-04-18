@@ -155,16 +155,25 @@ const AboutPage = () => {
       {/* Principles */}
       <section className="section-padding bg-ct-section">
         <div className="container-main">
-          <SectionLabel label="What We Stand For" />
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center">
+          <div className="flex justify-center mb-4">
+            <SectionLabel label="What We Stand For" />
+          </div>
+          <h2 className="text-3xl md:text-5xl font-heading font-bold text-center max-w-2xl mx-auto leading-tight">
             The Principles Behind Our Work
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+          <div className="grid md:grid-cols-3 gap-6 mt-12 items-start">
             {principles.map((p) => (
-              <div key={p.title} className="bg-background rounded-xl border border-border p-6">
+              <div
+                key={p.title}
+                className="group bg-background rounded-xl border border-border p-6 shadow-[0_2px_10px_hsl(var(--foreground)/0.04)] cursor-pointer transition-all duration-300"
+              >
                 <div className="p-3 rounded-lg bg-ct-blue-light inline-block mb-4">{p.icon}</div>
                 <h3 className="font-heading font-semibold text-lg mb-2">{p.title}</h3>
-                <p className="text-sm text-muted-foreground">{p.desc}</p>
+                <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-300 ease-out">
+                  <div className="overflow-hidden">
+                    <p className="text-sm text-muted-foreground pt-1">{p.desc}</p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
