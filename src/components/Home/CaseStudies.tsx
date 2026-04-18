@@ -60,7 +60,7 @@ const CaseStudies = () => {
                   onMouseEnter={() => setActiveKey(c.key)}
                   onFocus={() => setActiveKey(c.key)}
                   tabIndex={0}
-                  className={`outline-none ${isLast ? "" : "border-b border-white/10"} ${isOpen ? "pt-1 pb-5 mb-5" : "py-4"}`}
+                  className={`outline-none ${isLast ? "" : "border-b border-white/10"} ${isOpen ? "pb-5 mb-5" : "py-4"}`}
                 >
                   <h3
                     className={`font-heading font-semibold text-lg transition-colors duration-200 ${
