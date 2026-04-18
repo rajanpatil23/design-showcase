@@ -144,10 +144,10 @@ const ResourcesShowcase = () => {
                 <div className="mt-6">
                   <Link
                     to={current.cta.to}
-                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline group/btn"
+                    className="inline-flex items-center gap-2 text-base md:text-lg font-semibold text-primary hover:underline group/btn"
                   >
                     {current.cta.label}
-                    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 ease-out group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                    <ArrowUpRight className="h-5 w-5 md:h-6 md:w-6 transition-transform duration-300 ease-out group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                   </Link>
                 </div>
               </div>
