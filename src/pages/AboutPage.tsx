@@ -132,13 +132,16 @@ const AboutPage = () => {
 
       {/* Mission */}
       <section className="section-padding">
-        <div className="container-main text-center">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-8">Our Mission</h2>
-          <div className="max-w-3xl mx-auto bg-ct-blue-light rounded-2xl p-8 md:p-12">
-            <Quote className="w-10 h-10 text-primary/40 mx-auto mb-4" />
-            <p className="text-lg md:text-xl font-heading font-medium text-foreground italic leading-relaxed">
-              "To make world-class growth marketing accessible to every ambitious brand — regardless of size or budget — by combining strategy, execution, and AI-powered automation."
-            </p>
+        <div className="container-main">
+          <div className="bg-[hsl(222,47%,11%)] text-white rounded-2xl p-8 md:p-14">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-8">Our Mission</h2>
+            <div className="flex items-start gap-4 md:gap-6">
+              <Quote className="w-10 h-10 md:w-12 md:h-12 text-white/80 shrink-0 -scale-x-100" />
+              <p className="flex-1 text-center text-base md:text-xl font-heading leading-relaxed">
+                "To make world-class growth marketing accessible to every ambitious brand — regardless of size or budget — by combining strategy, execution, and AI-powered automation."
+              </p>
+              <Quote className="w-10 h-10 md:w-12 md:h-12 text-white/80 shrink-0 self-end" />
+            </div>
           </div>
         </div>
       </section>
