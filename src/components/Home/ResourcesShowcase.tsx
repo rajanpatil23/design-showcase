@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect, useRef } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import SectionLabel from "@/components/SectionLabel";
 import blogIllustration from "@/assets/blog-illustration.jpg";
@@ -121,7 +121,7 @@ const ResourcesShowcase = () => {
                   onClick={() => setActive(tab.key)}
                   className={`whitespace-nowrap rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
                     selected
-                      ? "bg-foreground text-background border-foreground"
+                      ? "bg-primary text-primary-foreground border-primary"
                       : "bg-background text-foreground border-border hover:bg-secondary"
                   }`}
                 >
@@ -137,17 +137,17 @@ const ResourcesShowcase = () => {
           <div className={`rounded-3xl ${PANEL_BG[activeIndex % PANEL_BG.length]}`}>
             <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 p-6 md:p-10 min-h-[400px]">
               <div className="order-2 md:order-1">
-                <h3 className="text-3xl md:text-4xl font-heading font-bold text-foreground">
+                <h3 className="text-3xl md:text-4xl font-heading font-bold text-primary">
                   {current.title}
                 </h3>
                 <p className="mt-4 text-base md:text-lg text-foreground/75">{current.desc}</p>
                 <div className="mt-6">
                   <Link
                     to={current.cta.to}
-                    className="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-primary-foreground bg-foreground hover:bg-foreground/90 transition-colors group/btn"
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline group/btn"
                   >
                     {current.cta.label}
-                    <ArrowRight className="h-4 w-4 transition-transform duration-300 ease-out group-hover/btn:-rotate-45" />
+                    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 ease-out group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                   </Link>
                 </div>
               </div>
