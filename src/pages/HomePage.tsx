@@ -5,8 +5,8 @@ import SectionLabel from "@/components/SectionLabel";
 import Hero from "@/components/Home/Hero";
 import ServicesGrid from "@/components/Home/ServicesGrid";
 import WhyChoose from "@/components/Home/WhyChoose";
+import CaseStudies from "@/components/Home/CaseStudies";
 import testimonialPerson from "@/assets/testimonial-person.jpg";
-import caseStudyDashboard from "@/assets/case-study-dashboard.jpg";
 import blogIllustration from "@/assets/blog-illustration.jpg";
 
 const heroStats = [
@@ -241,40 +241,7 @@ const HomePage = () => {
       <WhyChoose />
 
       {/* Case Studies — Dark Section */}
-      <section className="py-16 md:py-20 bg-ct-dark">
-        <div className="container-main">
-          <div className="flex justify-center mb-6">
-            <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider rounded-full border border-primary/40 bg-primary/10 text-primary">
-              Case Study
-            </span>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center text-white">
-            Real <span className="gradient-text">Growth Stories</span>
-          </h2>
-          <div className="mt-12 max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-center">
-            {/* Left - Case Study List */}
-            <div className="space-y-0">
-              <div className="border-b border-white/10 pb-5 mb-5">
-                <h3 className="font-heading font-semibold text-lg text-white">EdTech Brand</h3>
-                <p className="text-sm text-white/60 mt-1">2M+ impressions generated through LinkedIn content strategy and organic growth.</p>
-                <button className="text-sm text-primary font-semibold mt-3 flex items-center gap-1 hover:underline">
-                  Read Case Study <ArrowUpRight className="w-3.5 h-3.5" />
-                </button>
-              </div>
-              <div className="border-b border-white/10 pb-5 mb-5">
-                <h3 className="font-heading font-semibold text-lg text-white/50">B2B SaaS Startup</h3>
-              </div>
-              <div>
-                <h3 className="font-heading font-semibold text-lg text-white/50">Service Business</h3>
-              </div>
-            </div>
-            {/* Right - Dashboard Image */}
-            <div className="rounded-xl overflow-hidden">
-              <img src={caseStudyDashboard} alt="Case Study Dashboard" className="w-full object-cover rounded-xl" loading="lazy" width={640} height={512} />
-            </div>
-          </div>
-        </div>
-      </section>
+      <CaseStudies />
 
       {/* Testimonials */}
       <section className="py-16 md:py-20">
