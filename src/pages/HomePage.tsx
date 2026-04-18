@@ -7,7 +7,7 @@ import ServicesGrid from "@/components/Home/ServicesGrid";
 import WhyChoose from "@/components/Home/WhyChoose";
 import CaseStudies from "@/components/Home/CaseStudies";
 import ResourcesShowcase from "@/components/Home/ResourcesShowcase";
-import testimonialPerson from "@/assets/testimonial-person.jpg";
+import ReviewCarousel from "@/components/Home/ReviewCarousel";
 import blogIllustration from "@/assets/blog-illustration.jpg";
 
 const heroStats = [
@@ -248,45 +248,11 @@ const HomePage = () => {
       <section className="py-16 md:py-20">
         <div className="container-main">
           <SectionLabel label="Testimonials" />
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mt-4">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mt-4 mb-10">
             What Our <span className="gradient-text">Clients Say</span>
           </h2>
-          <div className="mt-12 max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-0 items-stretch">
-              {/* Left - Testimonial Text */}
-              <div className="bg-background rounded-l-xl border border-border p-7 flex flex-col justify-center">
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-11 h-11 rounded-full overflow-hidden bg-ct-blue-light">
-                    <img src={testimonialPerson} alt="Kinjal M Jain" className="w-full h-full object-cover" loading="lazy" width={44} height={44} />
-                  </div>
-                  <div>
-                    <p className="font-heading font-semibold text-sm">Kinjal M Jain</p>
-                    <p className="text-xs text-muted-foreground">Founder, Mending Mind</p>
-                  </div>
-                </div>
-                <Quote className="w-8 h-8 text-primary/20 mb-3" />
-                <p className="text-sm text-muted-foreground italic leading-relaxed">
-                  Connecttly helped us harness AI-powered analytics to uncover insights we were missing. From dashboards to automation, they gave clarity and optimized campaigns in real time. Like having a full analytics team on demand.
-                </p>
-              </div>
-              {/* Right - Person Image with video overlay */}
-              <div className="relative rounded-r-xl overflow-hidden min-h-[320px]">
-                <img src={testimonialPerson} alt="Kinjal M Jain" className="w-full h-full object-cover absolute inset-0" loading="lazy" width={400} height={400} />
-                {/* Play button overlay */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center shadow-lg cursor-pointer hover:bg-primary/90 transition-colors">
-                    <Play className="w-6 h-6 text-white fill-white ml-0.5" />
-                  </div>
-                </div>
-                {/* Name overlay at bottom */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-5">
-                  <p className="text-white font-heading font-semibold text-sm">Kinjal M Jain</p>
-                  <p className="text-white/70 text-xs">Founder of Mending Minds</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
+        <ReviewCarousel noPadding />
       </section>
 
       {/* Resource Hub */}

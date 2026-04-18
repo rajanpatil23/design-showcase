@@ -1,0 +1,185 @@
+import * as React from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import type { EmblaOptionsType } from "embla-carousel";
+import testimonialPerson from "@/assets/testimonial-person.jpg";
+import edgeLogo from "@/assets/brands/the-edu-edge.svg";
+import oceanLogo from "@/assets/brands/the-edu-ocean.svg";
+import actionSyncLogo from "@/assets/brands/action-sync.svg";
+import infosecLogo from "@/assets/brands/infosec-minds.svg";
+import yttLogo from "@/assets/brands/ytt-global.svg";
+import evolveuLogo from "@/assets/brands/evolveu.svg";
+
+type ReviewItem = {
+  brand: string;
+  brandLogo: string;
+  quote: string;
+  person: { name: string; title: string; avatar: string };
+};
+
+const DEFAULT_REVIEWS: ReviewItem[] = [
+  {
+    brand: "The Edu Ocean",
+    brandLogo: oceanLogo,
+    quote:
+      "Connecttly exceeded expectations with their strategic ad campaigns. From research to budget optimization, they drove real ROI across Google, Meta, LinkedIn, and YouTube. A reliable partner in scaling performance marketing.",
+    person: { name: "Karm Veer Singh", title: "Founder & CEO, The Edu Ocean", avatar: testimonialPerson },
+  },
+  {
+    brand: "EvolveU",
+    brandLogo: evolveuLogo,
+    quote:
+      "Exploring LinkedIn Ads for the first time was seamless with Connecttly. Their insights helped me optimize my profile, generate leads, and grow with confidence. Excited to see the long-term impact!",
+    person: { name: "Ankit Doshi", title: "Director, EvolveU", avatar: testimonialPerson },
+  },
+  {
+    brand: "Infosec Minds",
+    brandLogo: infosecLogo,
+    quote:
+      "Connecttly's ghostwriting and creative storytelling captured my voice authentically. They turned ideas into engaging posts that resonated with my audience. Professional, creative, and effortless to work with.",
+    person: { name: "Ankit Pahwa", title: "Software Engineer", avatar: testimonialPerson },
+  },
+  {
+    brand: "ActionSync",
+    brandLogo: actionSyncLogo,
+    quote:
+      "Partnering with Connecttly on demand generation was a game-changer. They built a strategy that attracted the right audience, nurtured leads, and strengthened our pipeline. Their precision and creativity made real impact.",
+    person: { name: "Tushar Dublish", title: "Founder, ActionSync", avatar: testimonialPerson },
+  },
+  {
+    brand: "The Edu Edge",
+    brandLogo: edgeLogo,
+    quote:
+      "Connecttly helped us harness AI-powered analytics to uncover insights we were missing. From dashboards to automation, they gave clarity and optimized campaigns in real time. Like having a full analytics team on demand.",
+    person: { name: "Kinjal M Jain", title: "Founder, Mending Mind", avatar: testimonialPerson },
+  },
+  {
+    brand: "YTT Global",
+    brandLogo: yttLogo,
+    quote:
+      "Growing our LinkedIn page with Connecttly was transformative. They went beyond numbers—strengthening brand credibility, improving engagement, and building trust. Their strategies truly elevated our reputation.",
+    person: { name: "Manwendrasinh Jadeja", title: "Founder & CEO, YTT Global", avatar: testimonialPerson },
+  },
+];
+
+type Props = {
+  items?: ReviewItem[];
+  options?: EmblaOptionsType;
+  noPadding?: boolean;
+};
+
+export default function ReviewCarousel({
+  items = DEFAULT_REVIEWS,
+  options = { loop: true, align: "center", containScroll: "trimSnaps" },
+  noPadding = false,
+}: Props) {
+  const [emblaRef, emblaApi] = useEmblaCarousel(options);
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
+
+  const scrollPrev = React.useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+  const scrollNext = React.useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+
+  const onSelect = React.useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  React.useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
+    return () => {
+      emblaApi.off("select", onSelect);
+      emblaApi.off("reInit", onSelect);
+    };
+  }, [emblaApi, onSelect]);
+
+  return (
+    <section className={`${noPadding ? "" : "py-16"} overflow-hidden bg-transparent`}>
+      <div className="relative">
+        {/* edge fades */}
+        <div className="hidden lg:block pointer-events-none absolute inset-y-0 left-0 w-48 xl:w-64 z-10 bg-gradient-to-r from-background via-background/80 to-transparent" />
+        <div className="hidden lg:block pointer-events-none absolute inset-y-0 right-0 w-48 xl:w-64 z-10 bg-gradient-to-l from-background via-background/80 to-transparent" />
+
+        {/* arrows */}
+        <button
+          onClick={scrollPrev}
+          aria-label="Previous"
+          className="hidden sm:inline-flex absolute left-4 sm:left-6 lg:left-12 top-1/2 -translate-y-1/2 z-20 h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full bg-background shadow-[0_8px_24px_hsl(var(--foreground)/0.10)] ring-1 ring-border hover:scale-105 transition"
+        >
+          <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5 text-foreground" />
+        </button>
+        <button
+          onClick={scrollNext}
+          aria-label="Next"
+          className="hidden sm:inline-flex absolute right-4 sm:right-6 lg:right-12 top-1/2 -translate-y-1/2 z-20 h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full bg-background shadow-[0_8px_24px_hsl(var(--foreground)/0.10)] ring-1 ring-border hover:scale-105 transition"
+        >
+          <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 text-foreground" />
+        </button>
+
+        {/* carousel */}
+        <div className="overflow-visible" ref={emblaRef}>
+          <div className="flex gap-4 sm:gap-6 lg:gap-8 xl:gap-12 px-4 sm:px-6 lg:px-8">
+            {items.map((it, idx) => (
+              <article
+                key={idx}
+                className="shrink-0 grow-0 basis-[90%] sm:basis-[85%] md:basis-[80%] lg:basis-[75%] xl:basis-[70%] min-w-0 bg-transparent"
+              >
+                <div
+                  className={[
+                    "rounded-2xl sm:rounded-3xl lg:rounded-[40px]",
+                    "px-5 sm:px-8 lg:px-12 xl:px-16",
+                    "py-8 sm:py-10 lg:py-12 xl:py-16",
+                    "shadow-[0_8px_32px_hsl(var(--foreground)/0.04),0_2px_8px_hsl(var(--foreground)/0.02)]",
+                    "relative overflow-hidden transition-all duration-500 ease-out",
+                    "bg-ct-blue-light",
+                    selectedIndex === idx
+                      ? "scale-100 opacity-100"
+                      : "scale-90 sm:scale-95 opacity-70 sm:opacity-90",
+                  ].join(" ")}
+                >
+                  <div className="pointer-events-none absolute inset-0 [background:radial-gradient(60%_60%_at_50%_50%,hsl(var(--background)/0.35),transparent_70%)]" />
+                  <div className="relative z-10 flex flex-col items-center text-center">
+                    <img src={it.brandLogo} alt={it.brand} className="h-8 sm:h-10 lg:h-12 opacity-90" />
+
+                    <p className="mt-5 sm:mt-6 lg:mt-8 max-w-3xl text-base sm:text-lg lg:text-xl leading-6 sm:leading-7 lg:leading-8 font-semibold text-foreground/80">
+                      {it.quote}
+                    </p>
+
+                    <div className="mt-6 sm:mt-7 lg:mt-8 flex items-center gap-3 sm:gap-4">
+                      <img
+                        src={it.person.avatar}
+                        alt={it.person.name}
+                        className="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover ring-2 ring-background/70 shadow-sm"
+                      />
+                      <div className="text-left">
+                        <div className="text-sm sm:text-base font-semibold text-foreground">{it.person.name}</div>
+                        <div className="text-xs sm:text-sm text-muted-foreground">{it.person.title}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        {/* mobile dots */}
+        <div className="flex sm:hidden justify-center gap-1.5 mt-6">
+          {items.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => emblaApi?.scrollTo(idx)}
+              className={[
+                "h-2 rounded-full transition-all duration-300",
+                selectedIndex === idx ? "w-6 bg-foreground/70" : "w-2 bg-muted-foreground/30",
+              ].join(" ")}
+              aria-label={`Go to slide ${idx + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
