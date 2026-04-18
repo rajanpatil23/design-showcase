@@ -85,45 +85,47 @@ const ServicesHub = ({
         <Card card={cardByKey("br")} hovered={hovered} setHovered={setHovered} />
       </div>
 
-      {/* Decorative blank dummy strip cards in the N/E/S/W gaps (desktop only) */}
+      {/* Decorative blank dummy strip cards filling the N/E/S/W gaps between the 4 cards */}
+      {/* The 2x2 grid has one horizontal gap at y=50% and one vertical gap at x=50%. */}
+      {/* Strips run along these dividers from each card edge toward the dial. */}
       <div aria-hidden className="hidden md:block pointer-events-none">
-        {/* NORTH — horizontal strip centered vertically in top gap, spanning between TL and TR cards */}
+        {/* WEST — horizontal strip in left half of horizontal gap (between TL and BL cards' inner edges? no — in the horizontal gap, left of dial) */}
         <div
-          className="absolute bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
+          className="absolute -translate-y-1/2 bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
           style={{
-            top: "calc(25% - 30px)",
-            left: "12%",
-            right: "12%",
+            top: "50%",
+            left: "8%",
+            width: "calc(50% - 8% - 70px)",
             height: "60px",
           }}
         />
-        {/* SOUTH */}
+        {/* EAST — horizontal strip in right half of horizontal gap */}
         <div
-          className="absolute bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
+          className="absolute -translate-y-1/2 bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
           style={{
-            top: "calc(75% - 30px)",
-            left: "12%",
-            right: "12%",
+            top: "50%",
+            right: "8%",
+            width: "calc(50% - 8% - 70px)",
             height: "60px",
           }}
         />
-        {/* WEST — vertical strip centered horizontally in left gap */}
+        {/* NORTH — vertical strip in top half of vertical gap */}
         <div
-          className="absolute bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
+          className="absolute -translate-x-1/2 bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
           style={{
-            left: "calc(25% - 30px)",
-            top: "12%",
-            bottom: "12%",
+            left: "50%",
+            top: "8%",
+            height: "calc(50% - 8% - 70px)",
             width: "60px",
           }}
         />
-        {/* EAST */}
+        {/* SOUTH — vertical strip in bottom half of vertical gap */}
         <div
-          className="absolute bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
+          className="absolute -translate-x-1/2 bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
           style={{
-            left: "calc(75% - 30px)",
-            top: "12%",
-            bottom: "12%",
+            left: "50%",
+            bottom: "8%",
+            height: "calc(50% - 8% - 70px)",
             width: "60px",
           }}
         />
