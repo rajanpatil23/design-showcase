@@ -1,7 +1,7 @@
 import SectionLabel from "@/components/SectionLabel";
 import StatsBar from "@/components/StatsBar";
 import { Button } from "@/components/ui/button";
-import { Linkedin, Quote, Shield, Zap, BarChart3, Handshake, Clock, Users, Building2, GraduationCap, Home, Stethoscope, Cpu, Briefcase } from "lucide-react";
+import { Linkedin, Quote, Shield, Zap, BarChart3, Handshake, Clock, Users, Building2, GraduationCap, Home, Stethoscope, Cpu, Briefcase, RefreshCw } from "lucide-react";
 import founderImg from "@/assets/founder-neeraj.jpg";
 import teamImg from "@/assets/team-collab.jpg";
 import testimonialImg from "@/assets/testimonial-person.jpg";
@@ -42,10 +42,10 @@ const teamMembers = [
 ];
 
 const clientTypes = [
-  { title: "Startups & Early-Stage Companies", desc: "You've found product-market fit and need to build a scalable, predictable lead-generation engine." },
-  { title: "Scaling B2B Businesses", desc: "You're growing, but your marketing hasn't kept up. You need systems, strategy, and execution." },
-  { title: "Enterprise Teams", desc: "You need a specialized partner to handle LinkedIn growth, performance marketing, or content at scale." },
-  { title: "EdTech & Training Companies", desc: "You're building an audience and need content strategy, paid acquisition, and brand positioning." },
+  { title: "Startups & Early-Stage Companies", desc: "You've found product-market fit and need to build a scalable, predictable lead-generation engine.", icon: <Briefcase className="w-5 h-5 text-primary" /> },
+  { title: "Scaling B2B Businesses", desc: "You're growing, but your marketing hasn't kept up. You need systems, strategy, and execution to match your ambition.", icon: <RefreshCw className="w-5 h-5 text-primary" /> },
+  { title: "Enterprise Teams", desc: "You need a specialized partner to handle LinkedIn growth, performance marketing, or content at scale alongside your internal team.", icon: <Building2 className="w-5 h-5 text-primary" /> },
+  { title: "EdTech & Training Companies", desc: "You're building an audience and need a content strategy, paid acquisition, and brand positioning that drives enrollments.", icon: <GraduationCap className="w-5 h-5 text-primary" /> },
 ];
 
 const industries = [
@@ -279,15 +279,23 @@ const AboutPage = () => {
       {/* Built for Brands */}
       <section className="section-padding">
         <div className="container-main">
-          <SectionLabel label="Who We Work With" />
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center">
+          <div className="flex justify-center mb-4">
+            <SectionLabel label="Who We Work With" />
+          </div>
+          <h2 className="text-3xl md:text-5xl font-heading font-bold text-center max-w-2xl mx-auto leading-tight">
             Built for Brands That <span className="gradient-text">Want to Grow</span>
           </h2>
-          <div className="grid md:grid-cols-2 gap-6 mt-12 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 mt-12 max-w-5xl mx-auto">
             {clientTypes.map((c) => (
-              <div key={c.title} className="bg-background rounded-xl border border-border p-6">
-                <h3 className="font-heading font-semibold mb-2">{c.title}</h3>
-                <p className="text-sm text-muted-foreground">{c.desc}</p>
+              <div
+                key={c.title}
+                className="bg-background rounded-xl border border-border/60 p-6 min-h-[220px] flex flex-col shadow-[0_2px_12px_hsl(var(--foreground)/0.05)]"
+              >
+                <div className="p-2.5 rounded-lg bg-ct-blue-light inline-flex w-fit">{c.icon}</div>
+                <div className="mt-auto pt-8">
+                  <h3 className="font-heading font-semibold text-lg mb-2">{c.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
+                </div>
               </div>
             ))}
           </div>
