@@ -76,7 +76,7 @@ const CaseStudies = () => {
                   >
                     <div className="overflow-hidden">
                       <p className="text-sm text-white/60">{c.desc}</p>
-                      <button className="text-sm text-primary font-semibold mt-3 flex items-center gap-1 hover:underline">
+                      <button className="text-sm text-primary font-semibold mt-3 ml-auto flex items-center gap-1 hover:underline">
                         Read Case Study <ArrowUpRight className="w-3.5 h-3.5" />
                       </button>
                     </div>
