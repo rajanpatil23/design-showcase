@@ -12,6 +12,10 @@ import illuMetaAds from "@/assets/services/illu-meta-ads.png";
 import illuLinkedinAds from "@/assets/services/illu-linkedin-ads.png";
 import illuYoutubeAds from "@/assets/services/illu-youtube-ads.png";
 import illuCro from "@/assets/services/illu-cro.png";
+import brandGoogleAds from "@/assets/brands/google-ads.png";
+import brandMeta from "@/assets/brands/meta.png";
+import brandLinkedin from "@/assets/brands/linkedin.png";
+import brandYoutube from "@/assets/brands/youtube.png";
 
 const categories = ["Performance", "Social Media", "LinkedIn", "SEO", "Content", "Web & AI"];
 
@@ -108,14 +112,12 @@ const ServicesPage = () => {
                       Recommended
                     </div>
                   </div>
-                  {/* Channel logos */}
-                  <div className="grid grid-cols-3 gap-2 mb-6 mt-6 max-w-[180px]">
-                    {[illuGoogleAds, illuMetaAds, illuLinkedinAds, null, illuYoutubeAds].map((img, i) => (
-                      img ? (
-                        <div key={i} className="bg-background rounded-lg p-2 aspect-square flex items-center justify-center">
-                          <img src={img} alt="" className="w-full h-full object-contain" loading="lazy" width={64} height={64} />
-                        </div>
-                      ) : <div key={i} />
+                  {/* Channel logos: 3 on top, 2 on bottom */}
+                  <div className="grid grid-cols-3 gap-3 mb-6 mt-8 max-w-[220px]">
+                    {[brandGoogleAds, brandMeta, brandLinkedin, illuCro, brandYoutube].map((img, i) => (
+                      <div key={i} className="bg-background rounded-xl p-2.5 aspect-square flex items-center justify-center shadow-md">
+                        <img src={img} alt="" className="w-full h-full object-contain" loading="lazy" width={64} height={64} />
+                      </div>
                     ))}
                   </div>
                   <h3 className="font-heading font-semibold text-lg mb-2">{s.title}</h3>
