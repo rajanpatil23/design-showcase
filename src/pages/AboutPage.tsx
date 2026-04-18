@@ -370,28 +370,64 @@ const AboutPage = () => {
       {/* Testimonials */}
       <section className="section-padding">
         <div className="container-main">
-          <SectionLabel label="Testimonials" />
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center">
+          <div className="flex justify-center mb-4">
+            <SectionLabel label="Testimonials" />
+          </div>
+          <h2 className="text-3xl md:text-5xl font-heading font-bold text-center">
             What Our <span className="gradient-text">Clients Say</span>
           </h2>
-          <div className="mt-12 max-w-4xl mx-auto bg-background rounded-xl border border-border p-8 md:flex gap-8 items-start">
-            <div className="flex-1">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-full overflow-hidden">
+
+          <div className="mt-12 max-w-5xl mx-auto grid md:grid-cols-[1.4fr_1fr] gap-6 items-center">
+            {/* Left — quote card */}
+            <div className="bg-background rounded-2xl border border-border/60 shadow-[0_6px_24px_hsl(var(--foreground)/0.06)] p-7 md:p-8 relative">
+              <div className="flex items-start gap-4 mb-5">
+                <div className="w-12 h-12 rounded-full overflow-hidden ring-2 ring-primary/40 shrink-0">
                   <img src={testimonialImg} alt="Kinjal M Jain" className="w-full h-full object-cover" loading="lazy" width={48} height={48} />
                 </div>
-                <div>
+                <div className="flex-1">
                   <p className="font-heading font-semibold">Kinjal M Jain</p>
                   <p className="text-xs text-muted-foreground">Founder, Mending Mind</p>
                 </div>
+                <Quote className="w-10 h-10 text-primary/20 shrink-0 -scale-x-100" />
               </div>
-              <p className="text-sm text-muted-foreground italic leading-relaxed">
+              <p className="text-sm text-muted-foreground leading-relaxed">
                 Connecttly helped us harness AI-powered analytics to uncover insights we were missing. From dashboards to automation, they gave clarity and optimized campaigns in real time. Like having a full analytics team on demand.
               </p>
             </div>
-            <div className="hidden md:block w-48 h-48 rounded-xl overflow-hidden shrink-0">
-              <img src={testimonialImg} alt="Client" className="w-full h-full object-cover" loading="lazy" width={192} height={192} />
+
+            {/* Right — video card */}
+            <div className="relative rounded-2xl overflow-hidden min-h-[340px] shadow-[0_6px_24px_hsl(var(--foreground)/0.08)]">
+              <img src={testimonialImg} alt="Kinjal M Jain video" className="absolute inset-0 w-full h-full object-cover" loading="lazy" width={400} height={400} />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <button aria-label="Play video" className="w-14 h-14 rounded-full bg-white/90 hover:bg-white flex items-center justify-center shadow-lg transition">
+                  <span className="block w-0 h-0 border-y-[8px] border-y-transparent border-l-[12px] border-l-primary ml-1" />
+                </button>
+              </div>
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-5">
+                <p className="text-white font-heading font-semibold">Kinjal M Jain</p>
+                <p className="text-white/75 text-xs">Founder of Mending Minds</p>
+              </div>
             </div>
+          </div>
+
+          {/* Bottom action row */}
+          <div className="mt-10 max-w-5xl mx-auto grid md:grid-cols-3 gap-5">
+            {[
+              { icon: <MessageSquare className="w-5 h-5 text-primary" />, title: "Contact Us", desc: "Reach out to our support team for assistance anytime" },
+              { icon: <HelpCircle className="w-5 h-5 text-primary" />, title: "FAQ", desc: "Get quick answers to your questions about our products and services" },
+              { icon: <Users className="w-5 h-5 text-primary" />, title: "Become an Affiliate", desc: "Join our affiliate program and earn recurring commission on referrals" },
+            ].map((item) => (
+              <a key={item.title} href="#" className="group bg-background rounded-xl border border-border/60 shadow-[0_2px_10px_hsl(var(--foreground)/0.04)] p-5 flex flex-col gap-3 hover:border-primary/40 transition-colors">
+                <div className="flex items-start justify-between">
+                  <div className="p-2 rounded-lg bg-ct-blue-light">{item.icon}</div>
+                  <ArrowUpRight className="w-4 h-4 text-primary opacity-70 group-hover:opacity-100" />
+                </div>
+                <div>
+                  <p className="font-heading font-semibold mb-1">{item.title}</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </section>
