@@ -310,19 +310,59 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Industries */}
+      {/* Industries — hub & spoke */}
       <section className="section-padding bg-ct-section">
         <div className="container-main">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center">
-            Industries <span className="gradient-text">we serve</span>
+          <h2 className="text-3xl md:text-5xl font-heading font-bold text-center">
+            <span className="gradient-text">Industries</span> we serve
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-12 max-w-3xl mx-auto">
-            {industries.map((ind) => (
-              <div key={ind.name} className="bg-background rounded-xl border border-border p-6 text-center">
-                <div className="p-3 rounded-lg bg-ct-blue-light inline-block mb-3">{ind.icon}</div>
-                <p className="text-sm font-heading font-semibold">{ind.name}</p>
+
+          <div className="relative mt-16 max-w-5xl mx-auto">
+            {/* Animated connector lines (desktop) */}
+            <svg
+              aria-hidden
+              className="hidden md:block absolute inset-0 w-full h-full pointer-events-none"
+              viewBox="0 0 100 60"
+              preserveAspectRatio="none"
+            >
+              {/* Left side: 3 cards -> hub (hub at x=50, y=30) */}
+              <path d="M 24 8  C 38 8, 42 22, 50 30" fill="none" stroke="hsl(var(--primary))" strokeWidth="0.4" vectorEffect="non-scaling-stroke" className="animated-dash" />
+              <path d="M 24 30 L 50 30"                fill="none" stroke="hsl(var(--primary))" strokeWidth="0.4" vectorEffect="non-scaling-stroke" className="animated-dash" />
+              <path d="M 24 52 C 38 52, 42 38, 50 30"  fill="none" stroke="hsl(var(--primary))" strokeWidth="0.4" vectorEffect="non-scaling-stroke" className="animated-dash" />
+              {/* Right side */}
+              <path d="M 76 8  C 62 8, 58 22, 50 30"   fill="none" stroke="hsl(var(--primary))" strokeWidth="0.4" vectorEffect="non-scaling-stroke" className="animated-dash" />
+              <path d="M 76 30 L 50 30"                fill="none" stroke="hsl(var(--primary))" strokeWidth="0.4" vectorEffect="non-scaling-stroke" className="animated-dash" />
+              <path d="M 76 52 C 62 52, 58 38, 50 30"  fill="none" stroke="hsl(var(--primary))" strokeWidth="0.4" vectorEffect="non-scaling-stroke" className="animated-dash" />
+            </svg>
+
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-12 items-center relative">
+              {/* LEFT column */}
+              <div className="space-y-6">
+                {industriesLeft.map((ind) => (
+                  <div key={ind.name} className="bg-background rounded-xl border border-border/60 shadow-[0_4px_18px_hsl(var(--foreground)/0.06)] px-5 py-4 flex items-center justify-between gap-4">
+                    <p className="text-sm font-heading font-semibold leading-tight">{ind.name}</p>
+                    <div className="p-2 rounded-lg bg-ct-blue-light shrink-0">{ind.icon}</div>
+                  </div>
+                ))}
               </div>
-            ))}
+
+              {/* CENTER hub */}
+              <div className="flex justify-center">
+                <div className="w-24 h-24 md:w-28 md:h-28 rounded-3xl bg-primary flex items-center justify-center shadow-[0_10px_30px_-8px_hsl(var(--primary)/0.6)]">
+                  <img src={connecttlyMark} alt="Connecttly" className="w-10 h-auto" />
+                </div>
+              </div>
+
+              {/* RIGHT column */}
+              <div className="space-y-6">
+                {industriesRight.map((ind) => (
+                  <div key={ind.name} className="bg-background rounded-xl border border-border/60 shadow-[0_4px_18px_hsl(var(--foreground)/0.06)] px-5 py-4 flex items-center gap-4">
+                    <div className="p-2 rounded-lg bg-ct-blue-light shrink-0">{ind.icon}</div>
+                    <p className="text-sm font-heading font-semibold leading-tight">{ind.name}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
