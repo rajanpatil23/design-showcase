@@ -91,9 +91,6 @@ const ServicesHub = ({
         <div
           className="absolute bg-background rounded-2xl shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
           style={{
-            top: "calc((100% - 48px) / 2 * 0)", // anchor from top of top row center vertically
-            // We position via top of top card row vertically centered: cards have aspect 5/4 so we use percentage.
-            // Simpler: stretch from ~12% to ~38% vertically? Use a fixed approach via top/height.
             left: "20%",
             right: "20%",
             top: "calc(50% - 80px)",
