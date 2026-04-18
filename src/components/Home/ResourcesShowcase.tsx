@@ -2,7 +2,12 @@ import { useState, useMemo, useEffect, useRef } from "react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import SectionLabel from "@/components/SectionLabel";
-import blogIllustration from "@/assets/blog-illustration.jpg";
+import blogImg from "@/assets/resources/blog.svg";
+import freeToolImg from "@/assets/resources/free-tool.svg";
+import templateImg from "@/assets/resources/template.svg";
+import communityImg from "@/assets/resources/community.svg";
+import liveMetricsImg from "@/assets/resources/live-metrics.svg";
+import contactImg from "@/assets/resources/contact.svg";
 
 type TabKey = "blog" | "tools" | "templates" | "community" | "metrics" | "support";
 
@@ -22,7 +27,7 @@ const TABS: Tab[] = [
     title: "Blog",
     desc: "Benchmark reports and platform updates so you always stay ahead in LinkedIn and social media strategy.",
     cta: { label: "Read Updates", to: "/resources/blog" },
-    img: { src: blogIllustration, alt: "Blog preview" },
+    img: { src: blogImg, alt: "Blog preview" },
   },
   {
     key: "tools",
@@ -30,7 +35,7 @@ const TABS: Tab[] = [
     title: "Free Tools",
     desc: "Free generators and builders to create posts, visuals, and tracking links effortlessly.",
     cta: { label: "Use Tools", to: "/resources/tools" },
-    img: { src: blogIllustration, alt: "Free Tools preview" },
+    img: { src: freeToolImg, alt: "Free Tools preview" },
   },
   {
     key: "templates",
@@ -38,7 +43,7 @@ const TABS: Tab[] = [
     title: "Templates",
     desc: "Proven LinkedIn templates, reporting frameworks, and campaign briefs to move faster and smarter.",
     cta: { label: "Get Templates", to: "/resources/templates" },
-    img: { src: blogIllustration, alt: "Templates preview" },
+    img: { src: templateImg, alt: "Templates preview" },
   },
   {
     key: "community",
@@ -46,7 +51,7 @@ const TABS: Tab[] = [
     title: "Community",
     desc: "Join a network of B2B leaders, access exclusive events, and grow alongside ambitious professionals.",
     cta: { label: "Join Community", to: "/resources/community" },
-    img: { src: blogIllustration, alt: "Community preview" },
+    img: { src: communityImg, alt: "Community preview" },
   },
   {
     key: "metrics",
@@ -54,7 +59,7 @@ const TABS: Tab[] = [
     title: "Live Metrics",
     desc: "Track our real-time business intelligence dashboard with revenue, customer, and marketing metrics updated monthly.",
     cta: { label: "Open Dashboard", to: "/resources/insights" },
-    img: { src: blogIllustration, alt: "Live Metrics dashboard" },
+    img: { src: liveMetricsImg, alt: "Live Metrics dashboard" },
   },
   {
     key: "support",
@@ -62,7 +67,7 @@ const TABS: Tab[] = [
     title: "Support",
     desc: "Reach out for tailored consultations, partnerships, or quick answers from our expert team.",
     cta: { label: "Contact", to: "/resources/support" },
-    img: { src: blogIllustration, alt: "Support preview" },
+    img: { src: contactImg, alt: "Support preview" },
   },
 ];
 
