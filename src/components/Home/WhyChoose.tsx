@@ -85,6 +85,50 @@ const ServicesHub = ({
         <Card card={cardByKey("br")} hovered={hovered} setHovered={setHovered} />
       </div>
 
+      {/* Decorative blank dummy cards in the gaps (desktop only) */}
+      <div aria-hidden className="hidden md:block pointer-events-none">
+        {/* Top dummy — horizontal strip in top gap */}
+        <div
+          className="absolute bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
+          style={{
+            top: "calc(50% - 110px)",
+            left: "32%",
+            right: "32%",
+            height: "60px",
+          }}
+        />
+        {/* Bottom dummy */}
+        <div
+          className="absolute bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
+          style={{
+            top: "calc(50% + 50px)",
+            left: "32%",
+            right: "32%",
+            height: "60px",
+          }}
+        />
+        {/* Left dummy — vertical strip in left gap */}
+        <div
+          className="absolute bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
+          style={{
+            left: "calc(50% - 110px)",
+            top: "32%",
+            bottom: "32%",
+            width: "60px",
+          }}
+        />
+        {/* Right dummy */}
+        <div
+          className="absolute bg-background rounded-2xl ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
+          style={{
+            left: "calc(50% + 50px)",
+            top: "32%",
+            bottom: "32%",
+            width: "60px",
+          }}
+        />
+      </div>
+
       {/* CENTRAL DIAL — desktop only */}
       <div
         aria-hidden
