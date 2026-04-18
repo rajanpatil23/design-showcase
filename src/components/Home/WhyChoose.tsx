@@ -94,7 +94,7 @@ const ServicesHub = ({
           style={{
             top: "50%",
             left: 0,
-            width: "calc(50% - 68px)",
+            width: "calc(50% - 40px)",
             height: "60px",
             WebkitMaskImage: "linear-gradient(to left, black 70%, transparent 100%)",
             maskImage: "linear-gradient(to left, black 70%, transparent 100%)",
@@ -106,7 +106,7 @@ const ServicesHub = ({
           style={{
             top: "50%",
             right: 0,
-            width: "calc(50% - 68px)",
+            width: "calc(50% - 40px)",
             height: "60px",
             WebkitMaskImage: "linear-gradient(to right, black 70%, transparent 100%)",
             maskImage: "linear-gradient(to right, black 70%, transparent 100%)",
@@ -118,8 +118,8 @@ const ServicesHub = ({
           style={{
             left: "50%",
             top: 0,
-            height: "calc(50% - 68px)",
-            width: "60px",
+            height: "calc(50% - 40px)",
+            width: "80px",
             WebkitMaskImage: "linear-gradient(to top, black 70%, transparent 100%)",
             maskImage: "linear-gradient(to top, black 70%, transparent 100%)",
           }}
@@ -130,8 +130,8 @@ const ServicesHub = ({
           style={{
             left: "50%",
             bottom: 0,
-            height: "calc(50% - 68px)",
-            width: "60px",
+            height: "calc(50% - 40px)",
+            width: "80px",
             WebkitMaskImage: "linear-gradient(to bottom, black 70%, transparent 100%)",
             maskImage: "linear-gradient(to bottom, black 70%, transparent 100%)",
           }}
