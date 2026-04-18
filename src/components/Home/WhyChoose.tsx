@@ -95,8 +95,8 @@ const ServicesHub = ({
             left: 0,
             width: "calc(50% - 68px)",
             height: "60px",
-            WebkitMaskImage: "linear-gradient(to left, black 50%, transparent 100%)",
-            maskImage: "linear-gradient(to left, black 50%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to left, black 70%, transparent 100%)",
+            maskImage: "linear-gradient(to left, black 70%, transparent 100%)",
           }}
         />
         {/* EAST strip — fades toward the right (outer) */}
@@ -107,8 +107,8 @@ const ServicesHub = ({
             right: 0,
             width: "calc(50% - 68px)",
             height: "60px",
-            WebkitMaskImage: "linear-gradient(to right, black 50%, transparent 100%)",
-            maskImage: "linear-gradient(to right, black 50%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to right, black 70%, transparent 100%)",
+            maskImage: "linear-gradient(to right, black 70%, transparent 100%)",
           }}
         />
         {/* NORTH strip — fades toward the top (outer) */}
@@ -119,8 +119,8 @@ const ServicesHub = ({
             top: 0,
             height: "calc(50% - 68px)",
             width: "60px",
-            WebkitMaskImage: "linear-gradient(to top, black 50%, transparent 100%)",
-            maskImage: "linear-gradient(to top, black 50%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to top, black 70%, transparent 100%)",
+            maskImage: "linear-gradient(to top, black 70%, transparent 100%)",
           }}
         />
         {/* SOUTH strip — fades toward the bottom (outer) */}
@@ -131,8 +131,8 @@ const ServicesHub = ({
             bottom: 0,
             height: "calc(50% - 68px)",
             width: "60px",
-            WebkitMaskImage: "linear-gradient(to bottom, black 50%, transparent 100%)",
-            maskImage: "linear-gradient(to bottom, black 50%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to bottom, black 70%, transparent 100%)",
+            maskImage: "linear-gradient(to bottom, black 70%, transparent 100%)",
           }}
         />
       </div>
