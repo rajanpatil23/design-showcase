@@ -325,14 +325,14 @@ const AboutPage = () => {
               viewBox="0 0 100 60"
               preserveAspectRatio="none"
             >
-              {/* Left side: 3 cards -> hub (hub at x=50, y=30) */}
-              <path d="M 24 8  C 38 8, 42 22, 50 30" fill="none" stroke="hsl(var(--primary))" strokeWidth="0.4" vectorEffect="non-scaling-stroke" className="animated-dash" />
-              <path d="M 24 30 L 50 30"                fill="none" stroke="hsl(var(--primary))" strokeWidth="0.4" vectorEffect="non-scaling-stroke" className="animated-dash" />
-              <path d="M 24 52 C 38 52, 42 38, 50 30"  fill="none" stroke="hsl(var(--primary))" strokeWidth="0.4" vectorEffect="non-scaling-stroke" className="animated-dash" />
-              {/* Right side */}
-              <path d="M 76 8  C 62 8, 58 22, 50 30"   fill="none" stroke="hsl(var(--primary))" strokeWidth="0.4" vectorEffect="non-scaling-stroke" className="animated-dash" />
-              <path d="M 76 30 L 50 30"                fill="none" stroke="hsl(var(--primary))" strokeWidth="0.4" vectorEffect="non-scaling-stroke" className="animated-dash" />
-              <path d="M 76 52 C 62 52, 58 38, 50 30"  fill="none" stroke="hsl(var(--primary))" strokeWidth="0.4" vectorEffect="non-scaling-stroke" className="animated-dash" />
+              {/* LEFT side: card edge (x=28) -> hub edge (x=46, y=30) */}
+              <path d="M 28 12 C 38 12, 42 22, 46 30" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
+              <path d="M 28 30 L 46 30"               fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
+              <path d="M 28 48 C 38 48, 42 38, 46 30" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
+              {/* RIGHT side: card edge (x=72) -> hub edge (x=54, y=30) */}
+              <path d="M 72 12 C 62 12, 58 22, 54 30" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
+              <path d="M 72 30 L 54 30"               fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
+              <path d="M 72 48 C 62 48, 58 38, 54 30" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
             </svg>
 
             <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-12 items-center relative">
