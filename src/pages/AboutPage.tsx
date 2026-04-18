@@ -1,7 +1,7 @@
 import SectionLabel from "@/components/SectionLabel";
 import StatsBar from "@/components/StatsBar";
 import { Button } from "@/components/ui/button";
-import { Linkedin, Quote, Shield, Zap, BarChart3, Handshake, Clock, Users, Building2, GraduationCap, Building, HeartPulse, Cpu, Briefcase, RefreshCw, Code2, MessageSquare, HelpCircle, ArrowUpRight } from "lucide-react";
+import { Linkedin, Quote, Shield, Zap, BarChart3, Handshake, Clock, Users, Building2, GraduationCap, Building, HeartPulse, Cpu, Briefcase, RefreshCw, Code2, MessageSquare, HelpCircle, ArrowUpRight, ArrowRight } from "lucide-react";
 import founderImg from "@/assets/founder-neeraj.jpg";
 import teamImg from "@/assets/team-collab.jpg";
 import testimonialImg from "@/assets/testimonial-person.jpg";
@@ -417,14 +417,14 @@ const AboutPage = () => {
               { icon: <HelpCircle className="w-5 h-5 text-primary" />, title: "FAQ", desc: "Get quick answers to your questions about our products and services" },
               { icon: <Users className="w-5 h-5 text-primary" />, title: "Become an Affiliate", desc: "Join our affiliate program and earn recurring commission on referrals" },
             ].map((item) => (
-              <a key={item.title} href="#" className="group bg-background rounded-xl border border-border/60 shadow-[0_2px_10px_hsl(var(--foreground)/0.04)] p-5 flex flex-col gap-3 hover:border-primary/40 transition-colors">
+              <a key={item.title} href="#" className="group bg-background rounded-xl border border-border/60 shadow-[0_2px_10px_hsl(var(--foreground)/0.04)] p-6 flex flex-col gap-4 hover:border-primary/40 transition-colors">
                 <div className="flex items-start justify-between">
-                  <div className="p-2 rounded-lg bg-ct-blue-light">{item.icon}</div>
-                  <ArrowUpRight className="w-4 h-4 text-primary opacity-70 group-hover:opacity-100" />
+                  <div className="w-11 h-11 rounded-full bg-ct-blue-light flex items-center justify-center">{item.icon}</div>
+                  <ArrowRight className="w-4 h-4 text-primary opacity-80 group-hover:translate-x-0.5 transition-transform" />
                 </div>
                 <div>
-                  <p className="font-heading font-semibold mb-1">{item.title}</p>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
+                  <p className="font-heading font-semibold mb-1.5">{item.title}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                 </div>
               </a>
             ))}
