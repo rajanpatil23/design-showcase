@@ -160,7 +160,7 @@ const ServicesHub = ({
           {(["tl", "tr", "bl", "br"] as CardKey[]).map((k) => (
             <span
               key={`corner-${k}`}
-              className={`absolute w-7 h-7 bg-primary transition-opacity duration-300 ${cornerClass[k]} ${
+              className={`absolute w-5 h-5 transition-opacity duration-300 ${cornerClass[k]} ${
                 hovered === k ? "opacity-100" : "opacity-0"
               }`}
             />
