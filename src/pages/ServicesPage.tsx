@@ -40,17 +40,47 @@ const ServicesPage = () => {
                 <Button className="rounded-full px-6 font-semibold">Work with us</Button>
                 <Button variant="outline" className="rounded-full px-6 font-semibold">See our insights</Button>
               </div>
-              <div className="flex flex-wrap gap-4 mt-8">
-                {["6 Growth Categories", "36 Specialized Services", "6 All-In-One Bundles", "100% Results-Driven"].map((stat) => (
-                  <span key={stat} className="text-xs font-semibold bg-ct-blue-light text-primary px-3 py-1.5 rounded-full">{stat}</span>
-                ))}
+            </div>
+
+            {/* Image with yellow backdrop + floating badges */}
+            <div className="relative w-full max-w-md mx-auto md:ml-auto md:mr-0 py-10 md:py-14">
+              {/* Yellow backdrop */}
+              <div className="absolute inset-y-0 right-6 left-16 bg-[hsl(48,96%,58%)] rounded-md" aria-hidden />
+              {/* Image */}
+              <div className="relative rounded-md overflow-hidden translate-x-6 translate-y-4">
+                <img src={servicesHero} alt="Services" className="w-full h-[360px] object-cover" width={700} height={512} />
+              </div>
+
+              {/* Floating badge: Growth Categories (top right) */}
+              <div className="absolute top-2 right-0 bg-background rounded-full shadow-[0_8px_24px_hsl(var(--foreground)/0.12)] pl-2 pr-4 py-1.5 flex items-center gap-2 animate-float">
+                <span className="text-primary font-bold text-sm">6</span>
+                <span className="text-xs font-semibold text-foreground">Growth Categories</span>
+              </div>
+
+              {/* Floating badge: Specialized Services (left) */}
+              <div className="absolute top-16 -left-2 bg-primary text-primary-foreground rounded-xl shadow-[0_8px_24px_hsl(var(--primary)/0.35)] px-4 py-2.5 animate-float-slow">
+                <p className="text-2xl font-bold leading-none">36</p>
+                <p className="text-[11px] font-medium opacity-90 mt-0.5">Specialized<br/>Services</p>
+              </div>
+
+              {/* Floating badge: All-In-One Bundles (mid left) */}
+              <div className="absolute bottom-24 left-0 bg-background rounded-full shadow-[0_8px_24px_hsl(var(--foreground)/0.12)] pl-2 pr-4 py-1.5 flex items-center gap-2 animate-float-delay">
+                <span className="text-primary font-bold text-sm">6</span>
+                <span className="text-xs font-semibold text-foreground">All-In-One Bundles</span>
+              </div>
+
+              {/* Floating badge: Results-Driven (bottom right) */}
+              <div className="absolute bottom-2 right-2 bg-primary text-primary-foreground rounded-xl shadow-[0_8px_24px_hsl(var(--primary)/0.35)] px-4 py-2.5 animate-float-slow2">
+                <p className="text-2xl font-bold leading-none">100%</p>
+                <p className="text-[11px] font-medium opacity-90 mt-0.5">Results-Driven</p>
               </div>
             </div>
-            <div className="rounded-2xl overflow-hidden">
-              <img src={servicesHero} alt="Services" className="w-full h-80 object-cover" width={700} height={512} />
-            </div>
           </div>
-          <StatsBar />
+
+          {/* Stats bar in light blue container */}
+          <div className="mt-12 bg-ct-blue-light rounded-2xl px-6 py-5">
+            <StatsBar />
+          </div>
         </div>
       </section>
 
