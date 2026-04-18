@@ -66,12 +66,8 @@ const TABS: Tab[] = [
   },
 ];
 
-// Soft pastel panel backgrounds, themed with primary
-const PANEL_BG = [
-  "bg-gradient-to-b from-ct-blue-light to-background",
-  "bg-gradient-to-b from-[hsl(170_60%_88%)] to-background",
-  "bg-gradient-to-b from-[hsl(95_60%_88%)] to-background",
-];
+// Unified white panel background for all tabs
+const PANEL_BG = ["bg-background"];
 
 const ResourcesShowcase = () => {
   const [active, setActive] = useState<TabKey>("blog");
