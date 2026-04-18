@@ -60,7 +60,7 @@ const Card = ({
         <Icon className="w-5 h-5 text-muted-foreground" />
       </div>
       <div>
-        <h3 className="font-heading font-semibold text-lg text-foreground mb-1.5">{card.title}</h3>
+        <h3 className={`font-heading font-semibold text-lg mb-1.5 transition-colors duration-200 ${isActive ? "text-primary" : "text-foreground"}`}>{card.title}</h3>
         <p className="text-sm text-muted-foreground leading-relaxed">{card.desc}</p>
       </div>
     </article>
