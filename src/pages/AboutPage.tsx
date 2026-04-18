@@ -14,12 +14,12 @@ const aboutStats = [
 ];
 
 const principles = [
-  { title: "Radical Transparency", desc: "No black-box reporting. No hidden fees. You see exactly what we're doing, why, and what it's delivering.", icon: <Shield className="w-6 h-6 text-primary" /> },
-  { title: "AI-First Thinking", desc: "We integrate AI and automation into everything — from content production to lead scoring to campaign optimization.", icon: <Cpu className="w-6 h-6 text-primary" /> },
-  { title: "Continuous Optimization", desc: "Every campaign, every piece of content, every workflow gets measured, tested, and improved — relentlessly.", icon: <BarChart3 className="w-6 h-6 text-primary" /> },
-  { title: "Results Over Rhetoric", desc: "We measure success in pipeline, revenue, and growth — not impressions and vanity metrics.", icon: <Zap className="w-6 h-6 text-primary" /> },
-  { title: "Speed of Execution", desc: "We plan, launch, learn, and optimize in rapid cycles because growth doesn't wait.", icon: <Clock className="w-6 h-6 text-primary" /> },
-  { title: "Partnership, Not Vendorship", desc: "We embed into your team, understand your business deeply, and treat your goals as our own.", icon: <Handshake className="w-6 h-6 text-primary" /> },
+  { title: "Radical Transparency", desc: "No black-box reporting. No hidden fees. You see exactly what we're doing, why we're doing it, and what it's delivering — in real time.", icon: <Shield className="w-6 h-6 text-primary" /> },
+  { title: "AI-First Thinking", desc: "We integrate AI and automation into everything we do — from content production to lead scoring to campaign optimization. It's how we deliver big-agency output at startup-friendly costs.", icon: <Cpu className="w-6 h-6 text-primary" /> },
+  { title: "Continuous Optimization", desc: "Good enough isn't good enough. Every campaign, every piece of content, every workflow gets measured, tested, and improved — relentlessly.", icon: <BarChart3 className="w-6 h-6 text-primary" /> },
+  { title: "Results Over Rhetoric", desc: "We measure success in pipeline, revenue, and growth — not impressions and vanity metrics. Every strategy we build is tied to a business outcome.", icon: <Zap className="w-6 h-6 text-primary" /> },
+  { title: "Speed of Execution", desc: "We move fast. Strategies don't sit in decks for weeks. We plan, launch, learn, and optimize in rapid cycles because growth doesn't wait.", icon: <Clock className="w-6 h-6 text-primary" /> },
+  { title: "Partnership, Not Vendorship", desc: "We don't operate as an outside vendor. We embed into your team, understand your business deeply, and treat your goals as our own.", icon: <Handshake className="w-6 h-6 text-primary" /> },
 ];
 
 const steps = [
