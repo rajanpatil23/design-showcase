@@ -168,7 +168,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Not Sure Where to Start */}
-      <section className="pt-4 pb-12 md:pt-6 md:pb-16">
+      <section className="pt-2 pb-12 md:pt-2 md:pb-16">
         <div className="container-main">
           <h2 className="text-3xl md:text-4xl font-heading font-bold">
             Not Sure <span className="gradient-text">Where to Start?</span>
