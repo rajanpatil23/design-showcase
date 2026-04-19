@@ -5,7 +5,7 @@ import StatsBar from "@/components/StatsBar";
 import ReviewCarousel from "@/components/Home/ReviewCarousel";
 import { Check, Quote, ChevronDown, ChevronUp, Shield, FileText, Eye, Layers, Search } from "lucide-react";
 import testimonialImg from "@/assets/testimonial-person.jpg";
-import googleAdsHero from "@/assets/google-ads-hero.jpg";
+import googleAdsHero from "@/assets/google-ads-hero.png";
 
 const painPoints = [
   { title: "You're spending $5K+ a month and can't tell what's actually working.", desc: "61% of Google Ads spend goes to clicks that never convert. That's not marketing — that's donation." },
@@ -93,8 +93,8 @@ const GoogleAdsPage = () => {
                 <Button variant="outline" className="rounded-full px-6 font-semibold">See Pricing</Button>
               </div>
             </div>
-            <div className="rounded-2xl overflow-hidden">
-              <img src={googleAdsHero} alt="Google Ads campaign dashboard mockup" className="w-full h-80 object-cover" width={700} height={512} />
+            <div className="flex justify-center">
+              <img src={googleAdsHero} alt="Google Ads keyword management mockup" className="w-full max-w-md h-auto object-contain" width={700} height={560} />
             </div>
           </div>
           <StatsBar />
