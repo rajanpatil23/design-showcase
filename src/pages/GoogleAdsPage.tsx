@@ -346,27 +346,27 @@ const GoogleAdsPage = () => {
           <h2 className="text-3xl md:text-5xl font-heading font-bold text-center mt-4">
             Questions <span className="gradient-text">We Get Asked</span>
           </h2>
-          <div className="max-w-5xl mx-auto mt-12 grid md:grid-cols-2 gap-x-6 gap-y-4 items-start">
+          <div className="max-w-5xl mx-auto mt-12 grid md:grid-cols-2 gap-x-8 gap-y-6 items-start">
             {faqs.map((faq, i) => {
               const isOpen = openFaq === i;
               return (
                 <div
                   key={i}
-                  className="bg-background rounded-2xl shadow-md transition-all duration-300 self-start"
+                  className="bg-background rounded-3xl border border-border/60 shadow-[0_4px_20px_-4px_hsl(var(--foreground)/0.08)] self-start"
                 >
                   <button
-                    className="w-full flex items-start gap-4 px-6 py-5 text-left"
+                    className="w-full flex items-start gap-5 px-7 py-6 text-left"
                     onClick={() => setOpenFaq(isOpen ? null : i)}
                   >
-                    <span className="text-primary text-2xl font-light leading-none mt-0.5 w-5 flex-shrink-0">
+                    <span className="text-primary text-3xl font-light leading-none mt-0.5 w-6 flex-shrink-0">
                       {isOpen ? "×" : "+"}
                     </span>
                     <span className="flex-1">
-                      <span className="block font-heading font-semibold text-sm md:text-base text-foreground">
+                      <span className="block font-heading font-semibold text-base md:text-lg text-foreground">
                         {faq.q}
                       </span>
                       {isOpen && (
-                        <span className="block text-sm text-muted-foreground mt-3 leading-relaxed">
+                        <span className="block text-sm md:text-base text-muted-foreground mt-3 leading-relaxed">
                           {faq.a}
                         </span>
                       )}
