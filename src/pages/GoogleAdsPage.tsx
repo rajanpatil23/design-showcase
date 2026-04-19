@@ -184,13 +184,16 @@ const GoogleAdsPage = () => {
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-center">
             Why Connecttly for <span className="gradient-text">Google Ads</span>
           </h2>
-          <div className="grid md:grid-cols-2 gap-6 mt-12 max-w-5xl mx-auto">
-            {whyUs.map((w) => (
-              <div key={w.title} className="bg-background rounded-2xl p-8 shadow-md min-h-[260px] flex flex-col justify-end transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-                <h3 className="font-heading font-semibold text-xl mb-3">{w.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{w.desc}</p>
-              </div>
-            ))}
+          <div className="grid md:grid-cols-5 gap-6 mt-12 max-w-5xl mx-auto">
+            {whyUs.map((w, i) => {
+              const sizes = ["md:col-span-2", "md:col-span-3", "md:col-span-3", "md:col-span-2"];
+              return (
+                <div key={w.title} className={`${sizes[i]} bg-background rounded-2xl p-8 shadow-md min-h-[260px] flex flex-col justify-end transition-all duration-300 hover:-translate-y-2 hover:shadow-xl`}>
+                  <h3 className="font-heading font-semibold text-xl mb-3">{w.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{w.desc}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
