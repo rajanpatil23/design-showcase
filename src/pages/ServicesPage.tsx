@@ -152,9 +152,9 @@ const ServicesPage = () => {
           <h2 className="text-3xl md:text-4xl font-heading font-bold">
             Not Sure <span className="gradient-text">Where to Start?</span>
           </h2>
-          <div className="space-y-6 md:space-y-8 mt-12 max-w-5xl mx-auto">
+          <div className="space-y-12 md:space-y-16 mt-12 max-w-4xl mx-auto">
             {ctaCards.map((card, i) => (
-              <div key={card.title} className={`md:flex items-center gap-8 ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}>
+              <div key={card.title} className={`md:flex items-center gap-12 ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}>
                 <div className="flex-1">
                   <h3 className="text-xl md:text-2xl font-heading font-bold mb-3">{card.title}</h3>
                   <p className="text-sm text-muted-foreground mb-5 max-w-sm">{card.desc}</p>
@@ -162,14 +162,14 @@ const ServicesPage = () => {
                     {card.cta}
                   </Button>
                 </div>
-                <div className="flex-1 flex justify-center mt-4 md:mt-0">
+                <div className="flex-1 flex justify-center mt-8 md:mt-0">
                   <img
                     src={card.image}
                     alt={card.title}
                     width={512}
                     height={512}
                     loading="lazy"
-                    className="w-full max-w-[420px] md:max-w-[460px] h-auto object-contain"
+                    className="w-48 md:w-56 h-auto object-contain"
                   />
                 </div>
               </div>
