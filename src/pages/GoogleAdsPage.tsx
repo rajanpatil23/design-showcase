@@ -3,14 +3,14 @@ import { Button } from "@/components/ui/button";
 import SectionLabel from "@/components/SectionLabel";
 import StatsBar from "@/components/StatsBar";
 import ReviewCarousel from "@/components/Home/ReviewCarousel";
-import { Check, Quote, ChevronDown, ChevronUp, Shield, FileText, Eye, Layers, Search } from "lucide-react";
+import { Check, Quote, ChevronDown, ChevronUp, Shield, FileText, Eye, Layers, Search, MonitorSmartphone, FileType2, Target } from "lucide-react";
 import testimonialImg from "@/assets/testimonial-person.jpg";
 import googleAdsHero from "@/assets/google-ads-hero.png";
 
 const painPoints = [
-  { title: "You're spending $5K+ a month and can't tell what's actually working.", desc: "61% of Google Ads spend goes to clicks that never convert. That's not marketing — that's donation." },
-  { title: "Your agency sends PDF reports full of numbers you don't understand.", desc: "If you can't explain the ROI in one sentence, your agency has failed you." },
-  { title: "Leads come in — but your sales team says they're garbage.", desc: "Wrong keywords + lazy targeting = paying $50-$80 per lead that was never going to buy." },
+  { title: "You're spending $5K+ a month and can't tell what's actually working.", desc: "61% of Google Ads spend goes to clicks that never convert. That's not marketing — that's donation.", icon: <MonitorSmartphone className="w-7 h-7 text-primary" /> },
+  { title: "Your agency sends PDF reports full of numbers you don't understand.", desc: "If you can't explain the ROI in one sentence, your agency has failed you.", icon: <FileType2 className="w-7 h-7 text-primary" /> },
+  { title: "Leads come in — but your sales team says they're garbage.", desc: "Wrong keywords + lazy targeting = paying $50-$80 per lead that was never going to buy.", icon: <Target className="w-7 h-7 text-primary" /> },
 ];
 
 const impactStats = [
@@ -115,11 +115,16 @@ const GoogleAdsPage = () => {
           <h2 className="text-2xl md:text-4xl font-heading font-bold text-center max-w-3xl mx-auto">
             Tired of wasting your <span className="gradient-text">Google Ads budget?</span>
           </h2>
-          <div className="space-y-4 mt-10 max-w-3xl mx-auto">
+          <div className="space-y-4 mt-10 max-w-2xl mx-auto">
             {painPoints.map((p) => (
-              <div key={p.title} className="bg-background rounded-xl border border-border p-6">
-                <h3 className="font-heading font-semibold mb-1">{p.title}</h3>
-                <p className="text-sm text-muted-foreground">{p.desc}</p>
+              <div key={p.title} className="relative bg-ct-blue-light/60 rounded-2xl p-5 pl-6 flex gap-4 items-start before:content-[''] before:absolute before:left-2 before:top-4 before:bottom-4 before:w-1 before:rounded-full before:bg-primary">
+                <div className="w-14 h-14 rounded-xl bg-background flex items-center justify-center shrink-0 shadow-sm">
+                  {p.icon}
+                </div>
+                <div>
+                  <h3 className="font-heading font-semibold text-sm md:text-base mb-1">{p.title}</h3>
+                  <p className="text-sm text-muted-foreground">{p.desc}</p>
+                </div>
               </div>
             ))}
           </div>
