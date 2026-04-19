@@ -142,13 +142,13 @@ const GoogleAdsPage = () => {
           </h2>
           <div className="space-y-4 mt-10 max-w-2xl mx-auto">
             {painPoints.map((p) => (
-              <div key={p.title} className="relative bg-ct-blue-light/60 rounded-2xl p-5 pl-6 flex gap-4 items-start before:content-[''] before:absolute before:left-2 before:top-4 before:bottom-4 before:w-1 before:rounded-full before:bg-primary">
-                <div className="w-14 h-14 rounded-xl bg-background flex items-center justify-center shrink-0 shadow-sm">
+              <div key={p.title} className="bg-ct-blue-light/60 rounded-2xl p-5 flex gap-5 items-center border-l-[3px] border-primary">
+                <div className="w-16 h-16 rounded-xl bg-background flex items-center justify-center shrink-0 shadow-sm">
                   {p.icon}
                 </div>
                 <div>
-                  <h3 className="font-heading font-semibold text-sm md:text-base mb-1">{p.title}</h3>
-                  <p className="text-sm text-muted-foreground">{p.desc}</p>
+                  <h3 className="font-heading font-semibold text-sm md:text-base mb-1.5 text-foreground">{p.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
                 </div>
               </div>
             ))}
