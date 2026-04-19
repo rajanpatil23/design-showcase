@@ -107,7 +107,7 @@ const IndustriesFlow = () => {
         source: `L${i}`,
         target: "hub",
         targetHandle: `left-${["top", "middle", "bottom"][i]}`,
-        type: "smoothstep",
+        type: i === 1 ? "straight" : "smoothstep",
         animated: true,
         style: { stroke: "hsl(var(--primary))", strokeWidth: 1.5, strokeDasharray: "4 3" },
       });
@@ -127,7 +127,7 @@ const IndustriesFlow = () => {
         source: `R${i}`,
         target: "hub",
         targetHandle: `right-${["top", "middle", "bottom"][i]}`,
-        type: "smoothstep",
+        type: i === 1 ? "straight" : "smoothstep",
         animated: true,
         style: { stroke: "hsl(var(--primary))", strokeWidth: 1.5, strokeDasharray: "4 3" },
       });
