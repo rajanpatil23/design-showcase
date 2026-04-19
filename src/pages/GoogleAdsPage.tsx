@@ -155,13 +155,14 @@ const GoogleAdsPage = () => {
       {/* Why Us */}
       <section className="section-padding bg-ct-section">
         <div className="container-main">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center">Why Connecttly for Google Ads</h2>
-          <div className="grid md:grid-cols-2 gap-6 mt-12 max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center">
+            Why Connecttly for <span className="gradient-text">Google Ads</span>
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6 mt-12 max-w-5xl mx-auto">
             {whyUs.map((w) => (
-              <div key={w.title} className="bg-background rounded-xl border border-border p-6">
-                <div className="p-3 rounded-lg bg-ct-blue-light inline-block mb-4">{w.icon}</div>
-                <h3 className="font-heading font-semibold text-lg mb-2">{w.title}</h3>
-                <p className="text-sm text-muted-foreground">{w.desc}</p>
+              <div key={w.title} className="bg-background rounded-2xl p-8 shadow-md min-h-[260px] flex flex-col justify-end">
+                <h3 className="font-heading font-semibold text-xl mb-3">{w.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{w.desc}</p>
               </div>
             ))}
           </div>
