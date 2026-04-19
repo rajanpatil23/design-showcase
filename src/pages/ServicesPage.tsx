@@ -8,7 +8,7 @@ import statProjects from "@/assets/stats/projects.png";
 import statSupport from "@/assets/stats/support.png";
 import { ArrowRight, BarChart3, Megaphone, Users, Globe, PenTool, Code, Youtube, TrendingUp, MessageCircle, Search, Send } from "lucide-react";
 import servicesHero from "@/assets/services-hero-person.png";
-import illustrationStrategist from "@/assets/services/illustration-strategist.png";
+import illustrationStrategist from "@/assets/strategist-avatar.png";
 import illustrationQuiz from "@/assets/services/illustration-quiz.png";
 import illustrationBrief from "@/assets/services/illustration-brief.png";
 import illuGoogleAds from "@/assets/services/illu-google-ads.png";
@@ -187,10 +187,11 @@ const ServicesPage = () => {
                   <img
                     src={card.image}
                     alt={card.title}
-                    width={512}
-                    height={512}
+                    width={648}
+                    height={327}
                     loading="lazy"
-                    className="w-48 md:w-56 h-auto object-contain"
+                    className="w-full max-w-[647.62px] h-auto md:h-[327px] object-contain"
+                    style={{ aspectRatio: "647.62 / 327" }}
                   />
                 </div>
               </div>
