@@ -121,7 +121,7 @@ const IndustriesFlow = () => {
         type: i === 1 ? "straight" : "smoothstep",
         animated: true,
         pathOptions: i === 1 ? undefined : { borderRadius: 80 },
-        style: { stroke: "hsl(var(--primary))", strokeWidth: 1.5, strokeDasharray: "4 3" },
+        style: { stroke: "hsl(var(--primary))", strokeWidth: 1.75 },
       } as Edge);
     });
 
@@ -142,7 +142,7 @@ const IndustriesFlow = () => {
         type: i === 1 ? "straight" : "smoothstep",
         animated: true,
         pathOptions: i === 1 ? undefined : { borderRadius: 80 },
-        style: { stroke: "hsl(var(--primary))", strokeWidth: 1.5, strokeDasharray: "4 3" },
+        style: { stroke: "hsl(var(--primary))", strokeWidth: 1.75 },
       } as Edge);
     });
 
