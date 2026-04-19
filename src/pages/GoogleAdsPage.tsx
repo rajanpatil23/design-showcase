@@ -135,16 +135,17 @@ const GoogleAdsPage = () => {
       </section>
 
       {/* Measured Impact */}
-      <section className="section-padding bg-ct-dark">
-        <div className="container-main text-center">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground">
+      <section className="relative pt-20 md:pt-24 pb-20 md:pb-24">
+        <div className="absolute inset-x-0 top-0 h-2/3 bg-ct-dark" aria-hidden="true" />
+        <div className="container-main relative">
+          <h2 className="text-3xl md:text-5xl font-heading font-bold text-primary-foreground text-center">
             Measured Impact. <span className="gradient-text">Proven Outcomes.</span>
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 max-w-3xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6 mt-14 md:mt-16 max-w-5xl mx-auto">
             {impactStats.map((stat) => (
-              <div key={stat.label} className="bg-background rounded-xl p-6 text-center">
-                <p className="text-3xl md:text-4xl font-heading font-bold text-primary">{stat.value}</p>
-                <p className="text-xs text-muted-foreground mt-1">{stat.label}</p>
+              <div key={stat.label} className="bg-background rounded-2xl p-8 text-center shadow-xl">
+                <p className="text-4xl md:text-5xl font-heading font-bold text-primary">{stat.value}</p>
+                <p className="text-xs md:text-sm text-muted-foreground mt-3 leading-tight">{stat.label}</p>
               </div>
             ))}
           </div>
