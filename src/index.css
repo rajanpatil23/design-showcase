@@ -100,12 +100,17 @@
   /* Energy pulse traveling outward from hub to cards (target -> source) */
   @keyframes energy-out {
     from { stroke-dashoffset: 0; }
-    to   { stroke-dashoffset: 80; }
+    to   { stroke-dashoffset: 120; }
+  }
+  @keyframes energy-fade {
+    0%, 100% { opacity: 0; }
+    20%, 80% { opacity: 1; }
   }
   .energy-line {
-    stroke-dasharray: 12 68;
-    animation: energy-out 1.8s linear infinite;
-    opacity: 0.9;
+    stroke-dasharray: 28 92;
+    stroke-linecap: round;
+    animation: energy-out 2.2s linear infinite, energy-fade 2.2s ease-in-out infinite;
+    mix-blend-mode: screen;
   }
 
   /* Floating animation for badge cards */

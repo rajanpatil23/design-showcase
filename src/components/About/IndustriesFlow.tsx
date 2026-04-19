@@ -194,6 +194,15 @@ const IndustriesFlow = () => {
         proOptions={{ hideAttribution: true }}
       >
         <Background gap={24} size={1} color="hsl(var(--border))" />
+        <svg style={{ position: "absolute", width: 0, height: 0 }}>
+          <defs>
+            <linearGradient id="energy-fade" x1="0" x2="1" y1="0" y2="0" gradientUnits="objectBoundingBox">
+              <stop offset="0%" stopColor="white" stopOpacity="0" />
+              <stop offset="50%" stopColor="white" stopOpacity="0.95" />
+              <stop offset="100%" stopColor="white" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+        </svg>
       </ReactFlow>
     </div>
   );
