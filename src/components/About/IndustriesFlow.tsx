@@ -60,7 +60,7 @@ const HubNode = () => (
               type="target"
               position={side === "left" ? Position.Left : Position.Right}
               className="!opacity-0 !pointer-events-none"
-              style={{ top: topPct }}
+              style={{ top: topPct, [side]: "-12px" }}
             />
             <span
               aria-hidden
