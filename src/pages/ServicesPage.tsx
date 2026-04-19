@@ -104,7 +104,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="pt-8 md:pt-12 pb-16 md:pb-20 bg-ct-section">
+      <section className="pt-8 md:pt-12 pb-16 md:pb-20 bg-background">
         <div className="container-main">
           <SectionLabel label="Our Services" />
           <div className="flex flex-wrap justify-center gap-3 mb-10">
