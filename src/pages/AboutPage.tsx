@@ -189,7 +189,7 @@ const AboutPage = () => {
                   ].map(({ item: p, tall }) => (
                     <div
                       key={p.title}
-                      className="bg-background rounded-xl border border-border p-6 shadow-[10px_12px_0_-2px_hsl(var(--foreground)/0.45)] hover:shadow-[14px_16px_0_-2px_hsl(var(--foreground)/0.55)] transition-shadow flex flex-col justify-between"
+                      className="bg-background rounded-xl border border-border p-6 shadow-[14px_18px_36px_-8px_hsl(var(--foreground)/0.20)] hover:shadow-[20px_26px_50px_-8px_hsl(var(--foreground)/0.28)] transition-shadow flex flex-col justify-between"
                       style={{ flex: tall ? "8 2 0" : "5 1 0" }}
                     >
                       <div className="p-3 rounded-lg bg-ct-blue-light inline-block self-start">{p.icon}</div>
