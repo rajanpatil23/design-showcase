@@ -142,7 +142,7 @@ export default function ReviewCarousel({
                   {/* subtle primary-tinted glow */}
                   <div className="pointer-events-none absolute inset-0 [background:radial-gradient(70%_60%_at_50%_0%,hsl(var(--primary)/0.06),transparent_70%)]" />
                   {/* decorative quote mark */}
-                  <div className="pointer-events-none absolute top-6 left-6 sm:top-8 sm:left-10 text-6xl sm:text-7xl lg:text-8xl font-heading font-bold leading-none text-primary/10 select-none">
+                  <div className="pointer-events-none absolute top-6 left-6 sm:top-8 sm:left-10 text-6xl sm:text-7xl lg:text-8xl font-heading font-bold leading-none text-primary/10 group-hover:text-primary/70 transition-colors duration-500 select-none">
                     “
                   </div>
                   <div className="relative z-10 flex flex-col items-center text-center">
