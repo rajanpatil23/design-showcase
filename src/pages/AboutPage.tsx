@@ -299,7 +299,7 @@ const AboutPage = () => {
           </div>
         </div>
 
-        <div className="container-main pt-6 pb-16 md:pb-24">
+        <div className="container-main pt-6 pb-10 md:pb-12">
           {/* Team Grid, solid blue cards */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {teamMembers.map((m) => (
@@ -313,7 +313,7 @@ const AboutPage = () => {
       </section>
 
       {/* Built for Brands */}
-      <section className="section-padding">
+      <section className="py-16 md:py-20">
         <div className="container-main">
           <SectionLabel label="Who We Work With" />
           <h2 className="text-3xl md:text-5xl font-heading font-bold text-center max-w-2xl mx-auto leading-tight mt-4">
