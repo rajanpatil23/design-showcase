@@ -175,7 +175,7 @@ const AboutPage = () => {
                  Col 2: TALL top (offset down), SHORT bottom
                  Col 3: SHORT top (flush), TALL bottom
               Heights: short ≈ 40%, tall ≈ 60% of column. Even gaps. */}
-          <div className="hidden md:grid grid-cols-3 gap-6 mt-12 max-w-5xl mx-auto" style={{ minHeight: 560 }}>
+          <div className="hidden md:grid grid-cols-3 gap-6 mt-12 max-w-5xl mx-auto" style={{ minHeight: 680 }}>
             {[0, 1, 2].map((col) => {
               const top = principles[col];
               const bottom = principles[col + 3];
@@ -190,7 +190,7 @@ const AboutPage = () => {
                     <div
                       key={p.title}
                       className="bg-background rounded-xl border border-border p-6 shadow-[0_2px_10px_hsl(var(--foreground)/0.04)] flex flex-col"
-                      style={{ flex: tall ? "3 1 0" : "2 1 0" }}
+                      style={{ flex: tall ? "5 1 0" : "2 1 0" }}
                     >
                       <div className="p-3 rounded-lg bg-ct-blue-light inline-block mb-4 self-start">{p.icon}</div>
                       <h3 className="font-heading font-semibold text-lg mb-2">{p.title}</h3>
