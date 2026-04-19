@@ -375,6 +375,7 @@ const AboutPage = () => {
         </div>
         <ReviewCarousel noPadding />
 
+        <div className="container-main">
           {/* Bottom action row */}
           <div className="mt-10 max-w-5xl mx-auto grid md:grid-cols-3 gap-5">
             {[
