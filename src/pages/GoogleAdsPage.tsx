@@ -184,7 +184,7 @@ const GoogleAdsPage = () => {
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-center">
             Why Connecttly for <span className="gradient-text">Google Ads</span>
           </h2>
-          <div className="grid md:grid-cols-2 gap-6 mt-12 max-w-[1264px] mx-auto">
+          <div className="grid md:grid-cols-2 gap-x-6 gap-y-0 mt-12 max-w-[1264px] mx-auto">
             {whyUs.map((w, i) => {
               // Diagonal pairs: cards 0 & 3 => 611x480, cards 1 & 2 => 629x386
               const isLargeHeight = i === 0 || i === 3;
