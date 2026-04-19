@@ -67,9 +67,7 @@ const AboutPage = () => {
       {/* Hero */}
       <section className="section-padding">
         <div className="container-main">
-          <div className="flex justify-center mb-6">
-            <SectionLabel label="About Us" />
-          </div>
+          <SectionLabel label="About Us" />
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-6xl font-heading font-bold leading-tight">
@@ -116,10 +114,8 @@ const AboutPage = () => {
       {/* Our Story */}
       <section className="pb-16 md:pb-24 bg-background">
         <div className="container-main">
-          <div className="flex justify-center mb-6">
-            <SectionLabel label="How it started" />
-          </div>
-          <h2 className="text-4xl md:text-5xl font-heading font-bold text-center mb-12">Our Story</h2>
+          <SectionLabel label="How it started" />
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-center mt-4 mb-12">Our Story</h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="rounded-2xl overflow-hidden">
               <img
@@ -170,10 +166,8 @@ const AboutPage = () => {
       {/* Principles */}
       <section className="section-padding bg-ct-section">
         <div className="container-main">
-          <div className="flex justify-center mb-4">
-            <SectionLabel label="What We Stand For" />
-          </div>
-          <h2 className="text-3xl md:text-5xl font-heading font-bold text-center max-w-2xl mx-auto leading-tight">
+          <SectionLabel label="What We Stand For" />
+          <h2 className="text-3xl md:text-5xl font-heading font-bold text-center max-w-2xl mx-auto leading-tight mt-4">
             The Principles Behind Our Work
           </h2>
           <div className="grid md:grid-cols-3 gap-6 mt-12 items-start">
@@ -243,10 +237,8 @@ const AboutPage = () => {
       {/* Team */}
       <section className="section-padding">
         <div className="container-main">
-          <div className="flex justify-center mb-4">
-            <SectionLabel label="Meet the Team" />
-          </div>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-12">Meet the Team</h2>
+          <SectionLabel label="Meet the Team" />
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mt-4 mb-12">Meet the Team</h2>
 
           {/* Founder — dark navy card */}
           <div className="max-w-5xl mx-auto bg-[#09233C] text-white p-6 md:p-10 mb-6 md:flex gap-10 items-center">
@@ -294,10 +286,8 @@ const AboutPage = () => {
       {/* Built for Brands */}
       <section className="section-padding">
         <div className="container-main">
-          <div className="flex justify-center mb-4">
-            <SectionLabel label="Who We Work With" />
-          </div>
-          <h2 className="text-3xl md:text-5xl font-heading font-bold text-center max-w-2xl mx-auto leading-tight">
+          <SectionLabel label="Who We Work With" />
+          <h2 className="text-3xl md:text-5xl font-heading font-bold text-center max-w-2xl mx-auto leading-tight mt-4">
             Built for Brands <span className="gradient-text">That Want to Grow</span>
           </h2>
           <div className="grid md:grid-cols-2 gap-x-8 gap-y-6 mt-12 max-w-5xl mx-auto md:items-center">
