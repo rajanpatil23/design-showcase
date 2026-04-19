@@ -295,9 +295,9 @@ const GoogleAdsPage = () => {
       </section>
 
       {/* Tool Stack */}
-      <section className="section-padding bg-ct-dark">
+      <section className="pt-10 pb-16 md:pt-12 md:pb-20 bg-ct-dark">
         <div className="container-main">
-          <div className="flex justify-center mb-10">
+          <div className="flex justify-center mb-6">
             <SectionLabel label="Tool Stack" />
           </div>
           <div className="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
