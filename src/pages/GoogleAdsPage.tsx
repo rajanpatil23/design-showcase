@@ -52,14 +52,16 @@ const pricingPlans = [
   {
     name: "3-Month Sprint",
     tagline: "Test the waters. Prove ROI. Build the foundation.",
-    price: "$800",
+    monthlyPrice: "$800",
+    yearlyPrice: "$640",
     cta: "Start My Sprint",
     features: ["Up to $10K monthly ad spend management", "Search + Display campaigns", "Keyword research & ad copy creation", "Conversion tracking setup", "Monthly performance report", "Basic bid management & optimization"],
   },
   {
     name: "6-Month Growth",
     tagline: "You're spending real money. Time to make it compound.",
-    price: "$1,200",
+    monthlyPrice: "$1,200",
+    yearlyPrice: "$960",
     cta: "Start Growing",
     popular: true,
     features: ["Up to $25K monthly ad spend management", "Full-funnel (Search + Display + Remarketing + Shopping)", "Advanced audience targeting & segmentation", "A/B testing of ads and landing pages", "Bi-weekly strategy calls + live dashboards", "Competitor monitoring & bid intelligence"],
@@ -67,7 +69,8 @@ const pricingPlans = [
   {
     name: "12-Month Scale",
     tagline: "Full firepower. Dedicated strategist. Maximum ROI at scale.",
-    price: "$1,800",
+    monthlyPrice: "$1,800",
+    yearlyPrice: "$1,440",
     cta: "Talk to Us",
     features: ["Unlimited ad spend management", "All Google properties (Search, Display, Shopping, YouTube, PMax)", "Custom audience & lookalike strategies", "Advanced attribution modeling & CRO", "Weekly reports + executive dashboards", "Dedicated senior account strategist"],
   },
@@ -267,8 +270,8 @@ const GoogleAdsPage = () => {
                     {plan.tagline}
                   </p>
                   <p className={`text-4xl font-heading font-bold mt-6 ${isPopular ? "" : "text-foreground"}`}>
-                    {plan.price}
-                    <span className={`text-sm font-normal ${isPopular ? "text-primary-foreground/70" : "text-muted-foreground"}`}> / Month</span>
+                    {billingCycle === "yearly" ? plan.yearlyPrice : plan.monthlyPrice}
+                    <span className={`text-sm font-normal ${isPopular ? "text-primary-foreground/70" : "text-muted-foreground"}`}> / {billingCycle === "yearly" ? "Year" : "Month"}</span>
                   </p>
                   <Button
                     className={`rounded-full font-semibold mt-6 ${
