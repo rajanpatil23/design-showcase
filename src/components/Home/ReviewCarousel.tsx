@@ -6,12 +6,14 @@ import testimonialPerson from "@/assets/testimonial-person.jpg";
 import karmVeerAvatar from "@/assets/testimonials/karm-veer.jpeg";
 import deepannitaAvatar from "@/assets/testimonials/deepannita-evolveu.png";
 import tusharAvatar from "@/assets/testimonials/tushar-dublish.jpeg";
+import kinjalAvatar from "@/assets/testimonials/kinjal-jain.jpeg";
 import edgeLogo from "@/assets/brands/the-edu-edge.png";
 import oceanLogo from "@/assets/brands/the-edu-ocean.svg";
 import actionSyncLogo from "@/assets/brands/action-sync.png";
 import infosecLogo from "@/assets/brands/infosec-minds.svg";
 import yttLogo from "@/assets/brands/ytt-global.svg";
 import evolveuLogo from "@/assets/brands/evolveu.svg";
+import mendingMindLogo from "@/assets/brands/mending-mind.svg";
 
 type ReviewItem = {
   brand: string;
@@ -50,11 +52,11 @@ const DEFAULT_REVIEWS: ReviewItem[] = [
     person: { name: "Tushar Dublish", title: "Founder, ActionSync", avatar: tusharAvatar },
   },
   {
-    brand: "The Edu Edge",
-    brandLogo: edgeLogo,
+    brand: "Mending Mind",
+    brandLogo: mendingMindLogo,
     quote:
       "Connecttly helped us harness AI-powered analytics to uncover insights we were missing. From dashboards to automation, they gave clarity and optimized campaigns in real time. Like having a full analytics team on demand.",
-    person: { name: "Kinjal M Jain", title: "Founder, Mending Mind", avatar: testimonialPerson },
+    person: { name: "Kinjal M Jain", title: "Founder, Mending Mind", avatar: kinjalAvatar },
   },
   {
     brand: "YTT Global",
