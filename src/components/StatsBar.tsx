@@ -4,6 +4,8 @@ interface Stat {
   icon: React.ReactNode;
   value: string;
   label: string;
+  /** When true, renders the icon as-is without the primary background tile. */
+  bareIcon?: boolean;
 }
 
 interface StatsBarProps {
@@ -22,9 +24,13 @@ const StatsBar = ({ stats = defaultStats }: StatsBarProps) => (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4">
       {stats.map((stat, i) => (
         <div key={i} className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center shrink-0 shadow-md">
-            {stat.icon}
-          </div>
+          {stat.bareIcon ? (
+            <div className="shrink-0">{stat.icon}</div>
+          ) : (
+            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center shrink-0 shadow-md">
+              {stat.icon}
+            </div>
+          )}
           <div className="leading-tight">
             <p className="font-heading font-bold text-xl text-foreground">{stat.value}</p>
             <p className="text-xs text-muted-foreground">{stat.label}</p>

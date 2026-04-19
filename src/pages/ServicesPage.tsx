@@ -2,6 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import SectionLabel from "@/components/SectionLabel";
 import StatsBar from "@/components/StatsBar";
+import statBrands from "@/assets/stats/brands.png";
+import statSatisfaction from "@/assets/stats/satisfaction.png";
+import statProjects from "@/assets/stats/projects.png";
+import statSupport from "@/assets/stats/support.png";
 import { ArrowRight, BarChart3, Megaphone, Users, Globe, PenTool, Code, Youtube, TrendingUp, MessageCircle, Search, Send } from "lucide-react";
 import servicesHero from "@/assets/services-hero-person.jpg";
 import illustrationStrategist from "@/assets/services/illustration-strategist.png";
@@ -88,7 +92,14 @@ const ServicesPage = () => {
             </div>
           </div>
 
-          <StatsBar />
+          <StatsBar
+            stats={[
+              { icon: <img src={statBrands} alt="" className="w-10 h-10 object-contain" />, value: "70+", label: "SaaS brands served", bareIcon: true },
+              { icon: <img src={statSatisfaction} alt="" className="w-10 h-10 object-contain" />, value: "98%", label: "Client satisfaction", bareIcon: true },
+              { icon: <img src={statProjects} alt="" className="w-10 h-10 object-contain" />, value: "500+", label: "Projects delivered", bareIcon: true },
+              { icon: <img src={statSupport} alt="" className="w-10 h-10 object-contain" />, value: "24/7", label: "Support available", bareIcon: true },
+            ]}
+          />
         </div>
       </section>
 
