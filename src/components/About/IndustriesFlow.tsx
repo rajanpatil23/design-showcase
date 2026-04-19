@@ -59,7 +59,7 @@ const HubNode = () => (
           position={side === "left" ? Position.Left : Position.Right}
           className="!opacity-0 !pointer-events-none"
           style={{
-            top: row === "top" ? "20%" : row === "middle" ? "50%" : "80%",
+            top: row === "top" ? "38%" : row === "middle" ? "50%" : "62%",
           }}
         />
       ))
