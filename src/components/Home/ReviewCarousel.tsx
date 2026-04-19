@@ -15,6 +15,8 @@ import infosecLogo from "@/assets/brands/infosec-minds.svg";
 import yttLogo from "@/assets/brands/ytt-global.svg";
 import evolveuLogo from "@/assets/brands/evolveu.svg";
 import mendingMindLogo from "@/assets/brands/mending-mind.svg";
+import waareeLogo from "@/assets/brands/waaree-group.svg";
+import ankitDoshiAvatar from "@/assets/testimonials/ankit-doshi.jpeg";
 
 type ReviewItem = {
   brand: string;
@@ -72,6 +74,13 @@ const DEFAULT_REVIEWS: ReviewItem[] = [
     quote:
       "Connecttly transformed our digital presence with sharp strategy and consistent execution. Their team understood our vision, delivered creative campaigns, and helped us reach the right learners at the right time.",
     person: { name: "Richikesh Kumar", title: "CEO & Founder, The Edu Edge", avatar: richikeshAvatar },
+  },
+  {
+    brand: "Waaree Group",
+    brandLogo: waareeLogo,
+    quote:
+      "Exploring LinkedIn Ads for the first time was seamless with Connecttly. Their insights helped me optimize my profile, generate leads, and grow with confidence. Excited to see the long-term impact!",
+    person: { name: "Ankit Doshi", title: "Director, Waaree Group", avatar: ankitDoshiAvatar },
   },
 ];
 
