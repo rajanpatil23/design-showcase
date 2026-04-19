@@ -119,7 +119,7 @@ const IndustriesFlow = () => {
         target: "hub",
         targetHandle: `left-${["top", "middle", "bottom"][i]}`,
         type: i === 1 ? "straight" : "smoothstep",
-        animated: true,
+        animated: false,
         pathOptions: i === 1 ? undefined : { borderRadius: 80 },
         style: { stroke: "hsl(var(--primary))", strokeWidth: 1.75 },
       } as Edge);
@@ -140,7 +140,7 @@ const IndustriesFlow = () => {
         target: "hub",
         targetHandle: `right-${["top", "middle", "bottom"][i]}`,
         type: i === 1 ? "straight" : "smoothstep",
-        animated: true,
+        animated: false,
         pathOptions: i === 1 ? undefined : { borderRadius: 80 },
         style: { stroke: "hsl(var(--primary))", strokeWidth: 1.75 },
       } as Edge);
