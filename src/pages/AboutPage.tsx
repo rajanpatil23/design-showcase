@@ -116,6 +116,9 @@ const AboutPage = () => {
       {/* Our Story */}
       <section className="section-padding bg-background">
         <div className="container-main">
+          <div className="flex justify-center mb-8">
+            <SectionLabel label="How it started" />
+          </div>
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <h2 className="text-4xl md:text-5xl font-heading font-bold">Our Story</h2>
             <div className="border-l-2 border-primary pl-6 text-muted-foreground space-y-4 leading-relaxed text-sm">
