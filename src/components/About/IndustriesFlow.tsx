@@ -84,7 +84,7 @@ const CARD_W = 260;
 const CARD_H = 64;
 const HUB_W = 96;
 const HUB_H = 96;
-const CANVAS_W = 980;
+const CANVAS_W = 1200;
 const CANVAS_H = 380;
 const ROW_YS = [40, (CANVAS_H - CARD_H) / 2, CANVAS_H - CARD_H - 40];
 
