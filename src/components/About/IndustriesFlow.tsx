@@ -4,11 +4,9 @@ import {
   Background,
   Handle,
   Position,
-  BaseEdge,
   type Node,
   type Edge,
   type NodeProps,
-  type EdgeProps,
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 import {
@@ -52,36 +50,24 @@ const HubNode = () => (
     <div className="w-24 h-24 rounded-3xl bg-primary flex items-center justify-center shadow-[0_10px_30px_-8px_hsl(var(--primary)/0.6)]">
       <img src={connecttlyMark} alt="Connecttly" className="w-10 h-auto" />
     </div>
-    {/* All targets on left/right edges, vertically centered */}
-    {(["left", "right"] as const).map((side) => (
-      <Handle
-        key={side}
-        id={side}
-        type="target"
-        position={side === "left" ? Position.Left : Position.Right}
-        className="!opacity-0 !pointer-events-none"
-        style={{ top: "50%" }}
-      />
-    ))}
+    {(["left", "right"] as const).map((side) =>
+      (["top", "middle", "bottom"] as const).map((row) => (
+        <Handle
+          key={`${side}-${row}`}
+          id={`${side}-${row}`}
+          type="target"
+          position={side === "left" ? Position.Left : Position.Right}
+          className="!opacity-0 !pointer-events-none"
+          style={{
+            top: row === "top" ? "20%" : row === "middle" ? "50%" : "80%",
+          }}
+        />
+      ))
+    )}
   </div>
 );
 
-/** Custom edge: horizontal from card, then smooth curve into hub side */
-const HorizCurveEdge = ({ id, sourceX, sourceY, targetX, targetY, markerEnd, style }: EdgeProps) => {
-  // Move horizontally from source for ~60% of horizontal distance, then curve to target
-  const dx = targetX - sourceX;
-  const midX = sourceX + dx * 0.55;
-  // Cubic bezier: control points keep horizontal exit from source and approach target on a curve
-  const c1x = sourceX + dx * 0.35;
-  const c1y = sourceY;
-  const c2x = midX;
-  const c2y = targetY;
-  const path = `M ${sourceX},${sourceY} C ${c1x},${c1y} ${c2x},${c2y} ${targetX},${targetY}`;
-  return <BaseEdge id={id} path={path} markerEnd={markerEnd} style={style} />;
-};
-
 const nodeTypes = { industry: IndustryNode, hub: HubNode };
-const edgeTypes = { horizCurve: HorizCurveEdge };
 
 const leftItems: IndustryData[] = [
   { name: "SaaS & Technology", icon: <Code2 className="w-5 h-5 text-primary" />, side: "left" },
@@ -107,12 +93,6 @@ const IndustriesFlow = () => {
     const ns: Node[] = [];
     const es: Edge[] = [];
 
-    const edgeStyle = {
-      stroke: "hsl(var(--primary))",
-      strokeWidth: 1.5,
-      strokeDasharray: "4 3",
-    };
-
     leftItems.forEach((d, i) => {
       ns.push({
         id: `L${i}`,
@@ -126,10 +106,10 @@ const IndustriesFlow = () => {
         id: `e-L${i}`,
         source: `L${i}`,
         target: "hub",
-        targetHandle: "left",
-        type: "horizCurve",
+        targetHandle: `left-${["top", "middle", "bottom"][i]}`,
+        type: "smoothstep",
         animated: true,
-        style: edgeStyle,
+        style: { stroke: "hsl(var(--primary))", strokeWidth: 1.5, strokeDasharray: "4 3" },
       });
     });
 
@@ -146,10 +126,10 @@ const IndustriesFlow = () => {
         id: `e-R${i}`,
         source: `R${i}`,
         target: "hub",
-        targetHandle: "right",
-        type: "horizCurve",
+        targetHandle: `right-${["top", "middle", "bottom"][i]}`,
+        type: "smoothstep",
         animated: true,
-        style: edgeStyle,
+        style: { stroke: "hsl(var(--primary))", strokeWidth: 1.5, strokeDasharray: "4 3" },
       });
     });
 
@@ -171,7 +151,6 @@ const IndustriesFlow = () => {
         nodes={nodes}
         edges={edges}
         nodeTypes={nodeTypes}
-        edgeTypes={edgeTypes}
         fitView
         fitViewOptions={{ padding: 0.05 }}
         nodesDraggable={false}
