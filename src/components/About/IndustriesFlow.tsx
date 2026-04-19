@@ -24,7 +24,7 @@ type IndustryData = { name: string; icon: React.ReactNode; side: "left" | "right
 const IndustryNode = ({ data }: NodeProps<Node<IndustryData>>) => {
   const isLeft = data.side === "left";
   return (
-    <div className="bg-background rounded-xl border border-border/60 shadow-[6px_8px_20px_-6px_hsl(var(--foreground)/0.15)] px-5 py-4 flex items-center gap-4 w-[260px]">
+    <div className="bg-background rounded-xl border border-border/60 shadow-[6px_8px_20px_-6px_hsl(var(--foreground)/0.15)] px-5 py-6 flex items-center gap-4 w-[260px]">
       {isLeft ? (
         <>
           <p className="text-sm font-heading font-semibold leading-tight flex-1">{data.name}</p>
