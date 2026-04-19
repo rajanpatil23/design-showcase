@@ -118,7 +118,7 @@ export default function ReviewCarousel({
   }, [emblaApi, onSelect]);
 
   return (
-    <section className={`${noPadding ? "" : "pt-16 pb-6"} bg-transparent`}>
+    <section className={`${noPadding ? "" : "pt-16 pb-2"} bg-transparent`}>
       <div className="relative">
         {/* edge fades */}
         <div className="hidden lg:block pointer-events-none absolute inset-y-0 left-0 w-48 xl:w-64 z-10 bg-gradient-to-r from-background via-background/80 to-transparent" />
@@ -141,7 +141,7 @@ export default function ReviewCarousel({
         </button>
 
         {/* carousel */}
-        <div className="overflow-visible pt-6 sm:pt-8 pb-2" ref={emblaRef}>
+        <div className="overflow-visible pt-6 sm:pt-8 pb-0" ref={emblaRef}>
           <div className="flex gap-4 sm:gap-6 lg:gap-8 xl:gap-12 px-4 sm:px-6 lg:px-8">
             {items.map((it, idx) => (
               <article
