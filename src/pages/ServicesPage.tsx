@@ -98,7 +98,7 @@ const ServicesPage = () => {
           <SectionLabel label="Our Services" />
           <div className="flex flex-wrap justify-center gap-3 mb-10">
             {categories.map((cat, i) => (
-              <button key={cat} className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${i === 0 ? "bg-primary text-primary-foreground" : "border border-border text-muted-foreground hover:bg-secondary"}`}>
+              <button key={cat} className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${i === 0 ? "bg-primary text-primary-foreground" : "bg-secondary text-foreground hover:bg-secondary/80"}`}>
                 {cat}
               </button>
             ))}
