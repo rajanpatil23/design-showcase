@@ -92,7 +92,7 @@ const rightItems: IndustryData[] = [
 ];
 
 const CARD_W = 260;
-const CARD_H = 64;
+const CARD_H = 80;
 const HUB_W = 96;
 const HUB_H = 96;
 const CANVAS_W = 1200;
