@@ -175,7 +175,7 @@ const AboutPage = () => {
                  Col 2: TALL top (offset down), SHORT bottom
                  Col 3: SHORT top (flush), TALL bottom
               Heights: short ≈ 40%, tall ≈ 60% of column. Even gaps. */}
-          <div className="hidden md:grid grid-cols-3 gap-6 mt-12 max-w-5xl mx-auto" style={{ minHeight: 680 }}>
+          <div className="hidden md:grid grid-cols-3 gap-6 mt-12" style={{ minHeight: 680 }}>
             {[0, 1, 2].map((col) => {
               const top = principles[col];
               const bottom = principles[col + 3];
@@ -233,7 +233,7 @@ const AboutPage = () => {
           </h2>
 
           {/* Cards + connector arrows */}
-          <div className="relative mt-16 max-w-5xl mx-auto">
+          <div className="relative mt-16">
             <svg
               aria-hidden
               className="hidden md:block absolute inset-x-0 -top-12 w-full h-12 pointer-events-none overflow-visible"
@@ -272,7 +272,7 @@ const AboutPage = () => {
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mt-4 mb-12">Meet the Team</h2>
 
           {/* Founder, dark navy card */}
-          <div className="max-w-5xl mx-auto bg-[#09233C] text-white p-6 md:p-10 mb-6 md:flex gap-10 items-center">
+          <div className="bg-[#09233C] text-white p-6 md:p-10 mb-6 md:flex gap-10 items-center">
             <div className="w-full md:w-72 h-72 rounded-2xl overflow-hidden shrink-0 mb-6 md:mb-0 bg-primary">
               <img src={founderImg} alt="Neeraj Yadav" className="w-full h-full object-cover object-top" loading="lazy" width={288} height={288} />
             </div>
@@ -291,7 +291,7 @@ const AboutPage = () => {
           </div>
 
           {/* Team Grid, solid blue cards */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {teamMembers.map((m, i) => (
               <div key={m.name} className="bg-primary text-primary-foreground rounded-2xl p-5 aspect-square flex flex-col items-center justify-center text-center overflow-hidden">
                 {i === 0 ? (
@@ -321,7 +321,7 @@ const AboutPage = () => {
           <h2 className="text-3xl md:text-5xl font-heading font-bold text-center max-w-2xl mx-auto leading-tight mt-4">
             Built for Brands <span className="gradient-text">That Want to Grow</span>
           </h2>
-          <div className="grid md:grid-cols-2 gap-x-8 gap-y-6 mt-12 max-w-5xl mx-auto md:items-center">
+          <div className="grid md:grid-cols-2 gap-x-8 gap-y-6 mt-12 md:items-center">
             {clientTypes.map((c, i) => {
               const tall = i === 0 || i === 3;
               return (
@@ -350,7 +350,7 @@ const AboutPage = () => {
             <span className="gradient-text">Industries</span> we serve
           </h2>
 
-          <div className="relative mt-16 max-w-5xl mx-auto">
+          <div className="relative mt-16">
             {/* Animated connector lines (desktop) */}
             <svg
               aria-hidden
