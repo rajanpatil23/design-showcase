@@ -318,7 +318,7 @@ const AboutPage = () => {
           <h2 className="text-3xl md:text-5xl font-heading font-bold text-center max-w-2xl mx-auto leading-tight mt-4">
             Built for Brands <span className="gradient-text">That Want to Grow</span>
           </h2>
-          <div className="grid md:grid-cols-2 gap-x-8 gap-y-6 mt-12 md:items-center">
+          <div className="grid md:grid-cols-2 gap-x-8 gap-y-3 mt-12 md:items-center">
             {clientTypes.map((c, i) => {
               const tall = i === 0 || i === 3;
               return (
