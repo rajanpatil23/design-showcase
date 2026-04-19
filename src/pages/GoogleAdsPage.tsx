@@ -300,19 +300,19 @@ const GoogleAdsPage = () => {
           <div className="flex justify-center mb-10">
             <SectionLabel label="Tool Stack" />
           </div>
-          <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
             <div>
-              <h2 className="text-3xl md:text-5xl font-heading font-bold text-primary-foreground leading-tight">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground leading-tight">
                 The Stack Behind Your Campaigns
               </h2>
-              <p className="text-primary-foreground/70 mt-5 text-sm md:text-base leading-relaxed max-w-md">
+              <p className="text-primary-foreground/70 mt-4 text-sm leading-relaxed max-w-md">
                 We leverage the best tools and platforms in the industry to deliver exceptional results for your Google Ads campaigns. From analytics to optimization, we use cutting-edge technology.
               </p>
             </div>
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid grid-cols-4 gap-3 max-w-sm ml-auto">
               {toolStack.map((tool, i) => {
                 const col = i % 4;
-                const offset = col === 1 || col === 3 ? "translate-y-8" : "";
+                const offset = col === 1 || col === 3 ? "translate-y-5" : "";
                 return (
                   <div
                     key={tool.name}
