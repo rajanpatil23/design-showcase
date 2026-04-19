@@ -174,16 +174,14 @@ const GoogleAdsPage = () => {
         <div className="container-main">
           <SectionLabel label="Our Process" />
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-center">How We Get You Results</h2>
-          <div className="max-w-2xl mx-auto mt-12 space-y-6">
+          <div className="max-w-xl mx-auto mt-16 space-y-10">
             {processSteps.map((step) => (
-              <div key={step.num} className="flex gap-6 items-start">
-                <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center shrink-0">
-                  <span className="text-xl font-heading font-bold text-primary-foreground">{step.num}</span>
+              <div key={step.num} className="relative bg-background rounded-2xl shadow-md pt-12 pb-6 px-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-primary flex items-center justify-center shadow-lg">
+                  <span className="text-lg font-heading font-bold text-primary-foreground">{step.num}</span>
                 </div>
-                <div>
-                  <h3 className="font-heading font-semibold text-lg">{step.title}</h3>
-                  <p className="text-sm text-muted-foreground mt-1">{step.desc}</p>
-                </div>
+                <h3 className="font-heading font-semibold text-xl">{step.title}</h3>
+                <p className="text-sm text-muted-foreground mt-2 max-w-sm mx-auto">{step.desc}</p>
               </div>
             ))}
           </div>
