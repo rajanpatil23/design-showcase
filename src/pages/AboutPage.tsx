@@ -190,7 +190,7 @@ const AboutPage = () => {
                     <div
                       key={p.title}
                       className="bg-background rounded-xl border border-border p-6 shadow-[0_2px_10px_hsl(var(--foreground)/0.04)] flex flex-col"
-                      style={{ flex: tall ? "5 1 0" : "2 1 0" }}
+                      style={{ flex: tall ? "9 2 0" : "4 1 0" }}
                     >
                       <div className="p-3 rounded-lg bg-ct-blue-light inline-block mb-4 self-start">{p.icon}</div>
                       <h3 className="font-heading font-semibold text-lg mb-2">{p.title}</h3>
