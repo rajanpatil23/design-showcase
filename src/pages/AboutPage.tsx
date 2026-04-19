@@ -116,12 +116,10 @@ const AboutPage = () => {
       {/* Our Story */}
       <section className="section-padding bg-background">
         <div className="container-main">
-          <div className="mb-6">
-            <span className="inline-block px-5 py-1.5 text-xs font-medium rounded-full border border-primary/30 bg-primary/5 text-primary">
-              How it started
-            </span>
+          <div className="flex justify-center mb-6">
+            <SectionLabel label="How it started" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-heading font-bold text-left mb-12">Our Story</h2>
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-center mb-12">Our Story</h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="rounded-2xl overflow-hidden">
               <img
