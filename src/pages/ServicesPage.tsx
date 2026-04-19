@@ -22,9 +22,9 @@ const categories = ["Performance", "Social Media", "LinkedIn", "SEO", "Content",
 
 const serviceCards = [
   { title: "Google Ads Management", desc: "Your competitors are bidding on your keywords right now. We make sure you win.", cta: "Get a Free Audit", image: illuGoogleAds, link: "/services/google-ads" },
-  { title: "Meta Ads Management", desc: "3 seconds to stop the scroll. We make everyone count — and convert.", cta: "Get a Free Audit", image: illuMetaAds },
+  { title: "Meta Ads Management", desc: "3 seconds to stop the scroll. We make everyone count, and convert.", cta: "Get a Free Audit", image: illuMetaAds },
   { title: "LinkedIn Ads Management", desc: "Reach the C-suite by name, title, and company. Not by guessing.", cta: "Get a Free Audit", image: illuLinkedinAds },
-  { title: "YouTube Ads Management", desc: "6 seconds before they skip. We make them stay — and act.", cta: "Get a Free Audit", image: illuYoutubeAds },
+  { title: "YouTube Ads Management", desc: "6 seconds before they skip. We make them stay, and act.", cta: "Get a Free Audit", image: illuYoutubeAds },
   { title: "Conversion Rate Optimisation", desc: "Same traffic. More customers. We find the leaks and fix them.", cta: "Fix My Funnel", image: illuCro },
   { title: "Performance Marketing Bundle", desc: "Every paid channel. One war room. Maximum ROI.", cta: "Explore Bundle", recommended: true },
 ];

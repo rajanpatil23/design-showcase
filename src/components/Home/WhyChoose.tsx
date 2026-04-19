@@ -16,14 +16,14 @@ type CardDef = {
 };
 
 const CARDS: CardDef[] = [
-  { key: "tl", title: "Strategy + Execution", desc: "We don't just advise — we build and run your growth engine.", Icon: Monitor },
+  { key: "tl", title: "Strategy + Execution", desc: "We don't just advise, we build and run your growth engine.", Icon: Monitor },
   { key: "tr", title: "AI-Powered Marketing", desc: "Automation and AI tools drive efficiency and scale.", iconSrc: aiIcon },
   { key: "bl", title: "Performance Focused", desc: "Every campaign is optimised for measurable ROI.", iconSrc: performanceIcon },
   { key: "br", title: "Founder-Friendly", desc: "We work closely with startups and growth-stage businesses.", iconSrc: founderFriendlyIcon },
 ];
 
 // Each corner uses a radial gradient anchored to its outer corner so only a
-// small, soft quarter-arc of blue hugs the edge — not a hard solid block.
+// small, soft quarter-arc of blue hugs the edge, not a hard solid block.
 const cornerClass: Record<CardKey, string> = {
   tl: "top-0 left-0 rounded-tl-[20px] [background:radial-gradient(circle_at_top_left,hsl(var(--primary))_0,hsl(var(--primary))_55%,transparent_72%)]",
   tr: "top-0 right-0 rounded-tr-[20px] [background:radial-gradient(circle_at_top_right,hsl(var(--primary))_0,hsl(var(--primary))_55%,transparent_72%)]",
@@ -98,7 +98,7 @@ const ServicesHub = ({
 
       {/* Decorative blank dummy strip cards in the N/E/S/W gaps, fading toward outer edges */}
       <div aria-hidden className="hidden md:block pointer-events-none">
-        {/* WEST strip — fades toward the left (outer) */}
+        {/* WEST strip, fades toward the left (outer) */}
         <div
           className="absolute -translate-y-1/2 bg-background rounded-lg ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
           style={{
@@ -110,7 +110,7 @@ const ServicesHub = ({
             maskImage: "linear-gradient(to left, black 70%, transparent 100%)",
           }}
         />
-        {/* EAST strip — fades toward the right (outer) */}
+        {/* EAST strip, fades toward the right (outer) */}
         <div
           className="absolute -translate-y-1/2 bg-background rounded-lg ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
           style={{
@@ -122,7 +122,7 @@ const ServicesHub = ({
             maskImage: "linear-gradient(to right, black 70%, transparent 100%)",
           }}
         />
-        {/* NORTH strip — fades toward the top (outer) */}
+        {/* NORTH strip, fades toward the top (outer) */}
         <div
           className="absolute -translate-x-1/2 bg-background rounded-lg ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
           style={{
@@ -134,7 +134,7 @@ const ServicesHub = ({
             maskImage: "linear-gradient(to top, black 70%, transparent 100%)",
           }}
         />
-        {/* SOUTH strip — fades toward the bottom (outer) */}
+        {/* SOUTH strip, fades toward the bottom (outer) */}
         <div
           className="absolute -translate-x-1/2 bg-background rounded-lg ring-1 ring-border/40 shadow-[0_1px_3px_hsl(var(--foreground)/0.04)]"
           style={{
@@ -148,7 +148,7 @@ const ServicesHub = ({
         />
       </div>
 
-      {/* CENTRAL DIAL — desktop only */}
+      {/* CENTRAL DIAL, desktop only */}
       <div
         aria-hidden
         className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20"

@@ -304,7 +304,7 @@ export default function Hero({
         if (mouseMoving && inHero) {
           s.vx = dX * 0.5; s.vy = dY * 0.5;
         } else {
-          // Mouse idle / outside hero — bleed off momentum without injecting
+          // Mouse idle / outside hero, bleed off momentum without injecting
           // any new random energy. Otherwise, all tiles end up drifting in
           // sync because they share the same RNG-driven jitter.
           s.vx *= MOMENTUM_DECAY; s.vy *= MOMENTUM_DECAY;
@@ -422,11 +422,11 @@ export default function Hero({
           }}
         />
 
-        {/* Hero content area (icons + text) — wrapped so floating icons stay in this region only and don't overlap the marquee below */}
+        {/* Hero content area (icons + text), wrapped so floating icons stay in this region only and don't overlap the marquee below */}
         <div className="relative">
           {/* Content + floating icons share the same container rail so everything aligns with the navbar/logo */}
           <div className="relative container-main min-h-[520px] md:min-h-[min(calc(100svh-4rem),680px)] py-14 md:py-16 flex items-center justify-center">
-            {/* Floating icons — constrained to the container rail, not the full viewport */}
+            {/* Floating icons, constrained to the container rail, not the full viewport */}
             <div className="absolute inset-0 z-10 pointer-events-none">
               {allSpecs.map((spec, i) => {
                 const d = POSITIONS_DESKTOP[spec.id];
@@ -492,7 +492,7 @@ export default function Hero({
           </div>
         </div>
 
-        {/* Trusted By marquee — part of hero (shares grid bg), sits flush at the bottom so it connects directly to the stats grid below */}
+        {/* Trusted By marquee, part of hero (shares grid bg), sits flush at the bottom so it connects directly to the stats grid below */}
         <div className="relative z-20 pb-6 md:pb-8">
           <TrustedMarquee />
         </div>
