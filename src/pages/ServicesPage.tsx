@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import SectionLabel from "@/components/SectionLabel";
 import StatsBar from "@/components/StatsBar";
 import { ArrowRight, BarChart3, Megaphone, Users, Globe, PenTool, Code, Youtube, TrendingUp, MessageCircle, Search, Send } from "lucide-react";
-import servicesHero from "@/assets/services-hero-person.jpg";
+import servicesHero from "@/assets/services-hero-person.png";
 import illustrationStrategist from "@/assets/services/illustration-strategist.png";
 import illustrationQuiz from "@/assets/services/illustration-quiz.png";
 import illustrationBrief from "@/assets/services/illustration-brief.png";
