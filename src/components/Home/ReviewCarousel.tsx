@@ -145,6 +145,9 @@ export default function ReviewCarousel({
                   <div className="pointer-events-none absolute top-6 left-6 sm:top-8 sm:left-10 text-6xl sm:text-7xl lg:text-8xl font-heading font-bold leading-none text-primary/10 group-hover:text-primary/70 transition-colors duration-500 select-none">
                     “
                   </div>
+                  <div className="pointer-events-none absolute bottom-2 right-6 sm:right-10 text-6xl sm:text-7xl lg:text-8xl font-heading font-bold leading-none text-primary/10 group-hover:text-primary/70 transition-colors duration-500 select-none">
+                    ”
+                  </div>
                   <div className="relative z-10 flex flex-col items-center text-center">
                     <img src={it.brandLogo} alt={it.brand} className="h-8 sm:h-10 lg:h-12 opacity-90" />
 
