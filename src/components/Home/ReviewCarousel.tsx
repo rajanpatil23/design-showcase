@@ -65,7 +65,7 @@ const DEFAULT_REVIEWS: ReviewItem[] = [
     brand: "YTT Global",
     brandLogo: yttLogo,
     quote:
-      "Growing our LinkedIn page with Connecttly was transformative. They went beyond numbers—strengthening brand credibility, improving engagement, and building trust. Their strategies truly elevated our reputation.",
+      "Growing our LinkedIn page with Connecttly was transformative. They went beyond numbers,strengthening brand credibility, improving engagement, and building trust. Their strategies truly elevated our reputation.",
     person: { name: "Manwendrasinh Jadeja", title: "Founder & CEO, YTT Global", avatar: testimonialPerson },
   },
   {

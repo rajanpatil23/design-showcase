@@ -16,10 +16,10 @@ const aboutStats = [
 ];
 
 const principles = [
-  { title: "Radical Transparency", desc: "No black-box reporting. No hidden fees. You see exactly what we're doing, why we're doing it, and what it's delivering — in real time.", icon: <Shield className="w-6 h-6 text-primary" /> },
-  { title: "AI-First Thinking", desc: "We integrate AI and automation into everything we do — from content production to lead scoring to campaign optimization. It's how we deliver big-agency output at startup-friendly costs.", icon: <Cpu className="w-6 h-6 text-primary" /> },
-  { title: "Continuous Optimization", desc: "Good enough isn't good enough. Every campaign, every piece of content, every workflow gets measured, tested, and improved — relentlessly.", icon: <BarChart3 className="w-6 h-6 text-primary" /> },
-  { title: "Results Over Rhetoric", desc: "We measure success in pipeline, revenue, and growth — not impressions and vanity metrics. Every strategy we build is tied to a business outcome.", icon: <Zap className="w-6 h-6 text-primary" /> },
+  { title: "Radical Transparency", desc: "No black-box reporting. No hidden fees. You see exactly what we're doing, why we're doing it, and what it's delivering, in real time.", icon: <Shield className="w-6 h-6 text-primary" /> },
+  { title: "AI-First Thinking", desc: "We integrate AI and automation into everything we do, from content production to lead scoring to campaign optimization. It's how we deliver big-agency output at startup-friendly costs.", icon: <Cpu className="w-6 h-6 text-primary" /> },
+  { title: "Continuous Optimization", desc: "Good enough isn't good enough. Every campaign, every piece of content, every workflow gets measured, tested, and improved, relentlessly.", icon: <BarChart3 className="w-6 h-6 text-primary" /> },
+  { title: "Results Over Rhetoric", desc: "We measure success in pipeline, revenue, and growth, not impressions and vanity metrics. Every strategy we build is tied to a business outcome.", icon: <Zap className="w-6 h-6 text-primary" /> },
   { title: "Speed of Execution", desc: "We move fast. Strategies don't sit in decks for weeks. We plan, launch, learn, and optimize in rapid cycles because growth doesn't wait.", icon: <Clock className="w-6 h-6 text-primary" /> },
   { title: "Partnership, Not Vendorship", desc: "We don't operate as an outside vendor. We embed into your team, understand your business deeply, and treat your goals as our own.", icon: <Handshake className="w-6 h-6 text-primary" /> },
 ];
@@ -130,11 +130,11 @@ const AboutPage = () => {
             <div className="border-l-2 border-primary pl-6 text-muted-foreground space-y-4 leading-relaxed text-sm">
               <div>
                 <p>Connecttly was born from a simple frustration: too many businesses were paying premium prices for marketing that didn't deliver results.</p>
-                <p>Our founder, Neeraj Yadav, saw the gap firsthand — agencies that overpromised and underdelivered, strategies built on vanity metrics instead of revenue, and small businesses left behind because they couldn't afford the big-agency price tag.</p>
+                <p>Our founder, Neeraj Yadav, saw the gap firsthand, agencies that overpromised and underdelivered, strategies built on vanity metrics instead of revenue, and small businesses left behind because they couldn't afford the big-agency price tag.</p>
               </div>
               <p className="font-semibold text-foreground">So he built Connecttly to be different.</p>
               <div>
-                <p>We're a growth marketing agency that operates like an extension of your team. We combine strategic thinking with hands-on execution, powered by AI and automation, to deliver marketing that actually moves the needle — more leads, more pipeline, more revenue.</p>
+                <p>We're a growth marketing agency that operates like an extension of your team. We combine strategic thinking with hands-on execution, powered by AI and automation, to deliver marketing that actually moves the needle, more leads, more pipeline, more revenue.</p>
                 <p>Based in Bengaluru and serving clients globally, we've helped 20+ brands across EdTech, SaaS, professional services, and enterprise automation build scalable growth systems from the ground up.</p>
               </div>
               <p className="font-semibold text-foreground">We don't believe in marketing for marketing's sake. If it doesn't drive growth, we don't do it.</p>
@@ -148,11 +148,11 @@ const AboutPage = () => {
         <div className="container-main py-16 md:py-24 px-8 md:px-14">
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-8">Our Mission</h2>
           <div className="relative px-12 md:px-20 py-12 md:py-16">
-            {/* Opening quote — top left */}
+            {/* Opening quote, top left */}
             <span aria-hidden className="pointer-events-none absolute left-0 -top-2 text-6xl sm:text-7xl lg:text-8xl font-heading font-bold leading-none text-white select-none">
               “
             </span>
-            {/* Closing quote — bottom right */}
+            {/* Closing quote, bottom right */}
             <span aria-hidden className="pointer-events-none absolute right-0 -bottom-6 text-6xl sm:text-7xl lg:text-8xl font-heading font-bold leading-none text-white select-none">
               ”
             </span>
@@ -189,7 +189,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* How It Works — Dark Section (mirrors Home) */}
+      {/* How It Works, Dark Section (mirrors Home) */}
       <section className="py-16 md:py-24 bg-[#09233C]">
         <div className="container-main">
           <div className="flex justify-center mb-6">
@@ -240,7 +240,7 @@ const AboutPage = () => {
           <SectionLabel label="Meet the Team" />
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mt-4 mb-12">Meet the Team</h2>
 
-          {/* Founder — dark navy card */}
+          {/* Founder, dark navy card */}
           <div className="max-w-5xl mx-auto bg-[#09233C] text-white p-6 md:p-10 mb-6 md:flex gap-10 items-center">
             <div className="w-full md:w-72 h-72 rounded-2xl overflow-hidden shrink-0 mb-6 md:mb-0 bg-primary">
               <img src={founderImg} alt="Neeraj Yadav" className="w-full h-full object-cover object-top" loading="lazy" width={288} height={288} />
@@ -259,7 +259,7 @@ const AboutPage = () => {
             </div>
           </div>
 
-          {/* Team Grid — solid blue cards */}
+          {/* Team Grid, solid blue cards */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
             {teamMembers.map((m, i) => (
               <div key={m.name} className="bg-primary text-primary-foreground rounded-2xl p-5 aspect-square flex flex-col items-center justify-center text-center overflow-hidden">
@@ -312,7 +312,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Industries — hub & spoke */}
+      {/* Industries, hub & spoke */}
       <section className="section-padding bg-ct-section">
         <div className="container-main">
           <h2 className="text-3xl md:text-5xl font-heading font-bold text-center">

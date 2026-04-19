@@ -40,7 +40,7 @@ const ServiceCard = ({ s, isActive, onActivate, idleBasisClass }: CardProps) => 
         : idleBasisClass
     }`}
   >
-    {/* Illustration layer — absolutely positioned in the bottom-right 75% of the card
+    {/* Illustration layer, absolutely positioned in the bottom-right 75% of the card
         (cells 6-8, 10-12, 14-16 of a 4×4 grid). Sits behind the text/number layer. */}
     <div
       aria-hidden={!isActive}
@@ -83,7 +83,7 @@ const ServiceCard = ({ s, isActive, onActivate, idleBasisClass }: CardProps) => 
 );
 
 const ServicesGrid = () => {
-  // Single global active id across BOTH rows — only one card can be expanded at a time.
+  // Single global active id across BOTH rows, only one card can be expanded at a time.
   const [activeId, setActiveId] = useState<string>("01");
 
   // Both rows share the same idle card width (~25% of row).
@@ -100,7 +100,7 @@ const ServicesGrid = () => {
         className="container-main space-y-5 mt-12"
         onMouseLeave={() => setActiveId("01")}
       >
-        {/* Row 1 — center when no card here is active */}
+        {/* Row 1, center when no card here is active */}
         <div className={`flex flex-col md:flex-row gap-5 ${row1HasActive ? "" : "md:justify-center"}`}>
           {row1.map((s) => (
             <ServiceCard
@@ -113,7 +113,7 @@ const ServicesGrid = () => {
           ))}
         </div>
 
-        {/* Row 2 — center when no card here is active */}
+        {/* Row 2, center when no card here is active */}
         <div className={`flex flex-col md:flex-row gap-5 ${row2HasActive ? "" : "md:justify-center"}`}>
           {row2.map((s) => (
             <ServiceCard

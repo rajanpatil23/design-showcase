@@ -20,9 +20,9 @@ import toolSlack from "@/assets/tools/slack.png";
 import toolGmb from "@/assets/tools/gmb.png";
 
 const painPoints = [
-  { title: "You're spending $5K+ a month and can't tell what's actually working.", desc: "61% of Google Ads spend goes to clicks that never convert. That's not marketing — that's donation.", icon: <MonitorSmartphone className="w-7 h-7 text-primary" /> },
+  { title: "You're spending $5K+ a month and can't tell what's actually working.", desc: "61% of Google Ads spend goes to clicks that never convert. That's not marketing, that's donation.", icon: <MonitorSmartphone className="w-7 h-7 text-primary" /> },
   { title: "Your agency sends PDF reports full of numbers you don't understand.", desc: "If you can't explain the ROI in one sentence, your agency has failed you.", icon: <FileType2 className="w-7 h-7 text-primary" /> },
-  { title: "Leads come in — but your sales team says they're garbage.", desc: "Wrong keywords + lazy targeting = paying $50-$80 per lead that was never going to buy.", icon: <Target className="w-7 h-7 text-primary" /> },
+  { title: "Leads come in, but your sales team says they're garbage.", desc: "Wrong keywords + lazy targeting = paying $50-$80 per lead that was never going to buy.", icon: <Target className="w-7 h-7 text-primary" /> },
 ];
 
 const impactStats = [
@@ -33,18 +33,18 @@ const impactStats = [
 ];
 
 const whyUs = [
-  { title: "Google Certified. Battle-Tested.", desc: "Active certifications. Six-figure budgets managed monthly. We've seen every mistake — yours won't be one of them.", icon: <Shield className="w-6 h-6 text-primary" /> },
+  { title: "Google Certified. Battle-Tested.", desc: "Active certifications. Six-figure budgets managed monthly. We've seen every mistake, yours won't be one of them.", icon: <Shield className="w-6 h-6 text-primary" /> },
   { title: "Your CFO Will Love Our Reports", desc: "We optimize for pipeline and closed revenue. Not impressions. Not click-through rates nobody at the board table cares about.", icon: <FileText className="w-6 h-6 text-primary" /> },
   { title: "Your Account. Your Data. Always.", desc: "Real-time dashboards. Full access. No black boxes. If we part ways tomorrow, you keep everything.", icon: <Eye className="w-6 h-6 text-primary" /> },
-  { title: "One System, Not Siloed Campaigns", desc: "Search, Display, Remarketing, Shopping, YouTube — connected into one full-funnel architecture that compounds.", icon: <Layers className="w-6 h-6 text-primary" /> },
+  { title: "One System, Not Siloed Campaigns", desc: "Search, Display, Remarketing, Shopping, YouTube, connected into one full-funnel architecture that compounds.", icon: <Layers className="w-6 h-6 text-primary" /> },
 ];
 
 const processSteps = [
-  { num: "01", title: "Audit", desc: "We tear your current account apart. Every wasted dollar, every missed keyword, every competitor gap — found." },
+  { num: "01", title: "Audit", desc: "We tear your current account apart. Every wasted dollar, every missed keyword, every competitor gap, found." },
   { num: "02", title: "Architect", desc: "Custom campaign structure mapped to your funnel. Not a template. Not a guess. Built for your business." },
   { num: "03", title: "Create", desc: "Ad copy that converts. Landing pages that match. Quality Scores that make Google charge you less." },
   { num: "04", title: "Launch", desc: "Go live. Monitor daily. Kill underperformers fast. Pour fuel on the winners." },
-  { num: "05", title: "Report & Scale", desc: "Clear monthly insights. Then we do it all again — sharper, faster, more profitable." },
+  { num: "05", title: "Report & Scale", desc: "Clear monthly insights. Then we do it all again, sharper, faster, more profitable." },
 ];
 
 const pricingPlans = [

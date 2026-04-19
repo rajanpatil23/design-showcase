@@ -26,7 +26,7 @@ const steps = [
 ];
 
 const whyUs = [
-  { title: "Strategy + Execution", desc: "We don't just advise — we build and run your growth engine.", icon: <BarChart3 className="w-6 h-6 text-primary" /> },
+  { title: "Strategy + Execution", desc: "We don't just advise, we build and run your growth engine.", icon: <BarChart3 className="w-6 h-6 text-primary" /> },
   { title: "AI-Powered Marketing", desc: "Automation and AI tools drive efficiency and scale.", icon: <Code className="w-6 h-6 text-primary" /> },
   { title: "Performance Focused", desc: "Every campaign is optimised for measurable ROI.", icon: <Star className="w-6 h-6 text-primary" /> },
   { title: "Founder-Friendly", desc: "We work closely with startups and growth-stage businesses.", icon: <Users className="w-6 h-6 text-primary" /> },
@@ -43,7 +43,7 @@ const HomePage = () => {
       {/* Spacer above stats */}
       <div aria-hidden className="h-8 md:h-12" />
 
-      {/* Stats + Services intro — shared grid, stats sit INSIDE the grid cells */}
+      {/* Stats + Services intro, shared grid, stats sit INSIDE the grid cells */}
       <div className="relative">
         {/* Full-bleed horizontal lines that extend left & right beyond the rail.
             Top line sits at the top of stats grid; bottom line sits at the bottom edge of stats grid. */}
@@ -94,7 +94,7 @@ const HomePage = () => {
                 </div>
               ))}
 
-              {/* Intersection circles — top edge */}
+              {/* Intersection circles, top edge */}
               {[0, 25, 50, 75, 100].map((leftPct) => (
                 <span
                   key={`top-${leftPct}`}
@@ -103,7 +103,7 @@ const HomePage = () => {
                   style={{ left: `${leftPct}%` }}
                 />
               ))}
-              {/* Intersection circles — bottom edge */}
+              {/* Intersection circles, bottom edge */}
               {[0, 25, 50, 75, 100].map((leftPct) => (
                 <span
                   key={`bot-${leftPct}`}
@@ -148,10 +148,10 @@ const HomePage = () => {
         </div>
       </div>
 
-      {/* Services cards — expandable rows. Active card grows wider + shows image; others compact. Both rows share identical flex ratios so widths align. */}
+      {/* Services cards, expandable rows. Active card grows wider + shows image; others compact. Both rows share identical flex ratios so widths align. */}
       <ServicesGrid />
 
-      {/* How It Works — Dark Section */}
+      {/* How It Works, Dark Section */}
       <section className="py-16 md:py-24 bg-[#09233C]">
         <div className="container-main">
           <div className="flex justify-center mb-6">
@@ -165,7 +165,7 @@ const HomePage = () => {
 
           {/* Cards + connector arrows */}
           <div className="relative mt-16 max-w-5xl mx-auto">
-            {/* Decorative dashed arrows — desktop only.
+            {/* Decorative dashed arrows, desktop only.
                 Top arrows arc from card 1 -> 2 and card 3 -> 4.
                 Bottom arrow arcs from card 2 -> 3. */}
             <svg
@@ -241,7 +241,7 @@ const HomePage = () => {
       {/* Why Brands Choose */}
       <WhyChoose />
 
-      {/* Case Studies — Dark Section */}
+      {/* Case Studies, Dark Section */}
       <CaseStudies />
 
       {/* Testimonials */}
