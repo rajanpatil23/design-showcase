@@ -19,8 +19,8 @@ const trustedBrands = [
 const TrustedMarquee = () => {
   return (
     <div className="text-center">
-      <span className="inline-block px-5 py-1.5 text-xs font-medium rounded-full border border-primary/30 bg-primary/5 text-primary">
-        Trusted By
+      <span className="inline-block text-sm font-medium text-foreground">
+        Recognised By
       </span>
 
       <div className="relative mt-6 overflow-hidden w-full [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
