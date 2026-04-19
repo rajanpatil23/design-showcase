@@ -64,7 +64,7 @@ const HubNode = () => (
             />
             <span
               aria-hidden
-              className="absolute w-2 h-2 rounded-full bg-primary ring-2 ring-background pointer-events-none"
+              className="absolute w-2 h-2 rounded-full bg-primary pointer-events-none"
               style={{
                 top: topPct,
                 [side]: "-12px",
