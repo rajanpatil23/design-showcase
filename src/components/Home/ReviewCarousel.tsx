@@ -7,6 +7,7 @@ import karmVeerAvatar from "@/assets/testimonials/karm-veer.jpeg";
 import deepannitaAvatar from "@/assets/testimonials/deepannita-evolveu.png";
 import tusharAvatar from "@/assets/testimonials/tushar-dublish.jpeg";
 import kinjalAvatar from "@/assets/testimonials/kinjal-jain.jpeg";
+import richikeshAvatar from "@/assets/testimonials/richikesh-kumar.jpg";
 import edgeLogo from "@/assets/brands/the-edu-edge.png";
 import oceanLogo from "@/assets/brands/the-edu-ocean.svg";
 import actionSyncLogo from "@/assets/brands/action-sync.png";
@@ -70,7 +71,7 @@ const DEFAULT_REVIEWS: ReviewItem[] = [
     brandLogo: edgeLogo,
     quote:
       "Connecttly transformed our digital presence with sharp strategy and consistent execution. Their team understood our vision, delivered creative campaigns, and helped us reach the right learners at the right time.",
-    person: { name: "The Edu Edge Team", title: "The Edu Edge", avatar: testimonialPerson },
+    person: { name: "Richikesh Kumar", title: "CEO & Founder, The Edu Edge", avatar: richikeshAvatar },
   },
 ];
 
