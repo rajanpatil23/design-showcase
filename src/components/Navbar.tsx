@@ -4,8 +4,18 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/connecttly-logo.png";
 
+const servicesItems = [
+  { label: "Performance Marketing", path: "/services" },
+  { label: "Social Media Management", path: "/services" },
+  { label: "LinkedIn Growth", path: "/services" },
+  { label: "Search Engine Optimisation", path: "/services" },
+  { label: "Content & Creative", path: "/services" },
+  { label: "Web & AI Automation", path: "/services" },
+];
+
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const location = useLocation();
 
   const isActive = (path: string) => location.pathname === path;
