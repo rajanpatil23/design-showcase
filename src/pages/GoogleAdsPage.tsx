@@ -340,23 +340,41 @@ const GoogleAdsPage = () => {
       {/* FAQ */}
       <section className="section-padding">
         <div className="container-main">
-          <SectionLabel label="FAQ" />
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center">Questions We Get Asked</h2>
-          <div className="max-w-3xl mx-auto mt-12 space-y-3">
-            {faqs.map((faq, i) => (
-              <div key={i} className="border border-border rounded-xl overflow-hidden">
-                <button
-                  className="w-full flex items-center justify-between px-6 py-4 text-left font-heading font-semibold text-sm hover:bg-secondary/50 transition-colors"
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+          <div className="flex justify-center">
+            <SectionLabel label="FAQ" />
+          </div>
+          <h2 className="text-3xl md:text-5xl font-heading font-bold text-center mt-4">
+            Questions <span className="gradient-text">We Get Asked</span>
+          </h2>
+          <div className="max-w-5xl mx-auto mt-12 grid md:grid-cols-2 gap-x-6 gap-y-4 items-start">
+            {faqs.map((faq, i) => {
+              const isOpen = openFaq === i;
+              return (
+                <div
+                  key={i}
+                  className="bg-background rounded-2xl shadow-md transition-all duration-300 self-start"
                 >
-                  {faq.q}
-                  {openFaq === i ? <ChevronUp className="w-4 h-4 text-muted-foreground" /> : <ChevronDown className="w-4 h-4 text-muted-foreground" />}
-                </button>
-                {openFaq === i && (
-                  <div className="px-6 pb-4 text-sm text-muted-foreground">{faq.a}</div>
-                )}
-              </div>
-            ))}
+                  <button
+                    className="w-full flex items-start gap-4 px-6 py-5 text-left"
+                    onClick={() => setOpenFaq(isOpen ? null : i)}
+                  >
+                    <span className="text-primary text-2xl font-light leading-none mt-0.5 w-5 flex-shrink-0">
+                      {isOpen ? "×" : "+"}
+                    </span>
+                    <span className="flex-1">
+                      <span className="block font-heading font-semibold text-sm md:text-base text-foreground">
+                        {faq.q}
+                      </span>
+                      {isOpen && (
+                        <span className="block text-sm text-muted-foreground mt-3 leading-relaxed">
+                          {faq.a}
+                        </span>
+                      )}
+                    </span>
+                  </button>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
