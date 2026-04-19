@@ -168,9 +168,9 @@ const GoogleAdsPage = () => {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6 mt-14 md:mt-16 max-w-5xl mx-auto">
             {impactStats.map((stat) => (
-              <div key={stat.label} className="bg-background rounded-2xl p-8 text-center shadow-xl">
+              <div key={stat.label} className="bg-background rounded-2xl p-6 text-center shadow-xl flex flex-col items-center justify-center min-h-[150px]">
                 <p className="text-4xl md:text-5xl font-heading font-bold text-primary">{stat.value}</p>
-                <p className="text-xs md:text-sm text-muted-foreground mt-3 leading-tight">{stat.label}</p>
+                <p className="text-xs md:text-sm text-muted-foreground mt-3 leading-snug whitespace-nowrap">{stat.label}</p>
               </div>
             ))}
           </div>
