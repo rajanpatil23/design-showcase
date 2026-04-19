@@ -3,6 +3,9 @@ import useEmblaCarousel from "embla-carousel-react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import type { EmblaOptionsType } from "embla-carousel";
 import testimonialPerson from "@/assets/testimonial-person.jpg";
+import karmVeerAvatar from "@/assets/testimonials/karm-veer.jpeg";
+import deepannitaAvatar from "@/assets/testimonials/deepannita-evolveu.png";
+import tusharAvatar from "@/assets/testimonials/tushar-dublish.jpeg";
 import edgeLogo from "@/assets/brands/the-edu-edge.png";
 import oceanLogo from "@/assets/brands/the-edu-ocean.svg";
 import actionSyncLogo from "@/assets/brands/action-sync.png";
@@ -23,14 +26,14 @@ const DEFAULT_REVIEWS: ReviewItem[] = [
     brandLogo: oceanLogo,
     quote:
       "Connecttly exceeded expectations with their strategic ad campaigns. From research to budget optimization, they drove real ROI across Google, Meta, LinkedIn, and YouTube. A reliable partner in scaling performance marketing.",
-    person: { name: "Karm Veer Singh", title: "Founder & CEO, The Edu Ocean", avatar: testimonialPerson },
+    person: { name: "Karm Veer Singh", title: "Founder & CEO, The Edu Ocean", avatar: karmVeerAvatar },
   },
   {
     brand: "EvolveU",
     brandLogo: evolveuLogo,
     quote:
       "Exploring LinkedIn Ads for the first time was seamless with Connecttly. Their insights helped me optimize my profile, generate leads, and grow with confidence. Excited to see the long-term impact!",
-    person: { name: "Ankit Doshi", title: "Director, EvolveU", avatar: testimonialPerson },
+    person: { name: "Deepannita C.", title: "EvolveU", avatar: deepannitaAvatar },
   },
   {
     brand: "Infosec Minds",
@@ -44,7 +47,7 @@ const DEFAULT_REVIEWS: ReviewItem[] = [
     brandLogo: actionSyncLogo,
     quote:
       "Partnering with Connecttly on demand generation was a game-changer. They built a strategy that attracted the right audience, nurtured leads, and strengthened our pipeline. Their precision and creativity made real impact.",
-    person: { name: "Tushar Dublish", title: "Founder, ActionSync", avatar: testimonialPerson },
+    person: { name: "Tushar Dublish", title: "Founder, ActionSync", avatar: tusharAvatar },
   },
   {
     brand: "The Edu Edge",
