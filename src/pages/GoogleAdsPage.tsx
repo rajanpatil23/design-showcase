@@ -270,8 +270,8 @@ const GoogleAdsPage = () => {
                     {plan.tagline}
                   </p>
                   <p className={`text-4xl font-heading font-bold mt-6 ${isPopular ? "" : "text-foreground"}`}>
-                    {plan.price}
-                    <span className={`text-sm font-normal ${isPopular ? "text-primary-foreground/70" : "text-muted-foreground"}`}> / Month</span>
+                    {billingCycle === "yearly" ? plan.yearlyPrice : plan.monthlyPrice}
+                    <span className={`text-sm font-normal ${isPopular ? "text-primary-foreground/70" : "text-muted-foreground"}`}> / {billingCycle === "yearly" ? "Year" : "Month"}</span>
                   </p>
                   <Button
                     className={`rounded-full font-semibold mt-6 ${
