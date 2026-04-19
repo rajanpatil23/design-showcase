@@ -197,42 +197,63 @@ const GoogleAdsPage = () => {
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-center">
             Choose a plan that's right for you
           </h2>
-          <div className="flex items-center justify-center gap-4 mt-6">
-            <button
-              onClick={() => setBillingCycle("monthly")}
-              className={`text-sm font-medium ${billingCycle === "monthly" ? "text-foreground" : "text-muted-foreground"}`}
-            >
+          <div className="flex items-center justify-center gap-3 mt-8">
+            <span className={`text-sm font-medium ${billingCycle === "monthly" ? "text-foreground" : "text-muted-foreground"}`}>
               Pay Monthly
-            </button>
+            </span>
             <button
-              onClick={() => setBillingCycle("yearly")}
-              className={`text-sm font-medium ${billingCycle === "yearly" ? "text-foreground" : "text-muted-foreground"}`}
+              onClick={() => setBillingCycle(billingCycle === "monthly" ? "yearly" : "monthly")}
+              className="relative w-12 h-6 rounded-full bg-muted-foreground/30 transition-colors"
+              aria-label="Toggle billing cycle"
             >
-              Pay Yearly
+              <span
+                className={`absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-background shadow transition-transform ${billingCycle === "yearly" ? "translate-x-6" : ""}`}
+              />
             </button>
+            <span className={`text-sm font-medium ${billingCycle === "yearly" ? "text-foreground" : "text-muted-foreground"}`}>
+              Pay Yearly
+            </span>
           </div>
-          <div className="grid md:grid-cols-3 gap-6 mt-10">
-            {pricingPlans.map((plan) => (
-              <div key={plan.name} className={`bg-background rounded-xl border p-6 flex flex-col ${plan.popular ? "border-primary ring-2 ring-primary/20" : "border-border"}`}>
-                {plan.popular && <span className="text-xs font-semibold bg-primary text-primary-foreground px-3 py-1 rounded-full self-start mb-3">Most Popular</span>}
-                <h3 className="font-heading font-semibold text-lg">{plan.name}</h3>
-                <p className="text-xs text-muted-foreground mt-1">{plan.tagline}</p>
-                <p className="text-3xl font-heading font-bold mt-4">
-                  {plan.price}<span className="text-sm font-normal text-muted-foreground"> / Month</span>
-                </p>
-                <Button className={`rounded-full font-semibold mt-6 ${plan.popular ? "" : "bg-foreground hover:bg-foreground/90"}`}>
-                  {plan.cta}
-                </Button>
-                <ul className="mt-6 space-y-3 flex-1">
-                  {plan.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2 text-sm text-muted-foreground">
-                      <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          <div className="grid md:grid-cols-3 gap-6 mt-12 max-w-5xl mx-auto">
+            {pricingPlans.map((plan) => {
+              const isPopular = plan.popular;
+              return (
+                <div
+                  key={plan.name}
+                  className={`rounded-2xl p-7 flex flex-col shadow-lg transition-transform hover:-translate-y-1 ${
+                    isPopular ? "bg-primary text-primary-foreground" : "bg-background"
+                  }`}
+                >
+                  <h3 className={`font-heading font-semibold text-lg ${isPopular ? "" : "text-foreground"}`}>{plan.name}</h3>
+                  <p className={`text-xs mt-2 leading-relaxed ${isPopular ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
+                    {plan.tagline}
+                  </p>
+                  <p className={`text-4xl font-heading font-bold mt-6 ${isPopular ? "" : "text-foreground"}`}>
+                    {plan.price}
+                    <span className={`text-sm font-normal ${isPopular ? "text-primary-foreground/70" : "text-muted-foreground"}`}> / Month</span>
+                  </p>
+                  <Button
+                    className={`rounded-full font-semibold mt-6 ${
+                      isPopular
+                        ? "bg-background text-foreground hover:bg-background/90"
+                        : "bg-background text-primary border border-primary hover:bg-primary hover:text-primary-foreground"
+                    }`}
+                  >
+                    {plan.cta}
+                  </Button>
+                  <ul className="mt-6 space-y-3 flex-1">
+                    {plan.features.map((f) => (
+                      <li key={f} className={`flex items-start gap-3 text-sm ${isPopular ? "text-primary-foreground/90" : "text-muted-foreground"}`}>
+                        <span className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${isPopular ? "bg-background" : "bg-primary"}`}>
+                          <Check className={`w-3 h-3 ${isPopular ? "text-primary" : "text-primary-foreground"}`} strokeWidth={3} />
+                        </span>
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
