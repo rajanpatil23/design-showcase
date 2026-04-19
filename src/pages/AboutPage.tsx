@@ -367,7 +367,7 @@ const AboutPage = () => {
       </section>
 
       {/* Industries, hub & spoke */}
-      <section className="py-16 md:py-20 bg-background">
+      <section className="pt-16 md:pt-20 pb-4 md:pb-6 bg-background">
         <div className="container-main">
           <h2 className="text-3xl md:text-5xl font-heading font-bold text-center">
             <span className="gradient-text">Industries</span> we serve
