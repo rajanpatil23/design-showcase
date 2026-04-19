@@ -174,14 +174,16 @@ const GoogleAdsPage = () => {
         <div className="container-main">
           <SectionLabel label="Our Process" />
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-center">How We Get You Results</h2>
-          <div className="max-w-xl mx-auto mt-16 space-y-10">
+          <div className="max-w-2xl mx-auto mt-12 space-y-12">
             {processSteps.map((step) => (
-              <div key={step.num} className="relative bg-background rounded-2xl shadow-md pt-12 pb-6 px-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                <div className="absolute -top-7 left-1/2 -translate-x-1/2 w-14 h-14 rounded-full bg-primary flex items-center justify-center shadow-lg">
+              <div key={step.num} className="flex flex-col items-center">
+                <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center shadow-lg relative z-10">
                   <span className="text-lg font-heading font-bold text-primary-foreground">{step.num}</span>
                 </div>
-                <h3 className="font-heading font-semibold text-xl">{step.title}</h3>
-                <p className="text-sm text-muted-foreground mt-2 max-w-sm mx-auto">{step.desc}</p>
+                <div className="bg-background rounded-2xl shadow-md w-full -mt-8 pt-12 pb-8 px-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                  <h3 className="font-heading font-semibold text-2xl">{step.title}</h3>
+                  <p className="text-sm text-muted-foreground mt-3 max-w-md mx-auto leading-relaxed">{step.desc}</p>
+                </div>
               </div>
             ))}
           </div>
