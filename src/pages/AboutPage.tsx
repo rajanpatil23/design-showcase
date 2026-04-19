@@ -372,51 +372,80 @@ const AboutPage = () => {
             <span className="gradient-text">Industries</span> we serve
           </h2>
 
-          <div className="relative mt-16">
-            {/* Animated connector lines (desktop) */}
-            <svg
-              aria-hidden
-              className="hidden md:block absolute inset-0 w-full h-full pointer-events-none"
-              viewBox="0 0 100 60"
-              preserveAspectRatio="none"
-            >
-              {/* LEFT side: card edge (x=28) -> hub edge (x=46, y=30) */}
-              <path d="M 28 12 C 38 12, 42 22, 46 30" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
-              <path d="M 28 30 L 46 30"               fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
-              <path d="M 28 48 C 38 48, 42 38, 46 30" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
-              {/* RIGHT side: card edge (x=72) -> hub edge (x=54, y=30) */}
-              <path d="M 72 12 C 62 12, 58 22, 54 30" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
-              <path d="M 72 30 L 54 30"               fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
-              <path d="M 72 48 C 62 48, 58 38, 54 30" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
-            </svg>
+          <div className="relative mt-16 max-w-5xl mx-auto">
+            {/* Desktop hub-and-spoke layout */}
+            <div className="hidden md:block relative" style={{ height: 360 }}>
+              {/* Connector lines: card inner-edge -> hub edge.
+                  Hub center (50, 50). Hub half-width ~7 (in viewBox units).
+                  Cards inner edges at x=32 (left) and x=68 (right).
+                  Card row centers: top y=18, mid y=50, bottom y=82. */}
+              <svg
+                aria-hidden
+                className="absolute inset-0 w-full h-full pointer-events-none"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="none"
+              >
+                {/* LEFT: short horizontal stub then curve into hub */}
+                <path d="M 32 18 L 38 18 C 44 18, 44 50, 43 50" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
+                <path d="M 32 50 L 43 50" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
+                <path d="M 32 82 L 38 82 C 44 82, 44 50, 43 50" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
+                {/* RIGHT: mirrored */}
+                <path d="M 68 18 L 62 18 C 56 18, 56 50, 57 50" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
+                <path d="M 68 50 L 57 50" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
+                <path d="M 68 82 L 62 82 C 56 82, 56 50, 57 50" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
+              </svg>
 
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-12 items-center relative">
-              {/* LEFT column */}
-              <div className="space-y-6">
-                {industriesLeft.map((ind) => (
-                  <div key={ind.name} className="bg-background rounded-xl border border-border/60 shadow-[0_4px_18px_hsl(var(--foreground)/0.06)] px-5 py-4 flex items-center justify-between gap-4">
-                    <p className="text-sm font-heading font-semibold leading-tight">{ind.name}</p>
-                    <div className="p-2 rounded-lg bg-ct-blue-light shrink-0">{ind.icon}</div>
-                  </div>
-                ))}
-              </div>
+              {/* LEFT column cards - absolutely positioned for exact endpoint alignment */}
+              {industriesLeft.map((ind, i) => (
+                <div
+                  key={ind.name}
+                  className="absolute left-0 w-[32%] bg-background rounded-xl border border-border/60 shadow-[0_4px_18px_hsl(var(--foreground)/0.06)] px-5 py-4 flex items-center justify-between gap-4"
+                  style={{ top: `${[6, 44, 82][i]}%`, transform: i === 1 ? "translateY(-50%)" : i === 2 ? "translateY(-100%)" : undefined }}
+                >
+                  <p className="text-sm font-heading font-semibold leading-tight">{ind.name}</p>
+                  <div className="p-2 rounded-lg bg-ct-blue-light shrink-0">{ind.icon}</div>
+                </div>
+              ))}
+
+              {/* RIGHT column cards */}
+              {industriesRight.map((ind, i) => (
+                <div
+                  key={ind.name}
+                  className="absolute right-0 w-[32%] bg-background rounded-xl border border-border/60 shadow-[0_4px_18px_hsl(var(--foreground)/0.06)] px-5 py-4 flex items-center gap-4"
+                  style={{ top: `${[6, 44, 82][i]}%`, transform: i === 1 ? "translateY(-50%)" : i === 2 ? "translateY(-100%)" : undefined }}
+                >
+                  <div className="p-2 rounded-lg bg-ct-blue-light shrink-0">{ind.icon}</div>
+                  <p className="text-sm font-heading font-semibold leading-tight">{ind.name}</p>
+                </div>
+              ))}
 
               {/* CENTER hub */}
-              <div className="flex justify-center">
-                <div className="w-24 h-24 md:w-28 md:h-28 rounded-3xl bg-primary flex items-center justify-center shadow-[0_10px_30px_-8px_hsl(var(--primary)/0.6)]">
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                <div className="w-24 h-24 rounded-3xl bg-primary flex items-center justify-center shadow-[0_10px_30px_-8px_hsl(var(--primary)/0.6)]">
                   <img src={connecttlyMark} alt="Connecttly" className="w-10 h-auto" />
                 </div>
               </div>
+            </div>
 
-              {/* RIGHT column */}
-              <div className="space-y-6">
-                {industriesRight.map((ind) => (
-                  <div key={ind.name} className="bg-background rounded-xl border border-border/60 shadow-[0_4px_18px_hsl(var(--foreground)/0.06)] px-5 py-4 flex items-center gap-4">
-                    <div className="p-2 rounded-lg bg-ct-blue-light shrink-0">{ind.icon}</div>
-                    <p className="text-sm font-heading font-semibold leading-tight">{ind.name}</p>
-                  </div>
-                ))}
+            {/* Mobile fallback: simple stack with hub in middle */}
+            <div className="md:hidden space-y-4">
+              {industriesLeft.map((ind) => (
+                <div key={ind.name} className="bg-background rounded-xl border border-border/60 shadow-[0_4px_18px_hsl(var(--foreground)/0.06)] px-5 py-4 flex items-center justify-between gap-4">
+                  <p className="text-sm font-heading font-semibold leading-tight">{ind.name}</p>
+                  <div className="p-2 rounded-lg bg-ct-blue-light shrink-0">{ind.icon}</div>
+                </div>
+              ))}
+              <div className="flex justify-center py-2">
+                <div className="w-20 h-20 rounded-3xl bg-primary flex items-center justify-center shadow-[0_10px_30px_-8px_hsl(var(--primary)/0.6)]">
+                  <img src={connecttlyMark} alt="Connecttly" className="w-9 h-auto" />
+                </div>
               </div>
+              {industriesRight.map((ind) => (
+                <div key={ind.name} className="bg-background rounded-xl border border-border/60 shadow-[0_4px_18px_hsl(var(--foreground)/0.06)] px-5 py-4 flex items-center gap-4">
+                  <div className="p-2 rounded-lg bg-ct-blue-light shrink-0">{ind.icon}</div>
+                  <p className="text-sm font-heading font-semibold leading-tight">{ind.name}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
