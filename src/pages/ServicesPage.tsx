@@ -164,7 +164,7 @@ const ServicesPage = () => {
           <h2 className="text-3xl md:text-4xl font-heading font-bold">
             Not Sure <span className="gradient-text">Where to Start?</span>
           </h2>
-          <div className="space-y-12 md:space-y-16 mt-12 max-w-4xl mx-auto">
+          <div className="space-y-12 md:space-y-16 mt-12">
             {ctaCards.map((card, i) => (
               <div key={card.title} className={`md:flex items-center gap-12 ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}>
                 <div className="flex-1">
