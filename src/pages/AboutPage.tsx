@@ -299,7 +299,7 @@ const AboutPage = () => {
           </div>
         </div>
 
-        <div className="container-main pt-6 pb-16 md:pb-24">
+        <div className="container-main pt-6 pb-10 md:pb-12">
           {/* Team Grid, solid blue cards */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {teamMembers.map((m) => (
