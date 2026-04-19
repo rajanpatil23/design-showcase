@@ -114,10 +114,10 @@ const ServicesPage = () => {
               </button>
             ))}
           </div>
-          <div className="grid md:grid-cols-3 gap-6 justify-items-center">
+          <div className="grid md:grid-cols-3 gap-6">
             {serviceCards.map((s) =>
               s.recommended ? (
-                <div key={s.title} className="relative overflow-hidden rounded-2xl bg-primary text-primary-foreground p-6 flex flex-col shadow-[0_10px_30px_hsl(var(--primary)/0.35)] w-full max-w-[414px] md:h-[548px]">
+                <div key={s.title} className="relative overflow-hidden rounded-2xl bg-primary text-primary-foreground p-6 flex flex-col shadow-[0_10px_30px_hsl(var(--primary)/0.35)]">
                   {/* Recommended diagonal banner */}
                   <div className="absolute top-0 left-0 w-28 h-28 overflow-hidden pointer-events-none rounded-tl-2xl">
                     <div className="absolute top-5 -left-8 w-40 rotate-[-45deg] bg-white/95 text-primary text-[10px] font-bold tracking-wide text-center py-1 shadow-md">
@@ -148,7 +148,7 @@ const ServicesPage = () => {
                   </Button>
                 </div>
               ) : (
-                <div key={s.title} className="bg-background rounded-2xl border border-border p-5 flex flex-col shadow-[0_2px_10px_hsl(var(--foreground)/0.04)] w-full max-w-[414px] md:h-[548px]">
+                <div key={s.title} className="bg-background rounded-2xl border border-border p-5 flex flex-col shadow-[0_2px_10px_hsl(var(--foreground)/0.04)]">
                   <div className="rounded-xl aspect-[4/3] mb-5 overflow-hidden">
                     <img src={s.image} alt={s.title} className="w-full h-full object-cover rounded-xl" loading="lazy" width={400} height={300} />
                   </div>
