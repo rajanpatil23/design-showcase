@@ -116,8 +116,10 @@ const AboutPage = () => {
       {/* Our Story */}
       <section className="section-padding bg-background">
         <div className="container-main">
-          <div className="flex justify-start mb-6 -ml-2">
-            <SectionLabel label="How it started" />
+          <div className="mb-6">
+            <span className="inline-block px-5 py-1.5 text-xs font-medium rounded-full border border-primary/30 bg-primary/5 text-primary">
+              How it started
+            </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-left mb-12">Our Story</h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
