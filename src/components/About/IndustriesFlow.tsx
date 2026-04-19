@@ -129,7 +129,7 @@ const IndustriesFlow = () => {
       es.push({
         ...edgeBase,
         id: `e-L${i}-pulse`,
-        style: { stroke: "hsl(var(--primary))", strokeWidth: 3, filter: "drop-shadow(0 0 4px hsl(var(--primary)/0.7))" },
+        style: { stroke: "hsl(0 0% 100% / 0.85)", strokeWidth: 1.75, strokeLinecap: "round" },
         className: "energy-line",
       } as Edge);
     });
@@ -159,7 +159,7 @@ const IndustriesFlow = () => {
       es.push({
         ...edgeBase,
         id: `e-R${i}-pulse`,
-        style: { stroke: "hsl(var(--primary))", strokeWidth: 3, filter: "drop-shadow(0 0 4px hsl(var(--primary)/0.7))" },
+        style: { stroke: "hsl(0 0% 100% / 0.85)", strokeWidth: 1.75, strokeLinecap: "round" },
         className: "energy-line",
       } as Edge);
     });
