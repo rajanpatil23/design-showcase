@@ -385,14 +385,14 @@ const AboutPage = () => {
                 viewBox="0 0 100 100"
                 preserveAspectRatio="none"
               >
-                {/* LEFT: short horizontal stub then curve into hub */}
-                <path d="M 32 18 L 38 18 C 44 18, 44 50, 43 50" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
-                <path d="M 32 50 L 43 50" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
-                <path d="M 32 82 L 38 82 C 44 82, 44 50, 43 50" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
+                {/* LEFT: leave card horizontally, S-curve, enter hub vertically at top/bottom */}
+                <path d="M 32 18 C 40 18, 46 18, 46 44" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
+                <path d="M 32 50 L 46 50" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
+                <path d="M 32 82 C 40 82, 46 82, 46 56" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
                 {/* RIGHT: mirrored */}
-                <path d="M 68 18 L 62 18 C 56 18, 56 50, 57 50" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
-                <path d="M 68 50 L 57 50" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
-                <path d="M 68 82 L 62 82 C 56 82, 56 50, 57 50" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
+                <path d="M 68 18 C 60 18, 54 18, 54 44" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
+                <path d="M 68 50 L 54 50" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
+                <path d="M 68 82 C 60 82, 54 82, 54 56" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
               </svg>
 
               {/* LEFT column cards - absolutely positioned for exact endpoint alignment */}
