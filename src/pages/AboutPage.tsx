@@ -189,12 +189,14 @@ const AboutPage = () => {
                   ].map(({ item: p, tall }) => (
                     <div
                       key={p.title}
-                      className="bg-background rounded-xl border border-border p-6 shadow-[0_2px_10px_hsl(var(--foreground)/0.04)] flex flex-col"
+                      className="bg-background rounded-xl border border-border p-6 shadow-[0_2px_10px_hsl(var(--foreground)/0.04)] flex flex-col justify-between"
                       style={{ flex: tall ? "9 2 0" : "4 1 0" }}
                     >
-                      <div className="p-3 rounded-lg bg-ct-blue-light inline-block mb-4 self-start">{p.icon}</div>
-                      <h3 className="font-heading font-semibold text-lg mb-2">{p.title}</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
+                      <div className="p-3 rounded-lg bg-ct-blue-light inline-block self-start">{p.icon}</div>
+                      <div>
+                        <h3 className="font-heading font-semibold text-lg mb-2">{p.title}</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
+                      </div>
                     </div>
                   ))}
                 </div>
