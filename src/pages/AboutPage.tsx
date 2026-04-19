@@ -373,7 +373,7 @@ const AboutPage = () => {
             <span className="gradient-text">Industries</span> we serve
           </h2>
 
-          <div className="relative mt-16 max-w-5xl mx-auto">
+          <div className="relative mt-16">
             {/* Desktop: React Flow hub-and-spoke */}
             <div className="hidden md:block">
               <IndustriesFlow />
