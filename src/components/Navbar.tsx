@@ -87,16 +87,45 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {mobileOpen && (
         <div className="md:hidden border-t border-border bg-background px-4 py-4 space-y-3">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              to={link.path}
-              className="block py-2 text-sm font-medium text-muted-foreground hover:text-primary"
-              onClick={() => setMobileOpen(false)}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            if (link.label === "Services") {
+              return (
+                <div key={link.label}>
+                  <button
+                    onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                    className="w-full flex items-center justify-between py-2 text-sm font-medium text-muted-foreground hover:text-primary"
+                  >
+                    <span>Services</span>
+                    <ChevronDown className={`w-4 h-4 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
+                  </button>
+                  {mobileServicesOpen && (
+                    <div className="pl-4 mt-1 space-y-1 border-l border-border">
+                      {servicesItems.map((item) => (
+                        <Link
+                          key={item.label}
+                          to={item.path}
+                          className="block py-1.5 text-sm text-muted-foreground hover:text-primary"
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            }
+            return (
+              <Link
+                key={link.label}
+                to={link.path}
+                className="block py-2 text-sm font-medium text-muted-foreground hover:text-primary"
+                onClick={() => setMobileOpen(false)}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
           <Button size="sm" className="w-full rounded-full font-semibold mt-2">
             Start for Free
           </Button>
