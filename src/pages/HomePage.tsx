@@ -10,14 +10,6 @@ import ResourcesShowcase from "@/components/Home/ResourcesShowcase";
 import ReviewCarousel from "@/components/Home/ReviewCarousel";
 import blogIllustration from "@/assets/blog-illustration.jpg";
 
-const heroStats = [
-  { value: "2M+", label: "Content Impressions Generated" },
-  { value: "1000+", label: "Qualified Leads Generated" },
-  { value: "20+", label: "Brands Scaled" },
-  { value: "10+", label: "Marketing Systems Automated" },
-];
-
-
 const steps = [
   { num: "01", title: "Discover", desc: "We learn your business, goals, and audience." },
   { num: "02", title: "Strategize", desc: "We build a custom growth strategy tailored to you." },
@@ -40,113 +32,16 @@ const HomePage = () => {
       {/* Hero Section */}
       <Hero />
 
-      {/* Spacer above stats */}
-      <div aria-hidden className="h-8 md:h-12" />
-
-      {/* Stats + Services intro, shared grid, stats sit INSIDE the grid cells */}
-      <div className="relative">
-        {/* Full-bleed horizontal lines that extend left & right beyond the rail.
-            Top line sits at the top of stats grid; bottom line sits at the bottom edge of stats grid. */}
-        <div aria-hidden className="hidden md:block absolute left-0 right-0 top-0 h-px bg-border/70" />
-        <div aria-hidden className="hidden md:block absolute left-0 right-0 h-px bg-border/70" style={{ top: "calc(200px + 1px)" }} />
+      {/* Services intro */}
+      <section className="relative pt-14 md:pt-16 pb-2">
         <div className="container-main">
-          {/* The grid lives inside the rail so it aligns with logo/nav/cards */}
-          <div className="relative">
-            {/* Vertical line extensions ABOVE the stats grid (continue up through the hero/marquee region).
-                Positioned to match the 4 inner column borders (25/50/75) + the 2 outer borders (0/100). */}
-            <div
-              aria-hidden
-              className="hidden md:block absolute left-0 right-0 pointer-events-none"
-              style={{
-                bottom: "100%",
-                height: "120px",
-                maskImage: "linear-gradient(to top, black 0%, black 40%, transparent 100%)",
-                WebkitMaskImage: "linear-gradient(to top, black 0%, black 40%, transparent 100%)",
-              }}
-            >
-              {[0, 25, 50, 75, 100].map((leftPct) => (
-                <div
-                  key={`v-up-${leftPct}`}
-                  className="absolute top-0 bottom-0 w-px bg-border/70"
-                  style={{ left: `${leftPct}%`, transform: leftPct === 100 ? "translateX(-1px)" : "translateX(0)" }}
-                />
-              ))}
-            </div>
-
-            {/* Stats row: 4 equal columns. Borders form the grid; circles mark intersections. */}
-            <div className="relative grid grid-cols-2 md:grid-cols-4 border-t border-b border-l border-r border-border/70">
-              {/* Vertical dividers (only between cells) */}
-              {heroStats.map((stat, i) => (
-                <div
-                  key={stat.label}
-                  className={`relative h-[180px] md:h-[200px] flex flex-col items-center justify-center text-center px-4 ${
-                    i > 0 ? "md:border-l border-border/70" : ""
-                  } ${i === 2 ? "border-l md:border-l" : ""} ${
-                    i < 2 && "border-b md:border-b-0"
-                  }`}
-                >
-                  <p className="text-4xl md:text-5xl font-heading font-bold text-primary leading-none">
-                    {stat.value}
-                  </p>
-                  <p className="text-xs md:text-sm text-muted-foreground mt-3 max-w-[16ch]">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-
-              {/* Intersection circles, top edge */}
-              {[0, 25, 50, 75, 100].map((leftPct) => (
-                <span
-                  key={`top-${leftPct}`}
-                  aria-hidden
-                  className="hidden md:block absolute -top-[8px] w-4 h-4 rounded-full border border-border bg-background -translate-x-1/2 z-20 shadow-[0_2px_6px_hsl(var(--foreground)/0.18)]"
-                  style={{ left: `${leftPct}%` }}
-                />
-              ))}
-              {/* Intersection circles, bottom edge */}
-              {[0, 25, 50, 75, 100].map((leftPct) => (
-                <span
-                  key={`bot-${leftPct}`}
-                  aria-hidden
-                  className="hidden md:block absolute -bottom-[8px] w-4 h-4 rounded-full border border-border bg-background -translate-x-1/2 z-20 shadow-[0_2px_6px_hsl(var(--foreground)/0.18)]"
-                  style={{ left: `${leftPct}%` }}
-                />
-              ))}
-            </div>
-
-            {/* Services intro sits below the stats grid, but the vertical guides continue down */}
-            <div className="relative">
-              {/* Continuation of vertical lines behind the eyebrow + heading, fading out */}
-              <div
-                aria-hidden
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  maskImage:
-                    "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)",
-                  WebkitMaskImage:
-                    "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)",
-                }}
-              >
-                {[0, 25, 50, 75, 100].map((leftPct) => (
-                  <div
-                    key={`v-${leftPct}`}
-                    className="hidden md:block absolute top-0 bottom-0 w-px bg-border/70"
-                    style={{ left: `${leftPct}%`, transform: leftPct === 100 ? "translateX(-1px)" : "translateX(0)" }}
-                  />
-                ))}
-              </div>
-
-              <section className="relative pt-14 md:pt-16 pb-2">
-                <SectionLabel label="Services" />
-                <h2 className="text-3xl md:text-4xl font-heading font-bold text-center max-w-2xl mx-auto mt-4">
-                  The Future of Digital Growth In{" "}
-                  <span className="gradient-text">One Unified Platform</span>
-                </h2>
-              </section>
-            </div>
-          </div>
+          <SectionLabel label="Services" />
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center max-w-2xl mx-auto mt-4">
+            The Future of Digital Growth In{" "}
+            <span className="gradient-text">One Unified Platform</span>
+          </h2>
         </div>
-      </div>
+      </section>
 
       {/* Services cards, expandable rows. Active card grows wider + shows image; others compact. Both rows share identical flex ratios so widths align. */}
       <ServicesGrid />
