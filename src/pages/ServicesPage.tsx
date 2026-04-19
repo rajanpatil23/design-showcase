@@ -16,6 +16,7 @@ import brandGoogleAds from "@/assets/brands/google-ads.png";
 import brandMeta from "@/assets/brands/meta.png";
 import brandLinkedin from "@/assets/brands/linkedin.png";
 import brandYoutube from "@/assets/brands/youtube.png";
+import brandGrowth from "@/assets/brands/growth.png";
 
 const categories = ["Performance", "Social Media", "LinkedIn", "SEO", "Content", "Web & AI"];
 
@@ -114,7 +115,7 @@ const ServicesPage = () => {
                   </div>
                   {/* Channel logos: 3 on top, 2 on bottom */}
                   <div className="grid grid-cols-3 gap-3 mb-6 mt-8 max-w-[220px]">
-                    {[brandGoogleAds, brandMeta, brandLinkedin, illuCro, brandYoutube].map((img, i) => (
+                    {[brandGoogleAds, brandMeta, brandLinkedin, brandYoutube, brandGrowth].map((img, i) => (
                       <div key={i} className="bg-background rounded-xl p-2.5 aspect-square flex items-center justify-center shadow-md">
                         <img src={img} alt="" className="w-full h-full object-contain" loading="lazy" width={64} height={64} />
                       </div>
