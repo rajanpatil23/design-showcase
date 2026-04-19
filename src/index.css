@@ -108,9 +108,8 @@
   }
   .energy-line {
     stroke-dasharray: 28 92;
-    stroke-linecap: round;
+    stroke-linecap: butt;
     animation: energy-out 2.2s linear infinite, energy-fade 2.2s ease-in-out infinite;
-    mix-blend-mode: screen;
   }
 
   /* Floating animation for badge cards */
