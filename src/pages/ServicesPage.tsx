@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import SectionLabel from "@/components/SectionLabel";
 import StatsBar from "@/components/StatsBar";
 import { ArrowRight, BarChart3, Megaphone, Users, Globe, PenTool, Code, Youtube, TrendingUp, MessageCircle, Search, Send } from "lucide-react";
-import servicesHero from "@/assets/services-hero-person.jpg";
+import servicesHero from "@/assets/services-hero-person.png";
 import illustrationStrategist from "@/assets/services/illustration-strategist.png";
 import illustrationQuiz from "@/assets/services/illustration-quiz.png";
 import illustrationBrief from "@/assets/services/illustration-brief.png";
@@ -58,18 +58,18 @@ const ServicesPage = () => {
             {/* Image with yellow backdrop + floating badges */}
             <div className="relative w-full max-w-md mx-auto md:ml-auto md:mr-0 py-10 md:py-14">
               {/* Image in tall rectangle frame */}
-              <div className="relative rounded-md overflow-hidden aspect-[4/5] w-full">
-                <img src={servicesHero} alt="Services" className="absolute inset-0 w-full h-full object-cover" width={700} height={875} />
+              <div className="relative rounded-md overflow-hidden aspect-[4/5] w-full bg-[hsl(48_100%_55%)]">
+                <img src={servicesHero} alt="Services" className="absolute inset-0 w-full h-full object-contain" width={700} height={875} />
               </div>
 
               {/* Floating badge: Growth Categories (top right, outside) */}
-              <div className="absolute top-8 right-4 md:right-8 bg-background rounded-full shadow-[0_8px_24px_hsl(var(--foreground)/0.12)] pl-2.5 pr-4 py-1.5 flex items-center gap-2 animate-float z-10">
+              <div className="absolute top-20 right-4 md:right-8 bg-background rounded-full shadow-[0_8px_24px_hsl(var(--foreground)/0.12)] pl-2.5 pr-4 py-1.5 flex items-center gap-2 animate-float z-10">
                 <span className="text-primary font-bold text-sm">6</span>
                 <span className="text-xs font-semibold text-foreground whitespace-nowrap">Growth Categories</span>
               </div>
 
               {/* Floating badge: Specialized Services (upper left, overlapping image edge) */}
-              <div className="absolute top-[18%] -left-4 md:-left-8 bg-primary text-primary-foreground rounded-xl shadow-[0_8px_24px_hsl(var(--primary)/0.35)] px-4 py-2.5 animate-float-slow z-10">
+              <div className="absolute top-[34%] -left-4 md:-left-8 bg-primary text-primary-foreground rounded-xl shadow-[0_8px_24px_hsl(var(--primary)/0.35)] px-4 py-2.5 animate-float-slow z-10">
                 <p className="text-2xl font-bold leading-none">36</p>
                 <p className="text-[11px] font-medium opacity-90 mt-1 leading-tight">Specialized<br/>Services</p>
               </div>
