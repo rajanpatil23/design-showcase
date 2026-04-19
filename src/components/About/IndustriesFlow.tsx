@@ -129,7 +129,7 @@ const IndustriesFlow = () => {
       es.push({
         ...edgeBase,
         id: `e-L${i}-pulse`,
-        style: { stroke: "hsl(0 0% 100% / 0.95)", strokeWidth: 1.4 },
+        style: { stroke: "hsl(0 0% 100% / 0.95)", strokeWidth: 1.1 },
         className: "energy-line",
       } as Edge);
     });
@@ -159,7 +159,7 @@ const IndustriesFlow = () => {
       es.push({
         ...edgeBase,
         id: `e-R${i}-pulse`,
-        style: { stroke: "hsl(0 0% 100% / 0.95)", strokeWidth: 1.4 },
+        style: { stroke: "hsl(0 0% 100% / 0.95)", strokeWidth: 1.1 },
         className: "energy-line",
       } as Edge);
     });

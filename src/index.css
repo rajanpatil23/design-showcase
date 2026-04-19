@@ -106,9 +106,10 @@
     0%, 100% { opacity: 0; }
     20%, 80% { opacity: 1; }
   }
-  .energy-line {
+  .energy-line .react-flow__edge-path,
+  .energy-line.react-flow__edge .react-flow__edge-path {
     stroke-dasharray: 28 92;
-    stroke-linecap: butt;
+    stroke-linecap: butt !important;
     animation: energy-out 2.2s linear infinite, energy-fade 2.2s ease-in-out infinite;
   }
 
