@@ -160,7 +160,7 @@ const GoogleAdsPage = () => {
           </h2>
           <div className="grid md:grid-cols-2 gap-6 mt-12 max-w-5xl mx-auto">
             {whyUs.map((w) => (
-              <div key={w.title} className="bg-background rounded-2xl p-8 shadow-md min-h-[260px] flex flex-col justify-end transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+              <div key={w.title} className="bg-background rounded-2xl p-8 shadow-md min-h-[260px] flex flex-col justify-end">
                 <h3 className="font-heading font-semibold text-xl mb-3">{w.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{w.desc}</p>
               </div>
