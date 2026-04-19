@@ -135,7 +135,7 @@ const GoogleAdsPage = () => {
       </section>
 
       {/* Measured Impact */}
-      <section className="relative pt-20 md:pt-24 pb-20 md:pb-24 bg-ct-section">
+      <section className="relative pt-20 md:pt-24 pb-8 md:pb-10 bg-ct-section">
         <div className="absolute inset-x-0 top-0 h-2/3 bg-ct-dark" aria-hidden="true" />
         <div className="container-main relative">
           <h2 className="text-3xl md:text-5xl font-heading font-bold text-primary-foreground text-center">
@@ -153,7 +153,7 @@ const GoogleAdsPage = () => {
       </section>
 
       {/* Why Us */}
-      <section className="section-padding bg-ct-section">
+      <section className="pt-4 pb-16 md:pb-20 bg-ct-section">
         <div className="container-main">
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-center">
             Why Connecttly for <span className="gradient-text">Google Ads</span>
