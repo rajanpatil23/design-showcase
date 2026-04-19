@@ -102,7 +102,7 @@ const ResourcesShowcase = () => {
   };
 
   return (
-    <section className="py-16 md:py-20">
+    <section className="pt-10 md:pt-14 pb-16 md:pb-20">
       <div className="container-main">
         <SectionLabel label="Resource Hub" />
         <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mt-4">
