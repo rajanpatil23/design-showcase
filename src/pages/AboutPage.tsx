@@ -313,7 +313,7 @@ const AboutPage = () => {
       </section>
 
       {/* Built for Brands */}
-      <section className="section-padding">
+      <section className="py-16 md:py-20">
         <div className="container-main">
           <SectionLabel label="Who We Work With" />
           <h2 className="text-3xl md:text-5xl font-heading font-bold text-center max-w-2xl mx-auto leading-tight mt-4">
