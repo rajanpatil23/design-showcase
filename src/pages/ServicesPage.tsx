@@ -125,7 +125,7 @@ const ServicesPage = () => {
                     </div>
                   </div>
                   {/* Channel logos: 3 on top, 2 on bottom */}
-                  <div className="grid grid-cols-3 gap-3 mb-6 mt-8 max-w-[220px]">
+                  <div className="grid grid-cols-3 gap-3 mb-6 mt-8 max-w-[220px] mx-auto">
                     {[brandGoogleAds, brandMeta, brandLinkedin, brandYoutube, brandGrowth].map((img, i) => (
                       <div key={i} className="bg-background rounded-xl p-2.5 aspect-square flex items-center justify-center shadow-md">
                         <img src={img} alt="" className="w-full h-full object-contain" loading="lazy" width={64} height={64} />
