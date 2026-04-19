@@ -116,10 +116,10 @@ const AboutPage = () => {
       {/* Our Story */}
       <section className="section-padding bg-background">
         <div className="container-main">
-          <div className="flex justify-center mb-6">
+          <div className="flex justify-start mb-6 -ml-2">
             <SectionLabel label="How it started" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-heading font-bold text-center mb-12">Our Story</h2>
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-left mb-12">Our Story</h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="rounded-2xl overflow-hidden">
               <img
