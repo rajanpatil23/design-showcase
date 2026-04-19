@@ -180,7 +180,7 @@ const AboutPage = () => {
               const top = principles[col];
               const bottom = principles[col + 3];
               const topTall = col === 1; // middle column starts with tall card
-              const colOffsetTop = col === 1 ? "pt-16" : ""; // push middle column down
+              const colOffsetTop = ""; // no offset — middle column tall card fills from top
               return (
                 <div key={col} className={`flex flex-col gap-6 h-full ${colOffsetTop}`}>
                   {[
