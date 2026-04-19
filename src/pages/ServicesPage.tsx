@@ -60,10 +60,10 @@ const ServicesPage = () => {
             </div>
 
             {/* Image with yellow backdrop + floating badges */}
-            <div className="relative w-full py-10 md:py-14">
+            <div className="relative w-full max-w-[434px] mx-auto md:ml-auto md:mr-0 py-10 md:py-14">
               {/* Image in tall rectangle frame */}
-              <div className="relative rounded-md overflow-hidden aspect-[4/5] w-full bg-[hsl(48_100%_55%)]">
-                <img src={servicesHero} alt="Services" className="absolute inset-0 w-full h-full object-cover" width={700} height={875} />
+              <div className="relative rounded-md overflow-hidden w-full bg-[hsl(48_100%_55%)]" style={{ aspectRatio: "434 / 659" }}>
+                <img src={servicesHero} alt="Services" className="absolute inset-0 w-full h-full object-cover" width={434} height={659} />
               </div>
 
               {/* Floating badge: Growth Categories (top right, outside) */}
