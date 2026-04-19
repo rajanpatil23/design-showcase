@@ -85,7 +85,7 @@ const ServicesPage = () => {
               </div>
 
               {/* Floating badge: Results-Driven (bottom right, overlapping image) */}
-              <div className="absolute -bottom-2 right-4 md:right-6 bg-primary text-primary-foreground rounded-xl shadow-[0_8px_24px_hsl(var(--primary)/0.35)] px-4 py-2.5 animate-float-slow2 z-10">
+              <div className="absolute bottom-16 right-4 md:right-6 bg-primary text-primary-foreground rounded-xl shadow-[0_8px_24px_hsl(var(--primary)/0.35)] px-4 py-2.5 animate-float-slow2 z-10">
                 <p className="text-2xl font-bold leading-none">100%</p>
                 <p className="text-[11px] font-medium opacity-90 mt-1 leading-tight">Results-Driven</p>
               </div>
