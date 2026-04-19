@@ -65,6 +65,13 @@ const DEFAULT_REVIEWS: ReviewItem[] = [
       "Growing our LinkedIn page with Connecttly was transformative. They went beyond numbers—strengthening brand credibility, improving engagement, and building trust. Their strategies truly elevated our reputation.",
     person: { name: "Manwendrasinh Jadeja", title: "Founder & CEO, YTT Global", avatar: testimonialPerson },
   },
+  {
+    brand: "The Edu Edge",
+    brandLogo: edgeLogo,
+    quote:
+      "Connecttly transformed our digital presence with sharp strategy and consistent execution. Their team understood our vision, delivered creative campaigns, and helped us reach the right learners at the right time.",
+    person: { name: "The Edu Edge Team", title: "The Edu Edge", avatar: testimonialPerson },
+  },
 ];
 
 type Props = {
