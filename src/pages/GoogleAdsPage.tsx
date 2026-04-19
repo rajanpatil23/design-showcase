@@ -5,7 +5,7 @@ import StatsBar from "@/components/StatsBar";
 import ReviewCarousel from "@/components/Home/ReviewCarousel";
 import { Check, Quote, ChevronDown, ChevronUp, Shield, FileText, Eye, Layers, Search } from "lucide-react";
 import testimonialImg from "@/assets/testimonial-person.jpg";
-import servicesHero from "@/assets/services-hero-person.jpg";
+import googleAdsHero from "@/assets/google-ads-hero.jpg";
 
 const painPoints = [
   { title: "You're spending $5K+ a month and can't tell what's actually working.", desc: "61% of Google Ads spend goes to clicks that never convert. That's not marketing — that's donation." },
@@ -94,7 +94,7 @@ const GoogleAdsPage = () => {
               </div>
             </div>
             <div className="rounded-2xl overflow-hidden">
-              <img src={servicesHero} alt="Google Ads" className="w-full h-80 object-cover" width={700} height={512} />
+              <img src={googleAdsHero} alt="Google Ads campaign dashboard mockup" className="w-full h-80 object-cover" width={700} height={512} />
             </div>
           </div>
           <StatsBar />
@@ -122,14 +122,14 @@ const GoogleAdsPage = () => {
       </section>
 
       {/* Measured Impact */}
-      <section className="section-padding">
+      <section className="section-padding bg-ct-dark">
         <div className="container-main text-center">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground">
             Measured Impact. <span className="gradient-text">Proven Outcomes.</span>
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 max-w-3xl mx-auto">
             {impactStats.map((stat) => (
-              <div key={stat.label} className="bg-ct-blue-light rounded-xl p-6 text-center">
+              <div key={stat.label} className="bg-background rounded-xl p-6 text-center">
                 <p className="text-3xl md:text-4xl font-heading font-bold text-primary">{stat.value}</p>
                 <p className="text-xs text-muted-foreground mt-1">{stat.label}</p>
               </div>
@@ -234,7 +234,7 @@ const GoogleAdsPage = () => {
       </section>
 
       {/* Tool Stack */}
-      <section className="section-padding bg-primary">
+      <section className="section-padding bg-ct-dark">
         <div className="container-main text-center">
           <SectionLabel label="Tool Stack" />
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground">
@@ -243,11 +243,11 @@ const GoogleAdsPage = () => {
           <p className="text-primary-foreground/70 mt-2 max-w-2xl mx-auto text-sm">
             We leverage the best tools and platforms in the industry to deliver exceptional results for your Google Ads campaigns.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 mt-10">
+          <div className="flex flex-wrap justify-center gap-4 mt-10 max-w-3xl mx-auto">
             {toolStack.map((tool) => (
-              <span key={tool} className="px-5 py-3 bg-primary-foreground/10 backdrop-blur-sm rounded-xl text-primary-foreground text-sm font-medium border border-primary-foreground/20">
-                {tool}
-              </span>
+              <div key={tool} className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-background flex items-center justify-center shadow-lg" title={tool}>
+                <span className="text-xs font-semibold text-foreground text-center px-2">{tool.split(" ")[0]}</span>
+              </div>
             ))}
           </div>
         </div>
