@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import SectionLabel from "@/components/SectionLabel";
 import StatsBar from "@/components/StatsBar";
+import ReviewCarousel from "@/components/Home/ReviewCarousel";
 import { Check, Quote, ChevronDown, ChevronUp, Shield, FileText, Eye, Layers, Search } from "lucide-react";
 import testimonialImg from "@/assets/testimonial-person.jpg";
 import servicesHero from "@/assets/services-hero-person.jpg";
@@ -221,34 +222,15 @@ const GoogleAdsPage = () => {
         </div>
       </section>
 
-      {/* Testimonial */}
-      <section className="section-padding">
+      {/* Testimonials */}
+      <section className="py-16 md:py-20">
         <div className="container-main">
           <SectionLabel label="Testimonials" />
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mt-4 mb-10">
             What Our <span className="gradient-text">Clients Say</span>
           </h2>
-          <div className="mt-12 max-w-4xl mx-auto bg-background rounded-xl border border-border p-8 md:flex gap-8 items-start">
-            <div className="flex-1">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-full overflow-hidden">
-                  <img src={testimonialImg} alt="Kinjal M Jain" className="w-full h-full object-cover" loading="lazy" width={48} height={48} />
-                </div>
-                <div>
-                  <p className="font-heading font-semibold">Kinjal M Jain</p>
-                  <p className="text-xs text-muted-foreground">Founder, Mending Mind</p>
-                </div>
-              </div>
-              <Quote className="w-6 h-6 text-primary/30 mb-2" />
-              <p className="text-sm text-muted-foreground italic leading-relaxed">
-                Connecttly helped us harness AI-powered analytics to uncover insights we were missing. From dashboards to automation, they gave clarity and optimized campaigns in real time. Like having a full analytics team on demand.
-              </p>
-            </div>
-            <div className="hidden md:block w-48 h-48 rounded-xl overflow-hidden shrink-0">
-              <img src={testimonialImg} alt="Client" className="w-full h-full object-cover" loading="lazy" width={192} height={192} />
-            </div>
-          </div>
         </div>
+        <ReviewCarousel noPadding />
       </section>
 
       {/* Tool Stack */}
