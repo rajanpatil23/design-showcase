@@ -245,7 +245,7 @@ const HomePage = () => {
       <CaseStudies />
 
       {/* Testimonials */}
-      <section className="py-16 md:py-20">
+      <section className="pt-16 md:pt-20 pb-24 md:pb-32">
         <div className="container-main">
           <SectionLabel label="Testimonials" />
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mt-4 mb-10">
