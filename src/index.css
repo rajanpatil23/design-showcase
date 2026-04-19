@@ -97,6 +97,16 @@
     animation: dash-flow 1.2s linear infinite;
   }
 
+  /* Energy pulse traveling outward from hub to cards (target -> source) */
+  @keyframes energy-out {
+    from { stroke-dashoffset: 0; }
+    to   { stroke-dashoffset: 60; }
+  }
+  .energy-line {
+    stroke-dasharray: 6 54;
+    animation: energy-out 1.6s linear infinite;
+  }
+
   /* Floating animation for badge cards */
   @keyframes float-y {
     0%, 100% { transform: translateY(0); }

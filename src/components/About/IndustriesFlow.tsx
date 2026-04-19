@@ -113,15 +113,24 @@ const IndustriesFlow = () => {
         draggable: false,
         selectable: false,
       });
-      es.push({
-        id: `e-L${i}`,
+      const edgeBase = {
         source: `L${i}`,
         target: "hub",
         targetHandle: `left-${["top", "middle", "bottom"][i]}`,
         type: i === 1 ? "straight" : "smoothstep",
-        animated: true,
+        animated: false,
         pathOptions: i === 1 ? undefined : { borderRadius: 80 },
-        style: { stroke: "hsl(var(--primary))", strokeWidth: 1.5, strokeDasharray: "4 3" },
+      } as const;
+      es.push({
+        ...edgeBase,
+        id: `e-L${i}`,
+        style: { stroke: "hsl(var(--primary))", strokeWidth: 1.75 },
+      } as Edge);
+      es.push({
+        ...edgeBase,
+        id: `e-L${i}-pulse`,
+        style: { stroke: "hsl(var(--primary))", strokeWidth: 3, filter: "drop-shadow(0 0 4px hsl(var(--primary)/0.7))" },
+        className: "energy-line",
       } as Edge);
     });
 
@@ -134,15 +143,24 @@ const IndustriesFlow = () => {
         draggable: false,
         selectable: false,
       });
-      es.push({
-        id: `e-R${i}`,
+      const edgeBase = {
         source: `R${i}`,
         target: "hub",
         targetHandle: `right-${["top", "middle", "bottom"][i]}`,
         type: i === 1 ? "straight" : "smoothstep",
-        animated: true,
+        animated: false,
         pathOptions: i === 1 ? undefined : { borderRadius: 80 },
-        style: { stroke: "hsl(var(--primary))", strokeWidth: 1.5, strokeDasharray: "4 3" },
+      } as const;
+      es.push({
+        ...edgeBase,
+        id: `e-R${i}`,
+        style: { stroke: "hsl(var(--primary))", strokeWidth: 1.75 },
+      } as Edge);
+      es.push({
+        ...edgeBase,
+        id: `e-R${i}-pulse`,
+        style: { stroke: "hsl(var(--primary))", strokeWidth: 3, filter: "drop-shadow(0 0 4px hsl(var(--primary)/0.7))" },
+        className: "energy-line",
       } as Edge);
     });
 
