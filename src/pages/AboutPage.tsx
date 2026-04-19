@@ -170,19 +170,36 @@ const AboutPage = () => {
           <h2 className="text-3xl md:text-5xl font-heading font-bold text-center max-w-2xl mx-auto leading-tight mt-4">
             The Principles Behind Our Work
           </h2>
-          <div className="grid md:grid-cols-3 gap-6 mt-12 items-start">
+          {/* Staggered 3-column grid: col1 & col3 = [short, tall], col2 = [tall, short] */}
+          <div className="hidden md:grid grid-cols-3 grid-rows-[2fr_3fr] gap-6 mt-12 max-w-5xl mx-auto">
+            {principles.map((p, i) => {
+              // Order: 0=col1-top(short), 1=col2-top(tall), 2=col3-top(short),
+              //        3=col1-bottom(tall), 4=col2-bottom(short), 5=col3-bottom(tall)
+              const tall = i === 1 || i === 3 || i === 5;
+              return (
+                <div
+                  key={p.title}
+                  className={`bg-background rounded-xl border border-border p-6 shadow-[0_2px_10px_hsl(var(--foreground)/0.04)] flex flex-col ${tall ? "row-span-1" : "row-span-1"}`}
+                  style={{ minHeight: tall ? 280 : 180 }}
+                >
+                  <div className="p-3 rounded-lg bg-ct-blue-light inline-block mb-4 self-start">{p.icon}</div>
+                  <h3 className="font-heading font-semibold text-lg mb-2">{p.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Mobile: simple stack */}
+          <div className="grid md:hidden grid-cols-1 gap-6 mt-12">
             {principles.map((p) => (
               <div
                 key={p.title}
-                className="group bg-background rounded-xl border border-border p-6 shadow-[0_2px_10px_hsl(var(--foreground)/0.04)] cursor-pointer transition-all duration-300"
+                className="bg-background rounded-xl border border-border p-6 shadow-[0_2px_10px_hsl(var(--foreground)/0.04)]"
               >
                 <div className="p-3 rounded-lg bg-ct-blue-light inline-block mb-4">{p.icon}</div>
                 <h3 className="font-heading font-semibold text-lg mb-2">{p.title}</h3>
-                <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-300 ease-out">
-                  <div className="overflow-hidden">
-                    <p className="text-sm text-muted-foreground pt-1">{p.desc}</p>
-                  </div>
-                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
               </div>
             ))}
           </div>
