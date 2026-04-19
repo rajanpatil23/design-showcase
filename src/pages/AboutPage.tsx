@@ -266,13 +266,15 @@ const AboutPage = () => {
       </section>
 
       {/* Team */}
-      <section className="section-padding">
+      <section className="pt-16 md:pt-24">
         <div className="container-main">
           <SectionLabel label="Meet the Team" />
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mt-4 mb-12">Meet the Team</h2>
+        </div>
 
-          {/* Founder, dark navy card */}
-          <div className="bg-[#09233C] text-white p-6 md:p-10 mb-6 md:flex gap-10 items-center">
+        {/* Founder, dark navy full-width band */}
+        <div className="bg-[#09233C] text-white">
+          <div className="container-main py-10 md:py-14 md:flex gap-10 items-center">
             <div className="w-full md:w-72 h-72 rounded-2xl overflow-hidden shrink-0 mb-6 md:mb-0 bg-primary">
               <img src={founderImg} alt="Neeraj Yadav" className="w-full h-full object-cover object-top" loading="lazy" width={288} height={288} />
             </div>
@@ -289,7 +291,9 @@ const AboutPage = () => {
               </p>
             </div>
           </div>
+        </div>
 
+        <div className="container-main pt-6 pb-16 md:pb-24">
           {/* Team Grid, solid blue cards */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {teamMembers.map((m, i) => (
