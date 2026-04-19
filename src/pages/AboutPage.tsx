@@ -7,6 +7,7 @@ import founderImg from "@/assets/team/neeraj-yadav.svg";
 import teamImg from "@/assets/team-collab.jpg";
 import testimonialImg from "@/assets/testimonial-person.jpg";
 import connecttlyMark from "@/assets/connecttly-mark.svg";
+import IndustriesFlow from "@/components/About/IndustriesFlow";
 
 const aboutStats = [
   { value: "15,000+", label: "Qualified Leads Generated" },
@@ -373,58 +374,9 @@ const AboutPage = () => {
           </h2>
 
           <div className="relative mt-16 max-w-5xl mx-auto">
-            {/* Desktop hub-and-spoke layout */}
-            <div className="hidden md:block relative" style={{ height: 360 }}>
-              {/* Connector lines: card inner-edge -> hub edge.
-                  Hub center (50, 50). Hub half-width ~7 (in viewBox units).
-                  Cards inner edges at x=32 (left) and x=68 (right).
-                  Card row centers: top y=18, mid y=50, bottom y=82. */}
-              <svg
-                aria-hidden
-                className="absolute inset-0 w-full h-full pointer-events-none"
-                viewBox="0 0 100 100"
-                preserveAspectRatio="none"
-              >
-                {/* LEFT: leave card horizontally, S-curve, enter hub vertically at top/bottom */}
-                <path d="M 32 18 C 40 18, 46 18, 46 44" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
-                <path d="M 32 50 L 46 50" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
-                <path d="M 32 82 C 40 82, 46 82, 46 56" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
-                {/* RIGHT: mirrored */}
-                <path d="M 68 18 C 60 18, 54 18, 54 44" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
-                <path d="M 68 50 L 54 50" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
-                <path d="M 68 82 C 60 82, 54 82, 54 56" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" className="animated-dash" />
-              </svg>
-
-              {/* LEFT column cards - absolutely positioned for exact endpoint alignment */}
-              {industriesLeft.map((ind, i) => (
-                <div
-                  key={ind.name}
-                  className="absolute left-0 w-[32%] bg-background rounded-xl border border-border/60 shadow-[0_4px_18px_hsl(var(--foreground)/0.06)] px-5 py-4 flex items-center justify-between gap-4"
-                  style={{ top: `${[6, 44, 82][i]}%`, transform: i === 1 ? "translateY(-50%)" : i === 2 ? "translateY(-100%)" : undefined }}
-                >
-                  <p className="text-sm font-heading font-semibold leading-tight">{ind.name}</p>
-                  <div className="p-2 rounded-lg bg-ct-blue-light shrink-0">{ind.icon}</div>
-                </div>
-              ))}
-
-              {/* RIGHT column cards */}
-              {industriesRight.map((ind, i) => (
-                <div
-                  key={ind.name}
-                  className="absolute right-0 w-[32%] bg-background rounded-xl border border-border/60 shadow-[0_4px_18px_hsl(var(--foreground)/0.06)] px-5 py-4 flex items-center gap-4"
-                  style={{ top: `${[6, 44, 82][i]}%`, transform: i === 1 ? "translateY(-50%)" : i === 2 ? "translateY(-100%)" : undefined }}
-                >
-                  <div className="p-2 rounded-lg bg-ct-blue-light shrink-0">{ind.icon}</div>
-                  <p className="text-sm font-heading font-semibold leading-tight">{ind.name}</p>
-                </div>
-              ))}
-
-              {/* CENTER hub */}
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                <div className="w-24 h-24 rounded-3xl bg-primary flex items-center justify-center shadow-[0_10px_30px_-8px_hsl(var(--primary)/0.6)]">
-                  <img src={connecttlyMark} alt="Connecttly" className="w-10 h-auto" />
-                </div>
-              </div>
+            {/* Desktop: React Flow hub-and-spoke */}
+            <div className="hidden md:block">
+              <IndustriesFlow />
             </div>
 
             {/* Mobile fallback: simple stack with hub in middle */}
