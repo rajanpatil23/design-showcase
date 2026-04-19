@@ -197,7 +197,7 @@ const GoogleAdsPage = () => {
               const justify =
                 i === 1 ? "md:justify-self-end" : i === 3 ? "md:justify-self-end" : "md:justify-self-start";
               return (
-                <div key={w.title} className={`${dims} ${justify} w-full bg-background rounded-2xl p-8 shadow-md min-h-[260px] flex flex-col justify-end transition-all duration-300 hover:-translate-y-2 hover:shadow-xl`}>
+                <div key={w.title} className={`${dims} ${justify} ${i === 3 ? "md:-mt-24" : ""} w-full bg-background rounded-2xl p-8 shadow-md min-h-[260px] flex flex-col justify-end transition-all duration-300 hover:-translate-y-2 hover:shadow-xl`}>
                   <h3 className="font-heading font-semibold text-xl mb-3">{w.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{w.desc}</p>
                 </div>
