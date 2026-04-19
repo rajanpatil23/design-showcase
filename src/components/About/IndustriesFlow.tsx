@@ -51,18 +51,29 @@ const HubNode = () => (
       <img src={connecttlyMark} alt="Connecttly" className="w-10 h-auto" />
     </div>
     {(["left", "right"] as const).map((side) =>
-      (["top", "middle", "bottom"] as const).map((row) => (
-        <Handle
-          key={`${side}-${row}`}
-          id={`${side}-${row}`}
-          type="target"
-          position={side === "left" ? Position.Left : Position.Right}
-          className="!opacity-0 !pointer-events-none"
-          style={{
-            top: row === "top" ? "38%" : row === "middle" ? "50%" : "62%",
-          }}
-        />
-      ))
+      (["top", "middle", "bottom"] as const).map((row) => {
+        const topPct = row === "top" ? "38%" : row === "middle" ? "50%" : "62%";
+        return (
+          <div key={`${side}-${row}`}>
+            <Handle
+              id={`${side}-${row}`}
+              type="target"
+              position={side === "left" ? Position.Left : Position.Right}
+              className="!opacity-0 !pointer-events-none"
+              style={{ top: topPct }}
+            />
+            <span
+              aria-hidden
+              className="absolute w-2 h-2 rounded-full bg-primary ring-2 ring-background pointer-events-none"
+              style={{
+                top: topPct,
+                [side]: "-4px",
+                transform: "translateY(-50%)",
+              }}
+            />
+          </div>
+        );
+      })
     )}
   </div>
 );
