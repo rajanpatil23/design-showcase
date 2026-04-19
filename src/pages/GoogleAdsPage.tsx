@@ -271,20 +271,34 @@ const GoogleAdsPage = () => {
 
       {/* Tool Stack */}
       <section className="section-padding bg-ct-dark">
-        <div className="container-main text-center">
-          <SectionLabel label="Tool Stack" />
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground">
-            The Stack Behind Your Campaigns
-          </h2>
-          <p className="text-primary-foreground/70 mt-2 max-w-2xl mx-auto text-sm">
-            We leverage the best tools and platforms in the industry to deliver exceptional results for your Google Ads campaigns.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 mt-10 max-w-3xl mx-auto">
-            {toolStack.map((tool) => (
-              <div key={tool} className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-background flex items-center justify-center shadow-lg" title={tool}>
-                <span className="text-xs font-semibold text-foreground text-center px-2">{tool.split(" ")[0]}</span>
-              </div>
-            ))}
+        <div className="container-main">
+          <div className="flex justify-center mb-10">
+            <SectionLabel label="Tool Stack" />
+          </div>
+          <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <div>
+              <h2 className="text-3xl md:text-5xl font-heading font-bold text-primary-foreground leading-tight">
+                The Stack Behind Your Campaigns
+              </h2>
+              <p className="text-primary-foreground/70 mt-5 text-sm md:text-base leading-relaxed max-w-md">
+                We leverage the best tools and platforms in the industry to deliver exceptional results for your Google Ads campaigns. From analytics to optimization, we use cutting-edge technology.
+              </p>
+            </div>
+            <div className="grid grid-cols-4 gap-4">
+              {toolStack.map((tool, i) => (
+                <div
+                  key={tool}
+                  className={`aspect-square rounded-2xl bg-background flex items-center justify-center shadow-lg p-3 ${
+                    i % 2 === 1 ? "translate-y-6" : ""
+                  }`}
+                  title={tool}
+                >
+                  <span className="text-[10px] md:text-xs font-semibold text-foreground text-center leading-tight">
+                    {tool}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
