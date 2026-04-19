@@ -133,10 +133,9 @@ const ServicesPage = () => {
                         </div>
                       ))}
                     </div>
-                    <div className="grid grid-cols-3 gap-3">
-                      <div />
+                    <div className="flex justify-center gap-3">
                       {[brandGrowth, brandYoutube].map((img, i) => (
-                        <div key={i} className="bg-background rounded-xl p-2.5 aspect-square flex items-center justify-center shadow-md">
+                        <div key={i} className="bg-background rounded-xl p-2.5 aspect-square w-[calc((100%-1.5rem)/3)] flex items-center justify-center shadow-md">
                           <img src={img} alt="" className="w-full h-full object-contain" loading="lazy" width={64} height={64} />
                         </div>
                       ))}
