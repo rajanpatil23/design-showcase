@@ -128,7 +128,7 @@ const GoogleAdsPage = () => {
               </div>
             ))}
           </div>
-          <p className="text-center mt-8 text-lg font-heading font-bold max-w-2xl mx-auto">
+          <p className="text-center mt-12 text-2xl md:text-3xl font-heading font-bold text-foreground max-w-3xl mx-auto leading-snug">
             You don't have a Google Ads problem. You have a strategy problem. <span className="text-primary">We fix that.</span>
           </p>
         </div>
