@@ -155,7 +155,7 @@ const HomePage = () => {
       <section className="py-16 md:py-24 bg-[#09233C]">
         <div className="container-main">
           <div className="flex justify-center mb-6">
-            <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider rounded-full border border-primary/40 bg-primary/10 text-primary">
+            <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-wider rounded-full border border-white/20 bg-white text-primary">
               Why Us
             </span>
           </div>

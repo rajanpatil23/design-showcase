@@ -67,9 +67,7 @@ const AboutPage = () => {
       {/* Hero */}
       <section className="section-padding">
         <div className="container-main">
-          <div className="flex justify-center mb-6">
-            <SectionLabel label="About Us" />
-          </div>
+          <SectionLabel label="About Us" />
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-6xl font-heading font-bold leading-tight">
@@ -114,10 +112,21 @@ const AboutPage = () => {
       </section>
 
       {/* Our Story */}
-      <section className="section-padding bg-ct-section">
+      <section className="pb-16 md:pb-24 bg-background">
         <div className="container-main">
-          <div className="grid md:grid-cols-2 gap-12 items-start">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold">Our Story</h2>
+          <SectionLabel label="How it started" />
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-center mt-4 mb-12">Our Story</h2>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="rounded-2xl overflow-hidden">
+              <img
+                src={teamImg}
+                alt="Connecttly team collaborating on growth strategy"
+                className="w-full h-[420px] object-cover"
+                loading="lazy"
+                width={800}
+                height={512}
+              />
+            </div>
             <div className="border-l-2 border-primary pl-6 text-muted-foreground space-y-4 leading-relaxed text-sm">
               <div>
                 <p>Connecttly was born from a simple frustration: too many businesses were paying premium prices for marketing that didn't deliver results.</p>
@@ -135,18 +144,18 @@ const AboutPage = () => {
       </section>
 
       {/* Mission */}
-      <section className="bg-[hsl(222,47%,11%)] text-white">
+      <section className="bg-[#09233C] text-white">
         <div className="container-main py-16 md:py-24 px-8 md:px-14">
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-8">Our Mission</h2>
           <div className="relative px-12 md:px-20">
             {/* Opening quote — top left */}
-            <svg className="absolute left-0 top-0 w-10 h-10 md:w-12 md:h-12 text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-              <path d="M7 7h4v4H8c0 2 1 3 3 3v3c-4 0-7-2-7-6V7zm9 0h4v4h-3c0 2 1 3 3 3v3c-4 0-7-2-7-6V7z" />
-            </svg>
+            <span aria-hidden className="pointer-events-none absolute left-0 top-0 text-6xl sm:text-7xl lg:text-8xl font-heading font-bold leading-none text-white/20 select-none">
+              “
+            </span>
             {/* Closing quote — bottom right */}
-            <svg className="absolute right-0 bottom-0 w-10 h-10 md:w-12 md:h-12 text-white rotate-180" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-              <path d="M7 7h4v4H8c0 2 1 3 3 3v3c-4 0-7-2-7-6V7zm9 0h4v4h-3c0 2 1 3 3 3v3c-4 0-7-2-7-6V7z" />
-            </svg>
+            <span aria-hidden className="pointer-events-none absolute right-0 bottom-0 text-6xl sm:text-7xl lg:text-8xl font-heading font-bold leading-none text-white/20 select-none">
+              ”
+            </span>
             <p className="text-center text-base md:text-xl font-heading leading-relaxed">
               "To make world-class growth marketing accessible to every ambitious brand — regardless of size or budget — by combining strategy, execution, and AI-powered automation."
             </p>
@@ -157,10 +166,8 @@ const AboutPage = () => {
       {/* Principles */}
       <section className="section-padding bg-ct-section">
         <div className="container-main">
-          <div className="flex justify-center mb-4">
-            <SectionLabel label="What We Stand For" />
-          </div>
-          <h2 className="text-3xl md:text-5xl font-heading font-bold text-center max-w-2xl mx-auto leading-tight">
+          <SectionLabel label="What We Stand For" />
+          <h2 className="text-3xl md:text-5xl font-heading font-bold text-center max-w-2xl mx-auto leading-tight mt-4">
             The Principles Behind Our Work
           </h2>
           <div className="grid md:grid-cols-3 gap-6 mt-12 items-start">
@@ -230,10 +237,8 @@ const AboutPage = () => {
       {/* Team */}
       <section className="section-padding">
         <div className="container-main">
-          <div className="flex justify-center mb-4">
-            <SectionLabel label="Meet the Team" />
-          </div>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-12">Meet the Team</h2>
+          <SectionLabel label="Meet the Team" />
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mt-4 mb-12">Meet the Team</h2>
 
           {/* Founder — dark navy card */}
           <div className="max-w-5xl mx-auto bg-[#09233C] text-white p-6 md:p-10 mb-6 md:flex gap-10 items-center">
@@ -281,10 +286,8 @@ const AboutPage = () => {
       {/* Built for Brands */}
       <section className="section-padding">
         <div className="container-main">
-          <div className="flex justify-center mb-4">
-            <SectionLabel label="Who We Work With" />
-          </div>
-          <h2 className="text-3xl md:text-5xl font-heading font-bold text-center max-w-2xl mx-auto leading-tight">
+          <SectionLabel label="Who We Work With" />
+          <h2 className="text-3xl md:text-5xl font-heading font-bold text-center max-w-2xl mx-auto leading-tight mt-4">
             Built for Brands <span className="gradient-text">That Want to Grow</span>
           </h2>
           <div className="grid md:grid-cols-2 gap-x-8 gap-y-6 mt-12 max-w-5xl mx-auto md:items-center">
