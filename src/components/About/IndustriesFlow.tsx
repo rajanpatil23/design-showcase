@@ -47,8 +47,17 @@ const IndustryNode = ({ data }: NodeProps<Node<IndustryData>>) => {
 
 const HubNode = () => (
   <div className="relative">
-    <div className="w-24 h-24 rounded-3xl bg-primary flex items-center justify-center shadow-[0_10px_30px_-8px_hsl(var(--primary)/0.6)]">
-      <img src={connecttlyMark} alt="Connecttly" className="w-10 h-auto" />
+    <div className="relative w-24 h-24 rounded-3xl bg-primary flex items-center justify-center shadow-[0_10px_30px_-8px_hsl(var(--primary)/0.6)]">
+      <span
+        aria-hidden
+        className="pointer-events-none absolute inset-0 rounded-3xl"
+        style={{
+          background:
+            "radial-gradient(circle at 50% 50%, hsl(0 0% 100% / 0.45) 0%, hsl(0 0% 100% / 0.18) 35%, transparent 70%)",
+          filter: "blur(2px)",
+        }}
+      />
+      <img src={connecttlyMark} alt="Connecttly" className="relative w-10 h-auto" />
     </div>
     {(["left", "right"] as const).map((side) =>
       (["top", "middle", "bottom"] as const).map((row) => {
