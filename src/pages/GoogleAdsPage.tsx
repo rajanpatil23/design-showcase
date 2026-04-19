@@ -135,7 +135,7 @@ const GoogleAdsPage = () => {
       </section>
 
       {/* Measured Impact */}
-      <section className="relative pt-20 md:pt-24 pb-20 md:pb-24">
+      <section className="relative pt-20 md:pt-24 pb-20 md:pb-24 bg-ct-section">
         <div className="absolute inset-x-0 top-0 h-2/3 bg-ct-dark" aria-hidden="true" />
         <div className="container-main relative">
           <h2 className="text-3xl md:text-5xl font-heading font-bold text-primary-foreground text-center">
