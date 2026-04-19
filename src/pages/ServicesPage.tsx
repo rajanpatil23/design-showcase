@@ -124,13 +124,22 @@ const ServicesPage = () => {
                       Recommended
                     </div>
                   </div>
-                  {/* Channel logos: 3 on top, 2 on bottom */}
-                  <div className="grid grid-cols-3 gap-3 mb-6 mt-8 max-w-[220px] mx-auto">
-                    {[brandGoogleAds, brandMeta, brandLinkedin, brandYoutube, brandGrowth].map((img, i) => (
-                      <div key={i} className="bg-background rounded-xl p-2.5 aspect-square flex items-center justify-center shadow-md">
-                        <img src={img} alt="" className="w-full h-full object-contain" loading="lazy" width={64} height={64} />
-                      </div>
-                    ))}
+                  {/* Channel logos: 3 on top, 2 centered on bottom */}
+                  <div className="mb-6 mt-8 max-w-[220px] mx-auto space-y-3">
+                    <div className="grid grid-cols-3 gap-3">
+                      {[brandGoogleAds, brandMeta, brandLinkedin].map((img, i) => (
+                        <div key={i} className="bg-background rounded-xl p-2.5 aspect-square flex items-center justify-center shadow-md">
+                          <img src={img} alt="" className="w-full h-full object-contain" loading="lazy" width={64} height={64} />
+                        </div>
+                      ))}
+                    </div>
+                    <div className="flex justify-center gap-3">
+                      {[brandGrowth, brandYoutube].map((img, i) => (
+                        <div key={i} className="bg-background rounded-xl p-2.5 aspect-square w-[calc((100%-1.5rem)/3)] flex items-center justify-center shadow-md">
+                          <img src={img} alt="" className="w-full h-full object-contain" loading="lazy" width={64} height={64} />
+                        </div>
+                      ))}
+                    </div>
                   </div>
                   <h3 className="font-heading font-semibold text-lg mb-2">{s.title}</h3>
                   <p className="text-sm opacity-90 mb-5 flex-1">{s.desc}</p>
