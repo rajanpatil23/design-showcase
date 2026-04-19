@@ -367,7 +367,7 @@ const AboutPage = () => {
       </section>
 
       {/* Industries, hub & spoke */}
-      <section className="section-padding bg-ct-section">
+      <section className="pt-16 md:pt-20 pb-8 md:pb-10 bg-background">
         <div className="container-main">
           <h2 className="text-3xl md:text-5xl font-heading font-bold text-center">
             <span className="gradient-text">Industries</span> we serve
