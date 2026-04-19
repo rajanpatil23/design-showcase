@@ -1,5 +1,6 @@
 import SectionLabel from "@/components/SectionLabel";
 import StatsBar from "@/components/StatsBar";
+import ReviewCarousel from "@/components/Home/ReviewCarousel";
 import { Button } from "@/components/ui/button";
 import { Linkedin, Quote, Shield, Zap, BarChart3, Handshake, Clock, Users, Building2, GraduationCap, Building, HeartPulse, Cpu, Briefcase, RefreshCw, Code2, MessageSquare, HelpCircle, ArrowUpRight, ArrowRight } from "lucide-react";
 import founderImg from "@/assets/founder-neeraj.jpg";
