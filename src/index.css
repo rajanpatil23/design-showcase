@@ -100,17 +100,17 @@
   /* Energy pulse traveling outward from hub to cards (target -> source) */
   @keyframes energy-out {
     from { stroke-dashoffset: 0; }
-    to   { stroke-dashoffset: 120; }
+    to   { stroke-dashoffset: 200; }
   }
   @keyframes energy-fade {
     0%, 100% { opacity: 0; }
-    20%, 80% { opacity: 1; }
+    25%, 75% { opacity: 0.9; }
   }
   .energy-line .react-flow__edge-path,
   .energy-line.react-flow__edge .react-flow__edge-path {
-    stroke-dasharray: 28 92;
+    stroke-dasharray: 70 130;
     stroke-linecap: butt !important;
-    animation: energy-out 2.2s linear infinite, energy-fade 2.2s ease-in-out infinite;
+    animation: energy-out 2.4s linear infinite, energy-fade 2.4s ease-in-out infinite;
   }
 
   /* Floating animation for badge cards */
