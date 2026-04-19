@@ -170,16 +170,19 @@ const AboutPage = () => {
           <h2 className="text-3xl md:text-5xl font-heading font-bold text-center max-w-2xl mx-auto leading-tight mt-4">
             The Principles Behind Our Work
           </h2>
-          {/* Staggered 3-column grid (desktop): col1 [short, tall], col2 [tall, short], col3 [short, tall] */}
-          <div className="hidden md:grid grid-cols-3 gap-6 mt-12 max-w-5xl mx-auto">
+          {/* Staggered 3-column grid (desktop) — matches wireframe.
+                 Col 1: SHORT top (flush), TALL bottom
+                 Col 2: TALL top (offset down), SHORT bottom
+                 Col 3: SHORT top (flush), TALL bottom
+              Heights: short ≈ 40%, tall ≈ 60% of column. Even gaps. */}
+          <div className="hidden md:grid grid-cols-3 gap-6 mt-12 max-w-5xl mx-auto" style={{ minHeight: 560 }}>
             {[0, 1, 2].map((col) => {
-              // Pair items per column from the principles array
               const top = principles[col];
               const bottom = principles[col + 3];
-              // Middle column inverts the height pattern
-              const topTall = col === 1;
+              const topTall = col === 1; // middle column starts with tall card
+              const colOffsetTop = col === 1 ? "pt-16" : ""; // push middle column down
               return (
-                <div key={col} className="flex flex-col gap-6">
+                <div key={col} className={`flex flex-col gap-6 h-full ${colOffsetTop}`}>
                   {[
                     { item: top, tall: topTall },
                     { item: bottom, tall: !topTall },
@@ -187,7 +190,7 @@ const AboutPage = () => {
                     <div
                       key={p.title}
                       className="bg-background rounded-xl border border-border p-6 shadow-[0_2px_10px_hsl(var(--foreground)/0.04)] flex flex-col"
-                      style={{ minHeight: tall ? 280 : 185 }}
+                      style={{ flex: tall ? "3 1 0" : "2 1 0" }}
                     >
                       <div className="p-3 rounded-lg bg-ct-blue-light inline-block mb-4 self-start">{p.icon}</div>
                       <h3 className="font-heading font-semibold text-lg mb-2">{p.title}</h3>
