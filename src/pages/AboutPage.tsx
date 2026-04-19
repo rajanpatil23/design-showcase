@@ -170,21 +170,30 @@ const AboutPage = () => {
           <h2 className="text-3xl md:text-5xl font-heading font-bold text-center max-w-2xl mx-auto leading-tight mt-4">
             The Principles Behind Our Work
           </h2>
-          {/* Staggered 3-column grid: col1 & col3 = [short, tall], col2 = [tall, short] */}
-          <div className="hidden md:grid grid-cols-3 grid-rows-[2fr_3fr] gap-6 mt-12 max-w-5xl mx-auto">
-            {principles.map((p, i) => {
-              // Order: 0=col1-top(short), 1=col2-top(tall), 2=col3-top(short),
-              //        3=col1-bottom(tall), 4=col2-bottom(short), 5=col3-bottom(tall)
-              const tall = i === 1 || i === 3 || i === 5;
+          {/* Staggered 3-column grid (desktop): col1 [short, tall], col2 [tall, short], col3 [short, tall] */}
+          <div className="hidden md:grid grid-cols-3 gap-6 mt-12 max-w-5xl mx-auto">
+            {[0, 1, 2].map((col) => {
+              // Pair items per column from the principles array
+              const top = principles[col];
+              const bottom = principles[col + 3];
+              // Middle column inverts the height pattern
+              const topTall = col === 1;
               return (
-                <div
-                  key={p.title}
-                  className={`bg-background rounded-xl border border-border p-6 shadow-[0_2px_10px_hsl(var(--foreground)/0.04)] flex flex-col ${tall ? "row-span-1" : "row-span-1"}`}
-                  style={{ minHeight: tall ? 280 : 180 }}
-                >
-                  <div className="p-3 rounded-lg bg-ct-blue-light inline-block mb-4 self-start">{p.icon}</div>
-                  <h3 className="font-heading font-semibold text-lg mb-2">{p.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
+                <div key={col} className="flex flex-col gap-6">
+                  {[
+                    { item: top, tall: topTall },
+                    { item: bottom, tall: !topTall },
+                  ].map(({ item: p, tall }) => (
+                    <div
+                      key={p.title}
+                      className="bg-background rounded-xl border border-border p-6 shadow-[0_2px_10px_hsl(var(--foreground)/0.04)] flex flex-col"
+                      style={{ minHeight: tall ? 280 : 185 }}
+                    >
+                      <div className="p-3 rounded-lg bg-ct-blue-light inline-block mb-4 self-start">{p.icon}</div>
+                      <h3 className="font-heading font-semibold text-lg mb-2">{p.title}</h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
+                    </div>
+                  ))}
                 </div>
               );
             })}
