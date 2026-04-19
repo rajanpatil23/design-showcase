@@ -147,13 +147,13 @@ const AboutPage = () => {
       <section className="bg-[#09233C] text-white">
         <div className="container-main py-16 md:py-24 px-8 md:px-14">
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-8">Our Mission</h2>
-          <div className="relative px-12 md:px-20">
+          <div className="relative px-12 md:px-20 py-12 md:py-16">
             {/* Opening quote — top left */}
-            <span aria-hidden className="pointer-events-none absolute left-0 top-0 text-6xl sm:text-7xl lg:text-8xl font-heading font-bold leading-none text-white select-none">
+            <span aria-hidden className="pointer-events-none absolute left-0 -top-2 text-6xl sm:text-7xl lg:text-8xl font-heading font-bold leading-none text-white select-none">
               “
             </span>
             {/* Closing quote — bottom right */}
-            <span aria-hidden className="pointer-events-none absolute right-0 bottom-0 text-6xl sm:text-7xl lg:text-8xl font-heading font-bold leading-none text-white select-none">
+            <span aria-hidden className="pointer-events-none absolute right-0 -bottom-6 text-6xl sm:text-7xl lg:text-8xl font-heading font-bold leading-none text-white select-none">
               ”
             </span>
             <p className="text-center text-base md:text-xl font-heading leading-relaxed">
