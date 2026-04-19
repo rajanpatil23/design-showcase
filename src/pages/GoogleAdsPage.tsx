@@ -297,12 +297,12 @@ const GoogleAdsPage = () => {
       {/* Tool Stack */}
       <section className="pt-10 pb-16 md:pt-12 md:pb-20 bg-ct-dark">
         <div className="container-main">
-          <div className="flex justify-center mb-6">
+          <div className="flex justify-center mb-2">
             <SectionLabel label="Tool Stack" />
           </div>
           <div className="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
             <div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground leading-tight">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground leading-tight mt-1">
                 The Stack Behind Your Campaigns
               </h2>
               <p className="text-primary-foreground/70 mt-4 text-sm leading-relaxed max-w-md">
