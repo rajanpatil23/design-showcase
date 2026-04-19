@@ -67,7 +67,7 @@ const HubNode = () => (
               className="absolute w-2 h-2 rounded-full bg-primary ring-2 ring-background pointer-events-none"
               style={{
                 top: topPct,
-                [side]: "-4px",
+                [side]: "-12px",
                 transform: "translateY(-50%)",
               }}
             />
