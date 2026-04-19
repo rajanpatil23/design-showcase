@@ -67,7 +67,7 @@ const ServicesPage = () => {
               </div>
 
               {/* Floating badge: Growth Categories (top right, outside) */}
-              <div className="absolute top-20 right-4 md:right-8 bg-background rounded-full shadow-[0_8px_24px_hsl(var(--foreground)/0.12)] pl-2.5 pr-4 py-1.5 flex items-center gap-2 animate-float z-10">
+              <div className="absolute top-40 right-4 md:right-8 bg-background rounded-full shadow-[0_8px_24px_hsl(var(--foreground)/0.12)] pl-2.5 pr-4 py-1.5 flex items-center gap-2 animate-float z-10">
                 <span className="text-primary font-bold text-sm">6</span>
                 <span className="text-xs font-semibold text-foreground whitespace-nowrap">Growth Categories</span>
               </div>
