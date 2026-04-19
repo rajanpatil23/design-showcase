@@ -114,7 +114,7 @@ const AboutPage = () => {
       </section>
 
       {/* Our Story */}
-      <section className="section-padding bg-background">
+      <section className="pb-16 md:pb-24 bg-background">
         <div className="container-main">
           <div className="flex justify-center mb-6">
             <SectionLabel label="How it started" />
