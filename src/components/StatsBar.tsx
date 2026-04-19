@@ -23,16 +23,16 @@ const StatsBar = ({ stats = defaultStats }: StatsBarProps) => (
   <div className="mt-12 bg-ct-blue-light rounded-[2rem] px-6 md:px-10 py-6 md:py-8">
     <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4">
       {stats.map((stat, i) => (
-        <div key={i} className="flex items-center gap-3">
+        <div key={i} className="flex items-start gap-3">
           {stat.bareIcon ? (
-            <div className="shrink-0">{stat.icon}</div>
+            <div className="shrink-0 flex items-center h-7">{stat.icon}</div>
           ) : (
             <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center shrink-0 shadow-md">
               {stat.icon}
             </div>
           )}
           <div className="leading-tight">
-            <p className="font-heading font-bold text-xl text-foreground">{stat.value}</p>
+            <p className="font-heading font-bold text-xl text-foreground leading-7">{stat.value}</p>
             <p className="text-xs text-muted-foreground">{stat.label}</p>
           </div>
         </div>
