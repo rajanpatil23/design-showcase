@@ -33,11 +33,8 @@ const steps = [
 
 const teamMembers = [
   { name: "Raja Patil", role: "Senior Developer" },
-  { name: "Krishnal Patil", role: "Junior Developer" },
   { name: "Divya Agrawal", role: "Account Manager & SMM" },
-  { name: "Mayank Kumar Gupta", role: "Senior Graphic Designer" },
   { name: "Nithish Kumar", role: "UI/UX & Graphic Designer" },
-  { name: "Darshan Mali", role: "Performance Marketer" },
   { name: "Anamika Yadav", role: "SEO Specialist" },
   { name: "Vaibhav Mohan", role: "Social Media Manager" },
   { name: "Namrata Tamse", role: "AI Generalist" },
