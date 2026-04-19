@@ -114,7 +114,7 @@ const AboutPage = () => {
       </section>
 
       {/* Our Story */}
-      <section className="section-padding bg-ct-section">
+      <section className="section-padding bg-background">
         <div className="container-main">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <h2 className="text-4xl md:text-5xl font-heading font-bold">Our Story</h2>
