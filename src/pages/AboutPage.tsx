@@ -293,22 +293,10 @@ const AboutPage = () => {
         <div className="container-main pt-6 pb-16 md:pb-24">
           {/* Team Grid, solid blue cards */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {teamMembers.map((m, i) => (
+            {teamMembers.map((m) => (
               <div key={m.name} className="bg-primary text-primary-foreground rounded-2xl p-5 aspect-square flex flex-col items-center justify-center text-center overflow-hidden">
-                {i === 0 ? (
-                  <div className="w-full h-full -m-5 relative">
-                    <img src={founderImg} alt={m.name} className="w-full h-full object-cover" loading="lazy" />
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-3 text-center">
-                      <p className="font-heading font-semibold text-sm text-white">{m.name}</p>
-                      <p className="text-xs text-white/80">{m.role}</p>
-                    </div>
-                  </div>
-                ) : (
-                  <>
-                    <p className="font-heading font-semibold text-sm">{m.name}</p>
-                    <p className="text-xs text-primary-foreground/80 mt-1">{m.role}</p>
-                  </>
-                )}
+                <p className="font-heading font-semibold text-sm">{m.name}</p>
+                <p className="text-xs text-primary-foreground/80 mt-1">{m.role}</p>
               </div>
             ))}
           </div>
