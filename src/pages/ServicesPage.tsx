@@ -60,10 +60,10 @@ const ServicesPage = () => {
             </div>
 
             {/* Image with yellow backdrop + floating badges */}
-            <div className="relative w-full max-w-md mx-auto md:ml-auto md:mr-0 py-10 md:py-14">
+            <div className="relative w-full py-10 md:py-14">
               {/* Image in tall rectangle frame */}
               <div className="relative rounded-md overflow-hidden aspect-[4/5] w-full bg-[hsl(48_100%_55%)]">
-                <img src={servicesHero} alt="Services" className="absolute inset-0 w-full h-full object-contain" width={700} height={875} />
+                <img src={servicesHero} alt="Services" className="absolute inset-0 w-full h-full object-cover" width={700} height={875} />
               </div>
 
               {/* Floating badge: Growth Categories (top right, outside) */}
@@ -94,10 +94,10 @@ const ServicesPage = () => {
 
           <StatsBar
             stats={[
-              { icon: <img src={statBrands} alt="" className="w-10 h-10 object-contain" />, value: "70+", label: "SaaS brands served", bareIcon: true },
-              { icon: <img src={statSatisfaction} alt="" className="w-10 h-10 object-contain" />, value: "98%", label: "Client satisfaction", bareIcon: true },
-              { icon: <img src={statProjects} alt="" className="w-10 h-10 object-contain" />, value: "500+", label: "Projects delivered", bareIcon: true },
-              { icon: <img src={statSupport} alt="" className="w-10 h-10 object-contain" />, value: "24/7", label: "Support available", bareIcon: true },
+              { icon: <img src={statBrands} alt="" className="w-14 h-14 object-contain" />, value: "70+", label: "SaaS brands served", bareIcon: true },
+              { icon: <img src={statSatisfaction} alt="" className="w-14 h-14 object-contain" />, value: "98%", label: "Client satisfaction", bareIcon: true },
+              { icon: <img src={statProjects} alt="" className="w-14 h-14 object-contain" />, value: "500+", label: "Projects delivered", bareIcon: true },
+              { icon: <img src={statSupport} alt="" className="w-14 h-14 object-contain" />, value: "24/7", label: "Support available", bareIcon: true },
             ]}
           />
         </div>
