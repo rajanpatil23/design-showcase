@@ -494,7 +494,7 @@ export default function Hero({
 
         {/* Trusted By marquee, part of hero (shares grid bg), sits flush at the bottom so it connects directly to the stats grid below */}
         <div className="relative z-20 pb-6 md:pb-8">
-          <div className="mx-auto w-[70%] md:w-[60%] lg:w-[55%] rounded-3xl border border-border bg-card/80 backdrop-blur-sm shadow-[0_8px_30px_rgba(0,0,0,0.06)] px-4 md:px-8 py-3 md:py-4">
+          <div className="mx-auto w-[80%] md:w-[72%] lg:w-[68%] rounded-3xl border border-border bg-card/80 backdrop-blur-sm shadow-[0_8px_30px_rgba(0,0,0,0.06)] px-4 md:px-8 py-3 md:py-4">
             <TrustedMarquee />
           </div>
         </div>
