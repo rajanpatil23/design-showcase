@@ -131,19 +131,24 @@ export default function ReviewCarousel({
                     "rounded-2xl sm:rounded-3xl lg:rounded-[40px]",
                     "px-5 sm:px-8 lg:px-12 xl:px-16",
                     "py-8 sm:py-10 lg:py-12 xl:py-16",
-                    "shadow-[0_8px_32px_hsl(var(--foreground)/0.04),0_2px_8px_hsl(var(--foreground)/0.02)]",
                     "relative overflow-hidden transition-all duration-500 ease-out",
-                    "bg-ct-blue-light",
+                    "bg-card border border-border/60",
+                    "shadow-[0_10px_40px_-12px_hsl(var(--primary)/0.18),0_2px_8px_hsl(var(--foreground)/0.04)]",
                     selectedIndex === idx
-                      ? "scale-100 opacity-100"
+                      ? "scale-100 opacity-100 ring-1 ring-primary/15"
                       : "scale-90 sm:scale-95 opacity-70 sm:opacity-90",
                   ].join(" ")}
                 >
-                  <div className="pointer-events-none absolute inset-0 [background:radial-gradient(60%_60%_at_50%_50%,hsl(var(--background)/0.35),transparent_70%)]" />
+                  {/* subtle primary-tinted glow */}
+                  <div className="pointer-events-none absolute inset-0 [background:radial-gradient(70%_60%_at_50%_0%,hsl(var(--primary)/0.06),transparent_70%)]" />
+                  {/* decorative quote mark */}
+                  <div className="pointer-events-none absolute top-6 left-6 sm:top-8 sm:left-10 text-6xl sm:text-7xl lg:text-8xl font-heading font-bold leading-none text-primary/10 select-none">
+                    “
+                  </div>
                   <div className="relative z-10 flex flex-col items-center text-center">
                     <img src={it.brandLogo} alt={it.brand} className="h-8 sm:h-10 lg:h-12 opacity-90" />
 
-                    <p className="mt-5 sm:mt-6 lg:mt-8 max-w-3xl text-base sm:text-lg lg:text-xl leading-6 sm:leading-7 lg:leading-8 font-semibold text-foreground/80">
+                    <p className="mt-5 sm:mt-6 lg:mt-8 max-w-3xl text-base sm:text-lg lg:text-xl leading-6 sm:leading-7 lg:leading-8 font-medium text-foreground/85">
                       {it.quote}
                     </p>
 
@@ -151,10 +156,10 @@ export default function ReviewCarousel({
                       <img
                         src={it.person.avatar}
                         alt={it.person.name}
-                        className="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover ring-2 ring-background/70 shadow-sm"
+                        className="h-10 w-10 sm:h-12 sm:w-12 rounded-full object-cover ring-2 ring-primary/20 shadow-sm"
                       />
                       <div className="text-left">
-                        <div className="text-sm sm:text-base font-semibold text-foreground">{it.person.name}</div>
+                        <div className="text-sm sm:text-base font-heading font-semibold text-foreground">{it.person.name}</div>
                         <div className="text-xs sm:text-sm text-muted-foreground">{it.person.title}</div>
                       </div>
                     </div>
