@@ -93,8 +93,16 @@ const GoogleAdsPage = () => {
                 <Button variant="outline" className="rounded-full px-6 font-semibold">See Pricing</Button>
               </div>
             </div>
-            <div className="flex justify-center">
+            <div className="relative flex justify-center">
               <img src={googleAdsHero} alt="Google Ads keyword management mockup" className="w-full max-w-md h-auto object-contain" width={700} height={560} />
+              <div className="absolute right-2 top-1/2 -translate-y-2 bg-primary text-primary-foreground rounded-xl px-4 py-3 shadow-xl text-center animate-fade-in">
+                <p className="font-heading font-bold text-xl leading-none">100%</p>
+                <p className="text-[10px] font-medium mt-1 opacity-90">Results-Driven</p>
+              </div>
+              <div className="absolute left-0 bottom-6 bg-primary text-primary-foreground rounded-xl px-4 py-3 shadow-xl text-center animate-fade-in">
+                <p className="font-heading font-bold text-xl leading-none">36</p>
+                <p className="text-[10px] font-medium mt-1 opacity-90 leading-tight">Specialized<br/>Services</p>
+              </div>
             </div>
           </div>
           <StatsBar />
