@@ -163,7 +163,6 @@ const IndustriesFlow = () => {
         className: "energy-line",
       } as Edge);
     });
-    });
 
     ns.push({
       id: "hub",
