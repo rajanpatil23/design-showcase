@@ -162,7 +162,7 @@ const GoogleAdsPage = () => {
 
       {/* Measured Impact */}
       <section className="relative pt-20 md:pt-24 pb-8 md:pb-10 bg-ct-section">
-        <div className="absolute inset-x-0 top-0 h-2/3" style={{ backgroundColor: "#3369FD" }} aria-hidden="true" />
+        <div className="absolute inset-x-0 top-0 h-2/3" style={{ backgroundColor: "#09233C" }} aria-hidden="true" />
         <div className="container-main relative">
           <h2 className="text-3xl md:text-5xl font-heading font-bold text-primary-foreground text-center">
             Measured Impact. <span className="gradient-text">Proven <br /> Outcomes.</span>
