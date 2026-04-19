@@ -128,11 +128,11 @@ export default function ReviewCarousel({
               >
                 <div
                   className={[
-                    "rounded-2xl sm:rounded-3xl lg:rounded-[40px]",
+                    "group rounded-2xl sm:rounded-3xl lg:rounded-[40px]",
                     "px-5 sm:px-8 lg:px-12 xl:px-16",
                     "py-8 sm:py-10 lg:py-12 xl:py-16",
                     "relative overflow-hidden transition-all duration-500 ease-out",
-                    "bg-card border border-border/60",
+                    "bg-card border border-border/60 hover:border-primary",
                     "shadow-[0_10px_40px_-12px_hsl(var(--primary)/0.18),0_2px_8px_hsl(var(--foreground)/0.04)]",
                     selectedIndex === idx
                       ? "scale-100 opacity-100 ring-1 ring-primary/15"
@@ -142,7 +142,7 @@ export default function ReviewCarousel({
                   {/* subtle primary-tinted glow */}
                   <div className="pointer-events-none absolute inset-0 [background:radial-gradient(70%_60%_at_50%_0%,hsl(var(--primary)/0.06),transparent_70%)]" />
                   {/* decorative quote mark */}
-                  <div className="pointer-events-none absolute top-6 left-6 sm:top-8 sm:left-10 text-6xl sm:text-7xl lg:text-8xl font-heading font-bold leading-none text-primary/10 select-none">
+                  <div className="pointer-events-none absolute top-6 left-6 sm:top-8 sm:left-10 text-6xl sm:text-7xl lg:text-8xl font-heading font-bold leading-none text-primary/10 group-hover:text-primary/70 transition-colors duration-500 select-none">
                     “
                   </div>
                   <div className="relative z-10 flex flex-col items-center text-center">
