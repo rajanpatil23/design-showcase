@@ -109,8 +109,9 @@ const IndustriesFlow = () => {
         targetHandle: `left-${["top", "middle", "bottom"][i]}`,
         type: i === 1 ? "straight" : "smoothstep",
         animated: true,
+        pathOptions: i === 1 ? undefined : { borderRadius: 40 },
         style: { stroke: "hsl(var(--primary))", strokeWidth: 1.5, strokeDasharray: "4 3" },
-      });
+      } as Edge);
     });
 
     rightItems.forEach((d, i) => {
@@ -129,8 +130,9 @@ const IndustriesFlow = () => {
         targetHandle: `right-${["top", "middle", "bottom"][i]}`,
         type: i === 1 ? "straight" : "smoothstep",
         animated: true,
+        pathOptions: i === 1 ? undefined : { borderRadius: 40 },
         style: { stroke: "hsl(var(--primary))", strokeWidth: 1.5, strokeDasharray: "4 3" },
-      });
+      } as Edge);
     });
 
     ns.push({
