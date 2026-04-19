@@ -6,6 +6,18 @@ import ReviewCarousel from "@/components/Home/ReviewCarousel";
 import { Check, Quote, ChevronDown, ChevronUp, Shield, FileText, Eye, Layers, Search, MonitorSmartphone, FileType2, Target } from "lucide-react";
 import testimonialImg from "@/assets/testimonial-person.jpg";
 import googleAdsHero from "@/assets/google-ads-hero.png";
+import toolGoogleAds from "@/assets/tools/google-ads.png";
+import toolGtm from "@/assets/tools/gtm.png";
+import toolAnalytics from "@/assets/tools/analytics.png";
+import toolLooker from "@/assets/tools/looker.png";
+import toolAsana from "@/assets/tools/asana.png";
+import toolTrello from "@/assets/tools/trello.png";
+import toolHotjar from "@/assets/tools/hotjar.png";
+import toolSemrush from "@/assets/tools/semrush.png";
+import toolHubspot from "@/assets/tools/hubspot.png";
+import toolZapier from "@/assets/tools/zapier.png";
+import toolSlack from "@/assets/tools/slack.png";
+import toolGmb from "@/assets/tools/gmb.png";
 
 const painPoints = [
   { title: "You're spending $5K+ a month and can't tell what's actually working.", desc: "61% of Google Ads spend goes to clicks that never convert. That's not marketing — that's donation.", icon: <MonitorSmartphone className="w-7 h-7 text-primary" /> },
@@ -69,7 +81,20 @@ const faqs = [
   { q: "Do you manage Shopping and YouTube too?", a: "Yes, we manage all Google properties including Search, Display, Shopping, YouTube, and Performance Max." },
 ];
 
-const toolStack = ["Google Ads", "Google Analytics", "Looker Studio", "HubSpot", "SEMrush", "Google Tag Manager", "Zapier", "Canva"];
+const toolStack = [
+  { name: "Google Ads", logo: toolGoogleAds },
+  { name: "Google Tag Manager", logo: toolGtm },
+  { name: "Google Analytics", logo: toolAnalytics },
+  { name: "Looker Studio", logo: toolLooker },
+  { name: "Asana", logo: toolAsana },
+  { name: "Trello", logo: toolTrello },
+  { name: "Hotjar", logo: toolHotjar },
+  { name: "SEMrush", logo: toolSemrush },
+  { name: "HubSpot", logo: toolHubspot },
+  { name: "Zapier", logo: toolZapier },
+  { name: "Slack", logo: toolSlack },
+  { name: "Google My Business", logo: toolGmb },
+];
 
 const GoogleAdsPage = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
@@ -285,19 +310,26 @@ const GoogleAdsPage = () => {
               </p>
             </div>
             <div className="grid grid-cols-4 gap-4">
-              {toolStack.map((tool, i) => (
-                <div
-                  key={tool}
-                  className={`aspect-square rounded-2xl bg-background flex items-center justify-center shadow-lg p-3 ${
-                    i % 2 === 1 ? "translate-y-6" : ""
-                  }`}
-                  title={tool}
-                >
-                  <span className="text-[10px] md:text-xs font-semibold text-foreground text-center leading-tight">
-                    {tool}
-                  </span>
-                </div>
-              ))}
+              {toolStack.map((tool, i) => {
+                const col = i % 4;
+                const offset = col === 1 || col === 3 ? "translate-y-8" : "";
+                return (
+                  <div
+                    key={tool.name}
+                    className={`aspect-square rounded-2xl bg-background flex items-center justify-center shadow-lg p-3 ${offset}`}
+                    title={tool.name}
+                  >
+                    <img
+                      src={tool.logo}
+                      alt={`${tool.name} logo`}
+                      loading="lazy"
+                      width={512}
+                      height={512}
+                      className="w-3/4 h-3/4 object-contain"
+                    />
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
