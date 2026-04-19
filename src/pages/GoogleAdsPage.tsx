@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import SectionLabel from "@/components/SectionLabel";
 import StatsBar from "@/components/StatsBar";
+import ReviewCarousel from "@/components/Home/ReviewCarousel";
 import { Check, Quote, ChevronDown, ChevronUp, Shield, FileText, Eye, Layers, Search } from "lucide-react";
 import testimonialImg from "@/assets/testimonial-person.jpg";
 import servicesHero from "@/assets/services-hero-person.jpg";

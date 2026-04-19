@@ -366,47 +366,14 @@ const AboutPage = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="section-padding">
+      <section className="py-16 md:py-20">
         <div className="container-main">
-          <div className="flex justify-center mb-4">
-            <SectionLabel label="Testimonials" />
-          </div>
-          <h2 className="text-3xl md:text-5xl font-heading font-bold text-center">
+          <SectionLabel label="Testimonials" />
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mt-4 mb-10">
             What Our <span className="gradient-text">Clients Say</span>
           </h2>
-
-          <div className="mt-12 max-w-5xl mx-auto grid md:grid-cols-[1.4fr_1fr] gap-6 items-center">
-            {/* Left — quote card */}
-            <div className="bg-background rounded-2xl border border-border/60 shadow-[0_8px_30px_hsl(var(--foreground)/0.08)] p-7 md:p-10 relative">
-              <Quote className="absolute top-7 right-7 w-12 h-12 text-primary/15 -scale-x-100" />
-              <div className="flex items-center gap-5 mb-6">
-                <div className="w-16 h-16 rounded-full overflow-hidden ring-2 ring-primary/40 shrink-0">
-                  <img src={testimonialImg} alt="Kinjal M Jain" className="w-full h-full object-cover" loading="lazy" width={64} height={64} />
-                </div>
-                <div>
-                  <p className="font-heading font-bold text-2xl leading-tight">Kinjal M Jain</p>
-                  <p className="text-sm text-muted-foreground mt-1">Founder, Mending Mind</p>
-                </div>
-              </div>
-              <p className="text-base text-muted-foreground leading-relaxed max-w-xl">
-                Connecttly helped us harness AI-powered analytics to uncover insights we were missing. From dashboards to automation, they gave clarity and optimized campaigns in real time. Like having a full analytics team on demand.
-              </p>
-            </div>
-
-            {/* Right — video card */}
-            <div className="relative rounded-2xl overflow-hidden min-h-[340px] shadow-[0_6px_24px_hsl(var(--foreground)/0.08)]">
-              <img src={testimonialImg} alt="Kinjal M Jain video" className="absolute inset-0 w-full h-full object-cover" loading="lazy" width={400} height={400} />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <button aria-label="Play video" className="w-14 h-14 rounded-full bg-white/90 hover:bg-white flex items-center justify-center shadow-lg transition">
-                  <span className="block w-0 h-0 border-y-[8px] border-y-transparent border-l-[12px] border-l-primary ml-1" />
-                </button>
-              </div>
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-5">
-                <p className="text-white font-heading font-semibold">Kinjal M Jain</p>
-                <p className="text-white/75 text-xs">Founder of Mending Minds</p>
-              </div>
-            </div>
-          </div>
+        </div>
+        <ReviewCarousel noPadding />
 
           {/* Bottom action row */}
           <div className="mt-10 max-w-5xl mx-auto grid md:grid-cols-3 gap-5">
