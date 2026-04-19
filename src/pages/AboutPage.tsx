@@ -116,11 +116,21 @@ const AboutPage = () => {
       {/* Our Story */}
       <section className="section-padding bg-background">
         <div className="container-main">
-          <div className="flex justify-center mb-8">
+          <div className="flex justify-center mb-6">
             <SectionLabel label="How it started" />
           </div>
-          <div className="grid md:grid-cols-2 gap-12 items-start">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold">Our Story</h2>
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-center mb-12">Our Story</h2>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="rounded-2xl overflow-hidden">
+              <img
+                src={teamImg}
+                alt="Connecttly team collaborating on growth strategy"
+                className="w-full h-[420px] object-cover"
+                loading="lazy"
+                width={800}
+                height={512}
+              />
+            </div>
             <div className="border-l-2 border-primary pl-6 text-muted-foreground space-y-4 leading-relaxed text-sm">
               <div>
                 <p>Connecttly was born from a simple frustration: too many businesses were paying premium prices for marketing that didn't deliver results.</p>
