@@ -10,14 +10,6 @@ import ResourcesShowcase from "@/components/Home/ResourcesShowcase";
 import ReviewCarousel from "@/components/Home/ReviewCarousel";
 import blogIllustration from "@/assets/blog-illustration.jpg";
 
-const heroStats = [
-  { value: "2M+", label: "Content Impressions Generated" },
-  { value: "1000+", label: "Qualified Leads Generated" },
-  { value: "20+", label: "Brands Scaled" },
-  { value: "10+", label: "Marketing Systems Automated" },
-];
-
-
 const steps = [
   { num: "01", title: "Discover", desc: "We learn your business, goals, and audience." },
   { num: "02", title: "Strategize", desc: "We build a custom growth strategy tailored to you." },
