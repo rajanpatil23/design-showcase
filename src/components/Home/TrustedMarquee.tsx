@@ -23,7 +23,7 @@ const TrustedMarquee = () => {
         Recognised By
       </span>
 
-      <div className="relative mt-6 overflow-hidden w-full [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+      <div className="relative mt-3 overflow-hidden w-full [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
         <div className="flex w-max animate-scroll-left">
           {[0, 1].map((half) => (
             <div key={half} className="flex shrink-0" aria-hidden={half === 1}>
