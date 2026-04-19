@@ -316,7 +316,8 @@ const GoogleAdsPage = () => {
                 return (
                   <div
                     key={tool.name}
-                    className={`aspect-square rounded-2xl bg-background flex items-center justify-center shadow-lg p-3 ${offset}`}
+                    className={`aspect-square rounded-2xl bg-background flex items-center justify-center shadow-lg p-3 animate-float-y ${offset}`}
+                    style={{ animationDelay: `${(i % 4) * 0.3}s` }}
                     title={tool.name}
                   >
                     <img
