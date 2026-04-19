@@ -136,7 +136,7 @@ const GoogleAdsPage = () => {
       </section>
 
       {/* Pain Points */}
-      <section className="section-padding bg-ct-section">
+      <section className="section-padding bg-background">
         <div className="container-main">
           <h2 className="text-2xl md:text-4xl font-heading font-bold text-center max-w-3xl mx-auto">
             Tired of wasting your Google <br /> <span className="gradient-text">Ads budget?</span>
@@ -165,7 +165,7 @@ const GoogleAdsPage = () => {
         <div className="absolute inset-x-0 top-0 h-2/3 bg-ct-dark" aria-hidden="true" />
         <div className="container-main relative">
           <h2 className="text-3xl md:text-5xl font-heading font-bold text-primary-foreground text-center">
-            Measured Impact. <span className="gradient-text">Proven Outcomes.</span>
+            Measured Impact. Proven <br /> <span className="gradient-text">Outcomes.</span>
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6 mt-14 md:mt-16 max-w-5xl mx-auto">
             {impactStats.map((stat) => (
