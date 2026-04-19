@@ -129,8 +129,8 @@ const ServicesPage = () => {
                 </div>
               ) : (
                 <div key={s.title} className="bg-background rounded-2xl border border-border p-5 flex flex-col shadow-[0_2px_10px_hsl(var(--foreground)/0.04)]">
-                  <div className="rounded-xl bg-ct-blue-light/60 aspect-[4/3] flex items-center justify-center mb-5 overflow-hidden">
-                    <img src={s.image} alt={s.title} className="w-full h-full object-cover" loading="lazy" width={400} height={300} />
+                  <div className="rounded-xl aspect-[4/3] mb-5 overflow-hidden">
+                    <img src={s.image} alt={s.title} className="w-full h-full object-cover rounded-xl" loading="lazy" width={400} height={300} />
                   </div>
                   <h3 className="font-heading font-semibold text-lg mb-2">{s.title}</h3>
                   <p className="text-sm text-muted-foreground mb-5 flex-1">{s.desc}</p>
