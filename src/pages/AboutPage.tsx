@@ -209,7 +209,7 @@ const AboutPage = () => {
             {principles.map((p) => (
               <div
                 key={p.title}
-                className="bg-background rounded-xl border border-border p-6 shadow-[0_2px_10px_hsl(var(--foreground)/0.04)]"
+                className="bg-background rounded-xl border border-border hover:border-primary transition-colors p-6 shadow-[0_2px_10px_hsl(var(--foreground)/0.04)]"
               >
                 <div className="p-3 rounded-lg bg-ct-blue-light inline-block mb-4">{p.icon}</div>
                 <h3 className="font-heading font-semibold text-lg mb-2">{p.title}</h3>
