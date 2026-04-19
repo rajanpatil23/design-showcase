@@ -99,7 +99,7 @@ export default {
         },
         "float-y": {
           "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-8px)" },
+          "50%": { transform: "translateY(-4px)" },
         },
       },
       animation: {
@@ -107,7 +107,7 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in-up": "fade-in-up 0.6s ease-out forwards",
         "scroll-left": "scroll-left 45s linear infinite",
-        "float-y": "float-y 3s ease-in-out infinite",
+        "float-y": "float-y 6s ease-in-out infinite",
       },
     },
   },
