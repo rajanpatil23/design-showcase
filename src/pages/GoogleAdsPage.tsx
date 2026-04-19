@@ -184,7 +184,7 @@ const GoogleAdsPage = () => {
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-center">
             Why Connecttly for <span className="gradient-text">Google Ads</span>
           </h2>
-          <div className="grid md:grid-cols-2 gap-6 mt-12 max-w-[1264px] mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 mt-12 max-w-[1264px] mx-auto md:items-start">
             {whyUs.map((w, i) => {
               // Card 0: 611x480 (top-left), Card 1: 629x386 (top-right)
               // Card 2: 629x386 (bottom-left), Card 3: 629x480 — matches card 2 width, aligned left under card 1
