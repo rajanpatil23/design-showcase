@@ -24,7 +24,7 @@ type IndustryData = { name: string; icon: React.ReactNode; side: "left" | "right
 const IndustryNode = ({ data }: NodeProps<Node<IndustryData>>) => {
   const isLeft = data.side === "left";
   return (
-    <div className="bg-background rounded-xl border border-border/60 shadow-[6px_8px_20px_-6px_hsl(var(--foreground)/0.15)] px-5 py-6 flex items-center gap-4 w-[260px]">
+    <div className="bg-background rounded-xl border border-border/60 shadow-[0_4px_18px_hsl(var(--foreground)/0.06)] px-5 py-4 flex items-center gap-4 w-[260px]">
       {isLeft ? (
         <>
           <p className="text-sm font-heading font-semibold leading-tight flex-1">{data.name}</p>
@@ -51,29 +51,18 @@ const HubNode = () => (
       <img src={connecttlyMark} alt="Connecttly" className="w-10 h-auto" />
     </div>
     {(["left", "right"] as const).map((side) =>
-      (["top", "middle", "bottom"] as const).map((row) => {
-        const topPct = row === "top" ? "38%" : row === "middle" ? "50%" : "62%";
-        return (
-          <div key={`${side}-${row}`}>
-            <Handle
-              id={`${side}-${row}`}
-              type="target"
-              position={side === "left" ? Position.Left : Position.Right}
-              className="!opacity-0 !pointer-events-none"
-              style={{ top: topPct, [side]: "-12px" }}
-            />
-            <span
-              aria-hidden
-              className="absolute w-2 h-2 rounded-full bg-primary pointer-events-none"
-              style={{
-                top: topPct,
-                [side]: "-12px",
-                transform: "translateY(-50%)",
-              }}
-            />
-          </div>
-        );
-      })
+      (["top", "middle", "bottom"] as const).map((row) => (
+        <Handle
+          key={`${side}-${row}`}
+          id={`${side}-${row}`}
+          type="target"
+          position={side === "left" ? Position.Left : Position.Right}
+          className="!opacity-0 !pointer-events-none"
+          style={{
+            top: row === "top" ? "20%" : row === "middle" ? "50%" : "80%",
+          }}
+        />
+      ))
     )}
   </div>
 );
@@ -92,10 +81,10 @@ const rightItems: IndustryData[] = [
 ];
 
 const CARD_W = 260;
-const CARD_H = 80;
+const CARD_H = 64;
 const HUB_W = 96;
 const HUB_H = 96;
-const CANVAS_W = 1200;
+const CANVAS_W = 980;
 const CANVAS_H = 380;
 const ROW_YS = [40, (CANVAS_H - CARD_H) / 2, CANVAS_H - CARD_H - 40];
 
@@ -113,25 +102,15 @@ const IndustriesFlow = () => {
         draggable: false,
         selectable: false,
       });
-      const edgeBase = {
+      es.push({
+        id: `e-L${i}`,
         source: `L${i}`,
         target: "hub",
         targetHandle: `left-${["top", "middle", "bottom"][i]}`,
         type: i === 1 ? "straight" : "smoothstep",
-        animated: false,
-        pathOptions: i === 1 ? undefined : { borderRadius: 80 },
-      } as const;
-      es.push({
-        ...edgeBase,
-        id: `e-L${i}`,
-        style: { stroke: "hsl(var(--primary))", strokeWidth: 1.75 },
-      } as Edge);
-      es.push({
-        ...edgeBase,
-        id: `e-L${i}-pulse`,
-        style: { stroke: "hsl(0 0% 100% / 0.95)", strokeWidth: 1.1 },
-        className: "energy-line",
-      } as Edge);
+        animated: true,
+        style: { stroke: "hsl(var(--primary))", strokeWidth: 1.5, strokeDasharray: "4 3" },
+      });
     });
 
     rightItems.forEach((d, i) => {
@@ -143,25 +122,15 @@ const IndustriesFlow = () => {
         draggable: false,
         selectable: false,
       });
-      const edgeBase = {
+      es.push({
+        id: `e-R${i}`,
         source: `R${i}`,
         target: "hub",
         targetHandle: `right-${["top", "middle", "bottom"][i]}`,
         type: i === 1 ? "straight" : "smoothstep",
-        animated: false,
-        pathOptions: i === 1 ? undefined : { borderRadius: 80 },
-      } as const;
-      es.push({
-        ...edgeBase,
-        id: `e-R${i}`,
-        style: { stroke: "hsl(var(--primary))", strokeWidth: 1.75 },
-      } as Edge);
-      es.push({
-        ...edgeBase,
-        id: `e-R${i}-pulse`,
-        style: { stroke: "hsl(0 0% 100% / 0.95)", strokeWidth: 1.1 },
-        className: "energy-line",
-      } as Edge);
+        animated: true,
+        style: { stroke: "hsl(var(--primary))", strokeWidth: 1.5, strokeDasharray: "4 3" },
+      });
     });
 
     ns.push({
@@ -194,15 +163,6 @@ const IndustriesFlow = () => {
         proOptions={{ hideAttribution: true }}
       >
         <Background gap={24} size={1} color="hsl(var(--border))" />
-        <svg style={{ position: "absolute", width: 0, height: 0 }}>
-          <defs>
-            <linearGradient id="energy-fade" x1="0" x2="1" y1="0" y2="0" gradientUnits="objectBoundingBox">
-              <stop offset="0%" stopColor="white" stopOpacity="0" />
-              <stop offset="50%" stopColor="white" stopOpacity="0.95" />
-              <stop offset="100%" stopColor="white" stopOpacity="0" />
-            </linearGradient>
-          </defs>
-        </svg>
       </ReactFlow>
     </div>
   );
