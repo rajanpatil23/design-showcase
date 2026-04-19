@@ -162,7 +162,7 @@ const GoogleAdsPage = () => {
 
       {/* Measured Impact */}
       <section className="relative pt-20 md:pt-24 pb-8 md:pb-10 bg-ct-section">
-        <div className="absolute inset-x-0 top-0 h-2/3 bg-ct-dark" aria-hidden="true" />
+        <div className="absolute inset-x-0 top-0 h-2/3" style={{ backgroundColor: "#3369FD" }} aria-hidden="true" />
         <div className="container-main relative">
           <h2 className="text-3xl md:text-5xl font-heading font-bold text-primary-foreground text-center">
             Measured Impact. <span className="gradient-text">Proven <br /> Outcomes.</span>
@@ -184,11 +184,16 @@ const GoogleAdsPage = () => {
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-center">
             Why Connecttly for <span className="gradient-text">Google Ads</span>
           </h2>
-          <div className="grid md:grid-cols-5 gap-6 mt-12 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 mt-12 max-w-[1264px] mx-auto">
             {whyUs.map((w, i) => {
-              const sizes = ["md:col-span-2", "md:col-span-3", "md:col-span-3", "md:col-span-2"];
+              // Diagonal pairs: cards 0 & 3 => 611x480, cards 1 & 2 => 629x386
+              const isLargeHeight = i === 0 || i === 3;
+              const dims = isLargeHeight
+                ? "md:max-w-[611px] md:h-[480px]"
+                : "md:max-w-[629px] md:h-[386px]";
+              const justify = i === 1 ? "md:justify-self-end" : i === 2 ? "md:justify-self-start" : i === 3 ? "md:justify-self-end" : "md:justify-self-start";
               return (
-                <div key={w.title} className={`${sizes[i]} bg-background rounded-2xl p-8 shadow-md min-h-[260px] flex flex-col justify-end transition-all duration-300 hover:-translate-y-2 hover:shadow-xl`}>
+                <div key={w.title} className={`${dims} ${justify} w-full bg-background rounded-2xl p-8 shadow-md min-h-[260px] flex flex-col justify-end transition-all duration-300 hover:-translate-y-2 hover:shadow-xl`}>
                   <h3 className="font-heading font-semibold text-xl mb-3">{w.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{w.desc}</p>
                 </div>
