@@ -314,20 +314,21 @@ const GoogleAdsPage = () => {
                 const col = i % 4;
                 const offset = col === 1 || col === 3 ? "translate-y-5" : "";
                 return (
-                  <div
-                    key={tool.name}
-                    className={`aspect-square rounded-2xl bg-background flex items-center justify-center shadow-lg p-3 animate-float-y ${offset}`}
-                    style={{ animationDelay: `${(i % 4) * 0.3}s` }}
-                    title={tool.name}
-                  >
-                    <img
-                      src={tool.logo}
-                      alt={`${tool.name} logo`}
-                      loading="lazy"
-                      width={512}
-                      height={512}
-                      className="w-3/4 h-3/4 object-contain"
-                    />
+                  <div key={tool.name} className={offset}>
+                    <div
+                      className="aspect-square rounded-2xl bg-background flex items-center justify-center shadow-lg p-3 animate-float-y"
+                      style={{ animationDelay: `${i * 0.2}s` }}
+                      title={tool.name}
+                    >
+                      <img
+                        src={tool.logo}
+                        alt={`${tool.name} logo`}
+                        loading="lazy"
+                        width={512}
+                        height={512}
+                        className="w-3/4 h-3/4 object-contain"
+                      />
+                    </div>
                   </div>
                 );
               })}
