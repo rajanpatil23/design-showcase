@@ -139,7 +139,7 @@ const GoogleAdsPage = () => {
       <section className="section-padding bg-background">
         <div className="container-main">
           <h2 className="text-2xl md:text-4xl font-heading font-bold text-center max-w-3xl mx-auto">
-            Tired of wasting your Google <br /> <span className="gradient-text">Ads budget?</span>
+            Tired of wasting your <span className="gradient-text">Google <br /> Ads budget?</span>
           </h2>
           <div className="space-y-4 mt-10 max-w-2xl mx-auto">
             {painPoints.map((p) => (
