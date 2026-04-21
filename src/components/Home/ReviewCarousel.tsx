@@ -37,8 +37,8 @@ const DEFAULT_REVIEWS: ReviewItem[] = [
     brand: "EvolveU",
     brandLogo: evolveuLogo,
     quote:
-      "Exploring LinkedIn Ads for the first time was seamless with Connecttly. Their insights helped me optimize my profile, generate leads, and grow with confidence. Excited to see the long-term impact!",
-    person: { name: "Deepannita C.", title: "EvolveU", avatar: deepannitaAvatar },
+      "Connecttly helped us turn LinkedIn into a real growth channel. Their content strategy, profile optimization, and ad guidance gave us clarity, consistency, and measurable traction from day one.",
+    person: { name: "Deepannita C.", title: "Founder, EvolveU", avatar: deepannitaAvatar },
   },
   {
     brand: "Infosec Minds",
